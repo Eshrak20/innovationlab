@@ -1,0 +1,1945 @@
+[
+  {
+    "id": "1",
+    "type": "technical",
+    "title": "Oracle Database Administration 19c",
+    "pdfPath": "/pdf/Oracle Database Administration 19c_Course_Outline.pdf",
+    "description": "Master Oracle Database Administration 19c with a comprehensive 64-hour course. Learn essential DBA responsibilities, database architecture, backup and recovery, user security, performance tuning, and more. Gain hands-on experience with Oracle tools like SQL*Plus, SQL Developer, RMAN, and Data Pump, all under expert guidance.",
+    "regularPrice": "20,000",
+    "offerPrice": "15,000",
+    "image": "/images/Training/DBA.jpg",
+    "startDate": "15 July, 2023",
+    "time": "Friday & Saturday (6:30 PM – 9:30 PM)",
+    "duration": "64 Hours",
+    "contact": "+880 1571119993",
+    "category": "Online Training",
+    "tags": ["Oracle Database", "DBA", "Database Management", "Linux", "SQL"],
+    "totalLiveClasses": "22",
+    "totalProjectsInThisCourse": 3,
+    "promoCode": "INTRO99",
+    "preRecordedVideo": true,
+    "seatsLeft": 20,
+    "batchNo": "03",
+    "courseOutline": [
+      {
+        "title": "1. Introduction",
+        "topics": [
+          "Course Objectives",
+          "Responsibilities as an Oracle DBA",
+          "Installing Oracle Database 19c on Oracle Enterprise Linux"
+        ]
+      },
+      {
+        "title": "2. Oracle Database Architecture",
+        "topics": [
+          "Oracle Database Server Architecture",
+          "Oracle Database Instance Configurations",
+          "Connecting to the Database Instance",
+          "Oracle Database Memory Structures"
+        ]
+      },
+      {
+        "title": "3. Creating DBCS Database Deployments",
+        "topics": [
+          "Automated Database Provisioning",
+          "Creating a Database Deployment"
+        ]
+      },
+      {
+        "title": "4. Oracle Database Management Tools",
+        "topics": [
+          "Connecting to an Oracle Database Instance",
+          "Oracle Database Tools Introduction",
+          "Using SQL*Plus",
+          "Oracle SQL Developer",
+          "SQL Developer Command Line (SQLcl)",
+          "Database Configuration Assistant (DBCA)"
+        ]
+      },
+      {
+        "title": "5. Managing the Database Instance",
+        "topics": [
+          "Working with Initialization Parameters",
+          "Starting the Oracle Database Instance",
+          "Shutting Down an Oracle Database Instance",
+          "Shutdown Modes and Options",
+          "Opening and Closing PDBs",
+          "Viewing the Alert Log",
+          "Using Trace Files",
+          "DDL Log File"
+        ]
+      },
+      {
+        "title": "6. Configuring the Oracle Network Environment",
+        "topics": [
+          "Oracle Net Services: Overview",
+          "Oracle Net Listener: Overview",
+          "Establishing Oracle Network Connections",
+          "Connecting to an Oracle Database",
+          "Using Oracle Net Manager",
+          "Using Oracle Net Configuration Assistant"
+        ]
+      },
+      {
+        "title": "7. Administering User Security",
+        "topics": [
+          "Database User Accounts",
+          "Managing Users",
+          "Creating Users in a Multitenant Environment",
+          "Schema-Only Account",
+          "Authenticating Users",
+          "System and Object Privileges",
+          "Granting and Revoking Privileges"
+        ]
+      },
+      {
+        "title": "8. Creating PDBs",
+        "topics": [
+          "Creating a New PDB from PDB$SEED",
+          "Cloning PDBs",
+          "Unplugging and Plugging PDBs"
+        ]
+      },
+      {
+        "title": "9. Creating and Managing Tablespaces",
+        "topics": [
+          "Creating and Altering Tablespaces",
+          "Viewing Tablespace Information",
+          "Adding and Moving Data Files",
+          "Tablespace Encryption"
+        ]
+      },
+      {
+        "title": "10. Managing Space",
+        "topics": [
+          "Space Management Features",
+          "Block Space Management",
+          "Row Chaining and Migration",
+          "Types of Segments",
+          "Allocating Extents"
+        ]
+      },
+      {
+        "title": "11. Managing Undo Data",
+        "topics": [
+          "Undo Data Overview",
+          "Undo Tablespace Management",
+          "Configuring Undo Retention"
+        ]
+      },
+      {
+        "title": "12. Moving Data",
+        "topics": [
+          "Oracle Data Pump Overview",
+          "Creating Directory Objects",
+          "Data Pump Export and Import",
+          "Data Pump Transformations"
+        ]
+      },
+      {
+        "title": "13. Backup and Recovery: Concepts",
+        "topics": [
+          "DBA Responsibilities",
+          "Failure Categories",
+          "Flashback Technology",
+          "Instance and Media Recovery",
+          "Complete and Incomplete Recovery"
+        ]
+      },
+      {
+        "title": "14. Backup and Recovery: Configuration",
+        "topics": [
+          "Configuring Fast Recovery Area",
+          "Multiplexing Control and Redo Log Files",
+          "ARCHIVELOG Mode Configuration"
+        ]
+      },
+      {
+        "title": "15. Performing Database Backups",
+        "topics": [
+          "Backup Solutions Overview",
+          "User-Managed and RMAN Backups",
+          "Managing Backup Settings"
+        ]
+      },
+      {
+        "title": "16. Performing Database Recovery",
+        "topics": [
+          "Data Recovery Advisor",
+          "RMAN Recovery Scenarios",
+          "Point-in-Time Recovery"
+        ]
+      },
+      {
+        "title": "17. Database Maintenance",
+        "topics": [
+          "Automatic Workload Repository (AWR)",
+          "Automatic Database Diagnostic Monitor (ADDM)"
+        ]
+      },
+      {
+        "title": "18. Managing Performance",
+        "topics": [
+          "Performance Monitoring",
+          "Tuning Activities",
+          "Memory Management"
+        ]
+      }
+    ],
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Database Administrator & IT Instructor",
+      "experience": "10+ years of experience in the IT field, specializing in Oracle Database Administration and Cloud Technologies.",
+      "skills": [
+        "Oracle Database Administration",
+        "Performance Tuning & Troubleshooting",
+        "High Availability (RAC, Data Guard, RMAN)",
+        "Cloud Computing (AWS, Azure, Oracle Cloud)",
+        "UNIX/Linux System Administration"
+      ],
+      "certifications": [
+        "Oracle Database Administration 2019 Certified Professional",
+        "Microsoft Certified: Azure Database Administrator Associate",
+        "Oracle Cloud Infrastructure 2023 Certified DevOps Professional",
+        "Oracle Cloud Infrastructure 2023 Certified Architect Associate",
+        "Red Hat Certified Engineer",
+        "Red Hat Certified System Administrator",
+        "AWS Certified Cloud Practitioner"
+      ],
+      "achievements": [
+        "Over 6 years of experience managing complex UNIX-based Oracle Databases",
+        "Expert in database administration best practices for high availability",
+        "Trained and mentored IT professionals in database management and cloud computing",
+        "Speaker at multiple tech seminars and conferences"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  },
+  {
+    "id": "2",
+    "type": "technical",
+    "title": "Oracle Database Design and Development: SQL, PL/SQL, APEX",
+    "description": "Become a full-stack web developer in 12 weeks. Learn HTML, CSS, JavaScript, and back-end technologies to build dynamic, interactive websites.Learn the basics of programming with Python, covering essential concepts like variables, data types, loops, and functions.Everything you need to learn app development in 1 course. With 72 live classes and 240 pre-recorded videos, you'll learn everything from the very basics to advanced levels! Along with technical support, mental support, job placement support, and lifetime access to everything!",
+    "regularPrice": "20,000",
+    "offerPrice": "15,000",
+    "image": "/images/Training/SQL, PLSQL, APEX.png",
+    "startDate": "15 July, 2023",
+    "time": "Friday & Saturday (6:30 PM – 9:30 PM)",
+    "duration": "70 Hours",
+    "contact": "+880 1571119993 ",
+    "category": "Online Training",
+    "tags": ["HTML", "CSS", "JavaScript", "Web Design", "Web Development"],
+    "totalLiveClasses": 24,
+    "totalProjectsInThisCourse": 5,
+    "promoCode": "WEBDEV149",
+    "preRecordedVideo": true,
+    "seatsLeft": "20",
+    "batchNo": "02",
+
+    "courseOutline": [
+      {
+        "title": "1. Introduction to Oracle Database",
+        "topics": [
+          "Oracle Database Overview",
+          "Architecture and components of Oracle database",
+          "Installation and configuration of Oracle Database",
+          "Relational Database Concepts",
+          "Tables, rows, columns, and relationships",
+          "Data types and constraints"
+        ]
+      },
+      {
+        "title": "2. SQL (Structured Query Language)",
+        "topics": [
+          "Basic SQL Queries: SELECT, INSERT, UPDATE, DELETE commands",
+          "Filtering (WHERE), sorting (ORDER BY), and grouping (GROUP BY)",
+          "Advanced SQL Queries: Joins (INNER, LEFT, RIGHT, FULL)",
+          "Subqueries and nested queries",
+          "Set operations (UNION, INTERSECT, EXCEPT)",
+          "Aggregate Functions: SUM, COUNT, AVG, MIN, MAX",
+          "Window Functions: Using OVER clause (ROW_NUMBER, RANK, LEAD, LAG)",
+          "Transactions and Concurrency Control: COMMIT, ROLLBACK, SAVEPOINT",
+          "Transaction isolation levels",
+          "Performance Tuning in SQL: Indexing, EXPLAIN PLAN",
+          "Optimizing queries for better performance"
+        ]
+      },
+      {
+        "title": "3. PL/SQL (Procedural Language/SQL)",
+        "topics": [
+          "PL/SQL Fundamentals: Introduction and integration with SQL",
+          "Declaring variables, constants, and types",
+          "Control Structures: Loops (FOR, WHILE), Conditional statements (IF-ELSE, CASE)",
+          "Exception Handling: Handling errors with EXCEPTION block",
+          "Procedures, Functions, and Packages: Creating and managing",
+          "Writing reusable packages and understanding package structure",
+          "Triggers: BEFORE, AFTER, INSTEAD OF triggers for data integrity",
+          "Cursors: Implicit and explicit cursors, Cursor for loops",
+          "Bulk collect and FORALL for performance improvement"
+        ]
+      },
+      {
+        "title": "4. Oracle APEX (Application Express)",
+        "topics": [
+          "Introduction to Oracle APEX: Overview and installation",
+          "Creating and managing workspaces",
+          "Creating Web Applications: Building basic web applications",
+          "User authentication and authorization",
+          "Interactive Reports and Forms: Designing and customizing",
+          "Advanced Features in APEX: Dynamic actions, JavaScript, and CSS customization",
+          "Deploying and Managing APEX Applications: Security, session state, and performance",
+          "Integrating APEX with Oracle SQL, PL/SQL, and RESTful web services"
+        ]
+      },
+      {
+        "title": "5. Advanced Database Design",
+        "topics": [
+          "Database Normalization: First to higher normal forms",
+          "Reducing redundancy and improving data integrity",
+          "Data Modeling and ER Diagrams: Using tools like Oracle SQL Developer Data Modeler",
+          "Mapping ER diagrams to database structures",
+          "Indexes, Constraints, and Relationships: Primary/foreign keys, unique and check constraints",
+          "Data Integrity and Security: User roles, privileges, data encryption, and auditing"
+        ]
+      },
+      {
+        "title": "6. Real-World Project",
+        "topics": [
+          "Building an End-to-End Oracle Application",
+          "Using SQL, PL/SQL, and APEX for real-world project development",
+          "Hands-on experience with data design, querying, and web development"
+        ]
+      }
+    ],
+
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Database Administrator & IT Instructor",
+      "experience": "10+ years of experience in the IT field, specializing in Oracle Database Administration and Cloud Technologies.",
+      "skills": [
+        "Oracle Database Administration",
+        "Performance Tuning & Troubleshooting",
+        "High Availability (RAC, Data Guard, RMAN)",
+        "Cloud Computing (AWS, Azure, Oracle Cloud)",
+        "UNIX/Linux System Administration"
+      ],
+      "certifications": [
+        "Oracle Database Administration 2019 Certified Professional",
+        "Microsoft Certified: Azure Database Administrator Associate",
+        "Oracle Cloud Infrastructure 2023 Certified DevOps Professional",
+        "Oracle Cloud Infrastructure 2023 Certified Architect Associate",
+        "Red Hat Certified Engineer",
+        "Red Hat Certified System Administrator",
+        "AWS Certified Cloud Practitioner"
+      ],
+      "achievements": [
+        "Over 6 years of experience managing complex UNIX-based Oracle Databases",
+        "Expert in database administration best practices for high availability",
+        "Trained and mentored IT professionals in database management and cloud computing",
+        "Speaker at multiple tech seminars and conferences"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  },
+  {
+    "id": "3",
+    "title": "Oracle Database Design",
+    "type": "technical",
+    "description": "Oracle Database Design and Development: SQL, PL/SQL, APEX(Web Application) Master data analysis and visualization with R, learning how to handle datasets, apply statistical models, and create impactful visualizations.Learn the basics of programming with Python, covering essential concepts like variables, data types, loops, and functions.Everything you need to learn app development in 1 course. With 72 live classes and 240 pre-recorded videos, you'll learn everything from the very basics to advanced levels! Along with technical support, mental support, job placement support, and lifetime access to everything!",
+    "regularPrice": "15,000",
+    "offerPrice": "10,000",
+    "image": "/images/Training/Database Design and Basic SQL, PLSQL.jpg",
+    "startDate": "1 August, 2023",
+    "time": "Wednesday & Sunday (5:00 PM – 8:00 PM)",
+    "duration": "40 Hours",
+    "contact": "+880 1571119993",
+    "category": "Online Training",
+    "tags": [
+      "R",
+      "Data Science",
+      "Data Visualization",
+      "Statistics",
+      "Big Data"
+    ],
+    "totalLiveClasses": "15",
+    "totalProjectsInThisCourse": 4,
+    "promoCode": "RDATA129",
+    "preRecordedVideo": true,
+    "seatsLeft": 12,
+    "batchNo": "03",
+    "courseOutline": [
+      {
+        "title": "1. Introduction to Oracle Database",
+        "topics": [
+          "Oracle Database Overview",
+          "Architecture and components of Oracle database",
+          "Installation and configuration of Oracle Database"
+        ]
+      },
+      {
+        "title": "2. Relational Database Concepts",
+        "topics": [
+          "Tables, rows, columns, and relationships",
+          "Data types and constraints"
+        ]
+      },
+      {
+        "title": "3. SQL (Structured Query Language)",
+        "topics": ["Basic SQL Queries"]
+      },
+      {
+        "title": "4. Basic SQL Queries",
+        "topics": [
+          "SELECT, INSERT, UPDATE, DELETE commands",
+          "Filtering (WHERE), sorting (ORDER BY), and grouping (GROUP BY)"
+        ]
+      },
+      {
+        "title": "5. Advanced SQL Queries",
+        "topics": [
+          "Joins (INNER, LEFT, RIGHT, FULL)",
+          "Subqueries and nested queries",
+          "Set operations (UNION, INTERSECT, EXCEPT)"
+        ]
+      },
+      {
+        "title": "6. Aggregate Functions and Window Functions",
+        "topics": [
+          "SUM, COUNT, AVG, MIN, MAX",
+          "Using OVER clause for window functions (e.g., ROW_NUMBER, RANK, LEAD, LAG)"
+        ]
+      },
+      {
+        "title": "7. Transactions and Concurrency Control",
+        "topics": [
+          "COMMIT, ROLLBACK, SAVEPOINT",
+          "Transaction isolation levels"
+        ]
+      },
+      {
+        "title": "8. Performance Tuning in SQL",
+        "topics": [
+          "Indexing, EXPLAIN PLAN",
+          "Optimizing queries for better performance"
+        ]
+      },
+      {
+        "title": "9. PL/SQL (Procedural Language/SQL)",
+        "topics": ["PL/SQL Fundamentals"]
+      },
+      {
+        "title": "10. PL/SQL Fundamentals",
+        "topics": [
+          "Introduction to PL/SQL and its integration with SQL",
+          "Declaring variables, constants, and types"
+        ]
+      },
+      {
+        "title": "11. Control Structures",
+        "topics": [
+          "Loops (FOR, WHILE)",
+          "Conditional statements (IF-ELSE, CASE)"
+        ]
+      },
+      {
+        "title": "12. Exception Handling",
+        "topics": ["Handling errors and exceptions with EXCEPTION block"]
+      },
+      {
+        "title": "13. Procedures, Functions, and Packages",
+        "topics": [
+          "Creating and managing stored procedures and functions",
+          "Writing reusable packages and understanding package structure"
+        ]
+      },
+      {
+        "title": "14. Triggers",
+        "topics": [
+          "Understanding triggers (BEFORE, AFTER, INSTEAD OF)",
+          "Using triggers for data integrity"
+        ]
+      },
+      {
+        "title": "15. Cursors",
+        "topics": [
+          "Implicit and explicit cursors",
+          "Cursor for loops",
+          "Bulk collect and FORALL for performance improvement"
+        ]
+      }
+    ],
+
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Database Administrator & IT Instructor",
+      "experience": "10+ years of experience in the IT field, specializing in Oracle Database Administration and Cloud Technologies.",
+      "skills": [
+        "Oracle Database Administration",
+        "Performance Tuning & Troubleshooting",
+        "High Availability (RAC, Data Guard, RMAN)",
+        "Cloud Computing (AWS, Azure, Oracle Cloud)",
+        "UNIX/Linux System Administration"
+      ],
+      "certifications": [
+        "Oracle Database Administration 2019 Certified Professional",
+        "Microsoft Certified: Azure Database Administrator Associate",
+        "Oracle Cloud Infrastructure 2023 Certified DevOps Professional",
+        "Oracle Cloud Infrastructure 2023 Certified Architect Associate",
+        "Red Hat Certified Engineer",
+        "Red Hat Certified System Administrator",
+        "AWS Certified Cloud Practitioner"
+      ],
+      "achievements": [
+        "Over 6 years of experience managing complex UNIX-based Oracle Databases",
+        "Expert in database administration best practices for high availability",
+        "Trained and mentored IT professionals in database management and cloud computing",
+        "Speaker at multiple tech seminars and conferences"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  },
+  {
+    "id": "4",
+    "title": "Web Development: PHP, Laravel",
+    "type": "technical",
+    "description": "Learn machine learning from scratch, including supervised and unsupervised learning, neural networks, and practical projects to solidify your understanding.Learn the basics of programming with Python, covering essential concepts like variables, data types, loops, and functions.Everything you need to learn app development in 1 course. With 72 live classes and 240 pre-recorded videos, you'll learn everything from the very basics to advanced levels! Along with technical support, mental support, job placement support, and lifetime access to everything!",
+    "regularPrice": "15,000",
+    "offerPrice": "12,000",
+    "image": "/images/Training/laravel PHP.jpg",
+    "startDate": "5 September, 2023",
+    "time": "Monday & Thursday (7:00 PM – 9:30 PM)",
+    "duration": "70 Hours",
+    "contact": "+880 1571119993 ",
+    "category": "Online Training",
+    "tags": [
+      "Machine Learning",
+      "AI",
+      "Deep Learning",
+      "Neural Networks",
+      "Data Science"
+    ],
+    "totalLiveClasses": "30",
+    "totalProjectsInThisCourse": 6,
+    "promoCode": "MLA-Z199",
+    "preRecordedVideo": true,
+    "seatsLeft": 8,
+    "batchNo": 4,
+    "courseOutline": [
+      {
+        "title": "1. Introduction to Web Development",
+        "topics": [
+          "What is Web Development?",
+          "Overview of web development: Frontend vs Backend",
+          "Client-Server Architecture",
+          "HTTP, Web Servers, and Browsers",
+          "Basics of HTML, CSS, and JavaScript"
+        ]
+      },
+      {
+        "title": "2. Introduction to PHP",
+        "topics": [
+          "What is PHP? Introduction to server-side development",
+          "PHP syntax and structure (variables, operators, expressions, and data types)",
+          "Writing PHP scripts",
+          "Working with strings, arrays, and numbers",
+          "Functions and basic object-oriented programming (OOP) principles",
+          "Handling GET and POST requests",
+          "Validating and sanitizing user inputs",
+          "File handling: Reading, writing, and uploading files"
+        ]
+      },
+      {
+        "title": "3. Object-Oriented Programming (OOP) in PHP",
+        "topics": [
+          "Core OOP Concepts: Classes, objects, constructors, and destructors",
+          "Properties and methods",
+          "Advanced OOP Concepts: Inheritance, polymorphism, interfaces, and abstract classes",
+          "Traits and namespaces",
+          "PHP’s Exception Handling: Try-catch blocks and custom exceptions",
+          "Auto-loading classes and PSR standards"
+        ]
+      },
+      {
+        "title": "4. Introduction to MySQL & Database Management",
+        "topics": [
+          "What is MySQL? Introduction to relational databases",
+          "Setting up a MySQL database and user privileges",
+          "Connecting PHP with MySQL using mysqli and PDO",
+          "Performing CRUD operations",
+          "Handling SQL injection vulnerabilities with prepared statements"
+        ]
+      },
+      {
+        "title": "5. Introduction to Laravel Framework",
+        "topics": [
+          "Why Laravel? Overview and benefits",
+          "Introduction to MVC architecture",
+          "Installing Laravel via Composer",
+          "Setting up a local development environment (XAMPP, Homestead, Docker)",
+          "Laravel directory structure and configuration",
+          "Routing in Laravel: Route parameters, named routes, groups, and middleware",
+          "Blade Templating Engine: Working with templates, layouts, and directives"
+        ]
+      },
+      {
+        "title": "6. Laravel Fundamentals",
+        "topics": [
+          "Controllers: Creating and managing controllers, RESTful and resource controllers",
+          "Models and Eloquent ORM: Relationships, query scopes, and advanced queries",
+          "Laravel Migrations and Seeding: Creating/modifying tables, seeding data, and rolling back migrations"
+        ]
+      },
+      {
+        "title": "7. Forms and Validation in Laravel",
+        "topics": [
+          "Form Handling: Creating and processing forms",
+          "Validating form data using built-in validation rules",
+          "Writing custom validation rules and error messages",
+          "File Uploads: Handling uploads and saving files securely"
+        ]
+      },
+      {
+        "title": "8. Authentication and Authorization",
+        "topics": [
+          "User Authentication: Built-in authentication, customizing login, registration, and password reset",
+          "API authentication with Laravel Passport",
+          "Authorization and Policies: Gates, policies, and role-based access control (RBAC)"
+        ]
+      },
+      {
+        "title": "9. Working with APIs in Laravel",
+        "topics": [
+          "Introduction to RESTful APIs and design principles",
+          "Building APIs: Routes, controllers, and JSON responses",
+          "API Authentication using Laravel Passport or Sanctum",
+          "Consuming APIs using Laravel’s HTTP client"
+        ]
+      },
+      {
+        "title": "10. Advanced Laravel Features",
+        "topics": [
+          "Middleware: Creating and applying middleware",
+          "Queues and Jobs: Background tasks with Laravel queues",
+          "Event Broadcasting: Real-time events using Laravel Echo and WebSockets",
+          "Testing: Unit and feature tests with PHPUnit",
+          "Debugging and Error Handling: Laravel’s debug tools and Debugbar"
+        ]
+      },
+      {
+        "title": "11. Deployment and Maintenance",
+        "topics": [
+          "Deploying Laravel Applications: Shared hosting, VPS, DigitalOcean, Heroku",
+          "Using Git, Composer, and Envoyer for deployment",
+          "Configuring environment settings (.env file, database, and cache)",
+          "Performance Optimization: Caching, routing, and database indexing",
+          "Monitoring and Maintenance: Logging, backups, and system monitoring"
+        ]
+      },
+      {
+        "title": "12. Real-World Project",
+        "topics": [
+          "Building a Complete Laravel Web Application (e.g., blog, e-commerce site, task manager)",
+          "Implementing features: User registration, authentication, CRUD, and API integration",
+          "Deploying the project to a production environment",
+          "Integrating third-party services (email, payment gateways)"
+        ]
+      }
+    ],
+
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Database Administrator & IT Instructor",
+      "experience": "10+ years of experience in the IT field, specializing in Oracle Database Administration and Cloud Technologies.",
+      "skills": [
+        "Oracle Database Administration",
+        "Performance Tuning & Troubleshooting",
+        "High Availability (RAC, Data Guard, RMAN)",
+        "Cloud Computing (AWS, Azure, Oracle Cloud)",
+        "UNIX/Linux System Administration"
+      ],
+      "certifications": [
+        "Oracle Database Administration 2019 Certified Professional",
+        "Microsoft Certified: Azure Database Administrator Associate",
+        "Oracle Cloud Infrastructure 2023 Certified DevOps Professional",
+        "Oracle Cloud Infrastructure 2023 Certified Architect Associate",
+        "Red Hat Certified Engineer",
+        "Red Hat Certified System Administrator",
+        "AWS Certified Cloud Practitioner"
+      ],
+      "achievements": [
+        "Over 6 years of experience managing complex UNIX-based Oracle Databases",
+        "Expert in database administration best practices for high availability",
+        "Trained and mentored IT professionals in database management and cloud computing",
+        "Speaker at multiple tech seminars and conferences"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  },
+  {
+    "id": "5",
+    "title": "Red Hat Certified System Administrator",
+    "type": "technical",
+    "description": "Understand the fundamentals of cybersecurity, including network security, ethical hacking, and data protection.Learn the basics of programming with Python, covering essential concepts like variables, data types, loops, and functions.Everything you need to learn app development in 1 course. With 72 live classes and 240 pre-recorded videos, you'll learn everything from the very basics to advanced levels! Along with technical support, mental support, job placement support, and lifetime access to everything!",
+    "regularPrice": "15,000",
+    "offerPrice": "12,000",
+    "image": "/images/Training/RHCSA.jpg",
+    "startDate": "10 September, 2023",
+    "time": "Saturday & Sunday (3:00 PM – 6:00 PM)",
+    "duration": "64 Hours",
+    "contact": "+880 1571119993 ",
+    "category": "Online Training",
+    "tags": [
+      "Cybersecurity",
+      "Ethical Hacking",
+      "Network Security",
+      "Data Protection"
+    ],
+    "totalLiveClasses": "22",
+    "totalProjectsInThisCourse": 4,
+    "promoCode": "CYBER119",
+    "preRecordedVideo": true,
+    "seatsLeft": "20",
+    "batchNo": "06",
+    "courseOutline": [
+      {
+        "title": "1. Introduction to Linux and Red Hat Enterprise Linux (RHEL)",
+        "topics": ["Overview of Linux and RHEL"]
+      },
+      {
+        "title": "2. Installation and Configuration of RHEL",
+        "topics": [
+          "Installing Red Hat Enterprise Linux",
+          "System Boot Process",
+          "Basic System Configuration"
+        ]
+      },
+      {
+        "title": "3. Managing Users and Groups",
+        "topics": [
+          "Creating and Managing Users",
+          "Managing Groups",
+          "User Permissions and Ownership"
+        ]
+      },
+      {
+        "title": "4. File System Management",
+        "topics": [
+          "File System Hierarchy and Directory Structures",
+          "Configuring Local Storage"
+        ]
+      },
+      {
+        "title": "5. Managing Services and Processes",
+        "topics": ["Service Management with systemd", "Process Management"]
+      },
+      {
+        "title": "6. Networking and Hostname Configuration",
+        "topics": [
+          "Configuring Network Interfaces",
+          "Network Troubleshooting",
+          "Firewall Configuration"
+        ]
+      },
+      {
+        "title": "7. Software Installation and Package Management",
+        "topics": [
+          "YUM (Yellowdog Updater, Modified) Package Management",
+          "Configuring Software Repositories"
+        ]
+      },
+      {
+        "title": "8. System Monitoring and Logging",
+        "topics": [
+          "System Monitoring Tools",
+          "Log Management",
+          "System Resource Usage"
+        ]
+      },
+      {
+        "title": "9. Security Management",
+        "topics": [
+          "Managing SELinux",
+          "File and Directory Security",
+          "Firewall and Network Security"
+        ]
+      },
+      {
+        "title": "10. Automation and Scripting",
+        "topics": ["Shell Scripting Basics", "Task Automation with cron and at"]
+      },
+      {
+        "title": "11. Virtualization and Containerization",
+        "topics": [
+          "Using KVM for Virtualization",
+          "Working with Containers (Docker)"
+        ]
+      },
+      {
+        "title": "12. System Performance Tuning",
+        "topics": [
+          "Performance Tuning Tools",
+          "Optimizing Disk I/O, CPU, and Memory Usage"
+        ]
+      },
+      {
+        "title": "13. Troubleshooting and Diagnostics",
+        "topics": [
+          "Troubleshooting Boot Issues",
+          "Log Analysis and Diagnostics"
+        ]
+      }
+    ],
+
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Database Administrator & IT Instructor",
+      "experience": "10+ years of experience in the IT field, specializing in Oracle Database Administration and Cloud Technologies.",
+      "skills": [
+        "Oracle Database Administration",
+        "Performance Tuning & Troubleshooting",
+        "High Availability (RAC, Data Guard, RMAN)",
+        "Cloud Computing (AWS, Azure, Oracle Cloud)",
+        "UNIX/Linux System Administration"
+      ],
+      "certifications": [
+        "Oracle Database Administration 2019 Certified Professional",
+        "Microsoft Certified: Azure Database Administrator Associate",
+        "Oracle Cloud Infrastructure 2023 Certified DevOps Professional",
+        "Oracle Cloud Infrastructure 2023 Certified Architect Associate",
+        "Red Hat Certified Engineer",
+        "Red Hat Certified System Administrator",
+        "AWS Certified Cloud Practitioner"
+      ],
+      "achievements": [
+        "Over 6 years of experience managing complex UNIX-based Oracle Databases",
+        "Expert in database administration best practices for high availability",
+        "Trained and mentored IT professionals in database management and cloud computing",
+        "Speaker at multiple tech seminars and conferences"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  },
+  {
+    "id": "6",
+    "title": "Red Hat Certified Engineer (RHCE)",
+    "type": "technical",
+    "description": "Get started with cloud computing concepts, including cloud architecture, deployment models, and cloud service providers like AWS and Azure.Learn the basics of programming with Python, covering essential concepts like variables, data types, loops, and functions.Everything you need to learn app development in 1 course. With 72 live classes and 240 pre-recorded videos, you'll learn everything from the very basics to advanced levels! Along with technical support, mental support, job placement support, and lifetime access to everything!",
+    "regularPrice": "15,000",
+    "offerPrice": "10,000",
+    "image": "/images/Training/RHCE.jpg ",
+    "startDate": "20 October, 2023",
+    "time": "Tuesday & Thursday (4:00 PM – 7:00 PM)",
+    "duration": "40 Hours",
+    "contact": "+880 1571119993 ",
+    "category": "Online Training",
+    "tags": ["Cloud Computing", "AWS", "Azure", "Cloud Services"],
+    "totalLiveClasses": "13",
+    "totalProjectsInThisCourse": 2,
+    "promoCode": "CLOUD89",
+    "preRecordedVideo": true,
+    "seatsLeft": "20",
+    "batchNo": "06",
+    "courseOutline": [
+      {
+        "title": "1. Review of RHCSA Topics",
+        "topics": [
+          "Basic Linux System Administration",
+          "Configuring Local Storage and File Systems",
+          "Managing System Services",
+          "Basic Networking Services"
+        ]
+      },
+      {
+        "title": "2. Introduction to Automation and Ansible",
+        "topics": [
+          "What is Ansible?",
+          "Setting Up Ansible",
+          "Basic Ansible Commands"
+        ]
+      },
+      {
+        "title": "3. Ansible Playbooks and Variables",
+        "topics": ["Ansible Playbook Basics", "Variables and Facts"]
+      },
+      {
+        "title": "4. Advanced Ansible Features",
+        "topics": [
+          "Loops and Conditional Statements",
+          "Handlers and Notifications",
+          "Roles and Ansible Galaxy"
+        ]
+      },
+      {
+        "title": "5. Managing System Configurations with Ansible",
+        "topics": [
+          "Configuring Package Management",
+          "Managing Users and Groups",
+          "File Management"
+        ]
+      },
+      {
+        "title": "6. Networking Services Automation with Ansible",
+        "topics": [
+          "Configuring Networking Services",
+          "Automating Web Servers with Apache",
+          "Database Services (MySQL/PostgreSQL)"
+        ]
+      },
+      {
+        "title": "7. Security Automation with Ansible",
+        "topics": [
+          "SELinux Management",
+          "Managing Firewalls with Ansible",
+          "Managing SSH Keys and Authentication"
+        ]
+      },
+      {
+        "title": "8. Monitoring and Logging with Ansible",
+        "topics": ["System Monitoring Automation", "Log Aggregation and Alerts"]
+      },
+      {
+        "title": "9. Cloud and Virtualization Automation with Ansible",
+        "topics": [
+          "Managing Virtualization with KVM",
+          "Managing Cloud Resources (AWS, OpenStack)"
+        ]
+      },
+      {
+        "title": "10. Red Hat Satellite and Automation",
+        "topics": ["Using Red Hat Satellite with Ansible", "Ansible Tower"]
+      }
+    ],
+
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Database Administrator & IT Instructor",
+      "experience": "10+ years of experience in the IT field, specializing in Oracle Database Administration and Cloud Technologies.",
+      "skills": [
+        "Oracle Database Administration",
+        "Performance Tuning & Troubleshooting",
+        "High Availability (RAC, Data Guard, RMAN)",
+        "Cloud Computing (AWS, Azure, Oracle Cloud)",
+        "UNIX/Linux System Administration"
+      ],
+      "certifications": [
+        "Oracle Database Administration 2019 Certified Professional",
+        "Microsoft Certified: Azure Database Administrator Associate",
+        "Oracle Cloud Infrastructure 2023 Certified DevOps Professional",
+        "Oracle Cloud Infrastructure 2023 Certified Architect Associate",
+        "Red Hat Certified Engineer",
+        "Red Hat Certified System Administrator",
+        "AWS Certified Cloud Practitioner"
+      ],
+      "achievements": [
+        "Over 6 years of experience managing complex UNIX-based Oracle Databases",
+        "Expert in database administration best practices for high availability",
+        "Trained and mentored IT professionals in database management and cloud computing",
+        "Speaker at multiple tech seminars and conferences"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  },
+  {
+    "id": "7",
+    "type": "technical",
+    "title": "Graphics Design",
+    "description": "Master Oracle Database Administration 19c with a comprehensive 64-hour course. Learn essential DBA responsibilities, database architecture, backup and recovery, user security, performance tuning, and more. Gain hands-on experience with Oracle tools like SQL*Plus, SQL Developer, RMAN, and Data Pump, all under expert guidance.",
+    "regularPrice": "6,000",
+    "offerPrice": "5,000",
+    "image": "/images/Training/graphic design.png",
+    "startDate": "15 July, 2025",
+    "time": "Friday & Saturday (6:30 PM – 9:30 PM)",
+    "duration": "40 Hours",
+    "contact": "+880 1571119993",
+    "category": "Online Training",
+    "tags": ["Oracle Database", "DBA", "Database Management", "Linux", "SQL"],
+    "totalLiveClasses": "13",
+    "totalProjectsInThisCourse": 3,
+    "promoCode": "INTRO99",
+    "preRecordedVideo": true,
+    "seatsLeft": "20",
+    "batchNo": "03",
+    "courseOutline": [
+      {
+        "title": "1. Introduction to Photoshop",
+        "topics": [
+          "Overview of Photoshop Interface",
+          "Setting up Photoshop for Design Projects",
+          "Introduction to Layers and Workspaces"
+        ]
+      },
+      {
+        "title": "2. Basic Designing Tools",
+        "topics": [
+          "Brush Tool, Eraser Tool, and Shapes",
+          "Using the Text Tool",
+          "Navigating Photoshop Panels"
+        ]
+      },
+      {
+        "title": "3. Selection and Background Removal",
+        "topics": [
+          "Lasso Tool, Magic Wand Tool, and Quick Selection Tool",
+          "Refining Edges and Removing Backgrounds",
+          "Using Layer Masks for Precise Selection"
+        ]
+      },
+      {
+        "title": "4. Color and Effects",
+        "topics": [
+          "Using Color Correction Tools (Hue/Saturation, Levels, Curves)",
+          "Applying Filters and Effects",
+          "Creating Gradient Effects"
+        ]
+      },
+      {
+        "title": "5. Pen Tool and Paths",
+        "topics": [
+          "Mastering the Pen Tool for Precise Paths",
+          "Creating Curves and Straight Lines",
+          "Using Paths for Selections and Masking"
+        ]
+      },
+      {
+        "title": "6. Masking and Adjustments",
+        "topics": [
+          "Layer Masking and Non-Destructive Editing",
+          "Adjustment Layers and Smart Filters",
+          "Using Clipping Masks for Complex Designs"
+        ]
+      },
+      {
+        "title": "7. Photo Editing Techniques",
+        "topics": [
+          "Basic Photo Enhancements",
+          "Retouching and Portrait Enhancements",
+          "Creating Special Effects for Photos"
+        ]
+      },
+      {
+        "title": "8. Advanced Tools and Effects",
+        "topics": [
+          "Advanced Layer Styles and Blending Options",
+          "Working with 3D Layers and Objects",
+          "Creating Realistic Shadows and Reflections"
+        ]
+      },
+      {
+        "title": "9. Motion Graphics & GIF Creation",
+        "topics": [
+          "Creating Basic Animation in Photoshop",
+          "Exporting GIFs and Video Animations",
+          "Working with Timelines for Motion Graphics"
+        ]
+      },
+      {
+        "title": "10. Business Card Design",
+        "topics": [
+          "Designing Effective Business Cards",
+          "Using Grids and Alignment for Professional Layout",
+          "Creating Print-Ready Files"
+        ]
+      },
+      {
+        "title": "11. Flyer and Mockup Design",
+        "topics": [
+          "Designing Promotional Flyers",
+          "Creating Product Mockups",
+          "Using Templates for Speedy Design"
+        ]
+      },
+      {
+        "title": "12. Social Media Design",
+        "topics": [
+          "Designing for Social Media Platforms",
+          "Creating Engaging Visual Content for Ads",
+          "Social Media Branding"
+        ]
+      },
+      {
+        "title": "13. AI Integration and YouTube Design",
+        "topics": [
+          "Using AI Tools for Creative Design",
+          "Designing YouTube Thumbnails and Channel Art",
+          "Video Post Production Techniques"
+        ]
+      },
+      {
+        "title": "14. Portfolio Development - Behance & Dribbble Project",
+        "topics": [
+          "Building an Impressive Design Portfolio",
+          "Showcasing Projects on Behance and Dribbble",
+          "Marketing Your Design Portfolio"
+        ]
+      },
+      {
+        "title": "15. Introduction to Adobe Illustrator",
+        "topics": [
+          "Overview of Adobe Illustrator Interface",
+          "Setting Up Artboards and Documents",
+          "Creating Basic Vector Graphics"
+        ]
+      },
+      {
+        "title": "16. Interface and File Saving",
+        "topics": [
+          "Navigating Illustrator Panels",
+          "Saving Files for Print and Web",
+          "Exporting and Sharing Artwork"
+        ]
+      },
+      {
+        "title": "17. Basic Tools and Shapes",
+        "topics": [
+          "Using the Shape Tool for Vector Designs",
+          "Creating Custom Shapes and Paths",
+          "Working with Anchor Points and Handles"
+        ]
+      },
+      {
+        "title": "18. Pen Tools and Image Tracing",
+        "topics": [
+          "Mastering the Pen Tool for Vector Paths",
+          "Image Tracing Techniques in Illustrator",
+          "Creating Complex Designs with Pen Tool"
+        ]
+      },
+      {
+        "title": "19. Typography and Effects",
+        "topics": [
+          "Working with Typography in Illustrator",
+          "Creating Text Effects and Styles",
+          "Combining Text with Graphics"
+        ]
+      },
+      {
+        "title": "20. Business and ID Card Design",
+        "topics": [
+          "Designing Business and ID Cards in Illustrator",
+          "Layout Techniques for Professional Design",
+          "Exporting for Print and Digital Use"
+        ]
+      },
+      {
+        "title": "21. Flyers and Brochures Design",
+        "topics": [
+          "Designing Flyers and Brochures for Print",
+          "Working with Multi-page Layouts",
+          "Creating High-Quality Print-Ready Files"
+        ]
+      },
+      {
+        "title": "22. Logo Design Concepts",
+        "topics": [
+          "Principles of Effective Logo Design",
+          "Creating Simple and Memorable Logos",
+          "Logo Variations and Application"
+        ]
+      },
+      {
+        "title": "23. Logo Presentation",
+        "topics": [
+          "Presenting Logo Designs to Clients",
+          "Creating Mockups for Logo Display",
+          "Preparing Final Files for Clients"
+        ]
+      },
+      {
+        "title": "24. Branding and 3D Design",
+        "topics": [
+          "Creating Complete Branding Packages",
+          "Introduction to 3D Design in Illustrator",
+          "Branding for Digital and Print Media"
+        ]
+      },
+      {
+        "title": "25. T-shirt & Packaging Design",
+        "topics": [
+          "Designing T-shirt Graphics for Print",
+          "Packaging Design for Products",
+          "Understanding Print Specifications"
+        ]
+      },
+      {
+        "title": "26. Advertising Design",
+        "topics": [
+          "Designing for Digital and Print Ads",
+          "Creating Eye-Catching Advertisements",
+          "Optimizing Ads for Different Media"
+        ]
+      },
+      {
+        "title": "27. Advanced Advertising Design",
+        "topics": [
+          "Advanced Techniques for Ad Design",
+          "Using Visual Hierarchy in Advertising",
+          "A/B Testing Designs for Best Results"
+        ]
+      },
+      {
+        "title": "28. UI/UX Design Basics",
+        "topics": [
+          "Principles of UI/UX Design",
+          "User-Centered Design Concepts",
+          "Creating User Flows and Wireframes"
+        ]
+      },
+      {
+        "title": "29. UI/UX Prototyping",
+        "topics": [
+          "Prototyping in UI/UX Design",
+          "Using Tools like Figma and Sketch",
+          "Creating Interactive Prototypes for Apps"
+        ]
+      },
+      {
+        "title": "30. Course Conclusion",
+        "topics": [
+          "Review of Key Concepts",
+          "Building a Career as a Graphic Designer",
+          "Next Steps and Continuous Learning"
+        ]
+      }
+    ],
+
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Database Administrator & IT Instructor",
+      "experience": "10+ years of experience in the IT field, specializing in Oracle Database Administration and Cloud Technologies.",
+      "skills": [
+        "Oracle Database Administration",
+        "Performance Tuning & Troubleshooting",
+        "High Availability (RAC, Data Guard, RMAN)",
+        "Cloud Computing (AWS, Azure, Oracle Cloud)",
+        "UNIX/Linux System Administration"
+      ],
+      "certifications": [
+        "Oracle Database Administration 2019 Certified Professional",
+        "Microsoft Certified: Azure Database Administrator Associate",
+        "Oracle Cloud Infrastructure 2023 Certified DevOps Professional",
+        "Oracle Cloud Infrastructure 2023 Certified Architect Associate",
+        "Red Hat Certified Engineer",
+        "Red Hat Certified System Administrator",
+        "AWS Certified Cloud Practitioner"
+      ],
+      "achievements": [
+        "Over 6 years of experience managing complex UNIX-based Oracle Databases",
+        "Expert in database administration best practices for high availability",
+        "Trained and mentored IT professionals in database management and cloud computing",
+        "Speaker at multiple tech seminars and conferences"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  },
+  {
+    "id": "8",
+    "type": "technical",
+    "title": "Freelancing & Outsourcing",
+    "description": "Master Oracle Database Administration 19c with a comprehensive 64-hour course. Learn essential DBA responsibilities, database architecture, backup and recovery, user security, performance tuning, and more. Gain hands-on experience with Oracle tools like SQL*Plus, SQL Developer, RMAN, and Data Pump, all under expert guidance.",
+    "regularPrice": "6,000",
+    "offerPrice": "5,000",
+    "image": "/images/Training/Freelance-Vs-In-House-Vs-Outsourcing-Choosing-the-Right-Flutter-Development-Model.png",
+    "startDate": "15 July, 2025",
+    "time": "Friday & Saturday (6:30 PM – 9:30 PM)",
+    "duration": "20 Hours",
+    "contact": "+880 1571119993",
+    "category": "Online Training",
+    "tags": ["Oracle Database", "DBA", "Database Management", "Linux", "SQL"],
+    "totalLiveClasses": "10",
+    "totalProjectsInThisCourse": 3,
+    "promoCode": "INTRO99",
+    "preRecordedVideo": true,
+    "seatsLeft": "20",
+    "batchNo": 1,
+    "courseOutline": [
+      {
+        "title": "1. Introduction to Freelancing & Outsourcing",
+        "topics": [
+          "What is Freelancing?",
+          "What is Outsourcing?",
+          "Benefits of Freelancing & Outsourcing",
+          "Current Trends in the Industry"
+        ]
+      },
+      {
+        "title": "2. Starting a Freelance Career",
+        "topics": [
+          "Identifying Your Skills & Niche",
+          "Creating a Personal Brand",
+          "Setting Rates & Pricing Strategies",
+          "Creating a Work-Life Balance as a Freelancer"
+        ]
+      },
+      {
+        "title": "3. Finding Freelance Jobs",
+        "topics": [
+          "Top Freelance Marketplaces (Fiverr, Upwork, etc.)",
+          "Networking and Word-of-Mouth Strategies",
+          "Cold Pitching and Building Client Relationships"
+        ]
+      },
+      {
+        "title": "4. Project Management & Client Interaction",
+        "topics": [
+          "Effective Communication with Clients",
+          "Managing Projects and Deadlines",
+          "Handling Payments and Invoicing"
+        ]
+      },
+      {
+        "title": "5. Outsourcing for Businesses",
+        "topics": [
+          "Understanding the Benefits of Outsourcing",
+          "Choosing the Right Outsourcing Partner",
+          "Managing and Leading Outsourced Teams"
+        ]
+      },
+      {
+        "title": "6. Legal & Financial Aspects",
+        "topics": [
+          "Legal Considerations in Freelancing",
+          "Creating Contracts and Agreements",
+          "Handling Finances, Taxes, and Invoicing"
+        ]
+      },
+      {
+        "title": "7. Scaling & Growing Your Freelance Business",
+        "topics": [
+          "Expanding Your Freelance Career",
+          "Branding & Marketing Yourself",
+          "Building a Team and Delegating Tasks"
+        ]
+      },
+      {
+        "title": "8. Advanced Freelancing & Outsourcing Strategies",
+        "topics": [
+          "Global Outsourcing Trends",
+          "Dealing with Challenges in Freelancing",
+          "Strategies for High-Value Clients"
+        ]
+      },
+      {
+        "title": "9. Case Studies & Practical Applications",
+        "topics": [
+          "Freelance Success Stories",
+          "Outsourcing in Action: Real-Life Examples",
+          "Hands-on Exercises and Assignments"
+        ]
+      },
+      {
+        "title": "10. Course Wrap-Up",
+        "topics": [
+          "Building a Long-Term Freelance Career",
+          "Review of Key Takeaways",
+          "Next Steps and Continuous Learning"
+        ]
+      }
+    ],
+
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Database Administrator & IT Instructor",
+      "experience": "10+ years of experience in the IT field, specializing in Oracle Database Administration and Cloud Technologies.",
+      "skills": [
+        "Oracle Database Administration",
+        "Performance Tuning & Troubleshooting",
+        "High Availability (RAC, Data Guard, RMAN)",
+        "Cloud Computing (AWS, Azure, Oracle Cloud)",
+        "UNIX/Linux System Administration"
+      ],
+      "certifications": [
+        "Oracle Database Administration 2019 Certified Professional",
+        "Microsoft Certified: Azure Database Administrator Associate",
+        "Oracle Cloud Infrastructure 2023 Certified DevOps Professional",
+        "Oracle Cloud Infrastructure 2023 Certified Architect Associate",
+        "Red Hat Certified Engineer",
+        "Red Hat Certified System Administrator",
+        "AWS Certified Cloud Practitioner"
+      ],
+      "achievements": [
+        "Over 6 years of experience managing complex UNIX-based Oracle Databases",
+        "Expert in database administration best practices for high availability",
+        "Trained and mentored IT professionals in database management and cloud computing",
+        "Speaker at multiple tech seminars and conferences"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  },
+  {
+    "id": "9",
+    "type": "technical",
+    "title": "Digital  Marketing",
+    "description": "Master Oracle Database Administration 19c with a comprehensive 64-hour course. Learn essential DBA responsibilities, database architecture, backup and recovery, user security, performance tuning, and more. Gain hands-on experience with Oracle tools like SQL*Plus, SQL Developer, RMAN, and Data Pump, all under expert guidance.",
+    "regularPrice": "6,000",
+    "offerPrice": "5,000",
+    "image": "/images/Training/digital-marketing.png",
+    "startDate": "1 June, 2025",
+    "time": "Friday & Saturday (6:30 PM – 9:30 PM)",
+    "duration": "15 Hours",
+    "contact": "+880 1571119993",
+    "category": "Online Training",
+    "tags": ["Oracle Database", "DBA", "Database Management", "Linux", "SQL"],
+    "totalLiveClasses": "10",
+    "totalProjectsInThisCourse": 3,
+    "promoCode": "INTRO99",
+    "preRecordedVideo": true,
+    "seatsLeft": "20",
+    "batchNo": "03",
+    "courseOutline": [
+      {
+        "title": "1. Introduction to Digital Marketing",
+        "topics": [
+          "What is Digital Marketing?",
+          "Importance of Digital Marketing in 2025",
+          "Digital Marketing Channels Overview"
+        ]
+      },
+      {
+        "title": "2. AI Tools for Marketers",
+        "topics": [
+          "Introduction to AI in Marketing",
+          "AI Tools for Content Creation",
+          "AI Tools for Analytics and Automation (Basic to Advanced)"
+        ]
+      },
+      {
+        "title": "3. Designing with Canva",
+        "topics": [
+          "Canva Basics: Interface and Tools",
+          "Designing Social Media Graphics",
+          "Advanced Techniques and Branding with Canva"
+        ]
+      },
+      {
+        "title": "4. Social Media Marketing (Organic)",
+        "topics": [
+          "Facebook Marketing & Full Professional Set Up",
+          "Instagram Marketing & Professional Set Up",
+          "YouTube Marketing Masterclass",
+          "WhatsApp Marketing A to Z",
+          "Chatbot Marketing A to Z"
+        ]
+      },
+      {
+        "title": "5. Platform-Specific Marketing Strategies",
+        "topics": [
+          "LinkedIn Marketing A to Z",
+          "Pinterest Marketing Essentials",
+          "TikTok Marketing A to Z (Organic + Paid)"
+        ]
+      },
+      {
+        "title": "6. Social Media Management",
+        "topics": [
+          "Managing Multiple Platforms",
+          "Complete Tool Set Up Techniques",
+          "Content Planning and Scheduling"
+        ]
+      },
+      {
+        "title": "7. Influencer & Lead Generation Marketing",
+        "topics": [
+          "Influencer Research & Marketing",
+          "Lead Generation Strategies",
+          "Secret Hacks for High-Quality Leads"
+        ]
+      },
+      {
+        "title": "8. Email & Chat Marketing",
+        "topics": [
+          "Email Marketing Basics",
+          "Bulk Email Techniques",
+          "Effective Chatbot Strategies"
+        ]
+      },
+      {
+        "title": "9. SEO & Website Development",
+        "topics": [
+          "SEO Basics Masterclass",
+          "WordPress Website Basics Complete Guideline"
+        ]
+      },
+      {
+        "title": "10. Business and E-commerce Strategies",
+        "topics": [
+          "How to Start an Online Business in 2025 without Investment",
+          "Google Business Profile (GBP) A to Z Guideline"
+        ]
+      },
+      {
+        "title": "11. Paid Ads Masterclasses",
+        "topics": [
+          "Meta Ads Master Class - Facebook Pixel and Conversion API",
+          "GOOGLE ADS A to Z Masterclass"
+        ]
+      },
+      {
+        "title": "12. Analytics and Reporting",
+        "topics": [
+          "Google Analytics Setup & Reporting",
+          "Tag Manager Integration and Best Practices"
+        ]
+      },
+      {
+        "title": "13. Freelancing and Client Acquisition",
+        "topics": [
+          "Freelancing Mastery: Fiverr and Upwork Crash Course",
+          "Client Acquisition Outside Marketplaces",
+          "Client Communication Hacks",
+          "CV Writing and Job Websites"
+        ]
+      },
+      {
+        "title": "14. International Business Essentials",
+        "topics": [
+          "International Banking Systems",
+          "Setting Up International Payment Gateways"
+        ]
+      },
+      {
+        "title": "15. Course Conclusion",
+        "topics": [
+          "Review of Key Concepts",
+          "Strategies for Success in Digital Marketing",
+          "Next Steps and Continuous Learning"
+        ]
+      }
+    ],
+
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Database Administrator & IT Instructor",
+      "experience": "10+ years of experience in the IT field, specializing in Oracle Database Administration and Cloud Technologies.",
+      "skills": [
+        "Oracle Database Administration",
+        "Performance Tuning & Troubleshooting",
+        "High Availability (RAC, Data Guard, RMAN)",
+        "Cloud Computing (AWS, Azure, Oracle Cloud)",
+        "UNIX/Linux System Administration"
+      ],
+      "certifications": [
+        "Oracle Database Administration 2019 Certified Professional",
+        "Microsoft Certified: Azure Database Administrator Associate",
+        "Oracle Cloud Infrastructure 2023 Certified DevOps Professional",
+        "Oracle Cloud Infrastructure 2023 Certified Architect Associate",
+        "Red Hat Certified Engineer",
+        "Red Hat Certified System Administrator",
+        "AWS Certified Cloud Practitioner"
+      ],
+      "achievements": [
+        "Over 6 years of experience managing complex UNIX-based Oracle Databases",
+        "Expert in database administration best practices for high availability",
+        "Trained and mentored IT professionals in database management and cloud computing",
+        "Speaker at multiple tech seminars and conferences"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  },
+  {
+    "id": "10",
+    "type": "english",
+    "title": "Kids' Spoken English",
+    "description": "A fun and engaging course designed to improve kids' spoken English skills. Focus on listening, pronunciation, vocabulary, and simple conversation through interactive lessons.",
+    "regularPrice": "4,500",
+    "offerPrice": "3,000",
+    "image": "/images/Training/KIDS-ENGLISH.png",
+    "startDate": "15 April, 2025",
+    "time": "Friday & Saturday (6:30 PM – 9:30 PM)",
+    "duration": "1.5 Hours",
+    "contact": "+880 1571119993",
+    "category": "Online Training",
+    "tags": [
+      "Kids English",
+      "Spoken English",
+      "Language Skills",
+      "Communication"
+    ],
+    "totalLiveClasses": "24",
+    "totalProjectsInThisCourse": 0,
+    "promoCode": "INTRO99",
+    "preRecordedVideo": true,
+    "seatsLeft": "20",
+    "batchNo": 1,
+    "courseOutline": [
+      {
+        "title": "1. Introduction",
+        "topics": [
+          "Course Objectives",
+          "Overview of Spoken English",
+          "Importance of Communication Skills"
+        ]
+      },
+      {
+        "title": "2. Listening Skills",
+        "topics": [
+          "Understanding Simple Instructions",
+          "Engaging in Listening Exercises"
+        ]
+      },
+      {
+        "title": "3. Reciting Skills",
+        "topics": ["Correct Pronunciation", "Practicing Recitations"]
+      },
+      {
+        "title": "4. Recognizing Letters",
+        "topics": ["Identifying Alphabet Letters", "Alphabet Sound Recognition"]
+      },
+      {
+        "title": "5. Rearranging Words",
+        "topics": ["Solving Jumbled Words", "Word Arrangement Activities"]
+      },
+      {
+        "title": "6. Grammar Basics",
+        "topics": ["Understanding Simple Grammar", "Forming Correct Sentences"]
+      },
+      {
+        "title": "7. Simple Conversations",
+        "topics": [
+          "Using Everyday Vocabulary",
+          "Engaging in Basic Conversations"
+        ]
+      },
+      {
+        "title": "8. Group Communication",
+        "topics": [
+          "Positive Group Discussions",
+          "Interactive Communication Games"
+        ]
+      },
+      {
+        "title": "9. Course Conclusion",
+        "topics": ["Review of Key Concepts", "Encouraging Continuous Learning"]
+      }
+    ],
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Language Instructor",
+      "experience": "10+ years of experience in language teaching and communication skills.",
+      "skills": [
+        "Language Teaching",
+        "Pronunciation Coaching",
+        "Child Education",
+        "Interactive Learning Methods"
+      ],
+      "certifications": [
+        "TESOL Certified",
+        "Child Language Development Expert"
+      ],
+      "achievements": [
+        "Trained over 500 kids in spoken English",
+        "Conducted multiple language workshops",
+        "Published articles on language learning techniques"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  },
+  {
+    "id": "11",
+    "type": "english",
+    "title": "Basic English & Spoken",
+    "description": "Master Oracle Database Administration 19c with a comprehensive 64-hour course. Learn essential DBA responsibilities, database architecture, backup and recovery, user security, performance tuning, and more. Gain hands-on experience with Oracle tools like SQL*Plus, SQL Developer, RMAN, and Data Pump, all under expert guidance.",
+    "regularPrice": "6,000",
+    "offerPrice": "3,500",
+    "image": "/images/Training/spoken-english.jpg",
+    "startDate": "15 July, 2023",
+    "time": "Friday & Saturday (6:30 PM – 9:30 PM)",
+    "duration": "2 Hours",
+    "contact": "+880 1571119993",
+    "category": "Online Training",
+    "tags": ["Oracle Database", "DBA", "Database Management", "Linux", "SQL"],
+    "totalLiveClasses": "30",
+    "totalProjectsInThisCourse": 3,
+    "promoCode": "INTRO99",
+    "preRecordedVideo": true,
+    "seatsLeft": "20",
+    "batchNo": "03",
+    "courseOutline": [
+      {
+        "title": "1. BE Verbs Basics",
+        "topics": [
+          "Basics of BE Verbs and correct usage",
+          "Fundamental understanding of Tense & Voice"
+        ]
+      },
+      {
+        "title": "2. Present Simple Tense",
+        "topics": ["Structure of Present Simple", "Practical applications"]
+      },
+      {
+        "title": "3. Past Simple Tense",
+        "topics": ["Key usage points", "Examples and applications"]
+      },
+      {
+        "title": "4. Future Simple",
+        "topics": [
+          "Basic understanding of Future Simple",
+          "Practical applications"
+        ]
+      },
+      {
+        "title": "5. WH Questions",
+        "topics": [
+          "Structure of WH questions and correct usage",
+          "Practice sessions"
+        ]
+      },
+      {
+        "title": "6. Present Continuous",
+        "topics": ["Usage of Present Continuous tense", "Examples and practice"]
+      },
+      {
+        "title": "7. Past & Future Continuous",
+        "topics": [
+          "Detailed explanation of Past & Future Continuous",
+          "Usage scenarios"
+        ]
+      },
+      {
+        "title": "8. Present, Past & Future Perfect",
+        "topics": [
+          "Discussion on Present, Past & Future Perfect tenses",
+          "Applications and examples"
+        ]
+      },
+      {
+        "title": "9. Perfect Continuous Tenses",
+        "topics": [
+          "Usage of Present, Past & Future Perfect Continuous",
+          "Practical examples"
+        ]
+      },
+      {
+        "title": "10. Passive Voice & Tense",
+        "topics": [
+          "Discussion on Passive Voice and Tense",
+          "Examples and applications"
+        ]
+      },
+      {
+        "title": "11. Modal Verbs",
+        "topics": ["Correct usage of Modal Verbs", "Practical sentences"]
+      },
+      {
+        "title": "12. Gerund, Participle & Infinitive",
+        "topics": [
+          "Discussion on Gerund, Participle & Infinitive",
+          "Usage and examples"
+        ]
+      },
+      {
+        "title": "13. Obligations",
+        "topics": [
+          "Sentence formation related to Obligations",
+          "Practical examples"
+        ]
+      },
+      {
+        "title": "14. Here & There",
+        "topics": [
+          "Usage of Here and There in sentences",
+          "Examples and practice"
+        ]
+      },
+      {
+        "title": "15. Causative Verbs",
+        "topics": [
+          "Writing sentences using Causative Verbs",
+          "Examples and applications"
+        ]
+      },
+      {
+        "title": "16. Conditionals",
+        "topics": ["Usage of Conditionals", "Examples and practice scenarios"]
+      },
+      {
+        "title": "17. Prepositions of Place & Time",
+        "topics": [
+          "Correct usage of Prepositions related to Place and Time",
+          "Practical examples"
+        ]
+      },
+      {
+        "title": "18. Preposition of Place",
+        "topics": [
+          "Correct application of Preposition of Place",
+          "Examples and practice"
+        ]
+      },
+      {
+        "title": "19. Preposition of Time",
+        "topics": [
+          "Structure and usage of Preposition of Time",
+          "Practical examples"
+        ]
+      },
+      {
+        "title": "20. Question & Answer Session",
+        "topics": [
+          "Interactive Question & Answer Session",
+          "Clarifying doubts and reinforcing concepts"
+        ]
+      },
+      {
+        "title": "21. Basic English & Spoken Mock Test",
+        "topics": [
+          "Mock test for Basic English & Spoken",
+          "Evaluation and feedback"
+        ]
+      },
+      {
+        "title": "22. Vocabulary Building",
+        "topics": [
+          "Learning approximately 1000 new words",
+          "Understanding their proper usage"
+        ]
+      },
+      {
+        "title": "23. Pronunciation",
+        "topics": [
+          "Learning the correct pronunciation of 1000 words",
+          "Improving speaking clarity"
+        ]
+      },
+      {
+        "title": "24. Grammar in Speaking",
+        "topics": [
+          "Correct usage of grammar while speaking",
+          "Practical applications and corrections"
+        ]
+      },
+      {
+        "title": "25. Communication Skills",
+        "topics": [
+          "Improving Communication skills in various situations",
+          "Role-playing and practice sessions"
+        ]
+      },
+      {
+        "title": "26. Smart Conversations",
+        "topics": [
+          "Having smart conversations on various daily topics",
+          "Improving fluency and confidence"
+        ]
+      },
+      {
+        "title": "27. Presentation Skills",
+        "topics": [
+          "Developing Presentation Skills",
+          "Practice and feedback sessions"
+        ]
+      },
+      {
+        "title": "28. English Speaking Environment",
+        "topics": [
+          "Creating an English-speaking environment",
+          "Practice sessions and group discussions"
+        ]
+      }
+    ],
+    "instructor": {
+      "name": "Engr. Md. Rasel",
+      "age": 35,
+      "occupation": "Senior Database Administrator & IT Instructor",
+      "experience": "10+ years of experience in the IT field, specializing in Oracle Database Administration and Cloud Technologies.",
+      "skills": [
+        "Oracle Database Administration",
+        "Performance Tuning & Troubleshooting",
+        "High Availability (RAC, Data Guard, RMAN)",
+        "Cloud Computing (AWS, Azure, Oracle Cloud)",
+        "UNIX/Linux System Administration"
+      ],
+      "certifications": [
+        "Oracle Database Administration 2019 Certified Professional",
+        "Microsoft Certified: Azure Database Administrator Associate",
+        "Oracle Cloud Infrastructure 2023 Certified DevOps Professional",
+        "Oracle Cloud Infrastructure 2023 Certified Architect Associate",
+        "Red Hat Certified Engineer",
+        "Red Hat Certified System Administrator",
+        "AWS Certified Cloud Practitioner"
+      ],
+      "achievements": [
+        "Over 6 years of experience managing complex UNIX-based Oracle Databases",
+        "Expert in database administration best practices for high availability",
+        "Trained and mentored IT professionals in database management and cloud computing",
+        "Speaker at multiple tech seminars and conferences"
+      ],
+      "image": "/images/InstructorPic/Teacher.jpeg",
+      "socialLinks": {
+        "facebook": "https://www.facebook.com/mirasel07/",
+        "linkedin": "https://www.linkedin.com/in/mir07/",
+        "twitter": "https://twitter.com/johndoe",
+        "github": "https://github.com/johndoe"
+      }
+    }
+  }
+]

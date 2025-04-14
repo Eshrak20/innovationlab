@@ -1,0 +1,96 @@
+/* navi.css - InnovationLabs360 Blue Cinematic Theme */
+.navi .nav-item {
+    padding: 10px 16px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease, background 0.4s ease;
+    color: black;
+    border-radius: 6px;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.navi .nav-item {
+    background: linear-gradient(
+        to right,
+        #06d4f8,
+        #020814
+    ); /* Equivalent to bg-gradient-to-r from-cyan-500 to-blue-600 */
+    color: white;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.navi .nav-item:hover {
+    background: linear-gradient(
+        to right,
+        #050e29,
+        #1f49bf
+    ); /* Solid blue on hover */
+    color: white;
+    transform: scale(1.06);
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.5);
+    border-radius: 8px;
+}
+
+@keyframes activePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(31, 73, 191, 0.7);
+        transform: scale(1.05);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(31, 73, 191, 0);
+        transform: scale(1.03);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(31, 73, 191, 0);
+        transform: scale(1.05);
+    }
+}
+
+.navi .nav-item.active {
+    background: linear-gradient(to right, #050e29, #1f49bf);
+    color: white;
+    font-weight: 700;
+    transform: scale(1.05);
+    position: relative;
+    animation: activePulse 2s infinite;
+    z-index: 1;
+    border-radius: 8px;
+    /* Enhanced glow effect */
+    box-shadow: 0 0 15px rgba(30, 64, 175, 0.8),
+        0 0 5px rgba(255, 255, 255, 0.5) inset;
+}
+
+/* Optional: Add transition for smoother state changes */
+.navi .nav-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navi .nav-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    /* background-color: #3b82f6; */
+    transition: width 0.3s ease;
+}
+
+.navi .nav-item:hover::after {
+    width: 100%;
+}
+
+.navi .btn {
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    background-color: #1e40af; /* Strong Blue */
+    color: white;
+    box-shadow: 0 4px 10px rgba(30, 64, 175, 0.5);
+}
+
+.transition-all {
+    transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "1",
+    "name": "RHDO (Rashmi Human Development Organization)",
+    "rating": 4.5,
+    "details": "The service was excellent, and the team was very professional.",
+    "img": "/images/Client/img3.jpeg"
+  },
+  {
+    "_id": "2",
+    "name": "MS SP Traders",
+    "rating": 5,
+    "details": "Amazing experience! Highly recommend their services to everyone.",
+    "img": "/images/Client/img1.jpeg"
+  },
+  {
+    "_id": "3",
+    "name": "Sonargaon University",
+    "rating": 5,
+    "details": "Amazing experience! Highly recommend their services to everyone.",
+    "img": "/images/Client/img1.png"
+  },
+  {
+    "_id": "4",
+    "name": "Electron BD",
+    "rating": 5,
+    "details": "Amazing experience! Highly recommend their services to everyone.",
+    "img": "/images/Client/Electronbd.png"
+  },
+  {
+    "_id": "5",
+    "name": "CCC Engineering Ltd.",
+    "rating": 4,
+    "details": "Good service, but there’s room for improvement in communication.",
+    "img": "/images/Client/img2.jpeg"
+  }
+]
