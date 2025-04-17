@@ -9,12 +9,12 @@ import HomeBlog from "./HomeBlog/HomeBlog";
 import TextImage from "@/Components/MyComponents/TextImage";
 const baseUrl = import.meta.env.VITE_APP_BASE_URL;
 
-const Home = () => {
+const Home = ({stats}) => {
     return (
         <>
             <MainLayout>
-                <BannerHome />
-                <HomeAbout baseUrl={baseUrl} />
+                <BannerHome stats={stats} />
+                <HomeAbout baseUrl={baseUrl} stats={stats}  />
                 <div className="px-4">
                     <TextImage
                         title="Custom Software Development"

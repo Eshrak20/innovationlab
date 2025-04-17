@@ -4,7 +4,8 @@ import Leader from "./Leader/Leader";
 import Management from "./Management/Management";
 import Mission from "./Mission/Mission";
 import Vision from "./Vision/Vision";
-
+import DynamicBanner from "@/Components/MyComponents/DynamicBanner";
+import videoSrc from "@/../../public/reactAssets/videos/bluevideo.mp4";
 const About = () => {
     const baseUrl = import.meta.env.VITE_APP_BASE_URL;
 
@@ -15,6 +16,11 @@ const About = () => {
     return (
         <>
             <MainLayout>
+                <DynamicBanner
+                    videoSrc={videoSrc}
+                    title="About Us"
+                    breadcrumb="Home / About Us"
+                />
                 <div className="max-w-full lg:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-4 md:px-8 lg:px-12">
                     <Mission />
                     <Vision

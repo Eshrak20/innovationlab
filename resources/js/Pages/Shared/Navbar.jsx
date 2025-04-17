@@ -50,19 +50,9 @@ const Navbar = () => {
             </li>
             <li className="relative group">
                 <a
-                    href="/about"
+                    href="/blogs"
                     className={`nav-item mt-2 ${
-                        location.pathname === "/about" ? "active" : ""
-                    }`}
-                >
-                    Teams
-                </a>
-            </li>
-            <li className="relative group">
-                <a
-                    href="/about"
-                    className={`nav-item mt-2 ${
-                        location.pathname === "/about" ? "active" : ""
+                        location.pathname === "/blogs" ? "active" : ""
                     }`}
                 >
                     Blogs
@@ -70,9 +60,9 @@ const Navbar = () => {
             </li>
             <li>
                 <a
-                    href="/contacts"
+                    href="/contact"
                     className={`nav-item mt-2 ${
-                        location.pathname === "/contacts" ? "active" : ""
+                        location.pathname === "/contact" ? "active" : ""
                     }`}
                 >
                     Contacts

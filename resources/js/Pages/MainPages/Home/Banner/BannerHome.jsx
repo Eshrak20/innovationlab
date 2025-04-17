@@ -3,13 +3,7 @@ import ReactTypingEffect from "react-typing-effect";
 import { motion } from "framer-motion";
 import { Link } from "@inertiajs/react";
 
-const BannerHome = () => {
-    const stats = [
-        { value: "05+", label: "Months" },
-        { value: "02+", label: "Countries" },
-        { value: "05+", label: "Professionals" },
-        { value: "07+", label: "Projects" },
-    ];
+const BannerHome = ({stats}) => {
 
     const taglines = [
         "Empowering Progress\nEngineering the Future",
@@ -117,7 +111,7 @@ const BannerHome = () => {
                                     className="text-xl font-bold md:text-2xl"
                                     style={{ color: "white" }}
                                 >
-                                    {stat.value}
+                                    +{stat.value}
                                 </h2>
                                 <p className="text-sm md:text-xl">
                                     {stat.label}

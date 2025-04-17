@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
 
-const stats = [
-    { value: "3+", label: "Years" },
-    { value: "3+", label: "Countries" },
-    { value: "20+", label: "Professionals" },
-    { value: "30+", label: "Projects" },
-];
-
-const HomeAbout = ({ baseUrl }) => {
+const HomeAbout = ({stats}) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const images = [
@@ -63,7 +56,7 @@ const HomeAbout = ({ baseUrl }) => {
                                     {stat.label}
                                 </p>
                                 <h2 className="text-lg font-bold md:text-2xl text-success">
-                                    {stat.value}
+                                    +{stat.value}
                                 </h2>
                             </div>
                         ))}
