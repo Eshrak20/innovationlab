@@ -1,10 +1,10 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Importing styles
-import img1 from "../../../../../../public/reactAssets/images/HomeAboutImages/AboutImg1.webp";
-import img2 from "../../../../../../public/reactAssets/images/HomeAboutImages/AboutImg1.webp";
-import img3 from "../../../../../../public/reactAssets/images/HomeAboutImages/AboutImg1.webp";
-import img4 from "../../../../../../public/reactAssets/images/HomeAboutImages/AboutImg1.webp";
-import img5 from "../../../../../../public/reactAssets/images/HomeAboutImages/AboutImg1.webp";
+import img1 from "../../../../../../public/reactAssets/images/Gallery/1.png";
+import img2 from "../../../../../../public/reactAssets/images/Gallery/2.png";
+import img3 from "../../../../../../public/reactAssets/images/Gallery/3.png";
+import img4 from "../../../../../../public/reactAssets/images/Gallery/4.png";
+import img5 from "../../../../../../public/reactAssets/images/Gallery/5.png";
 
 const Gallery = () => {
   // Array of images
@@ -32,9 +32,9 @@ const Gallery = () => {
         {images.map((image, index) => (
           <div key={index}>
             <img
-              src={`${baseUrl}/${image}`}
+              src={`${image}`}
               alt={`Gallery Image ${index + 1}`}
-              className="h-[350px] md:h-[450px] 2xl:h-[650px] object-cover cursor-pointer" // Tailwind classes for fixed height and responsiveness
+              className="h-[350px] md:h-[550px] 2xl:h-[750px] object-fill cursor-pointer" // Tailwind classes for fixed height and responsiveness
             />
           </div>
         ))}

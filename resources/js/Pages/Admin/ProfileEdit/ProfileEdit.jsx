@@ -1,15 +1,61 @@
 import AdminLayout from "@/Layouts/AdminLayout";
-import { Head, usePage } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
+import ProfilePic from "./ProfilePic";
 
 const ProfileEdit = ({ profile }) => {
+    const [profilePhoto, setProfilePhoto] = useState(null);
+
+    const getInitials = (fullName) => {
+        if (!fullName) return "";
+        const names = fullName.trim().split(" ");
+        if (names.length === 1) return names[0][0].toUpperCase();
+        return (
+            names[0][0].toUpperCase() + names[names.length - 1][0].toUpperCase()
+        );
+    };
+
+    // const handleFileChange = (file) => {
+    //     setProfilePhoto(file);
+    //     console.log("Cropped file received:", file);
+    // };
+
+    const handleFileChange = async (file) => {
+        setProfilePhoto(file);
+
+        const formData = new FormData();
+        formData.append("profilePhotoPath", file);
+
+        try {
+            const csrfToken = document.querySelector(
+                'meta[name="csrf-token"]'
+            ).content;
+
+            const response = await axios.put(
+                `/profile/${profile.id}`,
+                formData,
+                {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                        "X-CSRF-TOKEN": csrfToken, // Include CSRF token in headers
+                    },
+                }
+            );
+
+            console.log("PUT successful:", response.data);
+        } catch (error) {
+            console.error("Error uploading file via PUT:", error);
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsUpdating(true);
+        // In your parent component (ProfileEdit)
 
         try {
             const payload = {
@@ -20,6 +66,7 @@ const ProfileEdit = ({ profile }) => {
                     ? programmingLanguages
                     : null,
                 tools: tools.length ? tools : null,
+                // profilePhotoPath: file ? file : null,
                 projects: projects.length ? projects : null,
             };
 
@@ -37,6 +84,7 @@ const ProfileEdit = ({ profile }) => {
                 linkedin: data.linkedin || "",
                 github: data.github || "",
                 portfolio_url: data.portfolio_url || "",
+                profilePhotoPath: data.profilePhotoPath || "",
                 current_stack: data.current_stack || "",
                 employment_type: data.employment_type || "",
                 hourly_rate: data.hourly_rate || "",
@@ -76,6 +124,7 @@ const ProfileEdit = ({ profile }) => {
         linkedin: profile?.linkedin || "",
         github: profile?.github || "",
         portfolio_url: profile?.portfolio_url || "",
+        profilePhotoPath: profile?.profilePhotoPath || "",
         current_stack: profile?.current_stack || "",
         employment_type: profile?.employment_type || "",
         hourly_rate: profile?.hourly_rate || "",
@@ -160,6 +209,14 @@ const ProfileEdit = ({ profile }) => {
                     </div>
 
                     <form onSubmit={handleSubmit} className="p-6 space-y-8">
+                        <ProfilePic
+                            fullName={profile?.title}
+                            getInitials={getInitials}
+                            profilePhoto={
+                                profilePhoto || profile?.profilePhotoPath
+                            }
+                            onFileChange={handleFileChange}
+                        />
                         {/* Professional Information Section */}
                         <div className="space-y-6">
                             <h2 className="text-lg font-medium text-gray-900">
@@ -196,6 +253,22 @@ const ProfileEdit = ({ profile }) => {
                                         id="subtitle"
                                         name="subtitle"
                                         value={formData.subtitle}
+                                        onChange={handleChange}
+                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        htmlFor="employment_type"
+                                        className="block text-sm font-medium text-gray-700"
+                                    >
+                                        Designation
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="employment_type"
+                                        name="employment_type"
+                                        value={formData.employment_type}
                                         onChange={handleChange}
                                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                                     />
@@ -480,6 +553,22 @@ const ProfileEdit = ({ profile }) => {
                                         id="portfolio_url"
                                         name="portfolio_url"
                                         value={formData.portfolio_url}
+                                        onChange={handleChange}
+                                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                                    />
+                                </div>
+                                <div>
+                                    <label
+                                        htmlFor="profilePhotoPath"
+                                        className="block text-sm font-medium text-gray-700"
+                                    >
+                                        Profile Photo Path
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="profilePhotoPath"
+                                        name="profilePhotoPath"
+                                        value={formData.profilePhotoPath}
                                         onChange={handleChange}
                                         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                                     />

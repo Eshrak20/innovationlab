@@ -23,12 +23,19 @@ class ExperienceStatusController extends Controller
         $validated = $request->validate([
             'value' => 'required|integer|min:0'
         ]);
-    
+
         $updated = $experienceStatus->update($validated);
-        
+
         return response()->json([
             'success' => true,
             'data' => $experienceStatus->fresh() // Return refreshed model from database
         ]);
+    }
+    public function destroy($id)
+    {
+        $experiences = ExperienceStatus::findOrFail($id);
+        $experiences->delete();
+
+        return response()->json(['message' => 'experiences deleted successfully']);
     }
 }

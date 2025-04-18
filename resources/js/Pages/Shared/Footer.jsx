@@ -117,7 +117,7 @@ const Footer = () => {
                     </div>
                     
                     <div className="mt-4 md:mt-0 text-sm text-gray-500">
-                        <p>Developed with ❤️ by <a href="https://syntaxss.com/" className="text-blue-400 hover:underline" target="_blank">Our Web Team</a></p>
+                        <p>Developed with ❤️ by <a href="/dashboard" className="text-blue-400 hover:underline" target="_blank">Our Web Team</a></p>
                     </div>
                 </div>
             </div>

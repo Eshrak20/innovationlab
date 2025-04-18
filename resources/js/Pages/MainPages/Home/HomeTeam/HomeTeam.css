@@ -1,3 +1,28 @@
+
+.scrollable-card {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px; /* for scrollbar space */
+}
+
+.scrollable-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollable-card::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 4px;
+}
+
+.profile-card {
+  height: 450px; /* Fixed card height */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+}
+
 .team-container {
   padding: 2rem;
   text-align: center;

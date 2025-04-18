@@ -16,6 +16,7 @@ class Profile extends Model
     /**
      * Get the user that owns the profile
      */
+    
      // Profile.php
     public function user()
     {

@@ -25,7 +25,7 @@ const ExperienceStatus = ({ experiences: initialExperiences }) => {
         
         setIsUpdating(true);
         try {
-            const { data } = await axios.put(`/admin/experience-statuses/${id}`, {
+            const { data } = await axios.put(`experience-statuses/${id}`, {
                 value: parseInt(form.value)
             });
             
@@ -48,7 +48,7 @@ const ExperienceStatus = ({ experiences: initialExperiences }) => {
         if (!confirm("Are you sure you want to delete this experience?")) return;
         
         try {
-            await axios.delete(`/admin/experience-statuses/${id}`);
+            await axios.delete(`experience-statuses/${id}`);
             setExperiences(exps => exps.filter(e => e.id !== id));
             showSuccessToast("Experience deleted successfully");
         } catch (error) {

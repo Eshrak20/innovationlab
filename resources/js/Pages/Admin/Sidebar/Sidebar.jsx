@@ -12,7 +12,7 @@ export default function AdminSidebar() {
         { name: 'Missions', path: '/missions' },
         { name: 'Core Team Data', path: '/team' },
         { name: 'Contact Info', path: '/contact-info' },
-        { name: 'Messages', path: '/messages' },
+        { name: 'Messages', path: '/forms' },
     ];
 
     return (

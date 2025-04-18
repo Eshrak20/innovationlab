@@ -7,11 +7,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ExperienceStatusController;
+use App\Http\Controllers\Admin\FormController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\PageControllers\BlogController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
+Route::get('/blogs', [BlogController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
+Route::post('/forms', [FormController::class, 'store'])->name('forms.store');
 
 
 Route::middleware('guest')->group(function () {
@@ -28,6 +32,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/experience-statuses', ExperienceStatusController::class);
     Route::resource('/profile', ProfileController::class);
+    Route::resource('/forms', FormController::class);
     
 });
 

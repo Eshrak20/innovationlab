@@ -18,7 +18,7 @@ const DynamicBanner = ({ videoSrc, title, breadcrumb }) => {
 
             {/* Centered Text Content */}
             <div className="absolute inset-0 z-10 flex items-center justify-center">
-                <h1 className="text-3xl md:text-5xl font-bold text-white text-center">
+                <h1 className="text-3xl md:text-7xl underline font-bold text-white text-center">
                     {title}
                 </h1>
             </div>
