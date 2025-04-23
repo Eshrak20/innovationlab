@@ -1,0 +1,32 @@
+[
+  {
+    "title": "User-Friendly Interface",
+    "description": "Our intuitive interface makes it easy to set up and navigate the system, with no need for extensive training.",
+    "image": "/images/makesBetter/better1.svg"
+  },
+  {
+    "title": "Real-Time Inventory Management",
+    "description": "Stay on top of your stock levels with our real-time inventory tracking. Automatic stock updates after each transaction",
+    "image": "/images/makesBetter/better2.svg"
+  },
+  {
+    "title": "Secure and Reliable",
+    "description": "With advanced security features and regular updates, our POS system protects your business and customer data from threats.",
+    "image": "/images/makesBetter/better3.svg"
+  },
+  {
+    "title": "24/7 Support",
+    "description": "Our dedicated support team is available around the clock to assist you with any questions or issues, ensuring that your business runs without interruption.",
+    "image": "/images/makesBetter/better4.svg"
+  },
+  {
+    "title": "Customizable Dashboard",
+    "description": "Personalize your workspace with widgets and shortcuts tailored to your workflow for increased efficiency.",
+    "image": "/images/makesBetter/better1.svg"
+  },
+  {
+    "title": "Seamless Integration",
+    "description": "Easily connect with popular third-party apps and tools, streamlining operations across multiple platforms.",
+    "image": "/images/makesBetter/better2.svg"
+  }
+]

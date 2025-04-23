@@ -1,0 +1,63 @@
+[
+    {
+      "_id": "1",
+      "name": "Project Manager",
+      "description": "Oversees project planning, execution, and delivery, ensuring resources are allocated efficiently and deadlines are met while optimizing costs and team productivity.",
+      "img": "/images/Resources/resrc1.svg"
+    },
+    {
+      "_id": "2",
+      "name": "IT Consultant",
+      "description": "Provides expert advice on IT strategies, system improvements, and digital transformation, helping businesses reduce overhead costs by optimizing technology investments.",
+      "img": "/images/Resources/resrc2.svg"
+    },
+    {
+      "_id": "3",
+      "name": "Database Design & Development Developer",
+      "description": "Designs and develops efficient database structures to store, manage, and retrieve data effectively, reducing storage costs and improving system performance.",
+      "img": "/images/Resources/resrc3.svg"
+    },
+    {
+      "_id": "4",
+      "name": "Web Application Developer",
+      "description": "Builds and maintains web-based applications tailored to business needs, ensuring high scalability and cost-effective deployment without excessive infrastructure investments.",
+      "img": "/images/Resources/resrc4.svg"
+    },
+    {
+      "_id": "5",
+      "name": "Frontend Developer",
+      "description": "Develops user interfaces with a focus on design, usability, and performance, enabling businesses to create engaging digital experiences with minimal development overhead.",
+      "img": "/images/Resources/resrc5.svg"
+    },
+    {
+      "_id": "6",
+      "name": "Backend Developer",
+      "description": "Handles server-side logic, database interactions, and API development, ensuring a secure and scalable infrastructure that optimizes operational costs.",
+      "img": "/images/Resources/resrc6.svg"
+    },
+    {
+      "_id": "7",
+      "name": "Full-Stack Developer",
+      "description": "Combines frontend and backend expertise to build complete applications, allowing businesses to streamline development costs by hiring a single expert for multiple tasks.",
+      "img": "/images/Resources/resrc1.svg"
+    },
+    {
+      "_id": "8",
+      "name": "Mobile App Developer",
+      "description": "Creates mobile applications for Android and iOS platforms, providing businesses with cost-effective solutions to reach a wider audience without extensive software expenses.",
+      "img": "/images/Resources/resrc2.svg"
+    },
+    {
+      "_id": "9",
+      "name": "Database Administrator",
+      "description": "Manages and optimizes databases, ensuring data security, performance, and availability while reducing operational costs through effective resource management.",
+      "img": "/images/Resources/resrc3.svg"
+    },
+    {
+      "_id": "10",
+      "name": "System Administrator",
+      "description": "Maintains IT infrastructure, including servers, networks, and security, optimizing system performance and reducing downtime-related costs.",
+      "img": "/images/Resources/resrc4.svg"
+    }
+  ]
+  

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Eng. Md. Rasel",
+    "position": "Managing Director",
+    "short_description": "10+ years of experience in the IT field, Specializing in Oracle Database Administration, High Availability and Cloud Technologies.",
+    "image": "../../images/Leaders/demoLeaderImg.jpeg"
+  },
+  {
+    "name": "Md. Rofikul Islam",
+    "position": "Chairman",
+    "short_description": "12+ years of experience in the IT field.",
+    "image": "../../images/Leaders/demoLeaderImg.jpeg"
+  },
+  {
+    "name": "Shah Md Afsaruddin Shamim",
+    "position": "Chief Executive Officer",
+    "short_description": "10+ years of experience in the IT field, Specializing in Project Management and Business Development.",
+    "image": "../../images/Leaders/demoLeaderImg.jpeg"
+  },
+  {
+    "name": "Md. Nazim Uddin",
+    "position": "Director",
+    "short_description": "8+ years of experience in the IT field. Specializing in Project Management and Business Development.",
+    "image": "../../images/Leaders/demoLeaderImg.jpeg"
+  }
+]

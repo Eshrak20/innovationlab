@@ -1,0 +1,424 @@
+[
+  {
+    "id": 1,
+    "logo": "/images/Service/CustomSoftware.png",
+    "title": "Web Application Development",
+    "description": "Building robust web and desktop applications tailored to meet your business needs.",
+    "hoverTitle": "Develop Your Application!",
+    "hoverDescription": "Streamline your business with our powerful application solutions.",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Custom Web Apps",
+        "description": "Tailored web applications designed to meet unique business requirements."
+      },
+      {
+        "id": 2,
+        "title": "Desktop Software",
+        "description": "Developing efficient and reliable desktop applications for various platforms."
+      },
+      {
+        "id": 3,
+        "title": "Progressive Web Apps",
+        "description": "Building fast, responsive, and engaging PWAs for seamless user experiences."
+      },
+      {
+        "id": 4,
+        "title": "Enterprise Solutions",
+        "description": "End-to-end application development for enterprise-grade solutions."
+      },
+      {
+        "id": 5,
+        "title": "Application Maintenance",
+        "description": "Ensuring your applications remain updated and perform optimally."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "logo": "/images/Service/websitedev.png",
+    "title": "Website Development",
+    "description": "Creating dynamic and visually appealing websites that elevate your online presence.",
+    "hoverTitle": "Launch Your Website!",
+    "hoverDescription": "Make your mark with a professional and engaging website.visually appealing websites ",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Portfolio Websites",
+        "description": "Showcase your work with a professional portfolio website."
+      },
+      {
+        "id": 2,
+        "title": "Corporate Websites",
+        "description": "Elegant and functional websites tailored for corporate needs."
+      },
+      {
+        "id": 3,
+        "title": "Landing Pages",
+        "description": "High-converting landing pages for your marketing campaigns."
+      },
+      {
+        "id": 4,
+        "title": "Blog Development",
+        "description": "Create a custom blog to share your ideas and expertise."
+      },
+      {
+        "id": 5,
+        "title": "SEO Optimization",
+        "description": "Boost your website’s visibility with SEO-friendly development."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "logo": "/images/Service/e-commerce.png",
+    "title": "E-commerce Website",
+    "description": "Building scalable and secure e-commerce websites for online success.",
+    "hoverTitle": "Start Selling Online!",
+    "hoverDescription": "Empower your business with an engaging online store.So Start Selling Online",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Custom Online Stores",
+        "description": "Create a unique shopping experience with a custom e-commerce platform."
+      },
+      {
+        "id": 2,
+        "title": "Payment Gateway Integration",
+        "description": "Secure and reliable payment options for seamless transactions."
+      },
+      {
+        "id": 3,
+        "title": "Inventory Management",
+        "description": "Streamline operations with advanced inventory management solutions."
+      },
+      {
+        "id": 4,
+        "title": "Multi-Vendor Platforms",
+        "description": "Build platforms for multiple sellers to connect with buyers."
+      },
+      {
+        "id": 5,
+        "title": "E-commerce SEO",
+        "description": "Optimize your online store for maximum visibility and sales."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "logo": "/images/Service/mobileapps.png",
+    "title": "Mobile Apps Development",
+    "description": "Crafting intuitive mobile apps to drive user engagement and business growth.",
+    "hoverTitle": "Create Your Mobile App!",
+    "hoverDescription": "Bring your app idea to life with our expert development services.",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "UI/UX Design",
+        "description": "Designing intuitive and visually appealing user interfaces."
+      },
+      {
+        "id": 2,
+        "title": "iOS Development",
+        "description": "Building high-performance apps for the iOS platform."
+      },
+      {
+        "id": 3,
+        "title": "Android Development",
+        "description": "Developing scalable Android applications for diverse audiences."
+      },
+      {
+        "id": 4,
+        "title": "Hybrid Apps",
+        "description": "Creating apps that work seamlessly across platforms."
+      },
+      {
+        "id": 5,
+        "title": "App Maintenance",
+        "description": "Ensuring your app remains updated and performs flawlessly."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "logo": "/images/Service/graphicdesign.png",
+    "title": "Graphic Design",
+    "description": "Delivering creative design solutions to make your brand stand out.",
+    "hoverTitle": "Design Your Brand!",
+    "hoverDescription": "Elevate your visuals with stunning graphic designs.Bring your brand to life",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Logo Design",
+        "description": "Crafting memorable logos that represent your brand."
+      },
+      {
+        "id": 2,
+        "title": "Branding Materials",
+        "description": "Creating cohesive branding materials like business cards and brochures."
+      },
+      {
+        "id": 3,
+        "title": "Social Media Graphics",
+        "description": "Designing visuals that engage audiences on social platforms."
+      },
+      {
+        "id": 4,
+        "title": "Infographics",
+        "description": "Communicating complex ideas with creative infographics."
+      },
+      {
+        "id": 5,
+        "title": "Illustrations",
+        "description": "Custom illustrations to bring your ideas to life."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "logo": "/images/Service/sms_email.png",
+    "title": "SMS & Email Platform",
+    "description": "Reach your audience effectively with SMS and email marketing solutions.",
+    "hoverTitle": "Connect with Ease!",
+    "hoverDescription": "Engage your customers with our powerful communication platforms.",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Email Campaigns",
+        "description": "Deliver impactful email campaigns that drive engagement."
+      },
+      {
+        "id": 2,
+        "title": "SMS Notifications",
+        "description": "Send timely SMS alerts for better communication."
+      },
+      {
+        "id": 3,
+        "title": "Marketing Automation",
+        "description": "Automate your campaigns for maximum efficiency."
+      },
+      {
+        "id": 4,
+        "title": "Transactional Messages",
+        "description": "Ensure timely delivery of critical information."
+      },
+      {
+        "id": 5,
+        "title": "Analytics",
+        "description": "Track and analyze the success of your campaigns."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "logo": "/images/Service/ITConsulting.png",
+    "title": "IT Consulting",
+    "description": "Providing expert guidance to help you navigate your IT challenges effectively.",
+    "hoverTitle": "Optimize Your IT Strategy!",
+    "hoverDescription": "Empower your business with expert IT insights and solutions.",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Technology Assessment",
+        "description": "Evaluate your current IT infrastructure and identify areas for improvement."
+      },
+      {
+        "id": 2,
+        "title": "Cloud Strategy",
+        "description": "Plan and implement a cloud strategy to enhance scalability and efficiency."
+      },
+      {
+        "id": 3,
+        "title": "IT Security Consulting",
+        "description": "Secure your IT environment with comprehensive security solutions."
+      },
+      {
+        "id": 4,
+        "title": "Process Optimization",
+        "description": "Streamline your business processes with technology integration."
+      },
+      {
+        "id": 5,
+        "title": "Custom IT Solutions",
+        "description": "Develop custom IT solutions tailored to your business needs."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "logo": "/images/Service/cloud.png",
+    "title": "Cloud Services",
+    "description": "Harness the power of cloud technology to enhance your business operations.",
+    "hoverTitle": "Embrace the Cloud!",
+    "hoverDescription": "Modernize your business with cutting-edge cloud solutions and Harness the power of cloud technology",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Cloud Migration",
+        "description": "Seamlessly migrate your applications and data to the cloud."
+      },
+      {
+        "id": 2,
+        "title": "Cloud Storage Solutions",
+        "description": "Secure and scalable cloud storage options for your business."
+      },
+      {
+        "id": 3,
+        "title": "Cloud Security",
+        "description": "Protect your cloud infrastructure with advanced security measures."
+      },
+      {
+        "id": 4,
+        "title": "SaaS Integration",
+        "description": "Integrate Software-as-a-Service solutions for enhanced efficiency."
+      },
+      {
+        "id": 5,
+        "title": "Disaster Recovery",
+        "description": "Ensure business continuity with cloud-based disaster recovery solutions."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "logo": "/images/Service/DigitalMarketing.png",
+    "title": "Managed Services",
+    "description": "Comprehensive IT management services to support your business operations.",
+    "hoverTitle": "Focus on Your Business!",
+    "hoverDescription": "Leave the IT management to us with our expert services.Also Comprehensive IT management services",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Network Management",
+        "description": "Ensure your network runs smoothly and efficiently."
+      },
+      {
+        "id": 2,
+        "title": "Server Maintenance",
+        "description": "Keep your servers up-to-date and performing at their best."
+      },
+      {
+        "id": 3,
+        "title": "Help Desk Support",
+        "description": "Provide your team with reliable IT support services."
+      },
+      {
+        "id": 4,
+        "title": "Data Backup & Recovery",
+        "description": "Protect and recover your critical business data with ease."
+      },
+      {
+        "id": 5,
+        "title": "Performance Monitoring",
+        "description": "Monitor and optimize your IT infrastructure for peak performance."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "logo": "/images/Service/DigitalMarketing.png",
+    "title": "Digital  Marketing",
+    "description": "Enhance your brand presence with strategic Digital  Marketing.",
+    "hoverTitle": "Grow Your Brand!",
+    "hoverDescription": "Connect with your audience through targeted social campaigns.",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Social Media Strategy",
+        "description": "Develop a tailored strategy to meet your business goals."
+      },
+      {
+        "id": 2,
+        "title": "Content Creation",
+        "description": "Produce engaging content that resonates with your audience."
+      },
+      {
+        "id": 3,
+        "title": "Campaign Management",
+        "description": "Run and manage successful social media campaigns."
+      },
+      {
+        "id": 4,
+        "title": "Social Media Advertising",
+        "description": "Leverage paid advertising to expand your reach and engagement."
+      },
+      {
+        "id": 5,
+        "title": "Analytics & Reporting",
+        "description": "Track and measure the success of your social media efforts."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "purchase":"true",
+    "logo": "/images/Service/DomainHosting.png",
+    "title": "Domain and Hosting",
+    "description": "Reliable domain registration and hosting services to power your online presence.",
+    "hoverTitle": "Host with Confidence!",
+    "hoverDescription": "Get your website live with secure and fast hosting solutions.Reliable domain registration",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Domain Registration",
+        "description": "Find and secure the perfect domain name for your business."
+      },
+      {
+        "id": 2,
+        "title": "Web Hosting",
+        "description": "Reliable hosting solutions to keep your website live and fast."
+      },
+      {
+        "id": 3,
+        "title": "SSL Certificates",
+        "description": "Protect your website and customer data with SSL encryption."
+      },
+      {
+        "id": 4,
+        "title": "Email Hosting",
+        "description": "Professional email hosting to build trust with your clients."
+      },
+      {
+        "id": 5,
+        "title": "Managed Hosting",
+        "description": "Let our experts handle the technical side of your hosting."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "logo": "/images/Service/CustomSoftware.png", 
+    "title": "Custom Software Development",
+    "description": "High Quality Custom Software Development in Bangladesh with Impact!",
+    "hoverTitle": "Development with Impact!",
+    "hoverDescription": "Latest technology with a broad range of technical expertise and commitment to client satisfaction.",
+    "dropDown": [
+      {
+        "id": 1,
+        "title": "Custom Software Solutions",
+        "description": "Creating tailored software solutions to meet your unique business needs."
+      },
+      {
+        "id": 2,
+        "title": "Enterprise Systems",
+        "description": "Developing large-scale systems to streamline and optimize enterprise operations."
+      },
+      {
+        "id": 3,
+        "title": "Cloud Solutions",
+        "description": "Leveraging cloud technologies to ensure scalable, efficient, and secure systems."
+      },
+      {
+        "id": 4,
+        "title": "Mobile App Development",
+        "description": "Building mobile apps with seamless user experiences for iOS and Android."
+      },
+      {
+        "id": 5,
+        "title": "Software Maintenance",
+        "description": "Offering ongoing support and updates to ensure the longevity of your software."
+      }
+    ]
+  }
+  
+]

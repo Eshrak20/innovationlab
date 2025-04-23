@@ -1,0 +1,396 @@
+[
+  {
+    "id": 1,
+    "logo": "🏥",
+    "img": "/images/product/HIS.jpg",
+    "title": "Hospital Management Information System",
+    "bannerDescription": "Experience the power of streamlined healthcare management . Elevate your hospital's efficiency, improve patient care, and stay ahead in today's competitive healthcare landscape.",
+    "keyFeaturesDes": "Our state-of-the-art H360 Hospital Management Information  is designed to revolutionize healthcare management by streamlining operations and optimizing hospital workflows.",
+    
+      "keyFeatures": [
+        { "id": 1, "title": "Patient Registration" },
+        { "id": 2, "title": "Doctor Appointment & Scheduling" },
+        { "id": 3, "title": "Doctor & Staff Management" },
+        { "id": 4, "title": "Out Patient Department" },
+        { "id": 5, "title": "Doctor OPD Prescription" },
+        { "id": 6, "title": "Laboratory Information System" },
+        { "id": 7, "title": "Radiology & Imaging System" },
+        { "id": 8, "title": "Pharmacy Management System" },
+        { "id": 9, "title": "Consultant Management" },
+        { "id": 10, "title": "In Patient Management (IPD)" },
+        { "id": 11, "title": "Operation Theatre (OT) Management" },
+        { "id": 12, "title": "Nursing & Ward Management" },
+        { "id": 13, "title": "Daycare Service Management" },
+        { "id": 14, "title": "Emergency Patient Management" },
+        { "id": 15, "title": "Electronic Medical Record" },
+        { "id": 16, "title": "Picture Archiving & Communication System (PACS)" },
+        { "id": 17, "title": "Billing & Invoicing System" },
+        { "id": 18, "title": "Health Package Management" },
+        { "id": 19, "title": "Blood Bank Management" },
+        { "id": 20, "title": "Ambulance Management" },
+        { "id": 21, "title": "Corporate Client Management" },
+        { "id": 22, "title": "Referral Management" },
+        { "id": 23, "title": "Discharge Summary" },
+        { "id": 24, "title": "Sales & Marketing Team Management" },
+        { "id": 25, "title": "Supply Chain Management" },
+        { "id": 26, "title": "Purchase & Procurement" },
+        { "id": 27, "title": "Inventory Management" },
+        { "id": 28, "title": "Fixed Asset Management" },
+        { "id": 29, "title": "Nutrition & Dietary Management" },
+        { "id": 30, "title": "CCU, ICU, NICU, PACU & HDU Management" },
+        { "id": 31, "title": "Central Sterilization & Supply Department (CSSD)" },
+        { "id": 32, "title": "Cafeteria / Canteen Management" },
+        { "id": 33, "title": "HR & Payroll Management" },
+        { "id": 34, "title": "Core Accounting Management" },
+        { "id": 35, "title": "MIS & Financial Reports" },
+        { "id": 36, "title": "Management Dashboard" },
+        { "id": 37, "title": "Security Management" },
+        { "id": 38, "title": "Alert & Notification System" },
+        { "id": 39, "title": "SMS Integration" }
+      ]
+    
+    
+  },
+  {
+    "id": 2,
+    "logo": "💍",
+    "img": "/images/product/Jewellery.jpg",
+
+    "title": "Jewellery Management ",
+    "bannerDescription": "Manage your jewellery business with ease. Track inventory, sales, and customer preferences effortlessly.",
+    "keyFeaturesDes": "Our Jewellery Management  helps you optimize your inventory, manage customers, and streamline operations for a successful jewellery business.",
+   
+  "keyFeatures": [
+    { "id": 1, "title": "Jewellery Management" },
+    { "id": 2, "title": "Jewellery Category" },
+    { "id": 3, "title": "Stock Management" },
+    { "id": 4, "title": "Purchase Management" },
+    { "id": 5, "title": "Sales Management" },
+    { "id": 6, "title": "Payment Management" },
+    { "id": 7, "title": "Account Management" },
+    { "id": 8, "title": "Customer Management" },
+    { "id": 9, "title": "Return & Repairing Management" },
+    { "id": 10, "title": "Gift Voucher & Promotion Scheme Management" },
+    { "id": 11, "title": "Reminder Management" },
+    { "id": 12, "title": "Event Management" },
+    { "id": 13, "title": "Multi-Branch Management" },
+    { "id": 14, "title": "Security & Access Control" },
+    { "id": 15, "title": "Reporting & Analytics" }
+  ]
+
+
+  },
+  {
+    "id": 3,
+    "logo": "🧑‍💼",
+    "img": "/images/product/hr-payroll.jpg",
+
+    "title": "HR-Payroll Management ",
+    "bannerDescription": "Streamline your human resources and payroll processes. Simplify employee management and payroll handling.",
+    "keyFeaturesDes": "Our HR-Payroll Management  offers a comprehensive solution for managing employee records, attendance, payroll, and compliance.",
+    "keyFeatures": [
+      { "id": 1, "title": "Employee Information Management" },
+      { "id": 2, "title": "Recruitment & Onboarding" },
+      { "id": 3, "title": "Attendance Management" },
+      { "id": 4, "title": "Shift Management" },
+      { "id": 5, "title": "Leave Management" },
+      { "id": 6, "title": "Payroll Processing" },
+      { "id": 7, "title": "Performance Management" },
+      { "id": 8, "title": "Loan Management" },
+      { "id": 9, "title": "Advance Salary Management" },
+      { "id": 10, "title": "Bonus Management" },
+      { "id": 11, "title": "Provident Fund Management" },
+      { "id": 12, "title": "Promotion & Increment Management" },
+      { "id": 13, "title": "Taxation & Compliance" },
+      { "id": 14, "title": "Training & Development" },
+      { "id": 15, "title": "Employee Self-Service (ESS) Portal" },
+      { "id": 16, "title": "Resignation & Offboarding" },
+      { "id": 17, "title": "Reports & Analytics" }
+    ]
+  },
+  {
+    "id": 4,
+    "logo": "💵",
+    "img": "/images/product/Accounts.jpg",
+
+    "title": "Accounts Management ",
+    "bannerDescription": "Simplify your financial operations. Manage budgets, accounts, and financial reporting in one platform.",
+    "keyFeaturesDes": "Our Accounts Management  enables businesses to track income, expenses, and financial performance with ease.",
+    "keyFeatures": [
+      { "id": 1, "title": "Charts of Accounts" },
+      { "id": 2, "title": "General Ledger Management" },
+      { "id": 3, "title": "Accounts Payable Management" },
+      { "id": 4, "title": "Accounts Receivable Management" },
+      { "id": 5, "title": "Real-Time Account Monitoring" },
+      { "id": 6, "title": "Billing & Invoicing" },
+      { "id": 7, "title": "Cash & Bank Management" },
+      { "id": 8, "title": "Customizable Reporting" },
+      { "id": 9, "title": "Balance Sheet" },
+      { "id": 10, "title": "Profit & Loss Statement" },
+      { "id": 11, "title": "Trial Balance" },
+      { "id": 12, "title": "Taxation & Compliance" },
+      { "id": 13, "title": "Financial Reports & Statements" },
+      { "id": 14, "title": "Payroll Integration" },
+      { "id": 15, "title": "Asset & Depreciation Management" },
+      { "id": 16, "title": "Details Book View" },
+      { "id": 17, "title": "System Administration" },
+      { "id": 18, "title": "Business Monitor" }
+    ]
+  },
+  {
+    "id": 5,
+    "logo": "🛒",
+    "img": "/images/product/POS.jpg",
+
+    "title": "POS Management ",
+    "bannerDescription": "Revolutionize your retail experience with our Point of Sale . Streamline transactions and manage inventory effectively.",
+    "keyFeaturesDes": "Our POS Management  ensures smooth sales processing, accurate inventory tracking, and insightful analytics.",
+    "keyFeatures": [
+      { "id": 1, "title": "Order Management" },
+      { "id": 2, "title": "Sales Management" },
+      { "id": 3, "title": "Customer Management" },
+      { "id": 4, "title": "Purchase & Procurement" },
+      { "id": 5, "title": "Inventory Management" },
+      { "id": 6, "title": "Accounts Management" },
+      { "id": 7, "title": "Multi-Store & Multi-Branch Management" },
+      { "id": 8, "title": "Barcode & Label Printing" },
+      { "id": 9, "title": "Employee & User Management" },
+      { "id": 10, "title": "Business Monitor" },
+      { "id": 11, "title": "POS Administration" },
+      { "id": 12, "title": "Reports & Analytics" }
+    ]
+  },
+  {
+    "id": 6,
+    "logo": "📦",
+    "img": "/images/product/Inventory.jpg",
+
+    "title": "Inventory Management ",
+    "bannerDescription": "Optimize your inventory processes. Reduce waste and increase efficiency with our robust .",
+    "keyFeaturesDes": "Our Inventory Management  helps you monitor stock levels, streamline restocking, and improve supply chain management.",
+    "keyFeatures": [
+      { "id": 1, "title": "Project Estimation" },
+      { "id": 2, "title": "Issue Management" },
+      { "id": 3, "title": "Product Management" },
+      { "id": 4, "title": "Repair Management" },
+      { "id": 5, "title": "Supplier Management" },
+      { "id": 6, "title": "Generate Quotation" },
+      { "id": 7, "title": "Stock Movement & Tracking" },
+      { "id": 8, "title": "Sales Management" },
+      { "id": 9, "title": "Stock Management" },
+      { "id": 10, "title": "Purchase Requisition" },
+      { "id": 11, "title": "Purchase Order" },
+      { "id": 12, "title": "Accounts Management" },
+      { "id": 13, "title": "Disposal & Auction" },
+      { "id": 14, "title": "Compliance & Security" },
+      { "id": 15, "title": "Reports & Analytics" }
+    ]
+  },
+  {
+    "id": 7,
+    "logo": "🍽️",
+    "img": "/images/product/Restaurant.jpg",
+
+    "title": "Restaurant Management ",
+    "bannerDescription": "Take your restaurant to the next level with an all-in-one management solution. Improve operations and enhance customer satisfaction.",
+    "keyFeaturesDes": "Our Restaurant Management  covers everything from order management to table reservations and billing.",
+    "keyFeatures": [
+      { "id": 1, "title": "Restaurant POS" },
+      { "id": 2, "title": "Menu & Recipe Management" },
+      { "id": 3, "title": "Sales Management" },
+      { "id": 4, "title": "Kitchen Management" },
+      { "id": 5, "title": "Purchase & Procurement" },
+      { "id": 6, "title": "Inventory & Stock Management" },
+      { "id": 7, "title": "Table Reservation & Booking System" },
+      { "id": 8, "title": "Accounts Management" },
+      { "id": 9, "title": "Staff & Payroll Management" },
+      { "id": 10, "title": "Delivery & Takeaway Management" },
+      { "id": 11, "title": "Reports & Analytics" },
+      { "id": 12, "title": "Business Monitor" },
+      { "id": 13, "title": "System Administration" }
+    ]
+  },
+  {
+    "id": 8,
+    "logo": "🏫",
+    "img": "/images/product/school.jpg",
+
+    "title": "School Management ",
+    "bannerDescription": "Simplify school operations with an integrated  for managing students, staff, and academics.",
+    "keyFeaturesDes": "Our School Management  provides tools for student enrollment, academic tracking, and staff management.",
+    "keyFeatures": [
+    { "id": 1, "title": "Student Admission" },
+    { "id": 2, "title": "Student Information" },
+    { "id": 3, "title": "Student Management" },
+    { "id": 4, "title": "Teacher Management" },
+    { "id": 5, "title": "Staff Payroll & HR Management" },
+    { "id": 6, "title": "Attendance Tracking" },
+    { "id": 7, "title": "Exam Management" },
+    { "id": 8, "title": "Result Management" },
+    { "id": 9, "title": "Academic Activities Management" },
+    { "id": 10, "title": "Hostel & Accommodation Management" },
+    { "id": 11, "title": "Library Management" },
+    { "id": 12, "title": "Fee Collection Management" },
+    { "id": 13, "title": "Financial Accounts" },
+    { "id": 14, "title": "Payment and SMS Gateway" },
+    { "id": 15, "title": "Inventory Management" },
+    { "id": 16, "title": "Asset & Property Management" },
+    { "id": 17, "title": "Transport Management" },
+    { "id": 18, "title": "Academic Card Management" },
+    { "id": 19, "title": "Reports & Analytics" },
+    { "id": 20, "title": "Parent & Student Portal" },
+    { "id": 21, "title": "Document & Certificate Management" },
+    { "id": 22, "title": "System Administration" },
+    { "id": 23, "title": "Business Monitor" },
+    { "id": 24, "title": "Event & Notice Management" }
+  ]
+  },
+  {
+    "id": 9,
+    "logo": "📚",
+    "img": "/images/product/Madrasah.jpg",
+
+    "title": "Madrasa Management ",
+    "bannerDescription": "Specially designed for madrasa operations, this  helps manage students, courses, and daily activities efficiently.",
+    "keyFeaturesDes": "Our Madrasa Management  caters to unique requirements, offering features like course management, attendance, and fee tracking.",
+    "keyFeatures": [
+      { "id": 1, "title": "Student Admission" },
+      { "id": 2, "title": "Student Information" },
+      { "id": 3, "title": "Student Management" },
+      { "id": 4, "title": "Teacher Management" },
+      { "id": 5, "title": "Staff Payroll & HR Management" },
+      { "id": 6, "title": "Attendance Tracking" },
+      { "id": 7, "title": "Exam Management" },
+      { "id": 8, "title": "Result Management" },
+      { "id": 9, "title": "Academic Activities Management" },
+      { "id": 10, "title": "Hostel & Accommodation Management" },
+      { "id": 11, "title": "Library Management" },
+      { "id": 12, "title": "Fee Collection Management" },
+      { "id": 13, "title": "Financial Accounts" },
+      { "id": 14, "title": "Payment and SMS Gateway" },
+      { "id": 15, "title": "Inventory Management" },
+      { "id": 16, "title": "Asset & Property Management" },
+      { "id": 17, "title": "Transport Management" },
+      { "id": 18, "title": "Academic Card Management" },
+      { "id": 19, "title": "Reports & Analytics" },
+      { "id": 20, "title": "Parent & Student Portal" },
+      { "id": 21, "title": "Document & Certificate Management" },
+      { "id": 22, "title": "System Administration" },
+      { "id": 23, "title": "Business Monitor" },
+      { "id": 24, "title": "Event & Notice Management" }
+    ]
+  },
+  {
+    "id": 10,
+    "logo": "🪨",
+    "img": "/images/product/stone.jpeg",
+    "title": "Stone Management ",
+    "bannerDescription": "Optimize your stone industry operations with our advanced management . Streamline inventory, orders, and logistics for maximum efficiency.",
+    "keyFeaturesDes": "A comprehensive solution designed to automate and enhance stone industry operations, from inventory management to order processing.",
+    "keyFeatures": [
+      { "id": 1, "title": "Inventory Tracking" },
+      { "id": 2, "title": "Order Management" },
+      { "id": 3, "title": "Supplier Coordination" },
+      { "id": 4, "title": "Delivery & Logistics" },
+      { "id": 5, "title": "Automated Reports" }
+    ]
+  },
+  {
+    "id": 11,
+    "logo": "🏢",
+    "img": "/images/product/ERP.jpg",
+    "title": "Enterprise Resource Planning",
+    "bannerDescription": "Enhance business efficiency with our all-in-one ERP . Manage resources, finance, HR, and operations seamlessly.",
+    "keyFeaturesDes": "A fully integrated ERP solution that connects all business processes for streamlined operations and better decision-making.",
+    "keyFeatures": [
+      { "id": 1, "title": "Financial Management" },
+      { "id": 2, "title": "Human Resource Management (HRM) & Payroll" },
+      { "id": 3, "title": "Inventory & Warehouse Management" },
+      { "id": 4, "title": "Procurement & Supplier Management" },
+      { "id": 5, "title": "Sales & Customer Relationship Management" },
+      { "id": 6, "title": "Manufacturing & Production Planning" },
+      { "id": 7, "title": "Supply Chain Management" },
+      { "id": 8, "title": "Project Management" },
+      { "id": 9, "title": "Retail & POS Management" },
+      { "id": 10, "title": "Business Intelligence & Reporting" },
+      { "id": 11, "title": "Compliance & Security Management" }
+    ]
+  },
+  {
+    "id": 12,
+    "logo": "⚖️",
+    "img": "/images/product/LawSuit.jpg",
+    "title": "LawSuit Management ",
+    "bannerDescription": "Streamline legal case management with our digital solution. Track cases, manage documents, and automate workflow.",
+    "keyFeaturesDes": "An efficient  tailored for law firms and legal departments to manage cases, clients, and legal proceedings with ease.",
+   
+  "keyFeatures": [
+    { "id": 1, "title": "Case Management" },
+    { "id": 2, "title": "Client & Contact Management" },
+    { "id": 3, "title": "Court & Judge Management" },
+    { "id": 4, "title": "Document & File Management" },
+    { "id": 5, "title": "Task & Calendar Management" },
+    { "id": 6, "title": "Billing & Financial Management" },
+    { "id": 7, "title": "Evidence & Witness Management" },
+    { "id": 8, "title": "Case Timeline & Workflow Automation" },
+    { "id": 9, "title": "Compliance & Security Management" },
+    { "id": 10, "title": "Reporting & Analytics" }
+  ]
+  },
+  {
+    "id": 13,
+    "logo": "🏠",
+    "img": "/images/product/RealEstate.jpg",
+    "title": "Real Estate Management ",
+    "bannerDescription": "Digitize your real estate business with our powerful management . Track properties, clients, and sales efficiently.",
+    "keyFeaturesDes": "A complete real estate solution that simplifies property listings, transactions, and client interactions.",
+    "keyFeatures": [
+    { "id": 1, "title": "Property Management" },
+    { "id": 2, "title": "Client Management" },
+    { "id": 3, "title": "Sales & Lease Management" },
+    { "id": 4, "title": "Rent Management" },
+    { "id": 5, "title": "Customer Relationship Management" },
+    { "id": 6, "title": "Agent & Broker Management" },
+    { "id": 7, "title": "Financial & Accounting Management" },
+    { "id": 8, "title": "Document & Legal Management" },
+    { "id": 9, "title": "Inventory & Maintenance Management" },
+    { "id": 10, "title": "Reporting & Analytics" },
+    { "id": 11, "title": "Security & Compliance" }
+  ]
+  },
+  {
+    "id": 14,
+    "logo": "🏘️",
+    "img": "/images/product/Housing.jpg",
+    "title": "Housing & Rental Automation ",
+    "bannerDescription": "Automate your housing and rental operations with our smart management . Simplify lease agreements, payments, and maintenance tracking.",
+    "keyFeaturesDes": "An intelligent housing and rental management  designed to optimize tenant management and property maintenance.",
+    "keyFeatures": [
+    { "id": 1, "title": "Property & Rental Unit Management" },
+    { "id": 2, "title": "Tenant Management" },
+    { "id": 3, "title": "Lease & Contract Management" },
+    { "id": 4, "title": "Rent Collection & Payment Processing" },
+    { "id": 5, "title": "Maintenance & Work Order Management" },
+    { "id": 6, "title": "Financial & Accounting Management" },
+    { "id": 7, "title": "Landlord & Owner Management" },
+    { "id": 8, "title": "Multi-Property Management" },
+    { "id": 9, "title": "Security & Access Control" },
+    { "id": 10, "title": "Reporting & Analytics" }
+  ]
+  },
+  {
+    "id": 15,
+    "logo": "🚪",
+    "img": "/images/product/Tenant.jpg",
+    "title": "Tenant Management ",
+    "bannerDescription": "Manage tenants and rental properties seamlessly with our efficient . Track payments, contracts, and maintenance effortlessly.",
+    "keyFeaturesDes": "A dedicated solution to simplify tenant management, rental agreements, and communication between property managers and tenants.",
+    "keyFeatures": [
+      { "id": 1, "title": "Tenant Database" },
+      { "id": 2, "title": "Rent Payment Tracking" },
+      { "id": 3, "title": "Lease Contract Management" },
+      { "id": 4, "title": "Maintenance Request Handling" },
+      { "id": 5, "title": "Automated Reminders" }
+    ]
+  }
+]
