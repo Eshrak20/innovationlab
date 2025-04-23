@@ -1,0 +1,57 @@
+{
+    "title": "Privacy Policy",
+    "lastUpdated": "April 23, 2025",
+    "intro": "This privacy notice for Innovation Labs360 (\"Company\", \"we\", \"us\", or \"our\") describes how and why we might collect, store, use, and/or share (\"process\") your information when you use our services, such as when you:",
+    "usageExamples": [
+      "Visit our website or any website of ours that links to this privacy notice",
+      "Download and use our web or mobile applications",
+      "Engage with us in other related ways—including sales, marketing, or events"
+    ],
+    "sections": [
+      {
+        "title": "1. What Information Do We Collect?",
+        "paragraph": "We collect personal information that you voluntarily provide to us when you register on our website, express an interest in obtaining information about us or our products and services, participate in activities on our website or mobile app, or otherwise contact us.",
+        "list": [
+          "Name, email address, phone number, and other contact information",
+          "Account credentials (usernames, passwords, etc.)",
+          "Usage data (pages visited, device information, IP address, etc.)"
+        ]
+      },
+      {
+        "title": "2. How Do We Use Your Information?",
+        "list": [
+          "To provide, operate, and maintain our services",
+          "To improve, personalize, and expand our services",
+          "To communicate with you, including for customer service and updates",
+          "For analytics and understanding usage trends",
+          "To comply with legal obligations"
+        ]
+      },
+      {
+        "title": "3. Will Your Information Be Shared With Anyone?",
+        "paragraph": "We may share your information with third-party service providers to facilitate our services, comply with legal requirements, or protect our rights. We do not sell your personal data."
+      },
+      {
+        "title": "4. How Do We Protect Your Information?",
+        "paragraph": "We implement appropriate technical and organizational security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction."
+      },
+      {
+        "title": "5. How Long Do We Keep Your Information?",
+        "paragraph": "We retain your information only as long as necessary to fulfill the purposes outlined in this privacy policy unless otherwise required by law."
+      },
+      {
+        "title": "6. What Are Your Privacy Rights?",
+        "paragraph": "Depending on your location, you may have rights to access, correct, or delete your personal information, or object to certain uses. Please contact us to exercise your rights."
+      },
+      {
+        "title": "7. Updates to This Policy",
+        "paragraph": "We may update this privacy policy from time to time. We encourage you to review this page periodically for any changes."
+      }
+    ],
+    "contact": {
+      "title": "8. Contact Us",
+      "description": "If you have questions or comments about this policy, you may contact us at: ",
+      "email": "privacy@innovationlabs360.com"
+    }
+  }
+  

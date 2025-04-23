@@ -370,24 +370,6 @@ const ProfileEdit = ({ profile }) => {
                                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 />
                             </div>
-
-                            <div>
-                                <label
-                                    htmlFor="hourly_rate"
-                                    className="block text-sm font-medium text-gray-700"
-                                >
-                                    Hourly Rate ($)
-                                </label>
-                                <input
-                                    type="number"
-                                    id="hourly_rate"
-                                    name="hourly_rate"
-                                    value={formData.hourly_rate}
-                                    onChange={handleChange}
-                                    min="0"
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
-                                />
-                            </div>
                         </ProfileSection>
 
                         {/* Bio Section */}
