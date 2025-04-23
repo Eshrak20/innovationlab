@@ -51,6 +51,15 @@ class ProfileController extends Controller
         ]);
 
         if ($request->hasFile('profilePhotoPath')) {
+            // Delete the old profile photo if it exists
+            if ($profile->profilePhotoPath) {
+                $oldPath = public_path($profile->profilePhotoPath); // Convert to absolute path
+                if (file_exists($oldPath)) {
+                    unlink($oldPath); // Delete the old image
+                }
+            }
+
+            // Store new profile photo
             $imagePath = $request->file('profilePhotoPath')->store('profile_photos', 'public');
             $validated['profilePhotoPath'] = '/storage/' . $imagePath;
         }

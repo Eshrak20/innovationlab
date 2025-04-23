@@ -24,13 +24,6 @@ const ProfilePic = ({ fullName, getInitials, profilePhoto, onFileChange }) => {
         return new File([uArray], filename, { type: mime });
     };
 
-    const getProfilePhotoUrl = (photoPath) => {
-        if (!photoPath) return "/default-avatar.png";
-        if (photoPath instanceof File) return URL.createObjectURL(photoPath);
-        if (photoPath.startsWith('http')) return photoPath;
-        return `/reactAssets/images/ProfileImages/${photoPath}`;
-    };
-
     const handleProfilePhotoUpload = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -123,7 +116,7 @@ const ProfilePic = ({ fullName, getInitials, profilePhoto, onFileChange }) => {
                 ) : previewUrl || profilePhoto ? (
                     <img
                         className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-blue-500 cursor-pointer transform transition-all hover:scale-105 hover:shadow-lg"
-                        src={previewUrl || getProfilePhotoUrl(profilePhoto)}
+                        src={previewUrl || profilePhoto}
                         alt="Profile"
                         onClick={() => document.getElementById("profilePhotoInput").click()}
                     />
