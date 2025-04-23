@@ -197,9 +197,9 @@ const HomeTeam = ({ profileData }) => {
                                         <h3 className="text-xl font-bold text-gray-800 mb-1">
                                             {profile.title || "No name provided"}
                                         </h3>
-                                        {profile.experience_years && (
+                                        {profile.subtitle && (
                                             <p className="text-gray-500 text-sm mb-4">
-                                                {profile.experience_years} years of experience
+                                                {profile.subtitle}
                                             </p>
                                         )}
 
@@ -213,6 +213,10 @@ const HomeTeam = ({ profileData }) => {
                                                     {renderField(
                                                         "Specialization",
                                                         profile.specialization
+                                                    )}
+                                                    {renderField(
+                                                        "Years of Experience",
+                                                        profile.experience_years
                                                     )}
                                                 </div>
 
@@ -236,6 +240,7 @@ const HomeTeam = ({ profileData }) => {
                                                     <h4 className="font-bold text-gray-800">
                                                         Personal Information
                                                     </h4>
+                                                    {renderField("Age", profile.age)}
                                                     {renderField("Education", profile.education)}
                                                     {renderField("Location", profile.location)}
                                                     {renderField("Bio", profile.bio)}
