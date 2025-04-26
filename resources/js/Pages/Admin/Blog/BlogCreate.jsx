@@ -20,11 +20,6 @@ const BlogCreate = ({ categories }) => {
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const formData = new FormData();
-
-    Object.keys(data).forEach((key) => {
-        formData.append(key, data[key]);
-    });
 
     const handleSubmit = async (e) => {
         e.preventDefault();

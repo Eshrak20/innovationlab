@@ -23,28 +23,54 @@ const BlogEdit = ({ blog, categories }) => {
     const [previewImage, setPreviewImage] = useState(
         blog.image ? `/storage/${blog.image}` : null
     );
-
+    const formData = new FormData();
+    Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+    });
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-
+        
         const formData = new FormData();
-        Object.keys(data).forEach((key) => {
-            formData.append(key, data[key]);
-        });
-
+        
+        // Append all fields to formData
+        formData.append('title', data.title);
+        formData.append('summary', data.summary);
+        formData.append('description', data.description);
+        formData.append('date', data.date);
+        formData.append('published_by', data.published_by);
+        formData.append('category', data.category);
+        formData.append('type', data.type);
+        formData.append('slug', data.slug);
+        
+        // Only append image if it's a file (not the existing path)
+        if (data.image instanceof File) {
+            formData.append('image', data.image);
+        } else if (!data.image) {
+            // If image is being removed
+            formData.append('image', '');
+        }
+    
         try {
-            await axios.patch(route("blogs.update", blog.id), formData, {
+            const response = await axios.post(route("blogs.update", blog.id), formData, {
                 headers: {
-                    "Content-Type": "multipart/form-data",
-                },
+                    'Content-Type': 'multipart/form-data',
+                    'X-HTTP-Method-Override': 'PATCH'
+                }
             });
-            showSuccessToast("Blog updated successfully!");
+            
+            showSuccessToast(response.data.success);
         } catch (error) {
             console.error("Update error:", error);
-            const errorMessage =
-                error.response?.data?.message || "Failed to update blog";
-            showErrorToast(errorMessage);
+            if (error.response && error.response.data.errors) {
+                // Handle validation errors
+                const errors = error.response.data.errors;
+                Object.keys(errors).forEach(key => {
+                    showErrorToast(errors[key][0]);
+                });
+            } else {
+                showErrorToast(error.response?.data?.message || "Failed to update blog");
+            }
         } finally {
             setIsSubmitting(false);
         }
