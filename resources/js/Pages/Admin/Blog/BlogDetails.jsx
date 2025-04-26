@@ -3,6 +3,8 @@ import AdminLayout from '@/Layouts/AdminLayout';
 import { Link } from '@inertiajs/react';
 
 const BlogDetails = ({ blog }) => {
+    console.log(blog);
+    
     return (
         <AdminLayout>
             <div className="p-6 bg-white rounded-lg shadow">
@@ -36,7 +38,7 @@ const BlogDetails = ({ blog }) => {
                 {blog.image && (
                     <div className="mb-6">
                         <img 
-                            src={blog.image} 
+                            src={`/storage/${blog.image}`} 
                             alt={blog.title} 
                             className="w-full h-64 object-cover rounded-lg"
                         />

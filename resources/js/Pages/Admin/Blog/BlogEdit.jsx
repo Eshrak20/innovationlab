@@ -20,13 +20,25 @@ const BlogEdit = ({ blog, categories }) => {
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [previewImage, setPreviewImage] = useState(
+        blog.image ? `/storage/${blog.image}` : null
+    );
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
+        const formData = new FormData();
+        Object.keys(data).forEach((key) => {
+            formData.append(key, data[key]);
+        });
+
         try {
-            await axios.patch(route("blogs.update", blog.id), data); // PUT instead of POST
+            await axios.patch(route("blogs.update", blog.id), formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            });
             showSuccessToast("Blog updated successfully!");
         } catch (error) {
             console.error("Update error:", error);
@@ -56,21 +68,45 @@ const BlogEdit = ({ blog, categories }) => {
                         {/* Image Upload */}
                         <div className="col-span-2">
                             <label className="block text-sm font-medium text-gray-700">
-                                Image URL
+                                Upload Image
                             </label>
                             <input
-                                type="text"
+                                type="file"
+                                accept="image/*"
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                value={data.image}
-                                onChange={(e) =>
-                                    setData("image", e.target.value)
-                                }
+                                onChange={(e) => {
+                                    if (e.target.files && e.target.files[0]) {
+                                        setData("image", e.target.files[0]);
+                                        setPreviewImage(
+                                            URL.createObjectURL(
+                                                e.target.files[0]
+                                            )
+                                        );
+                                    }
+                                }}
                             />
                             {errors.image && (
                                 <p className="mt-1 text-sm text-red-600">
                                     {errors.image}
                                 </p>
                             )}
+                            <div className="mt-4">
+                                {previewImage ? (
+                                    <img
+                                        src={previewImage}
+                                        alt="Preview"
+                                        className="h-40 object-cover rounded-md border"
+                                    />
+                                ) : (
+                                    blog.image && (
+                                        <img
+                                            src={blog.image}
+                                            alt="Current"
+                                            className="h-40 object-cover rounded-md border"
+                                        />
+                                    )
+                                )}
+                            </div>
                         </div>
 
                         {/* Title */}

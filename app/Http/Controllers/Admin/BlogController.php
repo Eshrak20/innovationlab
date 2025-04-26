@@ -90,7 +90,6 @@ class BlogController extends Controller
             'categories' => ['technical', 'nontechnical'],
         ]);
     }
-
     public function update(Request $request, $id)
     {
         $blog = Blog::where('id', $id)
@@ -98,7 +97,7 @@ class BlogController extends Controller
             ->firstOrFail();
 
         $request->validate([
-            'image' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'title' => 'required|string|max:255',
             'summary' => 'nullable|string',
             'description' => 'required|string',
@@ -109,20 +108,73 @@ class BlogController extends Controller
             'slug' => 'required|string|unique:blogs,slug,' . $id,
         ]);
 
-        $blog->update([
-            'image' => $request->image,
-            'title' => $request->title,
-            'summary' => $request->summary,
-            'description' => $request->description,
-            'date' => $request->date,
-            'published_by' => $request->published_by,
-            'category' => $request->category,
-            'type' => $request->type,
-            'slug' => Str::slug($request->slug),
+        // Collect the validated data
+        $data = $request->only([
+            'title',
+            'summary',
+            'description',
+            'date',
+            'published_by',
+            'category',
+            'type',
+            'slug'
         ]);
+
+        // Handle the image file if it exists
+        if ($request->hasFile('image')) {
+            // Delete old image
+            if ($blog->image) {
+                $oldPath = public_path($blog->image);
+                if (file_exists($oldPath)) {
+                    unlink($oldPath);
+                }
+            }
+
+            // Upload new image
+            $imagePath = $request->file('image')->store('blogs', 'public');
+            $data['image'] = '/storage/' . $imagePath;
+        }
+
+        // Update the blog with the validated data
+        $blog->update($data);
 
         return redirect()->route('blogs.index')->with('success', 'Blog updated successfully');
     }
+
+
+
+    // public function update(Request $request, $id)
+    // {
+    //     $blog = Blog::where('id', $id)
+    //         ->where('admin_id', auth()->id())
+    //         ->firstOrFail();
+
+    //     $request->validate([
+    //         'image' => 'nullable|string',
+    //         'title' => 'required|string|max:255',
+    //         'summary' => 'nullable|string',
+    //         'description' => 'required|string',
+    //         'date' => 'required|date',
+    //         'published_by' => 'required|string',
+    //         'category' => 'required|in:technical,nontechnical',
+    //         'type' => 'required|string',
+    //         'slug' => 'required|string|unique:blogs,slug,' . $id,
+    //     ]);
+
+    //     $blog->update([
+    //         'image' => $request->image,
+    //         'title' => $request->title,
+    //         'summary' => $request->summary,
+    //         'description' => $request->description,
+    //         'date' => $request->date,
+    //         'published_by' => $request->published_by,
+    //         'category' => $request->category,
+    //         'type' => $request->type,
+    //         'slug' => Str::slug($request->slug),
+    //     ]);
+
+    //     return redirect()->route('blogs.index')->with('success', 'Blog updated successfully');
+    // }
 
     public function destroy($id)
     {
