@@ -6,47 +6,32 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
 
-const BlogCreate = ({ categories }) => {
-    const { data, setData, reset, processing, errors } = useForm({
-        image: "",
-        title: "",
-        summary: "",
-        description: "",
-        date: new Date().toISOString().split("T")[0],
-        published_by: "",
-        category: "technical",
-        type: "",
-        slug: "",
+const BlogEdit = ({ blog, categories }) => {
+    const { data, setData, processing, errors } = useForm({
+        image: blog.image || "",
+        title: blog.title || "",
+        summary: blog.summary || "",
+        description: blog.description || "",
+        date: blog.date || new Date().toISOString().split("T")[0],
+        published_by: blog.published_by || "",
+        category: blog.category || "technical",
+        type: blog.type || "",
+        slug: blog.slug || "",
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const formData = new FormData();
-
-    Object.keys(data).forEach((key) => {
-        formData.append(key, data[key]);
-    });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        const formData = new FormData();
-        Object.keys(data).forEach((key) => {
-            formData.append(key, data[key]);
-        });
-
         try {
-            await axios.post(route("blogs.store"), formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
-            showSuccessToast("Blog created successfully!");
-            reset(); // Clear the form
+            await axios.patch(route("blogs.update", blog.id), data); // PUT instead of POST
+            showSuccessToast("Blog updated successfully!");
         } catch (error) {
-            console.error("Submit error:", error);
+            console.error("Update error:", error);
             const errorMessage =
-                error.response?.data?.message || "Failed to create blog";
+                error.response?.data?.message || "Failed to update blog";
             showErrorToast(errorMessage);
         } finally {
             setIsSubmitting(false);
@@ -65,19 +50,21 @@ const BlogCreate = ({ categories }) => {
         <AdminLayout>
             <ToastContainer />
             <div className="p-6 bg-white rounded-lg shadow">
-                <h1 className="text-2xl font-bold mb-6">Create New Blog</h1>
+                <h1 className="text-2xl font-bold mb-6">Edit Blog</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Image Upload */}
                         <div className="col-span-2">
                             <label className="block text-sm font-medium text-gray-700">
-                                Upload Image
+                                Image URL
                             </label>
                             <input
-                                type="file"
+                                type="text"
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                value={data.image}
                                 onChange={(e) =>
-                                    setData("image", e.target.files[0])
-                                } // select the file
+                                    setData("image", e.target.value)
+                                }
                             />
                             {errors.image && (
                                 <p className="mt-1 text-sm text-red-600">
@@ -276,8 +263,8 @@ const BlogCreate = ({ categories }) => {
                             disabled={isSubmitting || processing}
                         >
                             {isSubmitting || processing
-                                ? "Creating..."
-                                : "Create Blog"}
+                                ? "Updating..."
+                                : "Update Blog"}
                         </button>
                     </div>
                 </form>
@@ -286,4 +273,4 @@ const BlogCreate = ({ categories }) => {
     );
 };
 
-export default BlogCreate;
+export default BlogEdit;
