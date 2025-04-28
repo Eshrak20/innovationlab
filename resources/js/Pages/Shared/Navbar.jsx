@@ -45,12 +45,12 @@ const Navbar = () => {
             </li>
             <li className="relative group">
                 <a
-                    href="/blogs"
+                href="/blog"
                     className={`nav-item mt-2 ${
-                        location.pathname === "/blogs" ? "active" : ""
+                        location.pathname === "/blog" ? "active" : ""
                     }`}
                 >
-                    Blogs
+                    blog
                 </a>
             </li>
             <li>

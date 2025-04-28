@@ -44,7 +44,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Ensure image validation
+            'image' => 'nullable|image|max:9048', // Ensure image validation
             'title' => 'required|string|max:255',
             'summary' => 'nullable|string',
             'description' => 'required|string',
@@ -95,9 +95,9 @@ class BlogController extends Controller
         $blog = Blog::where('id', $id)
             ->where('admin_id', auth()->id())
             ->firstOrFail();
-
+    
         $request->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|max:2048',
             'title' => 'required|string|max:255',
             'summary' => 'nullable|string',
             'description' => 'required|string',
@@ -107,26 +107,31 @@ class BlogController extends Controller
             'type' => 'required|string',
             'slug' => 'required|string|unique:blogs,slug,' . $id,
         ]);
-
+    
         $data = $request->except('image');
-
+    
         if ($request->hasFile('image')) {
             // Delete old image
             if ($blog->image) {
-                $oldPath = public_path('storage/' . $blog->image);  // ✅ Correct path
+                $oldPath = public_path('storage/' . $blog->image);
                 if (file_exists($oldPath)) {
                     unlink($oldPath);
                 }
             }
-        
+    
             $imagePath = $request->file('image')->store('blogs', 'public');
-            $data['image'] = $imagePath;  // Store relative path (without `/storage/`)
+            $data['image'] = $imagePath;
         }
-
+    
         $blog->update($data);
-
-        return response()->json(['success' => 'Blog updated successfully']);
+    
+        if ($request->wantsJson()) {
+            return response()->json(['success' => 'Blog updated successfully']);
+        }
+    
+        return redirect()->route('blogs.index'); // or whatever your blog list route is named
     }
+
 
     public function destroy($id)
     {

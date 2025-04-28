@@ -23,31 +23,28 @@ const BlogEdit = ({ blog, categories }) => {
     const [previewImage, setPreviewImage] = useState(
         blog.image ? `/storage/${blog.image}` : null
     );
-    const formData = new FormData();
-    Object.keys(data).forEach((key) => {
-        formData.append(key, data[key]);
-    });
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
         
         const formData = new FormData();
         
-        // Append all fields to formData
-        formData.append('title', data.title);
-        formData.append('summary', data.summary);
-        formData.append('description', data.description);
-        formData.append('date', data.date);
-        formData.append('published_by', data.published_by);
-        formData.append('category', data.category);
-        formData.append('type', data.type);
-        formData.append('slug', data.slug);
+        // Append all fields to formData using a loop
+        const fieldsToAppend = [
+            'title', 'summary', 'description', 'date', 
+            'published_by', 'category', 'type', 'slug'
+        ];
         
-        // Only append image if it's a file (not the existing path)
+        fieldsToAppend.forEach(key => {
+            if (data[key] !== undefined) {
+                formData.append(key, data[key]);
+            }
+        });
+        
+        // Handle image separately
         if (data.image instanceof File) {
             formData.append('image', data.image);
         } else if (!data.image) {
-            // If image is being removed
             formData.append('image', '');
         }
     
