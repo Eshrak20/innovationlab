@@ -9,7 +9,7 @@ import HomeBlog from "./HomeBlog/HomeBlog";
 import TextImage from "@/Components/MyComponents/TextImage";
 const baseUrl = import.meta.env.VITE_APP_BASE_URL;
 
-const Home = ({ stats, profileData }) => {
+const Home = ({ stats, profileData,blog }) => {
     console.log(profileData);
 
     return (
@@ -56,7 +56,7 @@ const Home = ({ stats, profileData }) => {
                 </div>
                 <Tech baseUrl={baseUrl} />
                 <HomeTeam profileData={profileData} />
-                <HomeBlog />
+                <HomeBlog blog={blog} />
                 <HomeClient />
             </MainLayout>
         </>

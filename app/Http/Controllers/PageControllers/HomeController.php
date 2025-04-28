@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\ExperienceStat;
 use App\Models\ExperienceStatus;
 use App\Models\Profile;
@@ -16,9 +17,13 @@ class HomeController extends Controller
     {
         $stats = ExperienceStatus::all();
         $profileData = Profile::all();
+        $blog = Blog::all();
+
         return Inertia::render('MainPages/Home/Home', [
             'stats' => $stats,
-            'profileData' => $profileData
+            'profileData' => $profileData,
+            'blog' => $blog
         ]);
     }
+   
 }

@@ -50,7 +50,7 @@ const Navbar = () => {
                         location.pathname === "/blog" ? "active" : ""
                     }`}
                 >
-                    blog
+                    Blogs
                 </a>
             </li>
             <li>
