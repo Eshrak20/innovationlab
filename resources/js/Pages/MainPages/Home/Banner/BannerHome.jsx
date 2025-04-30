@@ -110,7 +110,7 @@ const BannerHome = ({stats}) => {
                                     className="text-xl font-bold md:text-2xl"
                                     style={{ color: "white" }}
                                 >
-                                    +{stat.value}
+                                    {stat.value}+
                                 </h2>
                                 <p className="text-sm md:text-xl">
                                     {stat.label}

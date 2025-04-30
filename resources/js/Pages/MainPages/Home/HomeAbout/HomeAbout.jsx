@@ -56,7 +56,7 @@ const HomeAbout = ({stats}) => {
                                     {stat.label}
                                 </p>
                                 <h2 className="text-lg font-bold md:text-2xl text-success">
-                                    +{stat.value}
+                                    {stat.value}+
                                 </h2>
                             </div>
                         ))}

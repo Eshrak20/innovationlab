@@ -17,22 +17,6 @@ class ManagementController extends Controller
         ]);
     }
 
-    // public function update(Request $request, Management $management)
-    // {
-
-    //     try {
-    //         $management->title = $request->input('title');
-    //         $management->number = $request->input('number');
-    //         $management->save();
-    //         return response()->json([
-    //             'success' => true,
-    //             'data' => $management->fresh() // Return refreshed model from database
-    //         ]);
-    //     } catch (\Exception $e) {
-    //     }
-    // }
-
-
     public function update(Request $request, $id)
     {
         try {
