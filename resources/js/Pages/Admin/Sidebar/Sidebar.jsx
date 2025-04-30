@@ -7,6 +7,7 @@ export default function AdminSidebar() {
     const menu = [
         { name: "Profile", path: "/profile" },
         { name: "Upload New Blog", path: "/blogs" },
+        { name: "Upload New Services", path: "/services" },
         { name: "Gallery", path: "/gallery" },
         { name: "Experience Status", path: "/experienceStatuses" },
         { name: "Missions", path: "/mission" },

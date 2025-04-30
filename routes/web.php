@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\FormController;
 use App\Http\Controllers\Admin\ManagementController;
 use App\Http\Controllers\Admin\MissionController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\PageControllers\BlogControllerView;
 use App\Http\Controllers\PageControllers\PrivacyPolicyController;
 use App\Http\Controllers\PageControllers\TermsConditionsController;
@@ -39,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
     Route::resource('/blogs', BlogController::class);
+    Route::resource('/services', ServiceController::class);
     Route::resource('/experienceStatuses', ExperienceStatusController::class);
     Route::resource('/contactInfo', ContactInfoController::class);
     Route::resource('/mission', MissionController::class);
