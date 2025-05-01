@@ -10,8 +10,6 @@ import TextImage from "@/Components/MyComponents/TextImage";
 const baseUrl = import.meta.env.VITE_APP_BASE_URL;
 
 const Home = ({ stats, profileData,blog }) => {
-    console.log(profileData);
-
     return (
         <>
             <MainLayout>

@@ -53,6 +53,16 @@ const Navbar = () => {
                     Blogs
                 </a>
             </li>
+            <li className="relative group">
+                <a
+                href="/service"
+                    className={`nav-item mt-2 ${
+                        location.pathname === "/service" ? "active" : ""
+                    }`}
+                >
+                    Service
+                </a>
+            </li>
             <li>
                 <a
                     href="/contact"

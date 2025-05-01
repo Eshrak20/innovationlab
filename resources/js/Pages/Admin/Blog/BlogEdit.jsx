@@ -264,6 +264,7 @@ const BlogEdit = ({ blog, categories }) => {
                                 onChange={(e) =>
                                     setData("type", e.target.value)
                                 }
+                                placeholder="e.g., article, tutorial, announcement"
                                 required
                             />
                             {errors.type && (
