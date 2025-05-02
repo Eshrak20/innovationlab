@@ -16,4 +16,12 @@ class ServiceControllerHome extends Controller
             'service' => $service
         ]);
     }
+
+    public function show($id)
+    {
+        $service = Service::findOrFail($id);
+        return Inertia::render('MainPages/Services/ServicesDetails', [
+            'service' => $service
+        ]);
+    }
 }

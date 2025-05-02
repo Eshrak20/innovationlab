@@ -149,9 +149,9 @@ const HomeTeam = ({ profileData }) => {
                         {visibleCards.map((profile, idx) => (
                             <div
                                 key={idx}
-                                className={`absolute transition-all duration-500 ease-in-out bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden ${
+                                className={`absolute transition-all duration-500 ease-in-out rounded-xl bg-blue-100/80 backdrop-blur-md shadow-2xl border border-blue-200 overflow-hidden cursor-pointer group ${
                                     profile.active
-                                        ? "w-[350px] h-auto z-10 shadow-xl"
+                                        ? "w-[350px] h-auto z-10 scale-105"
                                         : "w-[300px] h-[450px]"
                                 } ${
                                     profile.position === -2
@@ -177,83 +177,151 @@ const HomeTeam = ({ profileData }) => {
                                     }
                                 }}
                             >
-                                <div className="max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 scrollbar-thumb-rounded">
-                                    <div className="p-6 flex flex-col items-center">
-                                        <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                                            <img
-                                                src={
-                                                    profile.profilePhotoPath ||
-                                                    "https://via.placeholder.com/150"
-                                                }
-                                                alt={profile.name || "Team member"}
-                                                className="w-full h-full object-cover"
-                                                loading="lazy"
-                                            />
-                                            {profile.active && (
-                                                <div className="absolute bottom-1 right-2 w-5 h-5 bg-blue-500 rounded-full border-2 border-white"></div>
-                                            )}
-                                        </div>
-
-                                        <h3 className="text-xl font-bold text-gray-800 mb-1">
-                                            {profile.title || "No name provided"}
-                                        </h3>
-                                        {profile.subtitle && (
-                                            <p className="text-gray-500 text-sm mb-4">
-                                                {profile.subtitle}
-                                            </p>
-                                        )}
-
-                                        {profile.active && (
-                                            <div className="w-full space-y-4 text-left">
-                                                <div className="space-y-2">
-                                                    {renderField(
-                                                        "Designation",
-                                                        profile.employment_type
-                                                    )}
-                                                    {renderField(
-                                                        "Specialization",
-                                                        profile.specialization
-                                                    )}
-                                                    {renderField(
-                                                        "Years of Experience",
-                                                        profile.experience_years
-                                                    )}
+                                <div className="max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-blue-100 scrollbar-thumb-rounded hover:scrollbar-thumb-blue-500 transition-colors duration-300">
+                                    {/* Card Wrapper with Animated Gradient Border */}
+                                    <div className="rounded-xl p-[2px] bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-300 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] animate-gradient-border">
+                                        {/* Inner Card */}
+                                        <div className="bg-white rounded-xl overflow-hidden custom-card group">
+                                            {/* Card Header */}
+                                            <div className="p-6 flex flex-col items-center bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 relative overflow-hidden">
+                                                {/* Animated background elements */}
+                                                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
+                                                    <div className="absolute top-0 left-10 w-20 h-20 bg-blue-300 rounded-full filter blur-xl animate-float1"></div>
+                                                    <div className="absolute top-10 right-5 w-24 h-24 bg-purple-300 rounded-full filter blur-xl animate-float2"></div>
                                                 </div>
 
-                                                <div className="space-y-2">
-                                                    <h4 className="font-bold text-gray-800">Skills</h4>
-                                                    <ul className="list-disc pl-5 space-y-1">
-                                                        {renderListItems(profile.skills)}
-                                                    </ul>
+                                                <div className="w-32 h-32 mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg transition-all duration-500 hover:scale-110 hover:shadow-xl relative z-10">
+                                                    <img
+                                                        src={
+                                                            profile.profilePhotoPath ||
+                                                            "https://via.placeholder.com/150"
+                                                        }
+                                                        alt={
+                                                            profile.name ||
+                                                            "Team member"
+                                                        }
+                                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                                        loading="lazy"
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                                                 </div>
 
-                                                <div className="space-y-2">
-                                                    <h4 className="font-bold text-gray-800">
-                                                        Certifications
-                                                    </h4>
-                                                    <ul className="list-disc pl-5 space-y-1">
-                                                        {renderListItems(profile.certifications)}
-                                                    </ul>
-                                                </div>
+                                                <h3 className="text-2xl font-bold text-gray-900 mb-1 text-center hover:text-indigo-600 transition-colors duration-300 relative z-10">
+                                                    {profile.title ||
+                                                        "No name provided"}
+                                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-500 group-hover:w-full"></span>
+                                                </h3>
 
-                                                <div className="space-y-2">
-                                                    <h4 className="font-bold text-gray-800">
-                                                        Personal Information
-                                                    </h4>
-                                                    {renderField("Age", profile.age)}
-                                                    {renderField("Education", profile.education)}
-                                                    {renderField("Location", profile.location)}
-                                                    {renderField("Bio", profile.bio)}
-                                                </div>
-
-                                                <div className="space-y-2">
-                                                    <h4 className="font-bold text-gray-800">
-                                                        Social Media
-                                                    </h4>
-                                                    {renderIcons(profile)}
-                                                </div>
+                                                {profile.subtitle && (
+                                                    <p className="text-gray-600 text-sm mb-2 text-center relative z-10 transform transition-transform duration-300 group-hover:-translate-y-1 mt-3">
+                                                        {profile.subtitle}
+                                                    </p>
+                                                )}
                                             </div>
-                                        )}
+
+                                            {/* Card Details */}
+                                            <div className="p-6 flex flex-col items-center text-gray-800 bg-white relative">
+                                                {profile.active && (
+                                                    <div className="w-full space-y-4 text-left">
+                                                        {/* Fields */}
+                                                        <div className="space-y-2">
+                                                            {renderField(
+                                                                "Designation",
+                                                                profile.employment_type
+                                                            )}
+                                                            {renderField(
+                                                                "Specialization",
+                                                                profile.specialization
+                                                            )}
+                                                            {renderField(
+                                                                "Years of Experience",
+                                                                profile.experience_years
+                                                            )}
+                                                        </div>
+
+                                                        {/* Skills */}
+                                                        <div className="space-y-2">
+                                                            <h4 className="font-bold text-indigo-600 flex items-center">
+                                                                <span className="mr-2">
+                                                                    🌟
+                                                                </span>
+                                                                <span>
+                                                                    Skills
+                                                                </span>
+                                                            </h4>
+                                                            <ul className="list-disc pl-5 space-y-1">
+                                                                {renderListItems(
+                                                                    profile.skills
+                                                                )}
+                                                            </ul>
+                                                        </div>
+
+                                                        {/* Certifications */}
+                                                        <div className="space-y-2">
+                                                            <h4 className="font-bold text-indigo-600 flex items-center">
+                                                                <span className="mr-2">
+                                                                    🏆
+                                                                </span>
+                                                                <span>
+                                                                    Certifications
+                                                                </span>
+                                                            </h4>
+                                                            <ul className="list-disc pl-5 space-y-1">
+                                                                {renderListItems(
+                                                                    profile.certifications
+                                                                )}
+                                                            </ul>
+                                                        </div>
+
+                                                        {/* Personal Info */}
+                                                        <div className="space-y-2">
+                                                            <h4 className="font-bold text-indigo-600 flex items-center">
+                                                                <span className="mr-2">
+                                                                    ℹ️
+                                                                </span>
+                                                                <span>
+                                                                    Personal
+                                                                    Information
+                                                                </span>
+                                                            </h4>
+                                                            {renderField(
+                                                                "Age",
+                                                                profile.age
+                                                            )}
+                                                            {renderField(
+                                                                "Education",
+                                                                profile.education
+                                                            )}
+                                                            {renderField(
+                                                                "Location",
+                                                                profile.location
+                                                            )}
+                                                            {renderField(
+                                                                "Bio",
+                                                                profile.bio
+                                                            )}
+                                                        </div>
+
+                                                        {/* Social Media */}
+                                                        <div className="space-y-2 pt-2">
+                                                            <h4 className="font-bold text-indigo-600 flex items-center">
+                                                                <span className="mr-2">
+                                                                    🌐
+                                                                </span>
+                                                                <span>
+                                                                    Connect
+                                                                </span>
+                                                            </h4>
+                                                            <div className="flex space-x-3">
+                                                                {renderIcons(
+                                                                    profile
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

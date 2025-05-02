@@ -4,7 +4,7 @@ const Dashboard = () => {
     return (
         <AdminLayout>
             <div className="text-gray-800">
-                <h1 className="text-3xl font-bold mb-6">Welcome to Admin Dashboard 👨‍💻</h1>
+                <h1 className="text-3xl font-bold mb-6">Welcome to Admin Panel 👨‍💻</h1>
                 <p className="text-lg">Manage your site content from the sidebar 👇</p>
 
                 {/* Example section */}

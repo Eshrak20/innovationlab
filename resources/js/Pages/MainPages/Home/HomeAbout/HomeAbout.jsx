@@ -73,7 +73,7 @@ const HomeAbout = ({stats}) => {
                         />
                     </div>
                     <img
-                        className="object-cover rounded-[20%] w-[150px] h-[150px] md:w-[200px] md:h-[240px] absolute -bottom-20 left-10 md:-bottom-10 md:-left-10 border-black border-r-[10px] border-t-[10px] -mt-10 border-l-[10px] md:border-l-[10px] transition-all duration-500"
+                        className="object-cover rounded-[20%] w-[150px] h-[150px] md:w-[200px] md:h-[240px] absolute -bottom-20 left-10 md:-bottom-10 md:-left-10 border-blue-900 border-r-[3px] border-t-[3px] -mt-10 border-l-[3px] md:border-l-[3px] transition-all duration-500"
                         src={images[currentImageIndex].overlay}
                         alt={`Overlay lab image ${currentImageIndex + 1}`}
                     />

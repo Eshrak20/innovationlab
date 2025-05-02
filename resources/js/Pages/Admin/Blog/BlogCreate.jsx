@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useForm } from "@inertiajs/inertia-react";
 import axios from "axios";
 import AdminLayout from "@/Layouts/AdminLayout";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
+import { Inertia } from "@inertiajs/inertia";
+import { useForm } from "@inertiajs/inertia-react";
 
 const BlogCreate = ({ categories }) => {
     const { data, setData, reset, processing, errors } = useForm({
@@ -200,27 +201,6 @@ const BlogCreate = ({ categories }) => {
                                 </p>
                             )}
                         </div>
-
-                        {/* Type */}
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">
-                                Type*
-                            </label>
-                            <input
-                                type="text"
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                value={data.type}
-                                onChange={(e) => setData("type", e.target.value)}
-                                placeholder="e.g., article, tutorial, announcement"
-                                required
-                            />
-                            {errors.type && (
-                                <p className="mt-1 text-sm text-red-600">
-                                    {errors.type}
-                                </p>
-                            )}
-                        </div>
-
                         {/* Summary */}
                         <div className="col-span-2">
                             <label className="block text-sm font-medium text-gray-700">
@@ -263,17 +243,17 @@ const BlogCreate = ({ categories }) => {
                         </div>
                     </div>
 
-                    <div className="mt-6 flex justify-end">
-                        <button
-                            type="submit"
-                            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50"
-                            disabled={isSubmitting || processing}
-                        >
-                            {isSubmitting || processing
-                                ? "Creating..."
-                                : "Create Blog"}
-                        </button>
-                    </div>
+                        <div className="mt-6 flex justify-end">
+                            <button
+                                type="submit"
+                                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50"
+                                disabled={isSubmitting || processing}
+                            >
+                                {isSubmitting || processing
+                                    ? "Creating..."
+                                    : "Create Blog"}
+                            </button>
+                        </div>
                 </form>
             </div>
         </AdminLayout>

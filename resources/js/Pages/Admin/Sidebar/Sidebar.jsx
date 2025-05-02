@@ -8,12 +8,12 @@ export default function AdminSidebar() {
         { name: "Profile", path: "/profile" },
         { name: "Upload New Blog", path: "/blogs" },
         { name: "Upload New Services", path: "/services" },
-        { name: "Gallery", path: "/gallery" },
         { name: "Experience Status", path: "/experienceStatuses" },
         { name: "Missions", path: "/mission" },
         { name: "Core Team Data", path: "/managementData" },
         { name: "Contact Info", path: "/contactInfo" },
         { name: "Messages", path: "/forms" },
+        // { name: "Gallery", path: "/gallery" },
     ];
 
     function handleLogout() {
@@ -30,9 +30,12 @@ export default function AdminSidebar() {
 
     return (
         <div className="w-64 h-screen bg-gray-900 text-white shadow-lg fixed top-0 left-0 flex flex-col">
-            <div className="text-2xl font-bold p-4 border-b border-gray-700">
-                Admin Panel
-            </div>
+            <Link
+                href="/"
+                className="block text-2xl font-bold p-4 border-b border-gray-700 hover:bg-gray-800 transition"
+            >
+                Go to Home
+            </Link>
 
             <div className="flex-1 overflow-y-auto">
                 <ul className="space-y-1 p-4">

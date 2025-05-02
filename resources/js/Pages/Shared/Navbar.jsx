@@ -1,7 +1,6 @@
-import { Link } from "@inertiajs/inertia-react"; // Inertia Link
+import { Link } from "@inertiajs/react";
 import "./Navbar.css"; // Import external CSS file for custom styles
 import { useState, useEffect } from "react";
-
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -24,54 +23,61 @@ const Navbar = () => {
     const navOptions = (
         <>
             <li>
-                <a
+                <Link
                     href="/"
                     className={`nav-item mt-2 ${
                         location.pathname === "/" ? "active" : ""
                     }`}
                 >
                     Home
-                </a>
+                </Link>
             </li>
-            <li className="relative group">
-                <a
+            <li>
+                <Link
                     href="/about"
                     className={`nav-item mt-2 ${
                         location.pathname === "/about" ? "active" : ""
                     }`}
                 >
                     About Us
-                </a>
+                </Link>
             </li>
-            <li className="relative group">
-                <a
-                href="/blog"
-                    className={`nav-item mt-2 ${
-                        location.pathname === "/blog" ? "active" : ""
+            <li>
+                <Link
+                    href="/blog"
+                    className={`nav-item ${
+                        location.pathname === "/blog" ||
+                        location.pathname.startsWith("/blog/")
+                            ? "active"
+                            : ""
                     }`}
                 >
                     Blogs
-                </a>
-            </li>
-            <li className="relative group">
-                <a
-                href="/service"
-                    className={`nav-item mt-2 ${
-                        location.pathname === "/service" ? "active" : ""
-                    }`}
-                >
-                    Service
-                </a>
+                </Link>
             </li>
             <li>
-                <a
+                <Link
+                    href="/service"
+                    className={`nav-item ${
+                        location.pathname === "/service" ||
+                        location.pathname.startsWith("/service/")
+                            ? "active"
+                            : ""
+                    }`}
+                >
+                    Services
+                </Link>
+            </li>
+
+            <li>
+                <Link
                     href="/contact"
                     className={`nav-item mt-2 ${
                         location.pathname === "/contact" ? "active" : ""
                     }`}
                 >
                     Contacts
-                </a>
+                </Link>
             </li>
         </>
     );

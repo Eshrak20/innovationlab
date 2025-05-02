@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, router } from "@inertiajs/react";
 import AdminLayout from "@/Layouts/AdminLayout";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
 import { ToastContainer } from "react-toastify";
-const BlogList = ({ blogs }) => {
+const BlogList = ({ blogs: initialBlogs  }) => {
+    const [blogs, setBlogs] = useState(initialBlogs);
     const handleDelete = async (id) => {
         try {
             await axios.delete(route("blogs.destroy", id));
+            setBlogs((prevBlogs) => prevBlogs.filter((blog) => blog.id !== id));
             showSuccessToast("Blog deleted successfully!");
         } catch (error) {
             console.error(error);
@@ -16,12 +18,13 @@ const BlogList = ({ blogs }) => {
         }
     };
 
+
     return (
         <AdminLayout>
             <ToastContainer />
             <div className="p-6 bg-white rounded-lg shadow">
                 <div className="flex justify-between items-center mb-6">
-                    <h1 className="text-2xl font-bold">Blog Posts</h1>
+                    <h1 className="text-2xl font-bold"><span className="text-red-500">*Only Your</span> Blog Posts</h1>
                     <Link
                         href={route("blogs.create")}
                         className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"

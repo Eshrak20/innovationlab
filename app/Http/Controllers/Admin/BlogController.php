@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 
@@ -44,14 +45,13 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'nullable|image|max:9048', // Ensure image validation
+            'image' => 'nullable|image|max:9048',
             'title' => 'required|string|max:255',
             'summary' => 'nullable|string',
             'description' => 'required|string',
             'date' => 'required|date',
             'published_by' => 'required|string',
             'category' => 'required|in:technical,nontechnical',
-            'type' => 'required|string',
             'slug' => 'required|string|unique:blogs,slug',
         ]);
 
@@ -63,19 +63,16 @@ class BlogController extends Controller
         }
 
         $blog = Blog::create([
-            'image' => $imagePath, // Save the image path
+            'image' => $imagePath,
             'title' => $request->title,
             'summary' => $request->summary,
             'description' => $request->description,
             'date' => $request->date,
             'published_by' => $request->published_by,
             'category' => $request->category,
-            'type' => $request->type,
             'slug' => Str::slug($request->slug),
             'admin_id' => auth()->id(),
         ]);
-
-        return redirect()->route('blogs.index')->with('success', 'Blog created successfully');
     }
 
 
@@ -104,7 +101,6 @@ class BlogController extends Controller
             'date' => 'required|date',
             'published_by' => 'required|string',
             'category' => 'required|in:technical,nontechnical',
-            'type' => 'required|string',
             'slug' => 'required|string|unique:blogs,slug,' . $id,
         ]);
     

@@ -32,7 +32,7 @@ const BlogEdit = ({ blog, categories }) => {
         // Append all fields to formData using a loop
         const fieldsToAppend = [
             'title', 'summary', 'description', 'date', 
-            'published_by', 'category', 'type', 'slug'
+            'published_by', 'category', 'slug'
         ];
         
         fieldsToAppend.forEach(key => {
@@ -251,29 +251,6 @@ const BlogEdit = ({ blog, categories }) => {
                                 </p>
                             )}
                         </div>
-
-                        {/* Type */}
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">
-                                Type*
-                            </label>
-                            <input
-                                type="text"
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                value={data.type}
-                                onChange={(e) =>
-                                    setData("type", e.target.value)
-                                }
-                                placeholder="e.g., article, tutorial, announcement"
-                                required
-                            />
-                            {errors.type && (
-                                <p className="mt-1 text-sm text-red-600">
-                                    {errors.type}
-                                </p>
-                            )}
-                        </div>
-
                         {/* Summary */}
                         <div className="col-span-2">
                             <label className="block text-sm font-medium text-gray-700">

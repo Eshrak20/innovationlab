@@ -24,6 +24,7 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/blog', [BlogControllerView::class, 'index']);
 Route::get('/blog/{id}', [BlogControllerView::class, 'show']);
 Route::get('/service', [ServiceControllerHome::class, 'index']);
+Route::get('/service/{id}', [ServiceControllerHome::class, 'show']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::post('/forms', [FormController::class, 'store'])->name('forms.store');
 Route::get('/privacy', [PrivacyPolicyController::class, 'index']);
