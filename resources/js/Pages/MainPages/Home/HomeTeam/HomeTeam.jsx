@@ -5,118 +5,109 @@ const HomeTeam = ({ profileData }) => {
     const [currentIndex, setCurrentIndex] = useState(2);
     const [autoSlide, setAutoSlide] = useState(true);
 
-    if (!Array.isArray(profileData) || profileData.length === 0) {
-        return null;
-    }
+    // Exit if no data
+    if (!Array.isArray(profileData) || profileData.length === 0) return null;
 
-    const parseArrayField = (field) => {
+    // Parse stringified arrays
+    const parseArray = (field) => {
         if (Array.isArray(field)) return field;
-        if (typeof field === "string") {
-            try {
-                return JSON.parse(field);
-            } catch {
-                return [];
-            }
+        try {
+            return JSON.parse(field);
+        } catch {
+            return [];
         }
-        return [];
     };
 
+    // Enhance all profiles
     const completeProfiles = profileData.map((profile) => ({
         ...profile,
         image: profile.profilePhotoPath || "https://via.placeholder.com/150",
-        skills: parseArrayField(profile.skills),
-        certifications: parseArrayField(profile.certifications),
+        skills: parseArray(profile.skills),
+        certifications: parseArray(profile.certifications),
     }));
 
+    // Auto slider effect
     useEffect(() => {
         if (!autoSlide) return;
-        const interval = setInterval(() => {
-            handleNext();
-        }, 5000);
-        return () => clearInterval(interval);
+        const timer = setInterval(handleNext, 5000);
+        return () => clearInterval(timer);
     }, [autoSlide, currentIndex]);
 
     const handlePrev = () => {
         setCurrentIndex((prev) =>
             prev === 0 ? completeProfiles.length - 1 : prev - 1
         );
-        setAutoSlide(false);
-        setTimeout(() => setAutoSlide(true), 10000);
+        pauseAutoSlide();
     };
 
     const handleNext = () => {
         setCurrentIndex((prev) =>
             prev === completeProfiles.length - 1 ? 0 : prev + 1
         );
+        pauseAutoSlide();
+    };
+
+    const pauseAutoSlide = () => {
         setAutoSlide(false);
         setTimeout(() => setAutoSlide(true), 10000);
     };
 
-    const visibleCards = [];
-    for (let i = -2; i <= 2; i++) {
+    // Render visible cards with relative positions
+    const visibleCards = Array.from({ length: 5 }, (_, i) => {
+        const position = i - 2;
         const index =
-            (currentIndex + i + completeProfiles.length) %
+            (currentIndex + position + completeProfiles.length) %
             completeProfiles.length;
-        visibleCards.push({
+        return {
             ...completeProfiles[index],
-            position: i,
-            active: i === 0,
-        });
-    }
+            position,
+            active: position === 0,
+        };
+    });
 
-    const renderListItems = (items) => {
-        if (!items || items.length === 0) {
-            return <li className="text-sm text-gray-500">None listed</li>;
-        }
-        return items.map((item, i) => (
-            <li key={i} className="text-sm text-gray-700">
-                {item}
-            </li>
-        ));
-    };
+    const renderList = (items) =>
+        items?.length ? (
+            <ul className="flex flex-wrap gap-2 mt-2">
+                {items.map((item, i) => (
+                    <li
+                        key={i}
+                        className="px-2 py-1 bg-indigo-100  text-indigo-800  text-xs rounded-full"
+                    >
+                        {item}
+                    </li>
+                ))}
+            </ul>
+        ) : null;
 
-    const renderField = (label, value) => {
-        if (!value) return null;
-        return (
-            <p className="text-sm">
-                <span className="font-medium">{label}:</span> {value}
+    const renderField = (label, value) =>
+        value ? (
+            <p className="text-sm mb-2">
+                <span className="font-medium text-indigo-600 ">{label}:</span>{" "}
+                <span className="text-gray-700 ">{value}</span>
             </p>
-        );
-    };
+        ) : null;
 
-    const renderIcons = (profile) => {
-        const icons = [
-            {
-                label: "LinkedIn",
-                url: profile.linkedin,
-                icon: <FaLinkedin />,
-            },
-            {
-                label: "GitHub",
-                url: profile.github,
-                icon: <FaGithub />,
-            },
-            {
-                label: "Portfolio",
-                url: profile.portfolio_url,
-                icon: <FaGlobe />,
-            },
+    const renderSocialIcons = ({ linkedin, github, portfolio_url }) => {
+        const links = [
+            { icon: <FaLinkedin />, url: linkedin, label: "LinkedIn" },
+            { icon: <FaGithub />, url: github, label: "GitHub" },
+            { icon: <FaGlobe />, url: portfolio_url, label: "Portfolio" },
         ];
 
         return (
-            <div className="flex gap-4 text-xl mt-2">
-                {icons.map(
-                    (item, i) =>
-                        item.url && (
+            <div className="flex gap-4 text-xl mt-4 justify-center">
+                {links.map(
+                    ({ icon, url, label }, i) =>
+                        url && (
                             <a
                                 key={i}
-                                href={item.url}
+                                href={url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hover:text-blue-600 transition-transform transform hover:scale-110"
-                                title={item.label}
+                                title={label}
+                                className="text-gray-600  hover:text-indigo-600  transform hover:scale-125 transition-all"
                             >
-                                {item.icon}
+                                {icon}
                             </a>
                         )
                 )}
@@ -125,238 +116,187 @@ const HomeTeam = ({ profileData }) => {
     };
 
     return (
-        <div className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white ">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-gray-800 mb-2">
+                    <h2 className="text-4xl font-bold text-gray-800 ">
                         Our Expert Team
                     </h2>
-                    <p className="text-lg text-gray-600">
-                        Meet our team of professionals with diverse expertise
+                    <p className="text-lg text-gray-600 ">
+                        Meet our team of professionals
                     </p>
                 </div>
 
-                <div className="flex items-center justify-center relative">
+                <div className="relative flex justify-center items-center">
+                    {/* Navigation Buttons */}
                     <button
-                        className="absolute left-0 z-20 bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 hover:scale-110 transition-all duration-300 focus:outline-none"
                         onClick={handlePrev}
-                        aria-label="Previous profile"
+                        className="absolute left-0 z-20 bg-indigo-600 text-white w-10 h-10 rounded-full shadow hover:bg-indigo-700 hover:scale-110 transition-all"
+                        aria-label="Previous"
                     >
                         &lt;
                     </button>
 
-                    <div className="flex items-center justify-center perspective-1000 h-[500px] w-full relative">
-                        {visibleCards.map((profile, idx) => (
-                            <div
-                                key={idx}
-                                className={`absolute transition-all duration-500 ease-in-out rounded-xl bg-blue-100/80 backdrop-blur-md shadow-2xl border border-blue-200 overflow-hidden cursor-pointer group ${
-                                    profile.active
-                                        ? "w-[350px] h-auto z-10 scale-105"
-                                        : "w-[300px] h-[450px]"
-                                } ${
-                                    profile.position === -2
-                                        ? "-translate-x-[180%] scale-75 opacity-60 z-1"
-                                        : profile.position === -1
-                                        ? "-translate-x-[90%] scale-90 opacity-80 z-2"
-                                        : profile.position === 1
-                                        ? "translate-x-[90%] scale-90 opacity-80 z-2"
-                                        : profile.position === 2
-                                        ? "translate-x-[180%] scale-75 opacity-60 z-1"
-                                        : ""
-                                }`}
-                                onClick={() => {
-                                    if (!profile.active) {
-                                        const diff = profile.position;
+                    {/* Card Carousel */}
+                    <div className="flex justify-center relative w-full h-[550px] mt-10 perspective-1000">
+                        {visibleCards.map((profile, idx) => {
+                            const baseStyle =
+                                "absolute transition-all duration-500 rounded-2xl bg-white  shadow-lg overflow-hidden cursor-pointer group";
+                            const sizeStyle = profile.active
+                                ? "w-[350px] h-[500px] z-10 scale-105"
+                                : "w-[300px] h-[450px]";
+                            const positionStyle =
+                                profile.position === -2
+                                    ? "-translate-x-[180%] scale-75 opacity-60 z-1"
+                                    : profile.position === -1
+                                    ? "-translate-x-[90%] scale-90 opacity-80 z-2"
+                                    : profile.position === 1
+                                    ? "translate-x-[90%] scale-90 opacity-80 z-2"
+                                    : profile.position === 2
+                                    ? "translate-x-[180%] scale-75 opacity-60 z-1"
+                                    : "";
+
+                            return (
+                                <div
+                                    key={idx}
+                                    className={`${baseStyle} ${sizeStyle} ${positionStyle} hover:shadow-2xl hover:-translate-y-3`}
+                                    onClick={() =>
+                                        !profile.active &&
                                         setCurrentIndex(
-                                            (prev) =>
-                                                (prev +
-                                                    diff +
-                                                    completeProfiles.length) %
+                                            (currentIndex +
+                                                profile.position +
+                                                completeProfiles.length) %
                                                 completeProfiles.length
-                                        );
+                                        )
                                     }
-                                }}
-                            >
-                                <div className="max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-blue-100 scrollbar-thumb-rounded hover:scrollbar-thumb-blue-500 transition-colors duration-300">
-                                    {/* Card Wrapper with Animated Gradient Border */}
-                                    <div className="rounded-xl p-[2px] bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-300 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] animate-gradient-border">
-                                        {/* Inner Card */}
-                                        <div className="bg-white rounded-xl overflow-hidden custom-card group">
-                                            {/* Card Header */}
-                                            <div className="p-6 flex flex-col items-center bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 relative overflow-hidden">
-                                                {/* Animated background elements */}
-                                                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
-                                                    <div className="absolute top-0 left-10 w-20 h-20 bg-blue-300 rounded-full filter blur-xl animate-float1"></div>
-                                                    <div className="absolute top-10 right-5 w-24 h-24 bg-purple-300 rounded-full filter blur-xl animate-float2"></div>
-                                                </div>
-
-                                                <div className="w-32 h-32 mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg transition-all duration-500 hover:scale-110 hover:shadow-xl relative z-10">
+                                >
+                                    <div className="h-full overflow-y-auto pr-2 no-scrollbar">
+                                        {/* Profile Header with Enhanced Image */}
+                                        <div className="relative h-60 bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 flex items-center justify-center overflow-hidden">
+                                            {profile.image ? (
+                                                <div className="relative w-full h-full">
                                                     <img
-                                                        src={
-                                                            profile.profilePhotoPath ||
-                                                            "https://via.placeholder.com/150"
-                                                        }
+                                                        src={profile.image}
                                                         alt={
-                                                            profile.name ||
-                                                            "Team member"
+                                                            profile.title ||
+                                                            "Profile"
                                                         }
-                                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                                        loading="lazy"
+                                                        className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-20 transition-opacity duration-500"
                                                     />
-                                                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                                                    <img
+                                                        src={profile.image}
+                                                        alt={
+                                                            profile.title ||
+                                                            "Profile"
+                                                        }
+                                                        className="w-44 h-44 rounded-full border-[4px] border-white object-cover absolute -bottom-2 left-1/2 transform -translate-x-1/2 group-hover:scale-110 group-hover:-translate-y-5 transition-all duration-500 shadow-xl"
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div className="w-24 h-24 rounded-full bg-white  flex items-center justify-center text-3xl font-bold text-indigo-600 border-[4px] border-white absolute -bottom-12 left-1/2 transform -translate-x-1/2 group-hover:scale-110 group-hover:-translate-y-5 transition-all duration-500 shadow-xl">
+                                                    {profile?.title?.[0] || "?"}
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* Profile Body */}
+                                        <div className="pt-16 pb-6 px-6">
+                                            <h3 className="text-xl font-bold text-center text-gray-800  mb-1 group-hover:text-indigo-600  transition-colors">
+                                                {profile.title ||
+                                                    "No name provided"}
+                                            </h3>
+                                            {profile.subtitle && (
+                                                <p className="text-sm text-indigo-600  text-center font-medium mb-4">
+                                                    {profile.subtitle}
+                                                </p>
+                                            )}
+
+                                            {/* Experience & Specialization */}
+                                            <div className="flex justify-between mb-4">
+                                                <div className="text-center">
+                                                    <span className="block text-xl font-bold text-gray-700 group-hover:text-indigo-600 transition-colors">
+                                                        {profile.experience_years
+                                                            ? `${profile.experience_years}+`
+                                                            : "N/A"}
+                                                    </span>
+                                                    <span className="text-xs text-gray-500">
+                                                        Years Exp
+                                                    </span>
                                                 </div>
 
-                                                <h3 className="text-2xl font-bold text-gray-900 mb-1 text-center hover:text-indigo-600 transition-colors duration-300 relative z-10">
-                                                    {profile.title ||
-                                                        "No name provided"}
-                                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-500 group-hover:w-full"></span>
-                                                </h3>
-
-                                                {profile.subtitle && (
-                                                    <p className="text-gray-600 text-sm mb-2 text-center relative z-10 transform transition-transform duration-300 group-hover:-translate-y-1 mt-3">
-                                                        {profile.subtitle}
-                                                    </p>
-                                                )}
+                                                <div className="text-center">
+                                                    <span className="block text-xs font-semibold text-gray-700  uppercase">
+                                                        Specialization
+                                                    </span>
+                                                    <span className="text-xs text-gray-500">
+                                                        {profile.specialization ||
+                                                            "Not specified"}
+                                                    </span>
+                                                </div>
                                             </div>
 
-                                            {/* Card Details */}
-                                            <div className="p-6 flex flex-col items-center text-gray-800 bg-white relative">
-                                                {profile.active && (
-                                                    <div className="w-full space-y-4 text-left">
-                                                        {/* Fields */}
-                                                        <div className="space-y-2">
-                                                            {renderField(
-                                                                "Designation",
-                                                                profile.employment_type
-                                                            )}
-                                                            {renderField(
-                                                                "Specialization",
-                                                                profile.specialization
-                                                            )}
-                                                            {renderField(
-                                                                "Years of Experience",
-                                                                profile.experience_years
-                                                            )}
-                                                        </div>
-
-                                                        {/* Skills */}
-                                                        <div className="space-y-2">
-                                                            <h4 className="font-bold text-indigo-600 flex items-center">
-                                                                <span className="mr-2">
-                                                                    🌟
-                                                                </span>
-                                                                <span>
-                                                                    Skills
-                                                                </span>
-                                                            </h4>
-                                                            <ul className="list-disc pl-5 space-y-1">
-                                                                {renderListItems(
-                                                                    profile.skills
-                                                                )}
-                                                            </ul>
-                                                        </div>
-
-                                                        {/* Certifications */}
-                                                        <div className="space-y-2">
-                                                            <h4 className="font-bold text-indigo-600 flex items-center">
-                                                                <span className="mr-2">
-                                                                    🏆
-                                                                </span>
-                                                                <span>
-                                                                    Certifications
-                                                                </span>
-                                                            </h4>
-                                                            <ul className="list-disc pl-5 space-y-1">
-                                                                {renderListItems(
-                                                                    profile.certifications
-                                                                )}
-                                                            </ul>
-                                                        </div>
-
-                                                        {/* Personal Info */}
-                                                        <div className="space-y-2">
-                                                            <h4 className="font-bold text-indigo-600 flex items-center">
-                                                                <span className="mr-2">
-                                                                    ℹ️
-                                                                </span>
-                                                                <span>
-                                                                    Personal
-                                                                    Information
-                                                                </span>
-                                                            </h4>
-                                                            {renderField(
-                                                                "Age",
-                                                                profile.age
-                                                            )}
-                                                            {renderField(
-                                                                "Education",
-                                                                profile.education
-                                                            )}
-                                                            {renderField(
-                                                                "Location",
-                                                                profile.location
-                                                            )}
-                                                            {renderField(
-                                                                "Bio",
-                                                                profile.bio
-                                                            )}
-                                                        </div>
-
-                                                        {/* Social Media */}
-                                                        <div className="space-y-2 pt-2">
-                                                            <h4 className="font-bold text-indigo-600 flex items-center">
-                                                                <span className="mr-2">
-                                                                    🌐
-                                                                </span>
-                                                                <span>
-                                                                    Connect
-                                                                </span>
-                                                            </h4>
-                                                            <div className="flex space-x-3">
-                                                                {renderIcons(
-                                                                    profile
-                                                                )}
-                                                            </div>
-                                                        </div>
+                                            {profile.active && (
+                                                <div className="space-y-4 text-left">
+                                                    <div>
+                                                        <h4 className="font-bold text-indigo-600 ">
+                                                            🌟 Skills
+                                                        </h4>
+                                                        {renderList(
+                                                            profile.skills
+                                                        )}
                                                     </div>
-                                                )}
-                                            </div>
+
+                                                    <div>
+                                                        <h4 className="font-bold text-indigo-600">
+                                                            🏆 Certifications
+                                                        </h4>
+                                                        {renderList(
+                                                            profile.certifications
+                                                        )}
+                                                    </div>
+
+                                                    <div>
+                                                        <h4 className="font-bold text-indigo-600">
+                                                            ℹ️ About
+                                                        </h4>
+                                                        {renderField(
+                                                            "Age",
+                                                            profile.age
+                                                        )}
+                                                        {renderField(
+                                                            "Education",
+                                                            profile.education
+                                                        )}
+                                                        {renderField(
+                                                            "Location",
+                                                            profile.location
+                                                        )}
+                                                        {renderField(
+                                                            "Bio",
+                                                            profile.bio
+                                                        )}
+                                                    </div>
+
+                                                    {renderSocialIcons(profile)}
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
 
                     <button
-                        className="absolute right-0 z-20 bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md hover:bg-blue-600 hover:scale-110 transition-all duration-300 focus:outline-none"
                         onClick={handleNext}
-                        aria-label="Next profile"
+                        className="absolute right-0 z-20 bg-indigo-600 text-white w-10 h-10 rounded-full shadow hover:bg-indigo-700 hover:scale-110 transition-all"
+                        aria-label="Next"
                     >
                         &gt;
                     </button>
                 </div>
-
-                <div className="flex justify-center mt-8 space-x-2">
-                    {completeProfiles.map((_, index) => (
-                        <button
-                            key={index}
-                            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                                index === currentIndex
-                                    ? "bg-blue-500 scale-125"
-                                    : "bg-gray-300"
-                            }`}
-                            onClick={() => {
-                                setCurrentIndex(index);
-                                setAutoSlide(false);
-                                setTimeout(() => setAutoSlide(true), 500);
-                            }}
-                            aria-label={`Go to profile ${index + 1}`}
-                        />
-                    ))}
-                </div>
             </div>
-        </div>
+        </section>
     );
 };
 

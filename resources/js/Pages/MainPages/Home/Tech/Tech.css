@@ -1,0 +1,57 @@
+.tech-card {
+    position: relative;
+    animation: glowBorder 3s linear infinite;
+    border: 2px solid transparent;
+    border-image: linear-gradient(90deg, #ffffff44, #ffffffaa, #ffffff44);
+    border-image-slice: 1;
+    background-color: transparent;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: cover;
+  }
+  
+  .tech-logo {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 12px #ffffffcc) brightness(1.5) contrast(1.5);
+    transition: transform 0.6s ease, filter 0.6s ease;
+    opacity: 1;
+  }
+  
+  /* Hover Effect: Glow + Rotation */
+  .tech-card:hover .tech-logo,
+  .tech-card.auto-hover .tech-logo {
+    transform: rotate(360deg) scale(1.15);
+    filter: drop-shadow(0 0 16px #ffffff) brightness(1.8) contrast(1.8);
+  }
+  
+  /* Auto hover (animated pulsing) */
+  @keyframes autoHover {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+  }
+  
+  .auto-hover .tech-logo {
+    animation: autoHover 4s ease-in-out infinite;
+  }
+  
+  /* Animated glowing border */
+  @keyframes glowBorder {
+    0% {
+      border-image-source: linear-gradient(0deg, #fff2, #fff8, #fff2);
+    }
+    50% {
+      border-image-source: linear-gradient(180deg, #fff2, #fff8, #fff2);
+    }
+    100% {
+      border-image-source: linear-gradient(0deg, #fff2, #fff8, #fff2);
+    }
+  }
+  

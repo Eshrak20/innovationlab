@@ -1,5 +1,6 @@
 import { useState } from "react";
 import techData from "../../../../../../public/Json/TeachData.json";
+import './Tech.css';
 
 const baseUrl = import.meta.env.VITE_APP_BASE_URL;
 
@@ -31,20 +32,29 @@ const Tech = () => {
             <div className="flex flex-wrap justify-center gap-8 md:gap-x-20 2xl:gap-x-20 gap-y-10 mt-10">
                 {techData[selectedTech].map((item) => (
                     <div
-                        key={item.name}
-                        className="flex flex-col items-center group transform transition duration-300 hover:scale-105"
+                    key={item.name}
+                    className="flex flex-col items-center group transform transition duration-300 hover:scale-105"
+                  >
+                    <div
+                      className="tech-card w-24 h-24 md:w-28 md:h-28 flex items-center justify-center shadow-lg group-hover:shadow-purple-300 auto-hover"
+                      style={{
+                        backgroundColor: item.hexCode,
+                        WebkitMaskImage: `url("/reactAssets/images/Tech/tailwind.svg")`,
+                        maskImage: `url("/reactAssets/images/Tech/tailwind.svg")`,
+                      }}
                     >
-                        <div className="bg-white rounded-full p-2 w-24 h-24 md:w-28 md:h-28 flex items-center justify-center shadow-lg group-hover:shadow-purple-300 transition-all duration-300">
-                            <img
-                                src={`${baseUrl}/${item.image}`}
-                                alt={item.name}
-                                className="w-16 h-16 md:w-20 md:h-20 object-contain transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110"
-                            />
-                        </div>
-                        <h3 className="text-sm md:text-lg font-semibold mt-2 text-center text-white">
-                            {item.name}
-                        </h3>
+                      <img
+                        src={`${baseUrl}/${item.image}`}
+                        alt={item.name}
+                        className="tech-logo w-10 h-10 md:w-14 md:h-14 object-contain"
+                      />
                     </div>
+                    <h3 className="text-sm md:text-lg font-semibold mt-2 text-center text-white">
+                      {item.name}
+                    </h3>
+                  </div>
+                  
+                    
                 ))}
             </div>
         </div>

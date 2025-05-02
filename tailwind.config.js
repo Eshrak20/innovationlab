@@ -17,10 +17,27 @@ export default {
             },
         },
     },
-    plugins: [require("daisyui")],
+    plugins: [require("daisyui")] 
+    ,
     daisyui: {
         themes: ["dark"], // Forces dark theme
     },
 
-    plugins: [forms],
+    plugins: [
+        forms,
+        function ({ addUtilities }) {
+            addUtilities({
+                ".no-scrollbar": {
+                    /* Firefox */
+                    "scrollbar-width": "none",
+                    /* IE and Edge */
+                    "-ms-overflow-style": "none",
+                    /* WebKit */
+                    "&::-webkit-scrollbar": {
+                        display: "none",
+                    },
+                },
+            });
+        },
+    ],
 };
