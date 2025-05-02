@@ -6,6 +6,7 @@
         "dev": "vite"
     },
     "devDependencies": {
+        "@babel/plugin-proposal-decorators": "^7.27.1",
         "@headlessui/react": "^2.0.0",
         "@tailwindcss/forms": "^0.5.3",
         "@tailwindcss/vite": "^4.0.0",
