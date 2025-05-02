@@ -1,9 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const AnimatedCounter = ({ value }) => {
     const [count, setCount] = useState(0);
+    const [hasAnimated, setHasAnimated] = useState(false);
+    const ref = useRef(null);
 
     useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    animateCounter();
+                    setHasAnimated(true);
+                    observer.disconnect(); // stop observing once triggered
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => observer.disconnect();
+    }, [value]);
+
+    const animateCounter = () => {
         let start = 0;
         const end = parseInt(value);
         if (isNaN(end)) return;
@@ -21,23 +42,19 @@ const AnimatedCounter = ({ value }) => {
                 setCount(start);
             }
         }, incrementTime);
-
-        return () => clearInterval(counter);
-    }, [value]);
+    };
 
     return (
-        <div className="relative inline-block">
+        <div ref={ref} className="relative inline-block">
             {/* Blue Fire Effect */}
             <div className="absolute -inset-3 rounded-full bg-blue-400 opacity-0 group-hover:opacity-70 blur-xl transition-all duration-500 animate-pulse"></div>
             <div className="absolute -inset-2 rounded-full bg-blue-300 opacity-0 group-hover:opacity-40 blur-md transition-all duration-300"></div>
-            
             <span className="relative z-10 text-white font-extrabold text-4xl md:text-5xl">
                 {count}+
             </span>
         </div>
     );
 };
-
 const HomeAboutStatus = ({ stats }) => {
     return (
         <div className="relative bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 text-white rounded-2xl p-8 md:p-10 shadow-2xl mt-10 overflow-hidden">

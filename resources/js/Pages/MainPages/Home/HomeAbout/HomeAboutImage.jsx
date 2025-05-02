@@ -7,14 +7,14 @@ const HomeAboutImage = () => {
 
     const images = [
         {
-            main: "reactAssets/images/HomeAboutImages/lab1.jpeg",
-            left1: "reactAssets/images/HomeAboutImages/potraitlab3.jpeg",
-            left2: "reactAssets/images/HomeAboutImages/potraitlab4.jpeg",
+            main: "reactAssets/images/HomeAboutImages/fardinPc1.jpeg",
+            left1: "reactAssets/images/HomeAboutImages/g1.jpeg",
+            left2: "reactAssets/images/HomeAboutImages/jisan1.jpeg",
         },
         {
-            main: "reactAssets/images/HomeAboutImages/lab2.jpeg",
-            left1: "reactAssets/images/HomeAboutImages/potraitlab4.jpeg",
-            left2: "reactAssets/images/HomeAboutImages/potraitlab3.jpeg",
+            main: "reactAssets/images/HomeAboutImages/g1.jpeg",
+            left1: "reactAssets/images/HomeAboutImages/fardinPc1.jpeg",
+            left2: "reactAssets/images/HomeAboutImages/g1.jpeg",
         },
     ];
 
@@ -78,8 +78,19 @@ const HomeAboutImage = () => {
                 </AnimatePresence>
             </div>
 
-            {/* Right - Big Main Image */}
-            <div className="relative w-[500px] h-[500px] rounded-2xl overflow-hidden shadow-2xl ">
+            {/* Right - Big Main Image with Hover Effect */}
+            <motion.div 
+                className="relative w-[850px] h-[700px] rounded-2xl overflow-hidden shadow-2xl"
+                whileHover={{
+                    boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.5)"
+                }}
+                initial={{ boxShadow: "0 0 0 0px rgba(99, 102, 241, 0)" }}
+                transition={{
+                    duration: 0.5,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                }}
+            >
                 <AnimatePresence custom={direction} mode="wait">
                     <motion.div
                         key={`main-${index}`}
@@ -93,12 +104,27 @@ const HomeAboutImage = () => {
                         <img
                             src={images[index].main}
                             alt="Main"
-                            className="w-full h-full object-cover rounded-2xl"
+                            className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/20 " />
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/20" />
                     </motion.div>
                 </AnimatePresence>
-            </div>
+
+                {/* Animated Border Elements */}
+                <motion.div 
+                    className="absolute inset-0 border-2 border-transparent"
+                    whileHover={{
+                        borderColor: "rgba(139, 92, 246, 0.5)",
+                        transition: {
+                            borderColor: {
+                                duration: 0.3,
+                                repeat: Infinity,
+                                repeatType: "mirror"
+                            }
+                        }
+                    }}
+                />
+            </motion.div>
         </div>
     );
 };

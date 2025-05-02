@@ -1,10 +1,10 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Importing styles
-import img1 from "../../../../../../public/reactAssets/images/Gallery/1.png";
-import img2 from "../../../../../../public/reactAssets/images/Gallery/2.png";
-import img3 from "../../../../../../public/reactAssets/images/Gallery/3.png";
-import img4 from "../../../../../../public/reactAssets/images/Gallery/4.png";
-import img5 from "../../../../../../public/reactAssets/images/Gallery/5.png";
+import img1 from "../../../../../../public/reactAssets/images/Gallery/1.jpeg";
+import img2 from "../../../../../../public/reactAssets/images/Gallery/2.jpeg";
+import img3 from "../../../../../../public/reactAssets/images/Gallery/3.jpeg";
+import img4 from "../../../../../../public/reactAssets/images/Gallery/4.jpeg";
+import img5 from "../../../../../../public/reactAssets/images/Gallery/5.jpeg";
 
 const Gallery = () => {
   // Array of images
