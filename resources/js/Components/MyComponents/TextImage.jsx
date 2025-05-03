@@ -41,7 +41,7 @@ const TextImage = ({
                         {title}
                     </h1>
                 </div>
-                <p className="mt-2 md:whitespace-pre-line text-lg md:text-xl text-gray-800 leading-relaxed">
+                <p className="mt-2 md:whitespace-pre-line text-lg md:text-xl text-gray-800 dark:text-gray-200  leading-relaxed">
                     {description}
                 </p>
                 <Link href={link}>

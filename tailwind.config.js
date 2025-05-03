@@ -13,26 +13,22 @@ export default {
     theme: {
         extend: {
             colors: {
-                success: "#1B42AE", // Add your success color here
+                success: "#1B42AE", // Your custom color
+            },
+            fontFamily: {
+                sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
             },
         },
-    },
-    plugins: [require("daisyui")] 
-    ,
-    daisyui: {
-        themes: ["dark"], // Forces dark theme
     },
 
     plugins: [
         forms,
+        require("daisyui"),
         function ({ addUtilities }) {
             addUtilities({
                 ".no-scrollbar": {
-                    /* Firefox */
                     "scrollbar-width": "none",
-                    /* IE and Edge */
                     "-ms-overflow-style": "none",
-                    /* WebKit */
                     "&::-webkit-scrollbar": {
                         display: "none",
                     },
@@ -40,4 +36,14 @@ export default {
             });
         },
     ],
+
+    daisyui: {
+        themes: ["light"], // Only load light theme
+        darkTheme: "light", // Force light theme even in dark mode
+        base: true,
+        styled: true,
+        utils: true,
+        prefix: "",
+        logs: true,
+    },
 };

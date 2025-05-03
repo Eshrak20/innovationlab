@@ -18,7 +18,7 @@ const Navbar = () => {
             const screenWidth = window.innerWidth;
 
             setIsScrolled(
-                screenWidth > 768 ? currentScrollY > 150 : currentScrollY > 30
+                screenWidth > 768 ? currentScrollY > 10 : currentScrollY > 30
             );
             setShowNavbar(
                 !(currentScrollY > lastScrollY && currentScrollY > 1050)
@@ -91,7 +91,7 @@ const Navbar = () => {
     return (
         <div
             className={`w-full flex justify-center fixed top-0 z-10 md:px-7 transition-all duration-300 ease-in-out bg-[#1D232A] pb-5  ${
-                isScrolled ? "bg-opacity-50" : "bg-opacity-0"
+                isScrolled ? "bg-opacity-70" : "bg-opacity-0"
             } ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
         >
             <div className="w-full px-5 pt-2 max-w-full lg:max-w-screen-xl 2xl:max-w-screen-2xl flex items-center justify-between mt-5 md:mt-2">

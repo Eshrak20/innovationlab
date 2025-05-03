@@ -79,9 +79,6 @@ const Tech = () => {
 
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4 py-20">
-                {/* Navbar */}
-                
-
                 {/* Main Content */}
                 <motion.div 
                     initial={{ opacity: 0 }}
@@ -116,11 +113,7 @@ const Tech = () => {
                         {Object.keys(techData).map((tech) => (
                             <motion.button
                                 key={tech}
-                                className={`px-6 py-3 rounded-lg font-semibold text-lg transition ${
-                                    selectedTech === tech 
-                                        ? "text-indigo-700" 
-                                        : "text-white hover:bg-white/20"
-                                }`}
+                                className={`px-6 py-3 rounded-lg font-semibold text-lg transition`}
                                 onClick={() => setSelectedTech(tech)}
                                 variants={buttonVariants}
                                 whileHover="hover"
@@ -135,9 +128,9 @@ const Tech = () => {
                     {/* Railway Track */}
                     <div className="relative h-96 overflow-hidden mb-32">
                         {/* Track lines */}
-                        <div className="absolute top-1/2 left-0 right-0 h-3 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                        {/* <div className="absolute top-1/2 left-0 right-0 h-3 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                         <div className="absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                        <div className="absolute top-3/4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                        <div className="absolute top-3/4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div> */}
                         
                         {/* Sleepers */}
                         <div className="absolute top-0 bottom-0 left-0 right-0 flex">

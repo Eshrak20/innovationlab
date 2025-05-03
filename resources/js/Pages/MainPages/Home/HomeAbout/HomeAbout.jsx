@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import HomeAboutStatus from "./HomeAboutStatus";
 import HomeAboutImage from "./HomeAboutImage";
 

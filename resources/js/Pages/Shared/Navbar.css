@@ -1,61 +1,61 @@
 .nav-item {
-  position: relative;
-  padding: 8px 12px;
-  color: white;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border-radius: 8px;
+    position: relative;
+    padding: 8px 12px;
+    color: white;
+    /* transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); */
+    border-radius: 5px;
 }
 
 .nav-item:hover {
-  color: #c4b5fd; /* lighter shade of #a855f7 */
-  background: rgba(168, 85, 247, 0.1); /* subtle purple glow */
+    color: #c4b5fd;
+    background: rgba(168, 85, 247, 0.1);
 }
 
 .nav-item.active {
-  color: #8b5cf6; /* close to #6366f1 */
-  font-weight: 600;
-  padding: 8px 12px;
+    color: #8a5cf6;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.884); /* white with 60% opacity */
 }
 
 .nav-item.active::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 3px;
-  background: linear-gradient(to right, #a855f7, #6366f1);
-  border-radius: 3px;
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    /* background: linear-gradient(to right, #a855f7, #6366f1); */
+    border-radius: 3px;
 }
 
 /* Mobile menu animations */
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Logo animation */
 @keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(168, 85, 247, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
-  }
+    0% {
+        box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(168, 85, 247, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
+    }
 }
 
 /* Scrolled state enhancements */
 .scrolled-nav {
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
 }

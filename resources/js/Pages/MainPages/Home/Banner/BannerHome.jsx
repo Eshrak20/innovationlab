@@ -47,7 +47,7 @@ const BannerHome = ({stats}) => {
 
             {/* Centeblue Content */}
             <div className="relative text-center z-10">
-                <h2 className="-mt-32 text-xl md:text-4xl 2xl:text-6xl font-extrabold uppercase text-white  bg-opacity-70 p-8 rounded-xl shadow-2xl transition duration-500 ease-in-out hover:scale-95">
+                <h2 className="-mt-32 text-xl md:text-4xl 2xl:text-6xl font-extrabold uppercase text-white  bg-opacity-70 p-8 rounded-xl transition duration-500 ease-in-out hover:scale-95">
                     {currentTagline.split('\n').map((line, i) => (
                         <React.Fragment key={i}>
                             "{line}"
