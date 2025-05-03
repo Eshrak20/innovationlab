@@ -33,7 +33,7 @@ const HomeAbout = ({ stats }) => {
 
                 {/* Image Section */}
                 <div>
-                  <HomeAboutImage/>
+                    <HomeAboutImage />
                 </div>
             </div>
         </>

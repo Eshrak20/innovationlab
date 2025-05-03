@@ -58,28 +58,15 @@ const ServicesMain = ({ service }) => {
                 <div className="h-56"></div>
 
                 <div className="max-w-full lg:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-4 md:px-8 lg:px-12">
-                    <Vision
-                        title="Become the most preferred technology"
-                        description={`Become the most preferred technology integrator and service provider with \n multiplatform, vendor independent information and communication \n technology solutions for both local and global market.`}
-                        imageUrl={`reactAssets/images/AboutBoxAbout/2.png`}
-                    />
-                    <Vision
-                        title="To develop a sustainable information Technology"
-                        description={`To develop a sustainable information Technology infra. & design the most \n Scalable IT solutions enabling Clients to reach their business goals.`}
-                        imageUrl={`reactAssets/images/AboutBoxAbout/1.png`}
-                        reverse={true}
-                    />
-                    <Vision
-                        title="Become the most preferred technology"
-                        description={`Become the most preferred technology integrator and service provider with \n multiplatform, vendor independent information and communication \n technology solutions for both local and global market.`}
-                        imageUrl={`reactAssets/images/AboutBoxAbout/2.png`}
-                    />
-                    <Vision
-                        title="To develop a sustainable information Technology"
-                        description={`To develop a sustainable information Technology infra. & design the most \n Scalable IT solutions enabling Clients to reach their business goals.`}
-                        imageUrl={`reactAssets/images/AboutBoxAbout/1.png`}
-                        reverse={true}
-                    />
+                    {service?.map((item, index) => (
+                        <Vision
+                            key={item.id}
+                            title={item.title}
+                            description={item.short_description}
+                            imageUrl={`/storage/${item.image}`}
+                            reverse={index % 2 !== 0} // alternate layout
+                        />
+                    ))}
                 </div>
 
                 {/* Optional spacing to prevent content overlap */}
