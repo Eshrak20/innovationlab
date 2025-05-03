@@ -8,6 +8,7 @@ use App\Models\Blog;
 use App\Models\ExperienceStat;
 use App\Models\ExperienceStatus;
 use App\Models\Profile;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -18,11 +19,14 @@ class HomeController extends Controller
         $stats = ExperienceStatus::all();
         $profileData = Profile::all();
         $blog = Blog::all();
+        $service = Service::all();
+
 
         return Inertia::render('MainPages/Home/Home', [
             'stats' => $stats,
             'profileData' => $profileData,
-            'blog' => $blog
+            'blog' => $blog,
+            'service' => $service
         ]);
     }
    

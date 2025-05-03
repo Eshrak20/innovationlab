@@ -1,6 +1,6 @@
 import DynamicBanner from "@/Components/MyComponents/DynamicBanner";
 import MainLayout from "@/Layouts/MainLayout";
-import videoSrc from "@/../../public/reactAssets/videos/bluevideo.mp4";
+import videoSrc from "@/../../public/reactAssets/videos/purplevideo.mp4";
 import { Link } from "@inertiajs/react";
 import Vision from "../About/Vision/Vision";
 

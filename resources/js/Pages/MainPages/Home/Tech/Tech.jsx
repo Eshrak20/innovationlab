@@ -1,63 +1,211 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import techData from "../../../../../../public/Json/TeachData.json";
 import './Tech.css';
 
 const baseUrl = import.meta.env.VITE_APP_BASE_URL;
 
 const Tech = () => {
-    const [selectedTech, setSelectedTech] = useState("Backend");
+    const [selectedTech, setSelectedTech] = useState("Frontend");
+    const [animationKey, setAnimationKey] = useState(0);
+
+    // Reset animation when tech changes
+    useEffect(() => {
+        setAnimationKey(prevKey => prevKey + 1);
+    }, [selectedTech]);
+
+    // Animation variants
+    const floatVariants = {
+        float: {
+            y: ["0%", "-15%", "0%"],
+            transition: {
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+            }
+        }
+    };
+
+    const buttonVariants = {
+        hover: {
+            scale: 1.05,
+            backgroundColor: "rgba(255,255,255,0.3)"
+        },
+        tap: {
+            scale: 0.95
+        },
+        selected: {
+            backgroundColor: "rgba(255,255,255,1)",
+            color: "#4f46e5"
+        }
+    };
+
+    const trackVariants = {
+        animate: {
+            x: ["0%", "-100%"],
+            transition: {
+                x: {
+                    repeat: Infinity,
+                    duration: 40,
+                    ease: "linear"
+                }
+            }
+        }
+    };
 
     return (
-        <div className="p-6 2xl:p-20 md:px-40 py-20 bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-300 transition-colors duration-500">
-            <h2 className="text-2xl md:text-4xl font-bold mb-6 text-center text-white">
-                Our Tech Stack
-            </h2>
-
-            <div className="flex flex-wrap justify-center  gap-6 p-4 mb-10 md:mb-20 bg-white/20 backdrop-blur-md shadow-md rounded-xl transition duration-300">
-                {Object.keys(techData).map((tech) => (
-                    <span
-                        key={tech}
-                        className={`cursor-pointer text-base md:text-lg 2xl:text-2xl font-semibold transition duration-300 px-4 py-2 rounded-xl transform hover:scale-105 ${
-                            selectedTech === tech
-                                ? "bg-white text-blue-600 shadow-md"
-                                : "text-white hover:bg-white/20 hover:text-purple-100"
-                        }`}
-                        onClick={() => setSelectedTech(tech)}
-                    >
-                        {tech}
-                    </span>
-                ))}
+        <section className="relative overflow-hidden min-h-screen">
+            {/* Animated Background */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 opacity-95"></div>
+                <div className="absolute inset-0 opacity-30">
+                    {[...Array(20)].map((_, i) => (
+                        <div 
+                            key={i}
+                            className="absolute rounded-full bg-white"
+                            style={{
+                                width: `${Math.random() * 300 + 100}px`,
+                                height: `${Math.random() * 300 + 100}px`,
+                                top: `${Math.random() * 100}%`,
+                                left: `${Math.random() * 100}%`,
+                                opacity: Math.random() * 0.2 + 0.1,
+                                filter: 'blur(40px)'
+                            }}
+                        ></div>
+                    ))}
+                </div>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-8 md:gap-x-20 2xl:gap-x-20 gap-y-10 mt-10">
-                {techData[selectedTech].map((item) => (
-                    <div
-                    key={item.name}
-                    className="flex flex-col items-center group transform transition duration-300 hover:scale-105"
-                  >
-                    <div
-                      className="tech-card w-24 h-24 md:w-28 md:h-28 flex items-center justify-center shadow-lg group-hover:shadow-purple-300 auto-hover"
-                      style={{
-                        backgroundColor: item.hexCode,
-                        WebkitMaskImage: `url("/reactAssets/images/Tech/tailwind.svg")`,
-                        maskImage: `url("/reactAssets/images/Tech/tailwind.svg")`,
-                      }}
+            {/* Content */}
+            <div className="relative z-10 container mx-auto px-4 py-20">
+                {/* Navbar */}
+                
+
+                {/* Main Content */}
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <motion.h2 
+                        className="text-4xl md:text-6xl font-bold mb-6 text-center text-white"
+                        initial={{ y: -50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.6 }}
                     >
-                      <img
-                        src={`${baseUrl}/${item.image}`}
-                        alt={item.name}
-                        className="tech-logo w-10 h-10 md:w-14 md:h-14 object-contain"
-                      />
+                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Tech Stack</span>
+                    </motion.h2>
+
+                    <motion.p 
+                        className="text-xl text-center text-white/80 mb-16 max-w-3xl mx-auto"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3, duration: 0.6 }}
+                    >
+                        The technologies we use to build amazing digital experiences
+                    </motion.p>
+
+                    {/* Tech Category Selector */}
+                    <motion.div 
+                        className="flex flex-wrap justify-center gap-4 p-6 mb-16 bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/10"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4, duration: 0.6 }}
+                    >
+                        {Object.keys(techData).map((tech) => (
+                            <motion.button
+                                key={tech}
+                                className={`px-6 py-3 rounded-lg font-semibold text-lg transition ${
+                                    selectedTech === tech 
+                                        ? "text-indigo-700" 
+                                        : "text-white hover:bg-white/20"
+                                }`}
+                                onClick={() => setSelectedTech(tech)}
+                                variants={buttonVariants}
+                                whileHover="hover"
+                                whileTap="tap"
+                                animate={selectedTech === tech ? "selected" : ""}
+                            >
+                                {tech}
+                            </motion.button>
+                        ))}
+                    </motion.div>
+
+                    {/* Railway Track */}
+                    <div className="relative h-96 overflow-hidden mb-32">
+                        {/* Track lines */}
+                        <div className="absolute top-1/2 left-0 right-0 h-3 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                        <div className="absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                        <div className="absolute top-3/4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                        
+                        {/* Sleepers */}
+                        <div className="absolute top-0 bottom-0 left-0 right-0 flex">
+                            {[...Array(40)].map((_, i) => (
+                                <motion.div 
+                                    key={i} 
+                                    className="h-full w-2 mx-8 bg-white/10"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: i * 0.05, duration: 0.5 }}
+                                ></motion.div>
+                            ))}
+                        </div>
+
+                        {/* Moving tech cards */}
+                        <motion.div 
+                            key={animationKey}
+                            className="absolute top-0 left-0 flex gap-24 items-center h-full"
+                            variants={trackVariants}
+                            initial="animate"
+                            animate="animate"
+                        >
+                            {[...techData[selectedTech], ...techData[selectedTech]].map((item, index) => (
+                                <motion.div
+                                    key={`${item.name}-${index}`}
+                                    className="flex flex-col items-center group relative px-4"
+                                    whileHover={{ scale: 1.2, zIndex: 10 }}
+                                    transition={{ type: "spring", stiffness: 300 }}
+                                >
+                                    <motion.div
+                                        className="tech-card w-28 h-28 flex items-center justify-center rounded-2xl shadow-xl"
+                                        style={{
+                                            backgroundColor: item.hexCode || '#ffffff',
+                                            boxShadow: `0 0 30px ${item.hexCode || '#ffffff'}`
+                                        }}
+                                        variants={floatVariants}
+                                        animate="float"
+                                        whileHover={{ 
+                                            scale: 1.5,
+                                            boxShadow: `0 0 50px ${item.hexCode || '#ffffff'}`,
+                                            zIndex: 20
+                                        }}
+                                    >
+                                        <motion.img
+                                            src={`${baseUrl}/${item.image}`}
+                                            alt={item.name}
+                                            className="tech-logo w-20 h-20 object-contain"
+                                            whileHover={{ 
+                                                rotate: 360,
+                                                scale: 1.5,
+                                                filter: 'brightness(1.2) drop-shadow(0 0 15px white)'
+                                            }}
+                                            transition={{ duration: 0.8 }}
+                                        />
+                                    </motion.div>
+                                    <motion.h3 
+                                        className="text-lg font-bold mt-4 text-center text-white bg-black/50 px-4 py-2 rounded-full"
+                                        whileHover={{ scale: 1.1 }}
+                                    >
+                                        {item.name}
+                                    </motion.h3>
+                                </motion.div>
+                            ))}
+                        </motion.div>
                     </div>
-                    <h3 className="text-sm md:text-lg font-semibold mt-2 text-center text-white">
-                      {item.name}
-                    </h3>
-                  </div>
-                  
-                    
-                ))}
+                </motion.div>
             </div>
-        </div>
+        </section>
     );
 };
 

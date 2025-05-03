@@ -5,7 +5,7 @@ import Management from "./Management/Management";
 import Mission from "./Mission/Mission";
 import Vision from "./Vision/Vision";
 import DynamicBanner from "@/Components/MyComponents/DynamicBanner";
-import videoSrc from "@/../../public/reactAssets/videos/bluevideo.mp4";
+import videoSrc from "@/../../public/reactAssets/videos/purplevideo.mp4";
 const About = ({ profileData, managementData, missionData }) => {
     const baseUrl = import.meta.env.VITE_APP_BASE_URL;
     console.log(profileData);

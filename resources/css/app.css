@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Glowing button effect */
+.glowing-button {
+    position: relative;
+    background: linear-gradient(to right, #6366f1, #a855f7);
+    color: white;
+    border: none;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.glowing-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+}
+
+.glowing-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #a855f7, #6366f1);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.glowing-button:hover::before {
+    opacity: 1;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .glowing-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}

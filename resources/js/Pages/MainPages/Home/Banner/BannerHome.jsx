@@ -39,11 +39,11 @@ const BannerHome = ({stats}) => {
                 loop
                 muted
                 playsInline
-                src="reactAssets/videos/bluevideo.mp4"
+                src="reactAssets/videos/purplevideo.mp4"
             ></video>
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/10 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
 
             {/* Centeblue Content */}
             <div className="relative text-center z-10">
@@ -85,7 +85,7 @@ const BannerHome = ({stats}) => {
                     {/* Let's Talk Button */}
                     <a href="/contact">
                         <motion.button
-                            className="bg-success py-1 px-3 text-sm text-white rounded-full mt-1 md:mt-3 transition-all duration-300 ease-in-out md:py-3 md:px-6 md:text-xl hover:bg-white hover:text-success transform hover:translate-x-2"
+                            className="glowing-button py-1 px-3 text-sm rounded-full mt-1 md:mt-3 transition-all duration-300 ease-in-out md:py-3 md:px-6 md:text-xl  transform hover:translate-x-2"
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.5, delay: 0.2 }}

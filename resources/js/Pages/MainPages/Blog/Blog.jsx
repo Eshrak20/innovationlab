@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MainLayout from "@/Layouts/MainLayout";
 import { Link } from "@inertiajs/react";
-
+import "./Blog.css";
 const Blog = ({ blogInfo }) => {
     const [filter, setFilter] = useState("all");
     const [likedBlogs, setLikedBlogs] = useState({});
@@ -23,12 +23,12 @@ const Blog = ({ blogInfo }) => {
 
     return (
         <MainLayout>
-            <section className="py-28 bg-gray-50 min-h-screen">
+            <section className="py-28 bg-gray-100 min-h-screen">
                 <div className="container mx-auto px-4 max-w-6xl">
-                    <h2 className="text-4xl font-bold text-center text-gray-800 mb-2">
+                    <h2 className="text-4xl font-bold text-center text-gradient mb-2">
                         Our Blog Posts
                     </h2>
-                    <p className="text-lg text-gray-600 text-center mb-12">
+                    <p className="text-lg text-gray-700 text-center mb-12">
                         Explore our latest technical and non-technical articles
                     </p>
 
@@ -38,10 +38,10 @@ const Blog = ({ blogInfo }) => {
                             (category) => (
                                 <button
                                     key={category}
-                                    className={`px-5 py-2 rounded-full font-semibold capitalize transition-all duration-300 ${
+                                    className={`glowing-button px-5 py-2 rounded-full font-semibold capitalize ${
                                         filter === category
-                                            ? "bg-blue-600 text-white shadow-md"
-                                            : "bg-gray-200 hover:bg-blue-100 hover:text-blue-800"
+                                            ? "shadow-lg"
+                                            : "opacity-75 hover:opacity-100"
                                     }`}
                                     onClick={() => setFilter(category)}
                                 >
@@ -55,22 +55,24 @@ const Blog = ({ blogInfo }) => {
                     </div>
 
                     {/* Blog Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                         {filteredBlogs.length > 0 ? (
-                            filteredBlogs.map((blog) => (
+                            filteredBlogs.map((blog, index) => (
                                 <Link
                                     key={blog.id}
                                     href={`/blog/${blog.id}`}
-                                    className="block h-full group"
+                                    className="blog-card-container animate-fade-in-up"
+                                    style={{
+                                        animationDelay: `${index * 100}ms`,
+                                    }}
                                 >
-                                    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 h-full flex flex-col">
-                                        <div className="relative h-48 overflow-hidden">
+                                    <div className="blog-card group">
+                                        <div className="relative h-60 overflow-hidden">
                                             {blog.image && (
                                                 <img
                                                     src={`/storage/${blog.image}`}
                                                     alt={blog.title}
-                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                                    loading="lazy"
+                                                    className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-105"
                                                 />
                                             )}
                                             <span className="absolute bottom-3 left-3 bg-black bg-opacity-70 text-white px-3 py-1 rounded text-sm">
@@ -80,23 +82,19 @@ const Blog = ({ blogInfo }) => {
                                                 {blog.category}
                                             </span>
                                         </div>
-
                                         <div className="p-6 flex-grow">
-                                            <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
+                                            <h3 className="text-xl font-semibold text-gradient mb-3 group-hover:text-blue-400 transition-colors">
                                                 {blog.title}
                                             </h3>
-                                            <p className="text-gray-600 mb-4 line-clamp-3">
+                                            <p className="text-gray-800 mb-4 line-clamp-3">
                                                 {blog.summary ||
                                                     "No summary available."}
                                             </p>
                                         </div>
-
                                         <div className="px-6 pb-6 pt-2">
-                                            <div className="flex justify-between items-center">
-                                                <span className="text-blue-500 font-medium hover:text-blue-700 transition-colors text-sm">
-                                                    Read More →
-                                                </span>
-                                            </div>
+                                            <button className="glowing-button px-4 py-2 rounded-full text-sm">
+                                                Read More →
+                                            </button>
                                         </div>
                                     </div>
                                 </Link>
@@ -129,7 +127,6 @@ const Blog = ({ blogInfo }) => {
                             </div>
                         )}
                     </div>
-
                 </div>
             </section>
         </MainLayout>

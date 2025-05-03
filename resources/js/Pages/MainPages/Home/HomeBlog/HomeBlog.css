@@ -1,0 +1,84 @@
+/* Text gradient effect */
+.text-gradient {
+    background-image: linear-gradient(to right, #a855f7, #6366f1, #4f46e5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Blog card container */
+.blog-card-container {
+    position: relative;
+    padding: 4px;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3));
+}
+
+/* Blog card styling */
+.blog-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    height: 100%;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* Glowing button effect */
+.glowing-button {
+    position: relative;
+    background: linear-gradient(to right, #6366f1, #a855f7);
+    color: white;
+    border: none;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    transition: all 0.3s ease;
+}
+
+.glowing-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+}
+
+/* Border animation effect */
+.blog-card-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.75rem;
+    padding: 2px;
+    background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blog-card-container:hover::before {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blog-card-container {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .glowing-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}

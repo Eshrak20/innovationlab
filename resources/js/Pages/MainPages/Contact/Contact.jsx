@@ -1,5 +1,5 @@
 import DynamicBanner from "@/Components/MyComponents/DynamicBanner";
-import videoSrc from "@/../../public/reactAssets/videos/bluevideo.mp4";
+import videoSrc from "@/../../public/reactAssets/videos/purplevideo.mp4";
 import Form from "./Form/Form";
 import MainLayout from "@/Layouts/MainLayout";
 import Visit from "./Visit/Visit";

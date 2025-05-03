@@ -1,61 +1,106 @@
 import React from 'react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { Link } from '@inertiajs/react';
+import './BlogDetails.css';
 
 const BlogDetails = ({ blog }) => {
-    console.log(blog);
-    
+    // Function to split description into paragraphs with proper spacing
+    const renderDescription = () => {
+        if (!blog.description) return null;
+        
+        // Split by double newlines first (user's intended paragraphs)
+        const paragraphs = blog.description.split('\n\n');
+        
+        return paragraphs.map((paragraph, index) => {
+            // Further split long paragraphs (more than 200 words)
+            const words = paragraph.split(' ');
+            if (words.length > 200) {
+                const chunks = [];
+                for (let i = 0; i < words.length; i += 200) {
+                    chunks.push(words.slice(i, i + 200).join(' '));
+                }
+                return chunks.map((chunk, chunkIndex) => (
+                    <p key={`${index}-${chunkIndex}`} className="blog-paragraph">
+                        {chunk}
+                    </p>
+                ));
+            }
+            return (
+                <p key={index} className="blog-paragraph">
+                    {paragraph}
+                </p>
+            );
+        });
+    };
+
     return (
         <AdminLayout>
-            <div className="p-6 bg-white rounded-lg shadow">
-                <div className="flex justify-between items-start mb-6">
+            <div className="blog-details-container">
+                {/* Blog Header */}
+                <div className="blog-header">
                     <div>
-                        <h1 className="text-2xl font-bold">{blog.title}</h1>
-                        <div className="flex items-center mt-2 space-x-4 text-sm text-gray-500">
-                            <span>Published on: {new Date(blog.date).toLocaleDateString()}</span>
-                            <span>By: {blog.published_by}</span>
-                            <span className="capitalize">{blog.category}</span>
-                            <span>{blog.type}</span>
-                            <span>{blog.likes} likes</span>
+                        <h1 className="blog-title">{blog.title}</h1>
+                        <div className="blog-meta">
+                            <span className="blog-date">
+                                {new Date(blog.date).toLocaleDateString('en-US', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric'
+                                })}
+                            </span>
+                            <span className="blog-author">By {blog.published_by}</span>
+                            <span className="blog-category">{blog.category}</span>
+                            <span className="blog-type">{blog.type}</span>
+                            <span className="blog-likes">{blog.likes} likes</span>
                         </div>
                     </div>
-                    <div className="flex space-x-2">
+                    <div className="blog-actions">
                         <Link
                             href={route('blogs.edit', blog.id)}
-                            className="px-3 py-1 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 text-sm"
+                            className="blog-edit-btn"
                         >
                             Edit
                         </Link>
                         <Link
                             href={route('blogs.index')}
-                            className="px-3 py-1 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 text-sm"
+                            className="blog-back-btn"
                         >
                             Back
                         </Link>
                     </div>
                 </div>
 
+                {/* Featured Image */}
                 {blog.image && (
-                    <div className="mb-6">
+                    <div className="blog-featured-image">
                         <img 
                             src={`/storage/${blog.image}`} 
                             alt={blog.title} 
-                            className="w-full h-64 object-cover rounded-lg"
+                            className="blog-image"
                         />
                     </div>
                 )}
 
+                {/* Blog Summary */}
                 {blog.summary && (
-                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                        <p className="text-gray-700 italic">{blog.summary}</p>
+                    <div className="blog-summary">
+                        <p>{blog.summary}</p>
                     </div>
                 )}
 
-                <div className="prose max-w-none">
-                    {blog.description.split('\n').map((paragraph, index) => (
-                        <p key={index}>{paragraph}</p>
-                    ))}
+                {/* Blog Content */}
+                <div className="blog-content">
+                    {renderDescription()}
                 </div>
+
+                {/* Tags (if available) */}
+                {blog.tags && blog.tags.length > 0 && (
+                    <div className="blog-tags">
+                        {blog.tags.map(tag => (
+                            <span key={tag} className="blog-tag">{tag}</span>
+                        ))}
+                    </div>
+                )}
             </div>
         </AdminLayout>
     );

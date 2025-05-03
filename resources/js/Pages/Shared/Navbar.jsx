@@ -124,18 +124,19 @@ const Navbar = () => {
                         <div
                             className={`inline-block px-4 py-2 rounded-lg transition-all duration-300 ${
                                 isScrolled
-                                    ? "bg-gradient-to-r from-cyan-500 to-blue-600 shadow-md"
+                                    ? "bg-gradient-to-r from-[#a855f7] to-[#6366f1] shadow-md"
                                     : "bg-black"
                             }`}
                         >
                             <h1 className="text-lg md:text-xl font-bold text-white">
                                 Innovation
-                                <span className="text-cyan-300">Labs</span>
-                                <span className="text-blue-300">360</span>
+                                <span className="text-[#efebf1]">Labs</span>
+                                <span className="text-[#ffffff]">360</span>
                             </h1>
                         </div>
                     </Link>
                 </div>
+
                 <div className="navi">
                     <ul className="hidden md:flex text-xl font-semibold menu-horizontal px-1">
                         {navOptions}
