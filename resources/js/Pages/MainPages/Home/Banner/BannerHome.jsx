@@ -31,7 +31,7 @@ const BannerHome = ({stats}) => {
     }, [currentIndex]);
 
     return (
-        <div className="relative w-full h-screen overflow-hidden text-white flex items-center justify-center">
+        <div className="relative w-full h-[500px] md:h-screen overflow-hidden text-white flex items-center justify-center">
             {/* Background Video */}
             <video
                 className="absolute top-0 left-0 w-full h-full object-cover z-negative"
@@ -56,7 +56,7 @@ const BannerHome = ({stats}) => {
                     ))}
                 </h2>
 
-                <div className="absolute top-[175px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                <div className="absolute top-[55px] md:top-[175px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
                     <motion.h1
                         className="2xl:text-4xl md:text-3xl font-bold leading-tight"
                         initial={{ opacity: 0, y: -50 }}

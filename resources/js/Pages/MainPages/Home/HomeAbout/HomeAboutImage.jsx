@@ -47,9 +47,9 @@ const HomeAboutImage = () => {
     };
 
     return (
-        <div className="flex justify-center items-center w-full gap-4 p-4">
+        <div className="flex justify-center items-center gap-4 p-4">
             {/* Left - 2 Small Images */}
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4">
                 <AnimatePresence mode="wait" custom={direction}>
                     <motion.img
                         key={`left1-${index}`}
@@ -76,55 +76,47 @@ const HomeAboutImage = () => {
                         custom={-direction}
                     />
                 </AnimatePresence>
-            </div>
+            </div> */}
 
-            {/* Right - Big Main Image with Hover Effect */}
-            <motion.div 
-                className="relative w-[850px] h-[700px] rounded-2xl overflow-hidden shadow-2xl"
-                whileHover={{
-                    boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.5)"
-                }}
-                initial={{ boxShadow: "0 0 0 0px rgba(99, 102, 241, 0)" }}
-                transition={{
-                    duration: 0.5,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                }}
-            >
-                <AnimatePresence custom={direction} mode="wait">
-                    <motion.div
-                        key={`main-${index}`}
-                        className="absolute inset-0"
-                        custom={direction}
-                        variants={fadeSlide}
-                        initial="enter"
-                        animate="center"
-                        exit="exit"
-                    >
-                        <img
-                            src={images[index].main}
-                            alt="Main"
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/20" />
-                    </motion.div>
-                </AnimatePresence>
+          {/* Right - Big Main Image with Enhanced Animated Border */}
+<div className="image-container">
+  <div className="animated-border w-[850px] h-[700px] rounded-2xl overflow-hidden shadow-2xl relative">
+    <span>
+      <motion.div 
+        whileHover={{
+          boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.5)"
+        }}
+        initial={{ boxShadow: "0 0 0 0px rgba(99, 102, 241, 0)" }}
+        transition={{
+          duration: 0.5,
+          repeat: Infinity,
+          repeatType: "reverse"
+        }}
+        className="relative w-full h-full"
+      >
+        <AnimatePresence custom={direction} mode="wait">
+          <motion.div
+            key={`main-${index}`}
+            className="absolute inset-0"
+            custom={direction}
+            variants={fadeSlide}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          >
+            <img
+              src={images[index].main}
+              alt="Main"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/20" />
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
+    </span>
+  </div>
+</div>
 
-                {/* Animated Border Elements */}
-                <motion.div 
-                    className="absolute inset-0 border-2 border-transparent"
-                    whileHover={{
-                        borderColor: "rgba(139, 92, 246, 0.5)",
-                        transition: {
-                            borderColor: {
-                                duration: 0.3,
-                                repeat: Infinity,
-                                repeatType: "mirror"
-                            }
-                        }
-                    }}
-                />
-            </motion.div>
         </div>
     );
 };

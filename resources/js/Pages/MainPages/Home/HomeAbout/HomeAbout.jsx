@@ -6,7 +6,7 @@ const HomeAbout = ({ stats }) => {
         <>
             <div className="flex flex-col md:flex-row gap-10 md:gap-44 mt-10 mb-20 lg:p-20 p-2 items-center">
                 {/* Text Section */}
-                <div className="w-full md:w-1/2 px-4 md:px-0">
+                <div className="w-full px-4 md:px-0">
                     <h1 className="text-2xl md:text-5xl font-medium leading-tight mb-6 md:mb-10">
                         <span className="text-success">Insights</span> About{" "}
                         <br /> Our Company

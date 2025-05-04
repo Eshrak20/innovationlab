@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
 const HomeTeam = ({ profileData }) => {
     const [currentIndex, setCurrentIndex] = useState(2);
     const [autoSlide, setAutoSlide] = useState(true);
+    const [isHovering, setIsHovering] = useState(false);
 
     // Exit if no data
     if (!Array.isArray(profileData) || profileData.length === 0) return null;
@@ -28,10 +29,10 @@ const HomeTeam = ({ profileData }) => {
 
     // Auto slider effect
     useEffect(() => {
-        if (!autoSlide) return;
-        const timer = setInterval(handleNext, 5000);
+        if (!autoSlide || isHovering) return;
+        const timer = setInterval(handleNext, 3000);
         return () => clearInterval(timer);
-    }, [autoSlide, currentIndex]);
+    }, [autoSlide, currentIndex, isHovering]);
 
     const handlePrev = () => {
         setCurrentIndex((prev) =>
@@ -50,6 +51,14 @@ const HomeTeam = ({ profileData }) => {
     const pauseAutoSlide = () => {
         setAutoSlide(false);
         setTimeout(() => setAutoSlide(true), 10000);
+    };
+
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
     };
 
     // Render visible cards with relative positions
@@ -116,13 +125,14 @@ const HomeTeam = ({ profileData }) => {
     };
 
     return (
-        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white ">
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-gray-800 ">
+                    <h2 className="text-4xl font-bold text-success">
                         Our Expert Team
                     </h2>
-                    <p className="text-lg text-gray-600 ">
+                    <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
+                        We are a team of dedicated professionals with diverse <br />
                         Meet our team of professionals
                     </p>
                 </div>
@@ -138,7 +148,11 @@ const HomeTeam = ({ profileData }) => {
                     </button>
 
                     {/* Card Carousel */}
-                    <div className="flex justify-center relative w-full h-[550px] mt-10 perspective-1000">
+                    <div 
+                        className="flex justify-center relative w-full h-[550px] mt-10 perspective-1000"
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                    >
                         {visibleCards.map((profile, idx) => {
                             const baseStyle =
                                 "absolute transition-all duration-500 rounded-2xl bg-white  shadow-lg overflow-hidden cursor-pointer group";

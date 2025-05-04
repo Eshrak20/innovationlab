@@ -21,7 +21,7 @@ const HomeBlog = ({ blog }) => {
                     <h2 className="text-gradient text-4xl font-bold mb-4">
                         Recent Blog Posts
                     </h2>
-                    <p className="text-xl text-gray-700">
+                    <p className="text-xl text-gray-700 dark:text-gray-200">
                         Discover our latest articles and tutorials
                     </p>
                 </motion.div>
@@ -41,7 +41,7 @@ const HomeBlog = ({ blog }) => {
                                     <img
                                         src={`/storage/${item.image}`}
                                         alt={item.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="w-full h-full object-cover transition-transform duration-500"
                                         loading="lazy"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

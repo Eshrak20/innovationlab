@@ -49,7 +49,7 @@ const AnimatedCounter = ({ value }) => {
             {/* Blue Fire Effect */}
             <div className="absolute -inset-3 rounded-full bg-blue-400 opacity-0 group-hover:opacity-70 blur-xl transition-all duration-500 animate-pulse"></div>
             <div className="absolute -inset-2 rounded-full bg-blue-300 opacity-0 group-hover:opacity-40 blur-md transition-all duration-300"></div>
-            <span className="relative z-10 text-white font-extrabold text-4xl md:text-5xl">
+            <span className="relative z-10 text-white font-extrabold 2xl:text-4xl md:text-3xl">
                 {count}+
             </span>
         </div>
@@ -57,9 +57,9 @@ const AnimatedCounter = ({ value }) => {
 };
 const HomeAboutStatus = ({ stats }) => {
     return (
-        <div className="relative bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 text-white rounded-2xl p-8 md:p-10 shadow-2xl mt-10 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 text-white rounded-md md:rounded-2xl px-4 py-2 md:p-10 shadow-2xl mt-10 overflow-hidden">
             <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
-            
+
             <div className="absolute inset-0 overflow-hidden">
                 {Array.from({ length: 8 }).map((_, i) => (
                     <div
@@ -70,20 +70,24 @@ const HomeAboutStatus = ({ stats }) => {
                             height: `${Math.random() * 6 + 2}px`,
                             top: `${Math.random() * 100}%`,
                             left: `${Math.random() * 100}%`,
-                            animation: `float ${Math.random() * 10 + 5}s linear infinite`,
+                            animation: `float ${
+                                Math.random() * 10 + 5
+                            }s linear infinite`,
                         }}
                     />
                 ))}
             </div>
-            
-            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
+
+            <div className="relative z-10 flex flex-wrap gap-4 justify-center md:gap-12">
                 {stats.map((stat, index) => (
                     <div
                         key={index}
                         className="text-center group transform transition-all duration-500 hover:scale-105"
                     >
-                        <p className="text-sm md:text-lg font-medium text-blue-100">{stat.label}</p>
-                        <h2 className="mt-2">
+                        <p className="text-sm md:text-lg font-medium text-blue-100">
+                            {stat.label}
+                        </p>
+                        <h2 className="mt-2 ">
                             <AnimatedCounter value={stat.value} />
                         </h2>
                     </div>

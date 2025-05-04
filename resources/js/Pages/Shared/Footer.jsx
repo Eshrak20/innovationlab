@@ -1,3 +1,4 @@
+import GradientIcon from "@/Components/MyComponents/GradientIcon";
 import {
     faFacebook,
     faLinkedin,
@@ -19,12 +20,7 @@ const Footer = () => {
                         <h3 className="text-xl font-bold mb-4">Head Office</h3>
                         <ul className="space-y-2">
                             <li className="flex items-start">
-                                <svg
-                                    className="w-5 h-5 mr-2 mt-0.5 text-blue-400"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
+                                <GradientIcon id="location">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -37,7 +33,7 @@ const Footer = () => {
                                         strokeWidth={2}
                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                     />
-                                </svg>
+                                </GradientIcon>
                                 <span>
                                     House # 5, Road # 01
                                     <br />
@@ -45,35 +41,25 @@ const Footer = () => {
                                 </span>
                             </li>
                             <li className="flex items-center">
-                                <svg
-                                    className="w-5 h-5 mr-2 text-blue-400"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
+                                <GradientIcon id="phone">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth={2}
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                        d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.516 2.064a2 2 0 01-.45 1.958l-1.27 1.27a11.042 11.042 0 005.292 5.292l1.27-1.27a2 2 0 011.958-.45l2.064.516A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C7.163 21 3 16.837 3 11V5z"
                                     />
-                                </svg>
+                                </GradientIcon>
                                 +880 1521-498303
                             </li>
                             <li className="flex items-center">
-                                <svg
-                                    className="w-5 h-5 mr-2 text-blue-400"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
+                                <GradientIcon id="email">
                                     <path
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth={2}
                                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                     />
-                                </svg>
+                                </GradientIcon>
                                 support@innovationlabs360.com
                             </li>
                         </ul>
@@ -88,27 +74,25 @@ const Footer = () => {
                             solutions that amplify your online presence.
                         </p>
                         <div className="flex space-x-4 mt-4">
-                            <a
-                                href="#"
-                                className="text-blue-400 hover:text-blue-300"
-                            >
+                            <a href="#" className="text-[#895DF4] hover:text-[#b89efc]">
                                 <FontAwesomeIcon icon={faFacebook} size="lg" />
                             </a>
+
                             <a
                                 href="#"
-                                className="text-blue-400 hover:text-blue-300"
+                                className="text-[#895DF4] hover:text-[#b89efc]"
                             >
                                 <FontAwesomeIcon icon={faLinkedin} size="lg" />
                             </a>
                             <a
                                 href="#"
-                                className="text-blue-400 hover:text-blue-300"
+                                className="text-[#895DF4] hover:text-[#b89efc]"
                             >
                                 <FontAwesomeIcon icon={faTwitter} size="lg" />
                             </a>
                             <a
                                 href="#"
-                                className="text-blue-400 hover:text-blue-300"
+                                className="text-[#895DF4] hover:text-[#b89efc]"
                             >
                                 <FontAwesomeIcon icon={faInstagram} size="lg" />
                             </a>
@@ -129,10 +113,10 @@ const Footer = () => {
                                 <li key={index}>
                                     <a
                                         href={item.path}
-                                        className="hover:text-blue-400 transition-colors flex items-center"
+                                        className="hover:text-[#b89efc] transition-colors flex items-center"
                                     >
                                         <svg
-                                            className="w-4 h-4 mr-2 text-blue-400"
+                                            className="w-4 h-4 mr-2 text-[#895DF4]"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -159,7 +143,7 @@ const Footer = () => {
                             your project over a virtual coffee!
                         </p>
                         <div className="bg-gray-800 p-4 rounded-lg">
-                            <p className="text-blue-400 font-medium">
+                            <p className="text-success font-medium">
                                 Need immediate assistance?
                             </p>
                             <a
@@ -207,7 +191,7 @@ const Footer = () => {
                             Developed with ❤️ by{" "}
                             <a
                                 href="/dashboard"
-                                className="text-blue-400 hover:underline"
+                                className="text-success hover:underline"
                                 target="_blank"
                             >
                                 Our Web Team

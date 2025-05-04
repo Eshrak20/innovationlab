@@ -12,9 +12,6 @@ export default {
 
     theme: {
         extend: {
-            colors: {
-                success: "#1B42AE", // Your custom color
-            },
             fontFamily: {
                 sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
             },

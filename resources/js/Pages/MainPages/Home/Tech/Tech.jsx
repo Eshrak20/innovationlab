@@ -105,7 +105,7 @@ const Tech = () => {
 
                     {/* Tech Category Selector */}
                     <motion.div 
-                        className="flex flex-wrap justify-center gap-4 p-6 mb-16 bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/10"
+                        className="flex flex-wrap  justify-center gap-3 md:gap-4 md:p-6 mb-16 md:bg-white/10 md:backdrop-blur-md rounded-xl md:shadow-lg md:border md:border-white/10"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
@@ -113,7 +113,8 @@ const Tech = () => {
                         {Object.keys(techData).map((tech) => (
                             <motion.button
                                 key={tech}
-                                className={`px-6 py-3 rounded-lg font-semibold text-lg transition`}
+                                className={`px-2 py-1 text-base rounded-lg font-semibold text-white transition md:px-6 md:py-3 md:text-lg`}
+
                                 onClick={() => setSelectedTech(tech)}
                                 variants={buttonVariants}
                                 whileHover="hover"

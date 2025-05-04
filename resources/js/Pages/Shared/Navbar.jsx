@@ -90,8 +90,8 @@ const Navbar = () => {
 
     return (
         <div
-            className={`w-full flex justify-center fixed top-0 z-10 md:px-7 transition-all duration-300 ease-in-out bg-[#1D232A] pb-5  ${
-                isScrolled ? "bg-opacity-70" : "bg-opacity-0"
+            className={`w-full flex justify-center fixed top-0 z-20 md:px-7 transition-all duration-300 ease-in-out bg-[#1D232A] pb-5  ${
+                isScrolled ? "bg-opacity-70" : "bg-opacity-50 bg-white/10 backdrop-blur-md"
             } ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
         >
             <div className="w-full px-5 pt-2 max-w-full lg:max-w-screen-xl 2xl:max-w-screen-2xl flex items-center justify-between mt-5 md:mt-2">
@@ -125,7 +125,7 @@ const Navbar = () => {
                             className={`inline-block px-4 py-2 rounded-lg transition-all duration-300 ${
                                 isScrolled
                                     ? "bg-gradient-to-r from-[#a855f7] to-[#6366f1] shadow-md"
-                                    : "bg-black"
+                                    : "bg-gradient-to-r from-[#a855f7] to-[#6366f1] shadow-md"
                             }`}
                         >
                             <h1 className="text-lg md:text-xl font-bold text-white">

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-success {
+    @apply bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-transparent bg-clip-text;
+}
+
+
 /* Glowing button effect */
 .glowing-button {
     position: relative;
@@ -40,4 +45,90 @@
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
     }
+}
+
+
+
+/* Glowing border effect */
+
+/* Enhanced Animated Border */
+.animated-border {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+}
+
+.animated-border::before,
+.animated-border::after,
+.animated-border span::before,
+.animated-border span::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899, #a855f7, #6366f1);
+    background-size: 400% 400%;
+    z-index: 20;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Top border */
+.animated-border::before {
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    animation: slide-horizontal 2s linear infinite, gradient 5s ease infinite;
+}
+
+/* Right border */
+.animated-border::after {
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    animation: slide-vertical 2s linear infinite 0.5s, gradient 5s ease infinite;
+}
+
+/* Bottom border */
+.animated-border span::before {
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    animation: slide-horizontal 2s linear infinite 1s, gradient 5s ease infinite;
+}
+
+/* Left border */
+.animated-border span::after {
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    animation: slide-vertical 2s linear infinite 1.5s, gradient 5s ease infinite;
+}
+
+/* Keyframes */
+@keyframes slide-horizontal {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes slide-vertical {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Optional: Hover effect to resize border width/height */
+.image-container:hover .animated-border::before,
+.image-container:hover .animated-border::after,
+.image-container:hover .animated-border span::before,
+.image-container:hover .animated-border span::after {
+    height: 5px;
+    width: 5px;
+    transition: all 0.3s ease;
 }
