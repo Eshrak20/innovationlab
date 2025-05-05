@@ -90,8 +90,8 @@ const Navbar = () => {
 
     return (
         <div
-            className={`w-full flex justify-center fixed top-0 z-20 md:px-7 transition-all duration-300 ease-in-out bg-[#1D232A] pb-5  ${
-                isScrolled ? "bg-opacity-70" : "bg-opacity-50 bg-white/10 backdrop-blur-md"
+            className={`w-full flex justify-center fixed top-0 z-20 md:px-7 transition-all duration-300 ease-in-out md:bg-white/10 md:backdrop-blur-md  pb-5  ${
+                isScrolled ? "bg-opacity-70" : "bg-opacity-50 "
             } ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
         >
             <div className="w-full px-5 pt-2 max-w-full lg:max-w-screen-xl 2xl:max-w-screen-2xl flex items-center justify-between mt-5 md:mt-2">

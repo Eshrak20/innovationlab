@@ -40,6 +40,10 @@ export default defineConfig({
         hmr: {
             host: "192.168.10.120",
         },
+        cors: {
+            origin: ["http://192.168.10.120:8000"], // allow Laravel host
+            credentials: true,
+        },
     },
     build: {
         chunkSizeWarningLimit: 1600,

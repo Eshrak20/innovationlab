@@ -57,7 +57,7 @@ const AnimatedCounter = ({ value }) => {
 };
 const HomeAboutStatus = ({ stats }) => {
     return (
-        <div className="relative bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 text-white rounded-md md:rounded-2xl px-4 py-2 md:p-10 shadow-2xl mt-10 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 text-white rounded-md md:rounded-2xl px-2 py-5 md:p-10 shadow-2xl mt-10 overflow-hidden">
             <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
 
             <div className="absolute inset-0 overflow-hidden">

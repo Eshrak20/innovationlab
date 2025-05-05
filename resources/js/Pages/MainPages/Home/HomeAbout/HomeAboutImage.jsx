@@ -30,32 +30,32 @@ const HomeAboutImage = () => {
         enter: (direction) => ({
             opacity: 0,
             x: direction > 0 ? 100 : -100,
-            scale: 0.95
+            scale: 0.95,
         }),
         center: {
             opacity: 1,
             x: 0,
             scale: 1,
-            transition: { duration: 0.8, ease: "easeOut" }
+            transition: { duration: 0.8, ease: "easeOut" },
         },
         exit: (direction) => ({
             opacity: 0,
             x: direction > 0 ? -100 : 100,
             scale: 0.95,
-            transition: { duration: 0.6, ease: "easeIn" }
+            transition: { duration: 0.6, ease: "easeIn" },
         }),
     };
 
     return (
         <div className="flex justify-center items-center gap-4 p-4">
             {/* Left - 2 Small Images */}
-            {/* <div className="flex flex-col gap-4">
+            <div className="flex animated-border gap-1 md:hidden">
                 <AnimatePresence mode="wait" custom={direction}>
                     <motion.img
                         key={`left1-${index}`}
                         src={images[index].left1}
                         alt="Left Top"
-                        className="w-40 h-40 rounded-xl object-cover shadow-lg"
+                        className="w-32 h-32  rounded-tl-lg object-cover shadow-lg"
                         variants={fadeSlide}
                         initial="enter"
                         animate="center"
@@ -68,7 +68,7 @@ const HomeAboutImage = () => {
                         key={`left2-${index}`}
                         src={images[index].left2}
                         alt="Left Bottom"
-                        className="w-40 h-40 rounded-xl object-cover shadow-lg"
+                        className="w-32 h-32 rounded-tr-lg object-cover shadow-lg"
                         variants={fadeSlide}
                         initial="enter"
                         animate="center"
@@ -76,47 +76,48 @@ const HomeAboutImage = () => {
                         custom={-direction}
                     />
                 </AnimatePresence>
-            </div> */}
+            </div>
 
-          {/* Right - Big Main Image with Enhanced Animated Border */}
-<div className="image-container">
-  <div className="animated-border w-[850px] h-[700px] rounded-2xl overflow-hidden shadow-2xl relative">
-    <span>
-      <motion.div 
-        whileHover={{
-          boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.5)"
-        }}
-        initial={{ boxShadow: "0 0 0 0px rgba(99, 102, 241, 0)" }}
-        transition={{
-          duration: 0.5,
-          repeat: Infinity,
-          repeatType: "reverse"
-        }}
-        className="relative w-full h-full"
-      >
-        <AnimatePresence custom={direction} mode="wait">
-          <motion.div
-            key={`main-${index}`}
-            className="absolute inset-0"
-            custom={direction}
-            variants={fadeSlide}
-            initial="enter"
-            animate="center"
-            exit="exit"
-          >
-            <img
-              src={images[index].main}
-              alt="Main"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/20" />
-          </motion.div>
-        </AnimatePresence>
-      </motion.div>
-    </span>
-  </div>
-</div>
-
+            {/* Right - Big Main Image with Enhanced Animated Border */}
+            <div className="image-container">
+                <div className="animated-border md:w-[850px] md:h-[700px] rounded-2xl overflow-hidden shadow-2xl relative">
+                    <span>
+                        <motion.div
+                            whileHover={{
+                                boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.5)",
+                            }}
+                            initial={{
+                                boxShadow: "0 0 0 0px rgba(99, 102, 241, 0)",
+                            }}
+                            transition={{
+                                duration: 0.5,
+                                repeat: Infinity,
+                                repeatType: "reverse",
+                            }}
+                            className="relative w-full h-full"
+                        >
+                            <AnimatePresence custom={direction} mode="wait">
+                                <motion.div
+                                    key={`main-${index}`}
+                                    className="absolute inset-0"
+                                    custom={direction}
+                                    variants={fadeSlide}
+                                    initial="enter"
+                                    animate="center"
+                                    exit="exit"
+                                >
+                                    <img
+                                        src={images[index].main}
+                                        alt="Main"
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-purple-900/20" />
+                                </motion.div>
+                            </AnimatePresence>
+                        </motion.div>
+                    </span>
+                </div>
+            </div>
         </div>
     );
 };

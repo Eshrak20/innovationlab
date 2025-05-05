@@ -86,21 +86,21 @@ const Tech = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <motion.h2 
-                        className="text-4xl md:text-6xl font-bold mb-6 text-center text-white"
+                        className="text-3xl md:text-6xl font-bold mb-6 text-center text-white"
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Tech Stack</span>
+                        Our <span className="text-transparent  bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Tech Stack</span>
                     </motion.h2>
 
                     <motion.p 
-                        className="text-xl text-center text-white/80 mb-16 max-w-3xl mx-auto"
+                        className="md:text-xl text-center text-white/80 mb-16 max-w-3xl mx-auto"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.6 }}
                     >
-                        The technologies we use to build amazing digital experiences
+                        The technologies we use to build amazing digital experiences 
                     </motion.p>
 
                     {/* Tech Category Selector */}
@@ -188,7 +188,7 @@ const Tech = () => {
                                         />
                                     </motion.div>
                                     <motion.h3 
-                                        className="text-lg font-bold mt-4 text-center text-white bg-black/50 px-4 py-2 rounded-full"
+                                        className="hidden md:block text-xs md:text-lg font-bold mt-2 md:mt-4 text-center  text-white bg-black/50 px-2 py-0 md:px-4 md:py-2 rounded-l-box md:rounded-full"
                                         whileHover={{ scale: 1.1 }}
                                     >
                                         {item.name}

@@ -17,7 +17,7 @@ const TextImage = ({
                 reverse ? "md:flex-row-reverse" : "md:flex-row"
             } flex-col 
             md:justify-between md:items-center 
-            py-3 px-2
+            py-8 px-6
             md:py-10 2xl:py-20
             lg:px-24 xl:px-28 2xl:px-20
              gap-10 lg:gap-16 xl:gap-20 2xl:gap-32
@@ -41,7 +41,7 @@ const TextImage = ({
                         {title}
                     </h1>
                 </div>
-                <p className="mt-2 md:whitespace-pre-line text-lg md:text-xl text-gray-800 dark:text-gray-200  leading-relaxed">
+                <p className="mt-2 md:whitespace-pre-line text-base md:text-xl text-gray-800 dark:text-gray-200  leading-relaxed">
                     {description}
                 </p>
                 <Link href={link}>
@@ -50,7 +50,7 @@ const TextImage = ({
                         <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></span>
                     </button>
                 </Link>
-                
+
                 {/* Decorative accent */}
                 <div className="absolute -left-10 top-0 h-full w-1 bg-gradient-to-b from-purple-500 to-indigo-400 rounded-full"></div>
             </motion.div>
@@ -75,7 +75,7 @@ const TextImage = ({
                     {/* Image overlay effect */}
                     <div className="absolute inset-0 rounded-br-[35%] rounded-tl-[35%] bg-gradient-to-t from-purple-900/30 via-indigo-800/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                
+
                 {/* Floating decorative elements */}
                 <div className="absolute -right-5 -top-5 w-20 h-20 rounded-full bg-purple-600/20 filter blur-xl z-0"></div>
                 <div className="absolute -left-5 -bottom-5 w-16 h-16 rounded-full bg-indigo-600/20 filter blur-xl z-0"></div>
