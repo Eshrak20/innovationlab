@@ -23,20 +23,20 @@ const ServicesMain = ({ service }) => {
                                 {service?.slice(0, 4).map((item, index) => (
                                     <div
                                         key={index}
-                                        className="bg-white rounded-2xl shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-200"
+                                        className="bg-white/90 rounded-2xl shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-200 backdrop-blur-sm"
                                     >
                                         {/* Image */}
                                         {item.image && (
                                             <img
                                                 src={`/storage/${item.image}`}
                                                 alt={item.title}
-                                                className="w-full h-44 object-fill object-center"
+                                                className="w-full h-44 object-cover object-center"
                                             />
                                         )}
 
                                         {/* Content */}
                                         <div className="p-5">
-                                            <h3 className="text-xl font-bold text-blue-600 mb-2">
+                                            <h3 className="text-xl font-bold text-success mb-2">
                                                 {item.title}
                                             </h3>
                                             <p className="text-sm text-gray-700 line-clamp-3 mb-4">
@@ -44,7 +44,7 @@ const ServicesMain = ({ service }) => {
                                             </p>
 
                                             <Link href={`/service/${item.id}`}>
-                                                <button className="px-4 py-1 text-sm bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-200 shadow-md">
+                                                <button className="px-4 py-1 text-sm bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-full hover:brightness-110 transition duration-200 shadow-md">
                                                     Read More
                                                 </button>
                                             </Link>

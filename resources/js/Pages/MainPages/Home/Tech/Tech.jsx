@@ -2,9 +2,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import techData from "../../../../../../public/Json/TeachData.json";
 import './Tech.css';
-
-const baseUrl = import.meta.env.VITE_APP_BASE_URL;
-
 const Tech = () => {
     const [selectedTech, setSelectedTech] = useState("Frontend");
     const [animationKey, setAnimationKey] = useState(0);
@@ -126,13 +123,8 @@ const Tech = () => {
                         ))}
                     </motion.div>
 
-                    {/* Railway Track */}
-                    <div className="relative h-96 overflow-hidden mb-32">
-                        {/* Track lines */}
-                        {/* <div className="absolute top-1/2 left-0 right-0 h-3 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                        <div className="absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                        <div className="absolute top-3/4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div> */}
-                        
+                    {/*Track */}
+                    <div className="relative h-32 md:h-96 overflow-hidden md:mb-32">
                         {/* Sleepers */}
                         <div className="absolute top-0 bottom-0 left-0 right-0 flex">
                             {[...Array(40)].map((_, i) => (
@@ -176,7 +168,7 @@ const Tech = () => {
                                         }}
                                     >
                                         <motion.img
-                                            src={`${baseUrl}/${item.image}`}
+                                            src={`${item.image}`}
                                             alt={item.name}
                                             className="tech-logo w-20 h-20 object-contain"
                                             whileHover={{ 
@@ -187,12 +179,6 @@ const Tech = () => {
                                             transition={{ duration: 0.8 }}
                                         />
                                     </motion.div>
-                                    <motion.h3 
-                                        className="hidden md:block text-xs md:text-lg font-bold mt-2 md:mt-4 text-center  text-white bg-black/50 px-2 py-0 md:px-4 md:py-2 rounded-l-box md:rounded-full"
-                                        whileHover={{ scale: 1.1 }}
-                                    >
-                                        {item.name}
-                                    </motion.h3>
                                 </motion.div>
                             ))}
                         </motion.div>

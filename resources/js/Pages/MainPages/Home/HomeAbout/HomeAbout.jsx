@@ -4,7 +4,7 @@ import HomeAboutImage from "./HomeAboutImage";
 const HomeAbout = ({ stats }) => {
     return (
         <>
-            <div className="flex flex-col md:flex-row gap-10 md:gap-44 mt-10 mb-20 lg:p-20 p-2 items-center">
+            <div className="flex flex-col md:flex-row gap-10 md:gap-44 mt-10 mb-5 md:mb-20 lg:p-20 p-2 items-center">
                 {/* Text Section */}
                 <div className="w-full px-4 md:px-0">
                     <h1 className="text-2xl md:text-5xl font-medium leading-tight mb-6 md:mb-10">
@@ -26,11 +26,8 @@ const HomeAbout = ({ stats }) => {
                         perfect choice if you are looking for a reliable and
                         experienced IT partner.
                     </p>
-
                     <HomeAboutStatus stats={stats} />
                 </div>
-
-                {/* Image Section */}
                 <div>
                     <HomeAboutImage />
                 </div>

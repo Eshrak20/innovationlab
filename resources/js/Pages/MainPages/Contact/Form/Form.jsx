@@ -21,7 +21,7 @@ const ContactInputField = ({
             requiblue={requiblue}
         />
         {errors && errors[name] && (
-            <p className="text-blue-500 text-sm mt-1">{errors[name]}</p>
+            <p className="text-success text-sm mt-1">{errors[name]}</p>
         )}
     </div>
 );
@@ -114,14 +114,14 @@ const Form = () => {
                                 requiblue
                             ></textarea>
                             {errors && errors.description && (
-                                <p className="text-blue-500 text-sm mt-1">{errors.description}</p>
+                                <p className="text-success text-sm mt-1">{errors.description}</p>
                             )}
                         </div>
                     </div>
                     <button
                         type="submit"
                         disabled={processing}
-                        className="w-full mt-14 px-3 md:px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-xs md:text-lg font-bold uppercase rounded-xl shadow-lg hover:shadow-blue-500/50 transition duration-300 ease-in-out disabled:opacity-50"
+                        className="w-full mt-14 px-3 md:px-8 py-3 bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white text-xs md:text-lg font-bold uppercase rounded-xl shadow-lg hover:shadow-blue-500/50 transition duration-300 ease-in-out disabled:opacity-50"
                     >
                         {processing ? 'Submitting...' : 'Contact Us'}
                     </button>
@@ -129,7 +129,7 @@ const Form = () => {
 
                 <p className="text-gray-600 text-sm mt-4 text-center">
                     By clicking Contact Us, you agree to our{" "}
-                    <a href="#" className="text-blue-500 hover:underline">
+                    <a href="#" className="text-success hover:underline">
                         Terms and Conditions
                     </a>{" "}
                     and{" "}

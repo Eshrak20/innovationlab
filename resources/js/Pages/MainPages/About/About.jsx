@@ -22,7 +22,7 @@ const About = ({ profileData, managementData, missionData }) => {
                     title="About Us"
                     breadcrumb="Home / About Us"
                 />
-                <div className="max-w-full lg:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto px-4 md:px-8 lg:px-12">
+                <div className="max-w-full mt-20 lg:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto md:px-8 lg:px-12">
                     <Mission missionData={missionData} />
                     <Vision
                         title="Become the most preferred technology"

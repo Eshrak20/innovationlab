@@ -47,7 +47,7 @@ const HomeAboutImage = () => {
     };
 
     return (
-        <div className="flex justify-center items-center gap-4 p-4">
+        <div className="flex justify-center items-center gap-4 md:p-4">
             {/* Left - 2 Small Images */}
             <div className="flex animated-border gap-1 md:hidden">
                 <AnimatePresence mode="wait" custom={direction}>
@@ -55,7 +55,7 @@ const HomeAboutImage = () => {
                         key={`left1-${index}`}
                         src={images[index].left1}
                         alt="Left Top"
-                        className="w-32 h-32  rounded-tl-lg object-cover shadow-lg"
+                        className="w-40 h-40  rounded-tl-lg object-cover shadow-lg"
                         variants={fadeSlide}
                         initial="enter"
                         animate="center"
@@ -68,7 +68,7 @@ const HomeAboutImage = () => {
                         key={`left2-${index}`}
                         src={images[index].left2}
                         alt="Left Bottom"
-                        className="w-32 h-32 rounded-tr-lg object-cover shadow-lg"
+                        className="w-40 h-40 rounded-tr-lg object-cover shadow-lg"
                         variants={fadeSlide}
                         initial="enter"
                         animate="center"
@@ -79,7 +79,7 @@ const HomeAboutImage = () => {
             </div>
 
             {/* Right - Big Main Image with Enhanced Animated Border */}
-            <div className="image-container">
+            <div className="image-container hidden md:block">
                 <div className="animated-border md:w-[850px] md:h-[700px] rounded-2xl overflow-hidden shadow-2xl relative">
                     <span>
                         <motion.div

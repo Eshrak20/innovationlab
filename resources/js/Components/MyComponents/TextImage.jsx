@@ -37,11 +37,11 @@ const TextImage = ({
                 viewport={{ once: true }}
             >
                 <div className="text-gradient bg-clip-text text-transparent">
-                    <h1 className="mb-7 text-3xl 2xl:text-5xl font-extrabold leading-tight">
+                    <h1 className="md:mb-7 mb-3 text-3xl 2xl:text-5xl font-extrabold leading-tight">
                         {title}
                     </h1>
                 </div>
-                <p className="mt-2 md:whitespace-pre-line text-base md:text-xl text-gray-800 dark:text-gray-200  leading-relaxed">
+                <p className="md:mt-2 md:whitespace-pre-line text-xs md:text-xl text-gray-800 dark:text-gray-200  leading-relaxed">
                     {description}
                 </p>
                 <Link href={link}>

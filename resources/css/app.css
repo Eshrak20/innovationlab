@@ -112,6 +112,24 @@
     animation: slide-vertical 2s linear infinite 1.5s, gradient 5s ease infinite;
 }
 
+
+
+.card-hover-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+    z-index: 0;
+}
+
+.card-hover-glow:hover::before {
+    border-color: #6366f1; /* Tailwind's indigo-500 */
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+
 /* Keyframes */
 @keyframes slide-horizontal {
     0% { transform: translateX(-100%); }
@@ -123,6 +141,8 @@
     100% { transform: translateY(100%); }
 }
 
+
+
 /* Optional: Hover effect to resize border width/height */
 .image-container:hover .animated-border::before,
 .image-container:hover .animated-border::after,
@@ -131,4 +151,79 @@
     height: 5px;
     width: 5px;
     transition: all 0.3s ease;
+}
+
+
+
+/*! Glowing border 2 */ 
+
+/* Enhanced Animated Border - Left & Right Only */
+.animated-border-2 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    padding: 1.5rem; /* Increased padding */
+}
+
+/* Remove top and bottom borders (so no ::before and span::before) */
+.animated-border-2::before,
+.animated-border-2::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(180deg, #6366f1, #a855f7, #ec4899, #a855f7, #6366f1);
+    background-size: 400% 400%;
+    z-index: 1;
+    animation: gradient 5s ease infinite;
+}
+
+/* Left border-2 */
+.animated-border-2::before {
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    animation: slide-vertical 2s linear infinite, gradient 5s ease infinite;
+}
+
+/* Right border-2 */
+.animated-border-2::after {
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    animation: slide-vertical 2s linear infinite 1s, gradient 5s ease infinite;
+}
+
+/* Remove unused span elements */
+.animated-border-2 span::before,
+.animated-border-2 span::after {
+    display: none;
+}
+
+/* Keyframes */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes slide-vertical {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Optional: Hover glow */
+.card-hover-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+    z-index: 0;
+}
+
+.card-hover-glow:hover::before {
+    border-color: #6366f1;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
 }

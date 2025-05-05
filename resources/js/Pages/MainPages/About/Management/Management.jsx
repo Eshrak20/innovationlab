@@ -15,29 +15,29 @@ const Management = ({ managementData }) => {
                                 className="w-60 md:w-96 transform -rotate-90 mt-52 ml-20 hidden md:block"
                             />
                         </div> */}
-                        <h1 className="text-lg md:text-5xl font-bold bg-black inline-block px-10 py-7 rounded-lg transition-all duration-300 text-white  transform -rotate-90 mt-52 -mr-40 ml-5 md:block">
+                        <h1 className="z-10 text-lg md:text-5xl font-bold bg-gradient-to-r from-[#a855f7] to-[#6366f1] shadow-md hidden md:inline-block px-10 py-7 rounded-lg transition-all duration-300 text-white  transform -rotate-90 mt-52 -mr-40 ml-5">
                             Innovation
-                            <span className="text-cyan-300">Labs</span>
-                            <span className="text-blue-300">360</span>
+                            <span>Labs</span>
+                            <span>360</span>
                         </h1>
-                        <div className="w-full grid grid-cols-1  md:grid-cols-2 md:gap-x-4">
+                        <div className="w-full grid grid-cols-1 md:grid-cols-2 md:gap-x-6">
                             {managementData.map((team, index) => (
                                 <div
                                     key={index}
-                                    className="p-4 grid-cols-2 items-start justify-start"
+                                    className="p-6 m-3 rounded-xl bg-white dark:bg-[#1f1f2e] shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                                 >
-                                    <div className="text-4xl font-bold mb-3 text-success">
+                                    <div className="text-4xl font-bold mb-2 text-success">
                                         {team.number < 10
                                             ? `0${team.number}`
                                             : team.number}
                                     </div>
-                                    <div className="text-sm text-gray-900">
+                                    <div className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">
                                         {team.title}
                                     </div>
-                                    <div className="text-xl text-gray-800">
+                                    <div className="text-sm text-gray-600 dark:text-gray-400">
                                         Team
                                     </div>
-                                    <hr className="my-4 w-full border-gray-300" />
+                                    <hr className="my-4 border-gray-300 dark:border-gray-600" />
                                 </div>
                             ))}
                         </div>

@@ -128,11 +128,10 @@ const HomeTeam = ({ profileData }) => {
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-success">
+                    <h2 className="text-4xl md:text-6xl font-bold text-success">
                         Our Expert Team
                     </h2>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
-                        We are a team of dedicated professionals with diverse <br />
+                    <p className="text-xs md:text-lg text-gray-900 font-mono dark:text-gray-300 mt-2 md:mt-4">
                         Meet our team of professionals
                     </p>
                 </div>
@@ -149,13 +148,13 @@ const HomeTeam = ({ profileData }) => {
 
                     {/* Card Carousel */}
                     <div 
-                        className="flex justify-center relative w-full h-[550px] mt-10 perspective-1000"
+                        className="flex justify-center relative w-full h-[350px]  md:h-[550px] md:mt-10 perspective-1000"
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                     >
                         {visibleCards.map((profile, idx) => {
                             const baseStyle =
-                                "absolute transition-all duration-500 rounded-2xl bg-white  shadow-lg overflow-hidden cursor-pointer group";
+                                "absolute transition-all duration-500 md:rounded-2xl bg-white  md:shadow-lg overflow-hidden cursor-pointer group";
                             const sizeStyle = profile.active
                                 ? "w-[350px] h-[500px] z-10 scale-105"
                                 : "w-[300px] h-[450px]";
@@ -173,7 +172,7 @@ const HomeTeam = ({ profileData }) => {
                             return (
                                 <div
                                     key={idx}
-                                    className={`${baseStyle} ${sizeStyle} ${positionStyle} hover:shadow-2xl hover:-translate-y-3`}
+                                    className={`${baseStyle} ${sizeStyle} ${positionStyle} md:hover:shadow-2xl hover:-translate-y-3`}
                                     onClick={() =>
                                         !profile.active &&
                                         setCurrentIndex(
@@ -184,7 +183,7 @@ const HomeTeam = ({ profileData }) => {
                                         )
                                     }
                                 >
-                                    <div className="h-full overflow-y-auto pr-2 no-scrollbar">
+                                    <div className="h-full overflow-y-auto pr-2 no-scrollbar mx-3 md:mx-0">
                                         {/* Profile Header with Enhanced Image */}
                                         <div className="relative h-60 bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 flex items-center justify-center overflow-hidden">
                                             {profile.image ? (
@@ -214,8 +213,8 @@ const HomeTeam = ({ profileData }) => {
                                         </div>
 
                                         {/* Profile Body */}
-                                        <div className="pt-16 pb-6 px-6">
-                                            <h3 className="text-xl font-bold text-center text-gray-800  mb-1 group-hover:text-indigo-600  transition-colors">
+                                        <div className="pt-16 pb-6 px-6 bg-gray-100 md:bg-white">
+                                            <h3 className="text-xl  font-bold text-center text-gray-800  mb-1 group-hover:text-indigo-600  transition-colors">
                                                 {profile.title ||
                                                     "No name provided"}
                                             </h3>

@@ -39,27 +39,27 @@ const Visit = ({ contactInfo }) => {
                                 }}
                             >
                                 {/* Address */}
-                                <motion.div className="flex flex-col items-center text-center space-y-4 w-full sm:w-1/3 hover:scale-105 transition-transform duration-300 mb-8 sm:mb-0">
-                                    <div className="bg-blue-100 p-4 rounded-full shadow-md">
-                                        <FaMapMarkerAlt className="text-5xl text-success" />
+                                <motion.div className="flex flex-col items-center text-center space-y-4 w-full sm:w-1/3  transition-transform duration-300 mb-8 sm:mb-0">
+                                    <div className="p-4 rounded-full shadow-md">
+                                        <FaMapMarkerAlt className="text-5xl" />
                                     </div>
-                                    <h2 className="text-xl font-bold">
+                                    <h2 className="text-xl font-bold hover:scale-105 text-success">
                                         Address
                                     </h2>
-                                    <p className="text-lg text-gray-700 whitespace-pre-line">
+                                    <p className="text-lg text-success whitespace-pre-line">
                                         {address}
                                     </p>
                                 </motion.div>
 
                                 {/* Phone */}
-                                <motion.div className="flex flex-col items-center text-center w-full sm:w-1/3 hover:scale-105 transition-transform duration-300 mb-8 sm:mb-0">
+                                <motion.div className="flex flex-col items-center text-center w-full sm:w-1/3 transition-transform duration-300 mb-8 sm:mb-0">
                                     <div className="bg-blue-100 p-4 rounded-full shadow-md">
                                         <FaPhoneAlt className="text-5xl text-success" />
                                     </div>
-                                    <h2 className="text-xl font-bold mt-4">
+                                    <h2 className="text-xl font-bold mt-4 hover:scale-105 text-success">
                                         Phone Numbers
                                     </h2>
-                                    <div className="text-lg text-gray-700 mt-4 space-y-1">
+                                    <div className="text-lg text-success mt-4 space-y-1">
                                         <p>
                                             {info.phone || "No phone provided"}
                                         </p>
@@ -76,14 +76,14 @@ const Visit = ({ contactInfo }) => {
                                     </div>
                                 </motion.div>
                                 {/* Email */}
-                                <motion.div className="flex flex-col items-center text-center space-y-4 w-full sm:w-1/3 hover:scale-105 transition-transform duration-300">
+                                <motion.div className="flex flex-col items-center text-center space-y-4 w-full sm:w-1/3  transition-transform duration-300">
                                     <div className="bg-blue-100 p-4 rounded-full shadow-md">
                                         <FaEnvelope className="text-5xl text-success" />
                                     </div>
-                                    <h2 className="text-xl font-bold">
+                                    <h2 className="text-xl font-bold hover:scale-105 text-success">
                                         Emails
                                     </h2>
-                                    <div className="text-lg text-gray-700 space-y-1">
+                                    <div className="text-lg text-success space-y-1">
                                         <p>
                                             {info.email || "No email provided"}{" "}
                                         </p>
@@ -108,7 +108,7 @@ const Visit = ({ contactInfo }) => {
                                         onClick={() =>
                                             setIsRoadView(!isRoadView)
                                         }
-                                        className="bg-success text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-500 transition-colors duration-300"
+                                        className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white px-6 py-2 rounded-full shadow-md  transition-colors duration-300"
                                     >
                                         {isRoadView
                                             ? "Show Default View"
