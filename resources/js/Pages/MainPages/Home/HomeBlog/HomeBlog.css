@@ -82,3 +82,45 @@
         font-size: 1rem;
     }
 }
+
+
+
+
+.text-gradient {
+    background: linear-gradient(90deg, #7c3aed, #4f46e5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.blog-card-container {
+    perspective: 1000px;
+}
+
+.blog-card {
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.blog-card-container:hover .blog-card {
+    transform: translateY(-5px);
+}
+
+.glowing-button {
+    position: relative;
+    z-index: 1;
+}
+
+.glowing-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+}
+
+/* Dark mode specific styles */
+.dark .blog-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glowing-button:hover {
+    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.4);
+}

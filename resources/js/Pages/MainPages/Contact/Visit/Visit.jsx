@@ -40,7 +40,7 @@ const Visit = ({ contactInfo }) => {
                             >
                                 {/* Address */}
                                 <motion.div className="flex flex-col items-center text-center space-y-4 w-full sm:w-1/3  transition-transform duration-300 mb-8 sm:mb-0">
-                                    <div className="p-4 rounded-full shadow-md">
+                                    <div className="p-4 rounded-full  text-purple-500 bg-purple-200 shadow-md">
                                         <FaMapMarkerAlt className="text-5xl" />
                                     </div>
                                     <h2 className="text-xl font-bold hover:scale-105 text-success">
@@ -53,8 +53,8 @@ const Visit = ({ contactInfo }) => {
 
                                 {/* Phone */}
                                 <motion.div className="flex flex-col items-center text-center w-full sm:w-1/3 transition-transform duration-300 mb-8 sm:mb-0">
-                                    <div className="bg-blue-100 p-4 rounded-full shadow-md">
-                                        <FaPhoneAlt className="text-5xl text-success" />
+                                    <div className="text-purple-500 bg-purple-200 p-4 rounded-full shadow-md">
+                                        <FaPhoneAlt className="text-5xl" />
                                     </div>
                                     <h2 className="text-xl font-bold mt-4 hover:scale-105 text-success">
                                         Phone Numbers
@@ -77,8 +77,8 @@ const Visit = ({ contactInfo }) => {
                                 </motion.div>
                                 {/* Email */}
                                 <motion.div className="flex flex-col items-center text-center space-y-4 w-full sm:w-1/3  transition-transform duration-300">
-                                    <div className="bg-blue-100 p-4 rounded-full shadow-md">
-                                        <FaEnvelope className="text-5xl text-success" />
+                                    <div className="text-purple-500 bg-purple-200 p-4 rounded-full shadow-md">
+                                        <FaEnvelope className="text-5xl" />
                                     </div>
                                     <h2 className="text-xl font-bold hover:scale-105 text-success">
                                         Emails

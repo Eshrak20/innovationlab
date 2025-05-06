@@ -16,7 +16,7 @@ const Mission = ({ missionData }) => {
             <span></span> {/* Required for pseudo-elements */}
             
             {/* mission Text */}
-            <p className="text-lg font-medium dark:text-gray-300 text-gray-700">
+            <p className="2xl:text-2xl md:text-xl text-lg font-medium dark:text-gray-300 text-gray-700">
               <span className="text-success font-bold">{`0${index + 1}. `}</span>
               {mission.text}
             </p>

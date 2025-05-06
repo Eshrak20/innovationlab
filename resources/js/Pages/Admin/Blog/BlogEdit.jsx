@@ -26,47 +26,58 @@ const BlogEdit = ({ blog, categories }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
+
         const formData = new FormData();
-        
+
         // Append all fields to formData using a loop
         const fieldsToAppend = [
-            'title', 'summary', 'description', 'date', 
-            'published_by', 'category', 'slug'
+            "title",
+            "summary",
+            "description",
+            "date",
+            "published_by",
+            "category",
+            "slug",
         ];
-        
-        fieldsToAppend.forEach(key => {
+
+        fieldsToAppend.forEach((key) => {
             if (data[key] !== undefined) {
                 formData.append(key, data[key]);
             }
         });
-        
+
         // Handle image separately
         if (data.image instanceof File) {
-            formData.append('image', data.image);
+            formData.append("image", data.image);
         } else if (!data.image) {
-            formData.append('image', '');
+            formData.append("image", "");
         }
-    
+
         try {
-            const response = await axios.post(route("blogs.update", blog.id), formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    'X-HTTP-Method-Override': 'PATCH'
+            const response = await axios.post(
+                route("blogs.update", blog.id),
+                formData,
+                {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                        "X-HTTP-Method-Override": "PATCH",
+                    },
                 }
-            });
-            
+            );
+
             showSuccessToast(response.data.success);
         } catch (error) {
             console.error("Update error:", error);
             if (error.response && error.response.data.errors) {
                 // Handle validation errors
                 const errors = error.response.data.errors;
-                Object.keys(errors).forEach(key => {
+                Object.keys(errors).forEach((key) => {
                     showErrorToast(errors[key][0]);
                 });
             } else {
-                showErrorToast(error.response?.data?.message || "Failed to update blog");
+                showErrorToast(
+                    error.response?.data?.message || "Failed to update blog"
+                );
             }
         } finally {
             setIsSubmitting(false);
@@ -84,19 +95,19 @@ const BlogEdit = ({ blog, categories }) => {
     return (
         <AdminLayout>
             <ToastContainer />
-            <div className="p-6 bg-white rounded-lg shadow">
+            <div className="p-6 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 rounded-lg shadow">
                 <h1 className="text-2xl font-bold mb-6">Edit Blog</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Image Upload */}
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Upload Image
                             </label>
                             <input
                                 type="file"
                                 accept="image/*"
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 onChange={(e) => {
                                     if (e.target.files && e.target.files[0]) {
                                         setData("image", e.target.files[0]);
@@ -134,12 +145,12 @@ const BlogEdit = ({ blog, categories }) => {
 
                         {/* Title */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Title*
                             </label>
                             <input
                                 type="text"
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 value={data.title}
                                 onChange={(e) =>
                                     setData("title", e.target.value)
@@ -155,13 +166,13 @@ const BlogEdit = ({ blog, categories }) => {
 
                         {/* Slug */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Slug*
                             </label>
                             <div className="flex">
                                 <input
                                     type="text"
-                                    className="mt-1 block w-full rounded-l-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                    className="mt-1 block w-full rounded-l-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                     value={data.slug}
                                     onChange={(e) =>
                                         setData("slug", e.target.value)
@@ -171,7 +182,7 @@ const BlogEdit = ({ blog, categories }) => {
                                 <button
                                     type="button"
                                     onClick={generateSlug}
-                                    className="mt-1 px-3 py-2 bg-gray-200 rounded-r-md hover:bg-gray-300"
+                                    className="mt-1 px-3 py-2 bg-gray-200 dark:bg-gray-700 dark:text-white rounded-r-md hover:bg-gray-300 dark:hover:bg-gray-600"
                                 >
                                     Generate
                                 </button>
@@ -185,12 +196,12 @@ const BlogEdit = ({ blog, categories }) => {
 
                         {/* Published By */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Published By*
                             </label>
                             <input
                                 type="text"
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 value={data.published_by}
                                 onChange={(e) =>
                                     setData("published_by", e.target.value)
@@ -206,12 +217,12 @@ const BlogEdit = ({ blog, categories }) => {
 
                         {/* Date */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Date*
                             </label>
                             <input
                                 type="date"
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 value={data.date}
                                 onChange={(e) =>
                                     setData("date", e.target.value)
@@ -227,11 +238,11 @@ const BlogEdit = ({ blog, categories }) => {
 
                         {/* Category */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Category*
                             </label>
                             <select
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 value={data.category}
                                 onChange={(e) =>
                                     setData("category", e.target.value)
@@ -251,13 +262,14 @@ const BlogEdit = ({ blog, categories }) => {
                                 </p>
                             )}
                         </div>
+
                         {/* Summary */}
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Summary
                             </label>
                             <textarea
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 rows={3}
                                 value={data.summary}
                                 onChange={(e) =>
@@ -273,11 +285,11 @@ const BlogEdit = ({ blog, categories }) => {
 
                         {/* Description */}
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Description*
                             </label>
                             <textarea
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                                 rows={6}
                                 value={data.description}
                                 onChange={(e) =>

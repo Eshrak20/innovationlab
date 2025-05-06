@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const ArrayInputField = ({
-    label,
     items,
     onAdd,
     onRemove,
@@ -35,7 +34,7 @@ const ArrayInputField = ({
                 <button
                     type="button"
                     onClick={handleAdd}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                    className="px-4 py-2 bg-blue-600 text-white dark:text-gray-800 rounded-md hover:bg-blue-700 transition-colors"
                 >
                     {buttonText}
                 </button>
@@ -45,7 +44,7 @@ const ArrayInputField = ({
                 {items.map((item, index) => (
                     <div
                         key={index}
-                        className="flex items-center bg-gray-100 px-3 py-1 rounded-full"
+                        className="flex items-center bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full"
                     >
                         <span>{item}</span>
                         <button

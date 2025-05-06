@@ -57,7 +57,7 @@ const Leader = ({ profiles }) => {
 
                                     {/* Body */}
                                     <div className="pt-7 pb-8 px-6">
-                                        <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                        <h3 className="text-base md:text-lg 2xl:text-2xl font-bold text-center text-gray-800 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                                             {profile?.title ||
                                                 "No title provided"}
                                         </h3>

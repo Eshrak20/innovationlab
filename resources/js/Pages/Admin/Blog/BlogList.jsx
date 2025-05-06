@@ -3,7 +3,7 @@ import { Link, router } from "@inertiajs/react";
 import AdminLayout from "@/Layouts/AdminLayout";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
 import { ToastContainer } from "react-toastify";
-const BlogList = ({ blogs: initialBlogs  }) => {
+const BlogList = ({ blogs: initialBlogs }) => {
     const [blogs, setBlogs] = useState(initialBlogs);
     const handleDelete = async (id) => {
         try {
@@ -18,83 +18,85 @@ const BlogList = ({ blogs: initialBlogs  }) => {
         }
     };
 
-
     return (
         <AdminLayout>
             <ToastContainer />
-            <div className="p-6 bg-white rounded-lg shadow">
+            <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
                 <div className="flex justify-between items-center mb-6">
-                    <h1 className="text-2xl font-bold"><span className="text-red-500">*Only Your</span> Blog Posts</h1>
+                    <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+                        <span className="text-red-500">*Only Your</span> Blog
+                        Posts
+                    </h1>
                     <Link
                         href={route("blogs.create")}
-                        className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+                        className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 dark:hover:bg-indigo-500"
                     >
                         Create New Blog
                     </Link>
                 </div>
 
                 <div className="overflow-x-auto">
-                    <table className="min-w-full divide-y divide-gray-200">
-                        <thead className="bg-gray-50">
+                    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
+                        <thead className="bg-gray-50 dark:bg-gray-700">
                             <tr>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Title
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Category
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Date
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Published By
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Likes
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                     Actions
                                 </th>
                             </tr>
                         </thead>
-                        <tbody className="bg-white divide-y divide-gray-200">
+                        <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-600">
                             {blogs.map((blog) => (
                                 <tr key={blog.id}>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm font-medium text-gray-900">
+                                        <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
                                             {blog.title}
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-500 capitalize">
+                                        <div className="text-sm text-gray-500 dark:text-gray-300 capitalize">
                                             {blog.category}
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-500">
+                                        <div className="text-sm text-gray-500 dark:text-gray-300">
                                             {new Date(
                                                 blog.date
                                             ).toLocaleDateString()}
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-500">
+                                        <div className="text-sm text-gray-500 dark:text-gray-300">
                                             {blog.published_by}
                                         </div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-500">
+                                        <div className="text-sm text-gray-500 dark:text-gray-300">
                                             {blog.likes}
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
                                         <div className="flex space-x-2">
                                             <Link
                                                 href={route(
                                                     "blogs.show",
                                                     blog.id
                                                 )}
-                                                className="text-indigo-600 hover:text-indigo-900"
+                                                className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
                                             >
                                                 View
                                             </Link>
@@ -103,7 +105,7 @@ const BlogList = ({ blogs: initialBlogs  }) => {
                                                     "blogs.edit",
                                                     blog.id
                                                 )}
-                                                className="text-indigo-600 hover:text-indigo-900"
+                                                className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
                                             >
                                                 Edit
                                             </Link>
@@ -111,7 +113,7 @@ const BlogList = ({ blogs: initialBlogs  }) => {
                                                 onClick={() =>
                                                     handleDelete(blog.id)
                                                 }
-                                                className="text-red-600 hover:text-red-900"
+                                                className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300"
                                             >
                                                 Delete
                                             </button>

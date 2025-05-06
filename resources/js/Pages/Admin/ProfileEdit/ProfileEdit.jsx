@@ -153,7 +153,7 @@ const ProfileEdit = ({ profile }) => {
             <Head title="Edit Profile" />
             <ToastContainer position="top-right" autoClose={3000} />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="bg-white shadow rounded-lg overflow-hidden">
+                <div className="bg-white dark:bg-gray-900 shadow rounded-lg overflow-hidden">
                     <ProfileHeader
                         title="Edit Your Profile"
                         description="Update your professional information"
@@ -174,7 +174,7 @@ const ProfileEdit = ({ profile }) => {
                             <div>
                                 <label
                                     htmlFor="title"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     Professional Title*
                                 </label>
@@ -185,14 +185,14 @@ const ProfileEdit = ({ profile }) => {
                                     value={formData.title}
                                     onChange={handleChange}
                                     required
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full dark:text rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 />
                             </div>
 
                             <div>
                                 <label
                                     htmlFor="subtitle"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     Tagline
                                 </label>
@@ -202,14 +202,14 @@ const ProfileEdit = ({ profile }) => {
                                     name="subtitle"
                                     value={formData.subtitle}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 />
                             </div>
 
                             <div>
                                 <label
                                     htmlFor="employment_type"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     Designation
                                 </label>
@@ -219,14 +219,14 @@ const ProfileEdit = ({ profile }) => {
                                     name="employment_type"
                                     value={formData.employment_type}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 />
                             </div>
 
                             <div>
                                 <label
                                     htmlFor="experience_years"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     Years of Experience
                                 </label>
@@ -238,14 +238,14 @@ const ProfileEdit = ({ profile }) => {
                                     onChange={handleChange}
                                     min="0"
                                     max="50"
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 />
                             </div>
 
                             <div>
                                 <label
                                     htmlFor="current_stack"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     Current Tech Stack
                                 </label>
@@ -255,14 +255,14 @@ const ProfileEdit = ({ profile }) => {
                                     name="current_stack"
                                     value={formData.current_stack}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 />
                             </div>
 
                             <div>
                                 <label
                                     htmlFor="specialization"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     Specialization
                                 </label>
@@ -272,7 +272,7 @@ const ProfileEdit = ({ profile }) => {
                                     name="specialization"
                                     value={formData.specialization}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 />
                             </div>
                         </ProfileSection>
@@ -291,6 +291,7 @@ const ProfileEdit = ({ profile }) => {
                                     )
                                 }
                                 placeholder="Add a new skill (e.g. React, Node.js)"
+                                // className="text-black"
                             />
                         </div>
 
@@ -321,7 +322,7 @@ const ProfileEdit = ({ profile }) => {
                             <div>
                                 <label
                                     htmlFor="age"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     Age
                                 </label>
@@ -333,14 +334,14 @@ const ProfileEdit = ({ profile }) => {
                                     onChange={handleChange}
                                     min="18"
                                     max="99"
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 />
                             </div>
 
                             <div>
                                 <label
                                     htmlFor="education"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm  font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     Education
                                 </label>
@@ -350,14 +351,14 @@ const ProfileEdit = ({ profile }) => {
                                     name="education"
                                     value={formData.education}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 />
                             </div>
 
                             <div>
                                 <label
                                     htmlFor="location"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     Location
                                 </label>
@@ -367,7 +368,7 @@ const ProfileEdit = ({ profile }) => {
                                     name="location"
                                     value={formData.location}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 />
                             </div>
                         </ProfileSection>
@@ -376,7 +377,7 @@ const ProfileEdit = ({ profile }) => {
                         <div>
                             <label
                                 htmlFor="bio"
-                                className="block text-sm font-medium text-gray-700"
+                                className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                             >
                                 Professional Bio
                             </label>
@@ -386,7 +387,7 @@ const ProfileEdit = ({ profile }) => {
                                 rows={5}
                                 value={formData.bio}
                                 onChange={handleChange}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                 placeholder="Tell us about your professional journey, skills, and achievements..."
                             />
                         </div>
@@ -396,7 +397,7 @@ const ProfileEdit = ({ profile }) => {
                             <div>
                                 <label
                                     htmlFor="linkedin"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     LinkedIn URL
                                 </label>
@@ -406,7 +407,7 @@ const ProfileEdit = ({ profile }) => {
                                     name="linkedin"
                                     value={formData.linkedin}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                     placeholder="https://linkedin.com/in/yourprofile"
                                 />
                             </div>
@@ -414,7 +415,7 @@ const ProfileEdit = ({ profile }) => {
                             <div>
                                 <label
                                     htmlFor="github"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     GitHub URL
                                 </label>
@@ -424,7 +425,7 @@ const ProfileEdit = ({ profile }) => {
                                     name="github"
                                     value={formData.github}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                     placeholder="https://github.com/yourusername"
                                 />
                             </div>
@@ -432,7 +433,7 @@ const ProfileEdit = ({ profile }) => {
                             <div>
                                 <label
                                     htmlFor="portfolio_url"
-                                    className="block text-sm font-medium text-gray-700"
+                                    className="block text-sm font-medium dark:text-gray-200 text-gray-800"
                                 >
                                     Portfolio URL
                                 </label>
@@ -442,7 +443,7 @@ const ProfileEdit = ({ profile }) => {
                                     name="portfolio_url"
                                     value={formData.portfolio_url}
                                     onChange={handleChange}
-                                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
+                                    className="mt-1 block w-full rounded-md text-black dark:border-gray-800 border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"
                                     placeholder="https://yourportfolio.com"
                                 />
                             </div>

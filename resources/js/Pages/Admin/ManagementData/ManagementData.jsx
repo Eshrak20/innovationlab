@@ -65,37 +65,48 @@ const ManagementData = ({ managementData: initialData }) => {
             <ToastContainer />
             <div className="max-w-7xl mx-auto p-6">
                 <div className="flex justify-between items-center mb-6">
-                    <h1 className="text-2xl font-bold text-gray-800">Management Metrics</h1>
-                    <div className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
+                    <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                        Management Metrics
+                    </h1>
+                    <div className="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-3 py-1 rounded-full text-sm font-medium">
                         {dataList.length} Records
                     </div>
                 </div>
 
-                <div className="bg-white rounded-lg shadow overflow-hidden">
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
                     <div className="overflow-x-auto">
-                        <table className="min-w-full divide-y divide-gray-200">
-                            <thead className="bg-gray-50">
+                        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                            <thead className="bg-gray-50 dark:bg-gray-700">
                                 <tr>
-                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                         Metric
                                     </th>
-                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-32">
+                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider w-32">
                                         Value
                                     </th>
-                                    <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider w-40">
+                                    <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider w-40">
                                         Actions
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody className="bg-white divide-y divide-gray-200">
+                            <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
                                 {dataList.map((item) => (
-                                    <tr key={item.id} className="hover:bg-gray-50">
+                                    <tr
+                                        key={item.id}
+                                        className="hover:bg-gray-50 dark:hover:bg-gray-700"
+                                    >
                                         <td className="px-6 py-4">
                                             {editingId === item.id ? (
                                                 <input
                                                     type="text"
                                                     value={form.title}
-                                                    onChange={(e) => setForm({ ...form, title: e.target.value })}
+                                                    onChange={(e) =>
+                                                        setForm({
+                                                            ...form,
+                                                            title: e.target
+                                                                .value,
+                                                        })
+                                                    }
                                                     onKeyDown={(e) => {
                                                         if (
                                                             e.key === "Enter" &&
@@ -107,11 +118,13 @@ const ManagementData = ({ managementData: initialData }) => {
                                                             );
                                                         }
                                                     }}
-                                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                                     autoFocus
                                                 />
                                             ) : (
-                                                <div className="text-sm font-medium text-gray-900">{item.title}</div>
+                                                <div className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                                                    {item.title}
+                                                </div>
                                             )}
                                         </td>
                                         <td className="px-6 py-4">
@@ -119,7 +132,13 @@ const ManagementData = ({ managementData: initialData }) => {
                                                 <input
                                                     type="number"
                                                     value={form.number}
-                                                    onChange={(e) => setForm({ ...form, number: e.target.value })}
+                                                    onChange={(e) =>
+                                                        setForm({
+                                                            ...form,
+                                                            number: e.target
+                                                                .value,
+                                                        })
+                                                    }
                                                     onKeyDown={(e) => {
                                                         if (
                                                             e.key === "Enter" &&
@@ -131,39 +150,55 @@ const ManagementData = ({ managementData: initialData }) => {
                                                             );
                                                         }
                                                     }}
-                                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                                 />
                                             ) : (
-                                                <div className="text-xl font-bold text-blue-600">{item.number}+</div>
+                                                <div className="text-xl font-bold text-blue-600 dark:text-blue-400">
+                                                    {item.number}+
+                                                </div>
                                             )}
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             {editingId === item.id ? (
                                                 <div className="flex justify-end space-x-2">
                                                     <button
-                                                        onClick={() => setEditingId(null)}
-                                                        className="px-3 py-1 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-md text-xs"
+                                                        onClick={() =>
+                                                            setEditingId(null)
+                                                        }
+                                                        className="px-3 py-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-100 rounded-md text-xs"
                                                     >
                                                         Cancel
                                                     </button>
                                                     <button
-                                                        onClick={() => handleUpdate(item.id)}
+                                                        onClick={() =>
+                                                            handleUpdate(
+                                                                item.id
+                                                            )
+                                                        }
                                                         disabled={isUpdating}
                                                         className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-xs disabled:opacity-50"
                                                     >
-                                                        {isUpdating ? "Saving..." : "Save"}
+                                                        {isUpdating
+                                                            ? "Saving..."
+                                                            : "Save"}
                                                     </button>
                                                 </div>
                                             ) : (
                                                 <div className="flex justify-end space-x-2">
                                                     <button
-                                                        onClick={() => handleEdit(item)}
+                                                        onClick={() =>
+                                                            handleEdit(item)
+                                                        }
                                                         className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-xs"
                                                     >
                                                         Edit
                                                     </button>
                                                     <button
-                                                        onClick={() => handleDelete(item.id)}
+                                                        onClick={() =>
+                                                            handleDelete(
+                                                                item.id
+                                                            )
+                                                        }
                                                         className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-md text-xs"
                                                     >
                                                         Delete

@@ -23,16 +23,16 @@ const ServiceEdit = ({ service }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-    
+
         // Validate if is_featured is a boolean
         if (typeof data.is_featured !== "boolean") {
             showErrorToast("Feature status must be either true or false.");
             setIsSubmitting(false);
             return;
         }
-    
+
         const formData = new FormData();
-    
+
         // Append all fields except image
         Object.keys(data).forEach((key) => {
             if (key === "is_featured") {
@@ -41,12 +41,12 @@ const ServiceEdit = ({ service }) => {
                 formData.append(key, data[key]);
             }
         });
-    
+
         // Only append image if it's a new uploaded file
         if (data.image instanceof File) {
             formData.append("image", data.image);
         }
-    
+
         try {
             const response = await axios.post(
                 route("services.update", service.id),
@@ -73,19 +73,19 @@ const ServiceEdit = ({ service }) => {
             setIsSubmitting(false);
         }
     };
-    
-    
 
     return (
         <AdminLayout>
             <ToastContainer />
-            <div className="p-6 bg-white rounded-lg shadow">
-                <h1 className="text-2xl font-bold mb-6">Edit Service</h1>
+            <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                    Edit Service
+                </h1>
                 <form onSubmit={handleSubmit} encType="multipart/form-data">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Title */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Title*
                             </label>
                             <input
@@ -94,11 +94,11 @@ const ServiceEdit = ({ service }) => {
                                 onChange={(e) =>
                                     setData("title", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm"
                                 required
                             />
                             {errors.title && (
-                                <p className="text-red-600 text-sm">
+                                <p className="text-red-500 text-sm">
                                     {errors.title}
                                 </p>
                             )}
@@ -106,7 +106,7 @@ const ServiceEdit = ({ service }) => {
 
                         {/* Icon */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Icon (class or URL)
                             </label>
                             <input
@@ -115,10 +115,10 @@ const ServiceEdit = ({ service }) => {
                                 onChange={(e) =>
                                     setData("icon", e.target.value)
                                 }
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm"
                             />
                             {errors.icon && (
-                                <p className="text-red-600 text-sm">
+                                <p className="text-red-500 text-sm">
                                     {errors.icon}
                                 </p>
                             )}
@@ -133,9 +133,9 @@ const ServiceEdit = ({ service }) => {
                                     onChange={(e) =>
                                         setData("is_featured", e.target.checked)
                                     }
-                                    className="rounded border-gray-300"
+                                    className="rounded border-gray-300 dark:border-gray-600"
                                 />
-                                <span className="ml-2 text-sm text-gray-700">
+                                <span className="ml-2 text-sm text-gray-700 dark:text-gray-300">
                                     Feature on homepage
                                 </span>
                             </label>
@@ -143,7 +143,7 @@ const ServiceEdit = ({ service }) => {
 
                         {/* Short Description */}
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Short Description
                             </label>
                             <textarea
@@ -152,10 +152,10 @@ const ServiceEdit = ({ service }) => {
                                     setData("short_description", e.target.value)
                                 }
                                 rows={3}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm"
                             />
                             {errors.short_description && (
-                                <p className="text-red-600 text-sm">
+                                <p className="text-red-500 text-sm">
                                     {errors.short_description}
                                 </p>
                             )}
@@ -163,7 +163,7 @@ const ServiceEdit = ({ service }) => {
 
                         {/* Description */}
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Full Description
                             </label>
                             <textarea
@@ -172,18 +172,18 @@ const ServiceEdit = ({ service }) => {
                                     setData("description", e.target.value)
                                 }
                                 rows={5}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm"
                             />
                             {errors.description && (
-                                <p className="text-red-600 text-sm">
+                                <p className="text-red-500 text-sm">
                                     {errors.description}
                                 </p>
                             )}
                         </div>
 
-                        {/* Image */}
+                        {/* Image Upload */}
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Upload Image
                             </label>
                             <input
@@ -199,10 +199,10 @@ const ServiceEdit = ({ service }) => {
                                         );
                                     }
                                 }}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm"
                             />
                             {errors.image && (
-                                <p className="text-red-600 text-sm">
+                                <p className="text-red-500 text-sm">
                                     {errors.image}
                                 </p>
                             )}
@@ -222,7 +222,7 @@ const ServiceEdit = ({ service }) => {
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+                            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 disabled:opacity-50"
                         >
                             {isSubmitting ? "Updating..." : "Update Service"}
                         </button>

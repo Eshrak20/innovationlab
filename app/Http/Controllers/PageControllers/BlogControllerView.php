@@ -16,9 +16,9 @@ class BlogControllerView extends Controller
             'blogInfo' => $blogInfo
         ]);
     }
-    public function show($id)
+    public function show($slug)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = Blog::findOrFail($slug);
         return Inertia::render('MainPages/Blog/DetBlog', [
             'blog' => $blog
         ]);

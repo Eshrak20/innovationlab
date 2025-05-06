@@ -22,7 +22,7 @@ use App\Http\Controllers\PageControllers\TermsConditionsController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/blog', [BlogControllerView::class, 'index']);
-Route::get('/blog/{id}', [BlogControllerView::class, 'show']);
+Route::get('/blog/{slug}', [BlogControllerView::class, 'show']);
 Route::get('/service', [ServiceControllerHome::class, 'index']);
 Route::get('/service/{id}', [ServiceControllerHome::class, 'show']);
 Route::get('/contact', [ContactController::class, 'index']);
