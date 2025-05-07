@@ -50,7 +50,10 @@ const Leader = ({ profiles }) => {
                                             </div>
                                         ) : (
                                             <div className="w-40 h-40 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center text-4xl font-bold text-indigo-600 dark:text-indigo-300 border-[6px] border-white dark:border-gray-800 absolute -bottom-10 left-1/2 transform -translate-x-1/2 group-hover:scale-110 group-hover:-translate-y-5 transition-all duration-500 shadow-xl">
-                                                {profile?.title?.[0] || "?"}
+                                                {profile?.title
+                                                    ?.split(" ")
+                                                    .slice(0, 2)
+                                                    .join(" ") || "?"}
                                             </div>
                                         )}
                                     </div>
@@ -58,8 +61,10 @@ const Leader = ({ profiles }) => {
                                     {/* Body */}
                                     <div className="pt-7 pb-8 px-6">
                                         <h3 className="text-base md:text-lg 2xl:text-2xl font-bold text-center text-gray-800 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                            {profile?.title ||
-                                                "No title provided"}
+                                            {profile?.title
+                                                ?.split(" ")
+                                                .slice(0, 2)
+                                                .join(" ") || "?"}
                                         </h3>
                                         <p className="text-sm text-indigo-600 dark:text-indigo-400 text-center font-medium mb-6">
                                             {profile?.employment_type ||

@@ -5,26 +5,71 @@ import "./DetBlog.css";
 
 const DetBlog = ({ blog }) => {
     const blogUrl = window.location.href;
+    console.log(blogUrl);
 
-    // Helper to split description
     const splitIntoParagraphs = (htmlString) => {
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = htmlString;
         const text = tempDiv.textContent || tempDiv.innerText || "";
-        const words = text.split(/\s+/);
+
+        // Split the text into sentences using punctuation
+        const sentences = text.split(/(?<=[.!?|।])\s+/g); // includes English and Bengali full stops
 
         const paragraphs = [];
-        for (let i = 0; i < words.length; i += 150) {
-            const chunk = words.slice(i, i + 150).join(" ");
-            paragraphs.push(chunk);
+        let currentParagraph = "";
+
+        for (let sentence of sentences) {
+            const currentWordCount = currentParagraph.split(/\s+/).length;
+            const sentenceWordCount = sentence.split(/\s+/).length;
+
+            // If adding this sentence keeps us under ~150 words, add it
+            if (currentWordCount + sentenceWordCount <=  ) {
+                currentParagraph += sentence + " ";
+            } else {
+                // Push current and start a new paragraph
+                if (currentParagraph.trim()) {
+                    paragraphs.push(currentParagraph.trim());
+                }
+                currentParagraph = sentence + " ";
+            }
+        }
+
+        // Add any remaining content
+        if (currentParagraph.trim()) {
+            paragraphs.push(currentParagraph.trim());
         }
 
         return paragraphs;
     };
 
     const copyLink = () => {
-        navigator.clipboard.writeText(blogUrl);
-        alert("Blog link copied to clipboard!");
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard
+                .writeText(blogUrl)
+                .then(() => alert("Blog link copied to clipboard!"))
+                .catch((err) => {
+                    console.error("Failed to copy: ", err);
+                    alert("Failed to copy the blog link.");
+                });
+        } else {
+            // Fallback for unsupported browsers or insecure context
+            const textArea = document.createElement("textarea");
+            textArea.value = blogUrl;
+            textArea.style.position = "fixed"; // avoid scrolling
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand("copy");
+                alert(successful ? "Blog link copied!" : "Copy failed.");
+            } catch (err) {
+                console.error("Fallback: Copy failed", err);
+                alert("Copy not supported.");
+            }
+
+            document.body.removeChild(textArea);
+        }
     };
 
     return (
@@ -56,7 +101,7 @@ const DetBlog = ({ blog }) => {
             <section className="blog-detail-section px-4 py-8">
                 {/* Blog Content */}
                 <div className="blog-container max-w-screen-2xl mx-auto">
-                    <div className="blog-content prose prose-lg prose-purple max-w-none dark:prose-invert">
+                    <div className="blog-content prose prose-lg prose-purple max-w-none dark:text-white">
                         {splitIntoParagraphs(blog.description || "").map(
                             (para, idx) => (
                                 <p key={idx} className="mb-6 leading-relaxed">
@@ -71,7 +116,7 @@ const DetBlog = ({ blog }) => {
                         <h2 className="text-2xl font-bold mb-4 text-success">
                             Summary
                         </h2>
-                        <p className="text-gray-700 dark:text-gray-300">
+                        <p className="text-gray-700 dark:text-gray-900">
                             {blog.summary || "No summary available."}
                         </p>
                     </div>
@@ -170,8 +215,8 @@ const DetBlog = ({ blog }) => {
                             <strong className="block text-lg font-medium text-gray-900 dark:text-white">
                                 {blog.published_by}
                             </strong>
-                            <p className="text-gray-500 dark:text-gray-400 text-sm">
-                                Published on {blog.published_date}
+                            <p className="text-gray-500 dark:text-gray-100 text-sm">
+                                Published on {blog.date}
                             </p>
                         </div>
                     </div>
@@ -180,21 +225,8 @@ const DetBlog = ({ blog }) => {
                     <div className="blog-back mt-8 text-center">
                         <Link
                             href="/blog"
-                            className="inline-flex items-center text-success font-medium hover:underline"
+                            className="inline-flex items-center text-success font-medium p-4 glowing-button hover:text-white rounded-md transition-all duration-300"
                         >
-                            <svg
-                                className="w-5 h-5 mr-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                                />
-                            </svg>
                             Back to all blogs
                         </Link>
                     </div>

@@ -4,6 +4,8 @@ import AdminLayout from "@/Layouts/AdminLayout";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const ServiceList = ({ services: initialServices }) => {
     const [services, setServices] = useState(initialServices); // ✅ Convert to state
@@ -81,24 +83,37 @@ const ServiceList = ({ services: initialServices }) => {
                                         ).toLocaleDateString()}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
-                                        <div className="flex space-x-2">
+                                        <div className="flex justify-end space-x-2">
+                                            {/* <Link
+                                                onClick={() =>
+                                                    handleView(exp.id)
+                                                }
+                                                className="action-button view-btn"
+                                                title="View"
+                                            >
+                                                <FontAwesomeIcon icon={faEye} />
+                                            </Link> */}
                                             <Link
                                                 href={route(
                                                     "services.edit",
                                                     service.id
                                                 )}
-                                                className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-200"
+                                                className="action-button edit-btn"
+                                                title="Edit"
                                             >
-                                                Edit
+                                                <FontAwesomeIcon icon={faPen} />
                                             </Link>
-                                            <button
+                                            <Link
                                                 onClick={() =>
                                                     handleDelete(service.id)
                                                 }
-                                                className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-200"
+                                                className="action-button delete-btn"
+                                                title="Delete"
                                             >
-                                                Delete
-                                            </button>
+                                                <FontAwesomeIcon
+                                                    icon={faTrash}
+                                                />
+                                            </Link>
                                         </div>
                                     </td>
                                 </tr>

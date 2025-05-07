@@ -4,6 +4,8 @@ import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import { showSuccessToast, showErrorToast } from "@/toastConfig/toast";
 import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Forms = ({ forms: initialForms }) => {
     const [forms, setForms] = useState(initialForms);
@@ -85,9 +87,10 @@ const Forms = ({ forms: initialForms }) => {
                                 >
                                     <button
                                         onClick={() => handleDelete(form.id)}
-                                        className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded"
+                                        className="action-button delete-btn"
+                                        title="Delete"
                                     >
-                                        Delete
+                                        <FontAwesomeIcon icon={faTrash} />
                                     </button>
                                 </td>
                             </tr>

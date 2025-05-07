@@ -56,7 +56,7 @@ const AdminRegister = () => {
                             type="text"
                             value={data.name}
                             onChange={(e) => setData("name", e.target.value)}
-                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                            className={`w-full px-4 py-3 border rounded-lg text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
                                 errors.name ? 'border-red-500' : 'border-gray-300'
                             }`}
                             placeholder="Your Name"
@@ -73,7 +73,7 @@ const AdminRegister = () => {
                             type="email"
                             value={data.email}
                             onChange={(e) => setData("email", e.target.value)}
-                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                            className={`w-full px-4 py-3 border rounded-lg text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
                                 errors.email ? 'border-red-500' : 'border-gray-300'
                             }`}
                             placeholder="admin@example.com"
@@ -90,7 +90,7 @@ const AdminRegister = () => {
                             type="password"
                             value={data.password}
                             onChange={(e) => setData("password", e.target.value)}
-                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                            className={`w-full px-4 py-3 border rounded-lg text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
                                 errors.password ? 'border-red-500' : 'border-gray-300'
                             }`}
                             placeholder="••••••••"
@@ -107,7 +107,7 @@ const AdminRegister = () => {
                             type="password"
                             value={data.password_confirmation}
                             onChange={(e) => setData("password_confirmation", e.target.value)}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             placeholder="••••••••"
                         />
                     </div>
@@ -121,7 +121,7 @@ const AdminRegister = () => {
                             type="text"
                             value={data.invite_code}
                             onChange={(e) => setData("invite_code", e.target.value)}
-                            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+                            className={`w-full px-4 py-3 border rounded-lg text-black focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
                                 errors.invite_code ? 'border-red-500' : 'border-gray-300'
                             }`}
                             placeholder="Enter your invite code"

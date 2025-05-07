@@ -80,7 +80,7 @@ const HomeAboutImage = () => {
 
             {/* Right - Big Main Image with Enhanced Animated Border */}
             <div className="image-container hidden md:block">
-                <div className="animated-border md:w-[850px] md:h-[700px] rounded-2xl overflow-hidden shadow-2xl relative">
+                <div className="animated-border 2xl:w-[850px] 2xl:h-[700px] md:w-[500px] md:h-[550px] rounded-2xl overflow-hidden shadow-2xl relative">
                     <span>
                         <motion.div
                             whileHover={{

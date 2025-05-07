@@ -64,7 +64,10 @@ const ServicesMain = ({ service }) => {
                             title={item.title}
                             description={item.short_description}
                             imageUrl={`/storage/${item.image}`}
+                            link={`/service/${item.id}`}
+                            buttonText="Read More"
                             reverse={index % 2 !== 0}
+                            buttonTrue={true}
                         />
                     ))}
                 </div>

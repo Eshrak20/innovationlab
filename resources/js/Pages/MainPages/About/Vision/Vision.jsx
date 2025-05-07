@@ -1,7 +1,16 @@
 import { motion } from "framer-motion";
 import "./Vision.css";
+import { Link } from "@inertiajs/react";
 
-const Vision = ({ title, description, imageUrl, reverse }) => {
+const Vision = ({
+    title,
+    description,
+    imageUrl,
+    reverse,
+    buttonText,
+    link,
+    buttonTrue,
+}) => {
     return (
         <div
             className={`flex ${
@@ -29,7 +38,15 @@ const Vision = ({ title, description, imageUrl, reverse }) => {
                 <p className="mt-2 md:whitespace-pre-line text-lg md:text-xl text-gray-800 dark:text-gray-200 leading-relaxed">
                     {description}
                 </p>
-                
+                {buttonTrue && (
+                    <Link href={link}>
+                        <button className="glowing-button mt-8 px-8 py-3 text-lg font-medium rounded-full transition-all duration-300">
+                            {buttonText}
+                            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></span>
+                        </button>
+                    </Link>
+                )}
+
                 {/* Decorative accent */}
                 <div className="absolute -left-10 top-0 h-full w-1 bg-gradient-to-b from-purple-500 to-indigo-400 rounded-full"></div>
             </motion.div>
@@ -52,7 +69,7 @@ const Vision = ({ title, description, imageUrl, reverse }) => {
                     {/* Image overlay effect */}
                     <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-indigo-800/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                
+
                 {/* Floating decorative elements */}
                 <div className="absolute -right-5 -top-5 w-20 h-20 rounded-full bg-purple-600/20 filter blur-xl z-0"></div>
                 <div className="absolute -left-5 -bottom-5 w-16 h-16 rounded-full bg-indigo-600/20 filter blur-xl z-0"></div>

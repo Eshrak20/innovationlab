@@ -279,7 +279,7 @@ const ProfileEdit = ({ profile }) => {
 
                         {/* Skills Section */}
                         <div className="space-y-6">
-                            <h2 className="text-lg font-medium text-gray-900">
+                            <h2 className="text-lg font-medium text-gray-900 dark:text-gray-200">
                                 Skills
                             </h2>
                             <ArrayInputField
@@ -297,7 +297,7 @@ const ProfileEdit = ({ profile }) => {
 
                         {/* Certifications Section */}
                         <div className="space-y-6">
-                            <h2 className="text-lg font-medium text-gray-900">
+                            <h2 className="text-lg font-medium text-gray-900 dark:text-gray-200">
                                 Certifications
                             </h2>
                             <ArrayInputField

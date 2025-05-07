@@ -18,7 +18,7 @@ class BlogControllerView extends Controller
     }
     public function show($slug)
     {
-        $blog = Blog::findOrFail($slug);
+        $blog = Blog::where('slug', $slug)->firstOrFail();
         return Inertia::render('MainPages/Blog/DetBlog', [
             'blog' => $blog
         ]);

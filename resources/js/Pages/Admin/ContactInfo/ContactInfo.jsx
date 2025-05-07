@@ -5,6 +5,8 @@ import { ToastContainer } from "react-toastify";
 import { showSuccessToast, showErrorToast } from "@/toastConfig/toast";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const ContactInfo = ({ contactInfo: initialContactInfos }) => {
     const [contactInfos, setContactInfos] = useState(initialContactInfos);
@@ -218,9 +220,12 @@ const ContactInfo = ({ contactInfo: initialContactInfos }) => {
                                                             onClick={() =>
                                                                 handleEdit(info)
                                                             }
-                                                            className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-xs"
+                                                            className="action-button edit-btn"
+                                                            title="Edit"
                                                         >
-                                                            Edit
+                                                            <FontAwesomeIcon
+                                                                icon={faPen}
+                                                            />
                                                         </button>
                                                         <button
                                                             onClick={() =>
@@ -228,9 +233,12 @@ const ContactInfo = ({ contactInfo: initialContactInfos }) => {
                                                                     info.id
                                                                 )
                                                             }
-                                                            className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-md text-xs"
+                                                            className="action-button delete-btn"
+                                                            title="Delete"
                                                         >
-                                                            Delete
+                                                            <FontAwesomeIcon
+                                                                icon={faTrash}
+                                                            />
                                                         </button>
                                                     </div>
                                                 </td>

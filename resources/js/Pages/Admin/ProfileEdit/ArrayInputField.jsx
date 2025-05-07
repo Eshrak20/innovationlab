@@ -34,7 +34,7 @@ const ArrayInputField = ({
                 <button
                     type="button"
                     onClick={handleAdd}
-                    className="px-4 py-2 bg-blue-600 text-white dark:text-gray-800 rounded-md hover:bg-blue-700 transition-colors"
+                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                 >
                     {buttonText}
                 </button>

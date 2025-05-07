@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Visit = ({ contactInfo }) => {
     const [currentDate, setCurrentDate] = useState("");
-    const [isRoadView, setIsRoadView] = useState(false);
+    const [isRoadView, setIsRoadView] = useState(true);
 
     useEffect(() => {
         const date = new Date();
@@ -110,7 +110,7 @@ const Visit = ({ contactInfo }) => {
                                         }
                                         className="bg-gradient-to-r from-[#a855f7] to-[#6366f1] text-white px-6 py-2 rounded-full shadow-md  transition-colors duration-300"
                                     >
-                                        {isRoadView
+                                        {!isRoadView
                                             ? "Show Default View"
                                             : "Show Road View"}
                                     </button>

@@ -49,7 +49,7 @@ const AnimatedCounter = ({ value }) => {
             {/* Blue Fire Effect */}
             <div className="absolute -inset-3 rounded-full bg-blue-400 opacity-0 group-hover:opacity-70 blur-xl transition-all duration-500 animate-pulse"></div>
             <div className="absolute -inset-2 rounded-full bg-blue-300 opacity-0 group-hover:opacity-40 blur-md transition-all duration-300"></div>
-            <span className="relative z-10 text-white font-extrabold 2xl:text-4xl md:text-3xl">
+            <span className="relative z-10 text-white font-extrabold 2xl:text-3xl md:text-2xl">
                 {count}+
             </span>
         </div>
@@ -84,7 +84,7 @@ const HomeAboutStatus = ({ stats }) => {
                         key={index}
                         className="text-center group transform transition-all duration-500 hover:scale-105"
                     >
-                        <p className="text-sm md:text-lg font-medium text-blue-100">
+                        <p className="text-sm md:text-lg  font-medium text-blue-100">
                             {stat.label}
                         </p>
                         <h2 className="mt-2 ">

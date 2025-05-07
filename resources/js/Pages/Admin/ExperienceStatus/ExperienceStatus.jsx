@@ -1,10 +1,12 @@
 import AdminLayout from "@/Layouts/AdminLayout";
-import { Head } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { showSuccessToast, showErrorToast } from "@/toastConfig/toast";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const ExperienceStatus = ({ experiences: initialExperiences }) => {
     const [experiences, setExperiences] = useState(initialExperiences);
@@ -159,17 +161,23 @@ const ExperienceStatus = ({ experiences: initialExperiences }) => {
                                                         onClick={() =>
                                                             handleEdit(exp)
                                                         }
-                                                        className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-xs"
+                                                        className="action-button edit-btn"
+                                                        title="Edit"
                                                     >
-                                                        Edit
+                                                        <FontAwesomeIcon
+                                                            icon={faPen}
+                                                        />
                                                     </button>
                                                     <button
                                                         onClick={() =>
                                                             handleDelete(exp.id)
                                                         }
-                                                        className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-md text-xs"
+                                                        className="action-button delete-btn"
+                                                        title="Delete"
                                                     >
-                                                        Delete
+                                                        <FontAwesomeIcon
+                                                            icon={faTrash}
+                                                        />
                                                     </button>
                                                 </div>
                                             )}
