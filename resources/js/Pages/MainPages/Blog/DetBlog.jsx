@@ -23,7 +23,7 @@ const DetBlog = ({ blog }) => {
             const sentenceWordCount = sentence.split(/\s+/).length;
 
             // If adding this sentence keeps us under ~150 words, add it
-            if (currentWordCount + sentenceWordCount <=  ) {
+            if (currentWordCount + sentenceWordCount <=  150) {
                 currentParagraph += sentence + " ";
             } else {
                 // Push current and start a new paragraph

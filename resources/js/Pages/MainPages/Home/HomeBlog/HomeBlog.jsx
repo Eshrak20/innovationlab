@@ -27,7 +27,7 @@ const HomeBlog = ({ blog }) => {
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
-                    {blog.map((item) => (
+                    {blog.slice(0,6).map((item) => (
                         <motion.div
                             key={item.id}
                             initial={{ opacity: 0, scale: 0.95 }}

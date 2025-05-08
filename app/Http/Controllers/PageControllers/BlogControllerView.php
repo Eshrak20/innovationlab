@@ -11,7 +11,7 @@ class BlogControllerView extends Controller
 {
     public function index()
     {
-        $blogInfo = Blog::all();
+        $blogInfo = Blog::orderBy('updated_at', 'desc')->paginate(9);
         return Inertia::render('MainPages/Blog/Blog', [
             'blogInfo' => $blogInfo
         ]);

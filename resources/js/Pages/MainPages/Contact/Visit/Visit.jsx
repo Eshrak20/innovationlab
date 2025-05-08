@@ -43,7 +43,7 @@ const Visit = ({ contactInfo }) => {
                                     <div className="p-4 rounded-full  text-purple-500 bg-purple-200 shadow-md">
                                         <FaMapMarkerAlt className="text-5xl" />
                                     </div>
-                                    <h2 className="text-xl font-bold hover:scale-105 text-success">
+                                    <h2 className="text-xl font-bold  text-success">
                                         Address
                                     </h2>
                                     <p className="text-lg text-success whitespace-pre-line">
@@ -56,7 +56,7 @@ const Visit = ({ contactInfo }) => {
                                     <div className="text-purple-500 bg-purple-200 p-4 rounded-full shadow-md">
                                         <FaPhoneAlt className="text-5xl" />
                                     </div>
-                                    <h2 className="text-xl font-bold mt-4 hover:scale-105 text-success">
+                                    <h2 className="text-xl font-bold mt-4  text-success">
                                         Phone Numbers
                                     </h2>
                                     <div className="text-lg text-success mt-4 space-y-1">
@@ -80,7 +80,7 @@ const Visit = ({ contactInfo }) => {
                                     <div className="text-purple-500 bg-purple-200 p-4 rounded-full shadow-md">
                                         <FaEnvelope className="text-5xl" />
                                     </div>
-                                    <h2 className="text-xl font-bold hover:scale-105 text-success">
+                                    <h2 className="text-xl font-bold  text-success">
                                         Emails
                                     </h2>
                                     <div className="text-lg text-success space-y-1">

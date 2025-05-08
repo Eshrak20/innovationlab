@@ -3,8 +3,18 @@ import MainLayout from "@/Layouts/MainLayout";
 import videoSrc from "@/../../public/reactAssets/videos/purplevideo.mp4";
 import { Link } from "@inertiajs/react";
 import Vision from "../About/Vision/Vision";
+import { useEffect, useRef } from "react";
 
 const ServicesMain = ({ service }) => {
+     const contentRef = useRef();
+        useEffect(() => {
+            if (contentRef.current) {
+                contentRef.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "end",
+                });
+            }
+        }, []);
     return (
         <>
             <MainLayout>
@@ -17,7 +27,7 @@ const ServicesMain = ({ service }) => {
                     />
 
                     {/* Service Cards - adjusted positioning for mobile */}
-                    <div className="absolute top-[75%] sm:top-[85%] left-1/2 transform -translate-x-1/2 w-full px-4 z-10">
+                    <div ref={contentRef} className="absolute top-[75%] sm:top-[85%] left-1/2 transform -translate-x-1/2 w-full px-4 z-10">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
                             {service?.slice(0, 4).map((item, index) => (
                                 <div

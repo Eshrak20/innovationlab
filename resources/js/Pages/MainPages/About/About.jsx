@@ -7,9 +7,6 @@ import Vision from "./Vision/Vision";
 import DynamicBanner from "@/Components/MyComponents/DynamicBanner";
 import videoSrc from "@/../../public/reactAssets/videos/purplevideo.mp4";
 const About = ({ profileData, managementData, missionData }) => {
-    const baseUrl = import.meta.env.VITE_APP_BASE_URL;
-    console.log(profileData);
-
     window.scrollTo({
         top: 0,
         behavior: "smooth",

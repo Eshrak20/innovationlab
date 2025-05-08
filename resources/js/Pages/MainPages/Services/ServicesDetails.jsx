@@ -44,7 +44,7 @@ const ServicesDetails = ({ service }) => {
                         <div className="flex flex-col md:flex-row items-center justify-between mt-6">
                             {/* Optional CTA */}
                             <div className="mt-4 md:mt-10">
-                                <button
+                                {/* <button
                                     onClick={() =>
                                         window.open(
                                             `https://www.google.com/search?q=${encodeURIComponent(
@@ -56,7 +56,12 @@ const ServicesDetails = ({ service }) => {
                                     className="glowing-button px-6 py-3 rounded-xl text-lg font-semibold"
                                 >
                                     Learn More
-                                </button>
+                                </button> */}
+                                <Link href="/" className="mt-4 md:mt-10">
+                                    <button className="glowing-button px-6 py-3 rounded-xl text-lg font-semibold">
+                                        Back to Home
+                                    </button>
+                                </Link>
                             </div>
                             <Link href="/service" className="mt-4 md:mt-10">
                                 <button className="glowing-button px-6 py-3 rounded-xl text-lg font-semibold">

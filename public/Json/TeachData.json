@@ -78,10 +78,23 @@
     "MobileApp": [
       {
         "name": "Flutter",
-        "image": "/reactAssets/images/Tech/Flutter-CH_524bf.png",
+        "image": "/reactAssets/images/Tech/flutter.png",
+        "colorName": "Blue",
+        "hexCode": "#02569B"
+      },
+      {
+        "name": "Flutter Flow",
+        "image": "/reactAssets/images/Tech/flutterflow.png",
+        "colorName": "Blue",
+        "hexCode": "#02569B"
+      },
+      {
+        "name": "Firebase",
+        "image": "/reactAssets/images/Tech/firebase.png",
         "colorName": "Blue",
         "hexCode": "#02569B"
       }
+     
     ],
     "Databases": [
       {
@@ -127,6 +140,18 @@
         "image": "/reactAssets/images/Tech/Kubernetes-CM9wttX4.png",
         "colorName": "Blue",
         "hexCode": "#326CE5"
+      },
+      {
+        "name": "Github",
+        "image": "/reactAssets/images/Tech/github-B7fJPouQ.png",
+        "colorName": "Blue",
+        "hexCode": "#02569B"
+      },
+      {
+        "name": "Gitlab",
+        "image": "/reactAssets/images/Tech/GitLab-BHJKew5W.png",
+        "colorName": "Blue",
+        "hexCode": "#02569B"
       }
     ]
   }

@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MainLayout from "@/Layouts/MainLayout";
 import { Link } from "@inertiajs/react";
 import DynamicBanner from "@/Components/MyComponents/DynamicBanner";
 import videoSrc from "@/../../public/reactAssets/videos/purplevideo.mp4";
+import BlogPagination from "./BlogPagination";
 
 const Blog = ({ blogInfo }) => {
+    const contentRef = useRef();
+    useEffect(() => {
+        if (contentRef.current) {
+            contentRef.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    }, []);
     const [filter, setFilter] = useState("all");
 
     const filteredBlogs =
         filter === "all"
-            ? blogInfo
-            : blogInfo.filter(
+            ? blogInfo.data
+            : blogInfo.data.filter(
                   (blog) => blog.category === filter || blog.type === filter
               );
 
@@ -21,7 +31,9 @@ const Blog = ({ blogInfo }) => {
                 title="Blog Section"
                 breadcrumb="Home / About Us"
             />
-            <section className="py-28 bg-gray-100 dark:bg-gray-900 min-h-screen">
+             
+            <section ref={contentRef} className="py-28 bg-gray-100 dark:bg-gray-900 min-h-screen">
+                
                 <div className="container mx-auto px-4 max-w-6xl">
                     <h2 className="text-4xl font-bold text-center mb-2 text-success">
                         Our Blog Posts
@@ -128,6 +140,7 @@ const Blog = ({ blogInfo }) => {
                     </div>
                 </div>
             </section>
+            <BlogPagination links={blogInfo.links} />
         </MainLayout>
     );
 };
