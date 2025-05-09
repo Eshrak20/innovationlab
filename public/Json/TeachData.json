@@ -1,158 +1,234 @@
 {
     "Frontend": [
-      {
-        "name": "HTML",
-        "image": "/reactAssets/images/Tech/HTML-LtyBLcCt.svg",
-        "colorName": "Orange",
-        "hexCode": "#E34F26"
-      },
-      {
-        "name": "CSS",
-        "image": "/reactAssets/images/Tech/CSS-CKiB969C.svg",
-        "colorName": "Blue",
-        "hexCode": "#1572B6"
-      },
-      {
-        "name": "JavaScript",
-        "image": "/reactAssets/images/Tech/Javascript-BapOsVnL.svg",
-        "colorName": "Yellow",
-        "hexCode": "#F7DF1E"
-      },
-      {
-        "name": "Tailwind",
-        "image": "/reactAssets/images/Tech/Tailwind CSS-7NEO6Nfh.svg",
-        "colorName": "Teal",
-        "hexCode": "#38BDF8"
-      },
-      {
-        "name": "React",
-        "image": "/reactAssets/images/Tech/React JS-CFaXVWLv.svg",
-        "colorName": "Cyan",
-        "hexCode": "#61DAFB"
-      },
-      {
-        "name": "Next JS",
-        "image": "/reactAssets/images/Tech/nextjs-D5GcxoyW.png",
-        "colorName": "Black",
-        "hexCode": "#000000"
-      }
+        {
+            "name": "HTML",
+            "image": "/reactAssets/images/Tech/HTML-LtyBLcCt.svg",
+            "colorName": "Orange",
+            "hexCode": "#E34F26"
+        },
+        {
+            "name": "CSS",
+            "image": "/reactAssets/images/Tech/CSS-CKiB969C.svg",
+            "colorName": "Blue",
+            "hexCode": "#1572B6"
+        },
+        {
+            "name": "JavaScript",
+            "image": "/reactAssets/images/Tech/Javascript-BapOsVnL.svg",
+            "colorName": "Yellow",
+            "hexCode": "#F7DF1E"
+        },
+        {
+            "name": "Tailwind",
+            "image": "/reactAssets/images/Tech/Tailwind CSS-7NEO6Nfh.svg",
+            "colorName": "Teal",
+            "hexCode": "#38BDF8"
+        },
+        {
+            "name": "React",
+            "image": "/reactAssets/images/Tech/React JS-CFaXVWLv.svg",
+            "colorName": "Cyan",
+            "hexCode": "#61DAFB"
+        },
+        {
+            "name": "Next JS",
+            "image": "reactAssets/images/Tech/nextjs-icon.png",
+            "colorName": "Black",
+            "hexCode": "#000000"
+        },
+        {
+            "name": "Vite",
+            "image": "reactAssets/images/Tech/vite-js-logo.png",
+            "colorName": "Purple",
+            "hexCode": "#646CFF"
+        }
     ],
     "Backend": [
-      {
-        "name": "PHP",
-        "image": "/reactAssets/images/Tech/PHP-NDgRhmsp.svg",
-        "colorName": "Purple",
-        "hexCode": "#777BB4"
-      },
-      {
-        "name": "Python",
-        "image": "/reactAssets/images/Tech/python-C2ywzids.png",
-        "colorName": "Blue",
-        "hexCode": "#3776AB"
-      },
-      {
-        "name": "Laravel",
-        "image": "/reactAssets/images/Tech/laravel-CugrLnId.png",
-        "colorName": "Red",
-        "hexCode": "#FF2D20"
-      },
-      {
-        "name": "Django",
-        "image": "/reactAssets/images/Tech/Django-YiW5sF8Y.svg",
-        "colorName": "Green",
-        "hexCode": "#092E20"
-      },
-      {
-        "name": "Node JS",
-        "image": "/reactAssets/images/Tech/nodeJs-ZzuB-U2O.png",
-        "colorName": "Green",
-        "hexCode": "#339933"
-      },
-      {
-        "name": "Express JS",
-        "image": "/reactAssets/images/Tech/expressJs-7g0NC7ji.png",
-        "colorName": "Black",
-        "hexCode": "#000000"
-      }
+        {
+            "name": "PHP",
+            "image": "/reactAssets/images/Tech/PHP-NDgRhmsp.svg",
+            "colorName": "Violet",
+            "hexCode": "#8892BE"
+        },
+        {
+            "name": "Python",
+            "image": "/reactAssets/images/Tech/Python.jpeg",
+            "colorName": "Blue",
+            "hexCode": "#3776AB"
+        },
+        {
+            "name": "Laravel",
+            "image": "/reactAssets/images/Tech/Laravel.png",
+            "colorName": "Red",
+            "hexCode": "#FF2D20"
+        },
+        {
+            "name": "Django",
+            "image": "reactAssets/images/Tech/Django.png",
+            "colorName": "Green",
+            "hexCode": "#092E20"
+        },
+        {
+            "name": "Node JS",
+            "image": "/reactAssets/images/Tech/nodeJs-ZzuB-U2O.png",
+            "colorName": "Green",
+            "hexCode": "#339933"
+        },
+        {
+            "name": "Express JS",
+            "image": "/reactAssets/images/Tech/express-js.png",
+            "colorName": "Gray",
+            "hexCode": "#303030"
+        },
+        {
+            "name": "CodeIgniter",
+            "image": "reactAssets/images/Tech/codelgniter.webp",
+            "colorName": "Orange",
+            "hexCode": "#EE4623"
+        },
+        {
+            "name": "Composer",
+            "image": "reactAssets/images/Tech/composer-logo.png",
+            "colorName": "Brown",
+            "hexCode": "#885630"
+        },
+        {
+            "name": "Svelte",
+            "image": "reactAssets/images/Tech/Svelte-logo.png",
+            "colorName": "Orange",
+            "hexCode": "#FF3E00"
+        },
+        {
+            "name": "Typeorm",
+            "image": "reactAssets/images/Tech/typeorm.png",
+            "colorName": "Maroon",
+            "hexCode": "#C12127"
+        },
+        {
+            "name": "Puppeteer",
+            "image": "/reactAssets/images/Tech/puppeteer.png",
+            "colorName": "Green",
+            "hexCode": "#40B5A4"
+        },
+        {
+            "name": "Nestjs",
+            "image": "/reactAssets/images/Tech/nestjs.png",
+            "colorName": "Red",
+            "hexCode": "#E0234E"
+        },
+        {
+            "name": "Recoil",
+            "image": "/reactAssets/images/Tech/recoil.png",
+            "colorName": "Purple",
+            "hexCode": "#3578E5"
+        },
+        {
+            "name": "Prisma",
+            "image": "/reactAssets/images/Tech/prisma-js.jpg",
+            "colorName": "Green",
+            "hexCode": "#0C344B"
+        }
     ],
     "MobileApp": [
-      {
-        "name": "Flutter",
-        "image": "/reactAssets/images/Tech/flutter.png",
-        "colorName": "Blue",
-        "hexCode": "#02569B"
-      },
-      {
-        "name": "Flutter Flow",
-        "image": "/reactAssets/images/Tech/flutterflow.png",
-        "colorName": "Blue",
-        "hexCode": "#02569B"
-      },
-      {
-        "name": "Firebase",
-        "image": "/reactAssets/images/Tech/firebase.png",
-        "colorName": "Blue",
-        "hexCode": "#02569B"
-      }
-     
+        {
+            "name": "Flutter",
+            "image": "/reactAssets/images/Tech/flutter.png",
+            "colorName": "Blue",
+            "hexCode": "#02569B"
+        },
+        {
+            "name": "Dart",
+            "image": "reactAssets/images/Tech/dart.png",
+            "colorName": "Blue",
+            "hexCode": "#0175C2"
+        },
+        {
+            "name": "Flutter Flow",
+            "image": "/reactAssets/images/Tech/flutterflow.png",
+            "colorName": "Purple",
+            "hexCode": "#7E22CE"
+        },
+        {
+            "name": "Firebase",
+            "image": "/reactAssets/images/Tech/firebase.png",
+            "colorName": "Yellow",
+            "hexCode": "#FFCA28"
+        }
     ],
     "Databases": [
-      {
-        "name": "MongoDB",
-        "image": "/reactAssets/images/Tech/mongoDB-9b2t3eJQ.png",
-        "colorName": "Green",
-        "hexCode": "#47A248"
-      },
-      {
-        "name": "PostgreSQL",
-        "image": "/reactAssets/images/Tech/postgesql-BwNgJREK.png",
-        "colorName": "Blue",
-        "hexCode": "#336791"
-      },
-      {
-        "name": "MySQL",
-        "image": "/reactAssets/images/Tech/mysql-rXm7oxL1.png",
-        "colorName": "Blue",
-        "hexCode": "#4479A1"
-      },
-      {
-        "name": "Oracle",
-        "image": "/reactAssets/images/Tech/oracle.jpeg",
-        "colorName": "Red",
-        "hexCode": "#F80000"
-      },
-      {
-        "name": "SQL Server",
-        "image": "/reactAssets/images/Tech/sqlserver.jpeg",
-        "colorName": "Burgundy",
-        "hexCode": "#CC2927"
-      }
+        {
+            "name": "MongoDB",
+            "image": "reactAssets/images/Tech/mongodb.png",
+            "colorName": "Green",
+            "hexCode": "#47A248"
+        },
+        {
+            "name": "Mongoose",
+            "image": "/reactAssets/images/Tech/mongoose.png",
+            "colorName": "Red",
+            "hexCode": "#880000"
+        },
+        {
+            "name": "PostgreSQL",
+            "image": "reactAssets/images/Tech/Postgresql.png",
+            "colorName": "Blue",
+            "hexCode": "#336791"
+        },
+        {
+            "name": "MySQL",
+            "image": "/reactAssets/images/Tech/mysql.png",
+            "colorName": "Blue",
+            "hexCode": "#4479A1"
+        },
+        {
+            "name": "GraphQL",
+            "image": "/reactAssets/images/Tech/GraphQL_Logo.png",
+            "colorName": "Pink",
+            "hexCode": "#E10098"
+        },
+        {
+            "name": "Sequelize",
+            "image": "/reactAssets/images/Tech/sequelize.png",
+            "colorName": "Blue",
+            "hexCode": "#3C9CD7"
+        },
+        {
+            "name": "DBforge",
+            "image": "/reactAssets/images/Tech/dbforge.png",
+            "colorName": "Blue",
+            "hexCode": "#205081"
+        },
+        {
+            "name": "SQL",
+            "image": "/reactAssets/images/Tech/sql.png",
+            "colorName": "Blue",
+            "hexCode": "#00758F"
+        }
     ],
     "DevOps": [
-      {
-        "name": "Docker",
-        "image": "/reactAssets/images/Tech/docker-71SzfFFv.png",
-        "colorName": "Blue",
-        "hexCode": "#2496ED"
-      },
-      {
-        "name": "Kubernetes",
-        "image": "/reactAssets/images/Tech/Kubernetes-CM9wttX4.png",
-        "colorName": "Blue",
-        "hexCode": "#326CE5"
-      },
-      {
-        "name": "Github",
-        "image": "/reactAssets/images/Tech/github-B7fJPouQ.png",
-        "colorName": "Blue",
-        "hexCode": "#02569B"
-      },
-      {
-        "name": "Gitlab",
-        "image": "/reactAssets/images/Tech/GitLab-BHJKew5W.png",
-        "colorName": "Blue",
-        "hexCode": "#02569B"
-      }
+        {
+            "name": "Docker",
+            "image": "/reactAssets/images/Tech/docker-71SzfFFv.png",
+            "colorName": "Blue",
+            "hexCode": "#2496ED"
+        },
+        {
+            "name": "Kubernetes",
+            "image": "/reactAssets/images/Tech/Kubernetes-CM9wttX4.png",
+            "colorName": "Blue",
+            "hexCode": "#326CE5"
+        },
+        {
+            "name": "Github",
+            "image": "/reactAssets/images/Tech/github-B7fJPouQ.png",
+            "colorName": "Black",
+            "hexCode": "#181717"
+        },
+        {
+            "name": "Gitlab",
+            "image": "/reactAssets/images/Tech/GitLab-BHJKew5W.png",
+            "colorName": "Orange",
+            "hexCode": "#FC6D26"
+        }
     ]
-  }
-  
+}

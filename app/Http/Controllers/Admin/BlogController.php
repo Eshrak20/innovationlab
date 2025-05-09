@@ -15,7 +15,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::where('admin_id', auth()->id())
-            ->orderBy('created_at', 'desc')
+            ->orderBy('updated_at', 'desc')
             ->get();
 
         return Inertia::render('Admin/Blog/BlogList', [
@@ -25,8 +25,14 @@ class BlogController extends Controller
 
     public function create()
     {
+        $adminProfile = auth()->user()->load('profile');
+
         return Inertia::render('Admin/Blog/BlogCreate', [
             'categories' => ['technical', 'nontechnical'],
+            'adminProfile' => [
+                'name' => $adminProfile->profile->name,
+                'photo' => $adminProfile->profile->photo ? asset('storage/' . $adminProfile->profile->photo) : asset('default-avatar.png'),
+            ],
         ]);
     }
 
@@ -76,6 +82,7 @@ class BlogController extends Controller
     }
 
 
+
     public function edit($id)
     {
         $blog = Blog::where('id', $id)
@@ -92,7 +99,7 @@ class BlogController extends Controller
         $blog = Blog::where('id', $id)
             ->where('admin_id', auth()->id())
             ->firstOrFail();
-    
+
         $request->validate([
             'image' => 'nullable|image|max:2048',
             'title' => 'required|string|max:255',
@@ -103,9 +110,9 @@ class BlogController extends Controller
             'category' => 'required|in:technical,nontechnical',
             'slug' => 'required|string|unique:blogs,slug,' . $id,
         ]);
-    
+
         $data = $request->except('image');
-    
+
         if ($request->hasFile('image')) {
             // Delete old image
             if ($blog->image) {
@@ -114,17 +121,17 @@ class BlogController extends Controller
                     unlink($oldPath);
                 }
             }
-    
+
             $imagePath = $request->file('image')->store('blogs', 'public');
             $data['image'] = $imagePath;
         }
-    
+
         $blog->update($data);
-    
+
         if ($request->wantsJson()) {
             return response()->json(['success' => 'Blog updated successfully']);
         }
-    
+
         return redirect()->route('blogs.index'); // or whatever your blog list route is named
     }
 

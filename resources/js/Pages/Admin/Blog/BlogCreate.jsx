@@ -4,10 +4,11 @@ import AdminLayout from "@/Layouts/AdminLayout";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
-import { Inertia } from "@inertiajs/inertia";
 import { useForm } from "@inertiajs/inertia-react";
 
-const BlogCreate = ({ categories }) => {
+const BlogCreate = ({ categories,adminProfile }) => {
+    console.log(adminProfile);
+    
     const { data, setData, reset, processing, errors } = useForm({
         image: "",
         title: "",
@@ -38,7 +39,7 @@ const BlogCreate = ({ categories }) => {
                 },
             });
             showSuccessToast("Blog created successfully!");
-            reset(); // Clear the form
+            reset();
         } catch (error) {
             console.error("Submit error:", error);
             const errorMessage =

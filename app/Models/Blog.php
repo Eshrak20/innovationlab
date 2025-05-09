@@ -19,5 +19,8 @@ class Blog extends Model
         'slug',
         'admin_id'
     ];
+    public function admin()
+    {
+        return $this->belongsTo(User::class, 'admin_id');
+    }
 }
-

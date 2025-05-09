@@ -95,11 +95,11 @@ const Navbar = () => {
 
     return (
         <div
-            className={`w-full flex justify-center fixed top-0 z-30 md:px-7 transition-all duration-300 ease-in-out bg-gradient-to-r from-[#a855f7] to-[#6366f1] dark:bg-gradient-to-r dark:from-[#4c494f00] dark:to-[#3e3e482c] md:backdrop-blur-sm dark:backdrop-blur-md   pb-5  ${
-                isScrolled ? "bg-opacity-70" : "bg-opacity-50 "
-            } ${showNavbar ? "translate-y-0 " : "-translate-y-full"}`}
+            className={`w-full flex justify-center fixed top-0 z-30 md:px-7 transition-all duration-300 ease-in-out dark:bg-gradient-to-r dark:from-[#4c494f00] dark:to-[#3e3e482c] md:backdrop-blur-md dark:backdrop-blur-md pb-2 ${
+                isScrolled ? "bg-opacity-50 bg-gradient-to-r from-[#090909] to-[#bd63f1ab]" : "bg-opacity-70  "
+            } ${showNavbar ? "translate-y-0 " : "-translate-y-full "}`}
         >
-            <div className="w-full px-5 pt-2 max-w-full lg:max-w-screen-xl 2xl:max-w-screen-2xl flex items-center justify-between mt-5 md:mt-2">
+            <div className="w-full px-5 max-w-full lg:max-w-screen-xl 2xl:max-w-screen-2xl flex items-center justify-between mt-5 md:mt-2">
                 <div className="md:hidden font-bold text-3xl dropdown">
                     <button tabIndex={0} className="mr-5 text-white">
                         <svg
@@ -143,9 +143,9 @@ const Navbar = () => {
 
                     <Link href="/">
                         <img
-                            src="/reactAssets/images/Logo/Logo9.png"
+                            src="/reactAssets/images/Logo18.png"
                             alt="Syntax Soft Systems Logo"
-                            className="w-44 md:w-48  md:ml-16  bg-white/90  rounded-md hover:scale-105 shadow-lg transition-transform duration-300 "
+                            className="w-40 md:w-52  md:ml-16 -mt-1 rounded-md hover:scale-105  transition-transform duration-300 "
                         />
                     </Link>
                 </div>
