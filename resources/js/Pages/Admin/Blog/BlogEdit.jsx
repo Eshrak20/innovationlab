@@ -206,7 +206,7 @@ const BlogEdit = ({ blog, categories }) => {
                                 onChange={(e) =>
                                     setData("published_by", e.target.value)
                                 }
-                                required
+                                readOnly
                             />
                             {errors.published_by && (
                                 <p className="mt-1 text-sm text-red-600">

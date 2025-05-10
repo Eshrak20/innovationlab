@@ -13,6 +13,7 @@ class Blog extends Model
         'description',
         'date',
         'published_by',
+        'profile_photo',
         'likes',
         'category',
         'type',

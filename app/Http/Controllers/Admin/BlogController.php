@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
 
+
 class BlogController extends Controller
 {
     // Show only the blogs of the logged-in admin
@@ -22,19 +23,26 @@ class BlogController extends Controller
             'blogs' => $blogs,
         ]);
     }
-
     public function create()
     {
-        $adminProfile = auth()->user()->load('profile');
-
+        $adminProfile = auth()->user();
+        $adminProfile->load('profile');
+    
         return Inertia::render('Admin/Blog/BlogCreate', [
             'categories' => ['technical', 'nontechnical'],
             'adminProfile' => [
-                'name' => $adminProfile->profile->name,
-                'photo' => $adminProfile->profile->photo ? asset('storage/' . $adminProfile->profile->photo) : asset('default-avatar.png'),
+                'name' => $adminProfile->profile->title,
+                // If profilePhotoPath exists, prepend 'storage/' only if it's not already included
+                'photo' => $adminProfile->profile->profilePhotoPath
+                    ? asset('storage/' . ltrim($adminProfile->profile->profilePhotoPath, '/storage/'))  // Remove leading '/storage/' if present
+                    : asset('default-avatar.png'),
             ],
         ]);
     }
+    
+
+
+
 
     public function show($id)
     {
@@ -68,6 +76,7 @@ class BlogController extends Controller
             // The file gets saved under storage/app/public/blogs
         }
 
+        // Save blog with the correct relative path for profile_photo
         $blog = Blog::create([
             'image' => $imagePath,
             'title' => $request->title,
@@ -75,6 +84,7 @@ class BlogController extends Controller
             'description' => $request->description,
             'date' => $request->date,
             'published_by' => $request->published_by,
+            'profile_photo' => $request->profile_photo,
             'category' => $request->category,
             'slug' => Str::slug($request->slug),
             'admin_id' => auth()->id(),
@@ -83,8 +93,12 @@ class BlogController extends Controller
 
 
 
+
     public function edit($id)
+
     {
+        $adminProfile = auth()->user();
+        $adminProfile->load('profile');
         $blog = Blog::where('id', $id)
             ->where('admin_id', auth()->id())
             ->firstOrFail();
@@ -92,6 +106,12 @@ class BlogController extends Controller
         return Inertia::render('Admin/Blog/BlogEdit', [
             'blog' => $blog,
             'categories' => ['technical', 'nontechnical'],
+            'adminProfile' => [
+                'name' => $adminProfile->profile->title,
+                'photo' => $adminProfile->profile->profilePhotoPath
+                    ? asset('storage/' . $adminProfile->profile->profilePhotoPath)
+                    : asset('default-avatar.png'),
+            ],
         ]);
     }
     public function update(Request $request, $id)

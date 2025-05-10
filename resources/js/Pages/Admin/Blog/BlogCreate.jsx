@@ -6,16 +6,15 @@ import { ToastContainer } from "react-toastify";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
 import { useForm } from "@inertiajs/inertia-react";
 
-const BlogCreate = ({ categories,adminProfile }) => {
-    console.log(adminProfile);
-    
+const BlogCreate = ({ categories, adminProfile }) => {
     const { data, setData, reset, processing, errors } = useForm({
         image: "",
         title: "",
         summary: "",
         description: "",
         date: new Date().toISOString().split("T")[0],
-        published_by: "",
+        published_by: adminProfile?.name || "Unknown",
+        profile_photo: adminProfile?.photo || "",
         category: "technical",
         type: "",
         slug: "",
@@ -24,6 +23,8 @@ const BlogCreate = ({ categories,adminProfile }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = async (e) => {
+        console.log("FormData profile_photo:", data.profile_photo);
+
         e.preventDefault();
         setIsSubmitting(true);
 
@@ -142,20 +143,11 @@ const BlogCreate = ({ categories,adminProfile }) => {
                             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                                 Published By*
                             </label>
-                            <input
-                                type="text"
-                                className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                value={data.published_by}
-                                onChange={(e) =>
-                                    setData("published_by", e.target.value)
-                                }
-                                required
-                            />
-                            {errors.published_by && (
-                                <p className="mt-1 text-sm text-red-600">
-                                    {errors.published_by}
-                                </p>
-                            )}
+                            <div>
+                                <div className="mt-1 p-2 rounded-md border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white shadow-sm">
+                                    {adminProfile?.name || "Unknown"}
+                                </div>
+                            </div>
                         </div>
 
                         {/* Date */}

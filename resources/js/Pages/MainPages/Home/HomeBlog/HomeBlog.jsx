@@ -64,7 +64,7 @@ const HomeBlog = ({ blog }) => {
                                     </p>
 
                                     <Link 
-                                        href={`/blog/${item.id}`}
+                                        href={`/blog/${item.slug}`}
                                         className="inline-flex items-center text-purple-400 font-medium hover:text-purple-300 transition-colors"
                                     >
                                         Read More

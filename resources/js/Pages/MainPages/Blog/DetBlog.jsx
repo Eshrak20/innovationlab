@@ -4,8 +4,9 @@ import React from "react";
 import "./DetBlog.css";
 
 const DetBlog = ({ blog }) => {
+    console.log(blog.profile_photo);
+
     const blogUrl = window.location.href;
-    console.log(blogUrl);
 
     const splitIntoParagraphs = (htmlString) => {
         const tempDiv = document.createElement("div");
@@ -23,7 +24,7 @@ const DetBlog = ({ blog }) => {
             const sentenceWordCount = sentence.split(/\s+/).length;
 
             // If adding this sentence keeps us under ~150 words, add it
-            if (currentWordCount + sentenceWordCount <=  150) {
+            if (currentWordCount + sentenceWordCount <= 150) {
                 currentParagraph += sentence + " ";
             } else {
                 // Push current and start a new paragraph
@@ -203,13 +204,15 @@ const DetBlog = ({ blog }) => {
                     {/* Author Info */}
                     <div className="blog-author my-12 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center gap-4">
                         <div className="author-avatar">
-                            {blog.author_image && (
-                                <img
-                                    src={`/storage/${blog.author_image}`}
-                                    alt={blog.published_by}
-                                    className="w-16 h-16 rounded-full object-cover border-2 border-purple-200"
-                                />
-                            )}
+                            <div className="author-avatar">
+                                {blog.profile_photo && (
+                                    <img
+                                        src={blog.profile_photo} // Use the blog.profile_photo directly here
+                                        alt={blog.published_by}
+                                        className="w-16 h-16 rounded-full object-cover border-2 border-purple-200"
+                                    />
+                                )}
+                            </div>
                         </div>
                         <div className="author-info">
                             <strong className="block text-lg font-medium text-gray-900 dark:text-white">
