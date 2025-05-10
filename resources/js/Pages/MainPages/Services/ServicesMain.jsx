@@ -32,7 +32,7 @@ const ServicesMain = ({ service }) => {
                             {service?.slice(0, 4).map((item, index) => (
                                 <div
                                     key={index}
-                                    className="bg-white/90 rounded-2xl shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-200 backdrop-blur-sm"
+                                    className="bg-white/90 card-hover-glow rounded-2xl shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-300 border border-gray-200 backdrop-blur-sm"
                                 >
                                     {/* Image */}
                                     {item.image && (

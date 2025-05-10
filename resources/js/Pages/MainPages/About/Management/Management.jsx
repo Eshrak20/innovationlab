@@ -20,11 +20,11 @@ const Management = ({ managementData }) => {
                             <span>Labs</span>
                             <span>360</span>
                         </h1>
-                        <div className="w-full grid grid-cols-1 md:grid-cols-2 md:gap-x-6">
+                        <div className="w-full animated-border-2 card-hover-glow grid grid-cols-1 md:grid-cols-2 md:gap-x-6">
                             {managementData.map((team, index) => (
                                 <div
                                     key={index}
-                                    className="p-6 m-3 rounded-xl bg-white dark:bg-[#1f1f2e] shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                                    className="p-6 m-3 card-hover-glow rounded-xl bg-white dark:bg-[#1f1f2e] shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                                 >
                                     <div className="text-4xl font-bold mb-2 text-success">
                                         {team.number < 10

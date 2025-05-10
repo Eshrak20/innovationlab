@@ -143,7 +143,7 @@ const Tech = () => {
                         <div className="absolute top-0 left-0 h-full w-full overflow-hidden">
                             <motion.div
                                 key={animationKey}
-                                className="flex gap-5 md:gap-24 items-center h-full"
+                                className="flex gap-4 md:gap-10 items-center h-full"
                                 animate={{
                                     x: [
                                         "0%",

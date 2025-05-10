@@ -3,6 +3,8 @@ import { Link, router } from "@inertiajs/react";
 import AdminLayout from "@/Layouts/AdminLayout";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
 import { ToastContainer } from "react-toastify";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 const BlogList = ({ blogs: initialBlogs }) => {
     const [blogs, setBlogs] = useState(initialBlogs);
     const handleDelete = async (id) => {
@@ -96,26 +98,28 @@ const BlogList = ({ blogs: initialBlogs }) => {
                                                     "blogs.show",
                                                     blog.id
                                                 )}
-                                                className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
+                                                className="action-button edit-btn"
+                                                title="Edit"
                                             >
-                                                View
+                                                <FontAwesomeIcon icon={faEye} />
                                             </Link>
                                             <Link
                                                 href={route(
                                                     "blogs.edit",
                                                     blog.id
                                                 )}
-                                                className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
+                                                className="action-button edit-btn"
+                                                title="Edit"
                                             >
-                                                Edit
+                                                <FontAwesomeIcon icon={faPen} />
                                             </Link>
                                             <button
-                                                onClick={() =>
-                                                    handleDelete(blog.id)
-                                                }
-                                                className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300"
+                                                className="action-button delete-btn"
+                                                title="Delete"
                                             >
-                                                Delete
+                                                <FontAwesomeIcon
+                                                    icon={faTrash}
+                                                />
                                             </button>
                                         </div>
                                     </td>
