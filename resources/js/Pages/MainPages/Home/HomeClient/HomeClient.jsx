@@ -4,21 +4,15 @@ import { useInView } from "react-intersection-observer";
 
 // Sample client logos (replace with your actual image paths)
 const clients = [
-    "reactAssets/images/HomeClient/1.png",
-    "reactAssets/images/HomeClient/2.jpeg",
-    "reactAssets/images/HomeClient/3.jpeg",
-    "reactAssets/images/HomeClient/4.jpeg",
-    "reactAssets/images/HomeClient/5.jpg",
-    "reactAssets/images/HomeClient/6.png",
-    "reactAssets/images/HomeClient/7.jpg",
-    "reactAssets/images/HomeClient/8.png",
-    "reactAssets/images/HomeClient/9.png",
-    "reactAssets/images/HomeClient/10.jpg",
-    "reactAssets/images/HomeClient/11.png",
-    "reactAssets/images/HomeClient/12.png",
-    "reactAssets/images/HomeClient/13.png",
-    "reactAssets/images/HomeClient/14.png",
-    "reactAssets/images/HomeClient/15.png",
+    "/reactAssets/images/Clients/syntaxss.png",
+    "/reactAssets/images/Clients/electron.png",
+    "/reactAssets/images/Clients/happ_customers.png",
+    "/reactAssets/images/Clients/turnkey.png",
+    "/reactAssets/images/Clients/halalqueue.png",
+    "/reactAssets/images/Clients/farmapp.png",
+    "/reactAssets/images/Clients/nfthl.png",
+    "/reactAssets/images/Clients/timetracker.png",
+    "/reactAssets/images/Clients/Bizzy.png",
 ];
 
 const HomeClient = () => {

@@ -19,6 +19,12 @@
             "hexCode": "#F7DF1E"
         },
         {
+            "name": "TypeScript",
+            "image": "/reactAssets/images/Tech/Typescript.png",
+            "colorName": "Light Blue",
+            "hexCode": "#61DAFB"
+        },
+        {
             "name": "Tailwind",
             "image": "/reactAssets/images/Tech/Tailwind CSS-7NEO6Nfh.svg",
             "colorName": "Sky Blue",
@@ -31,6 +37,18 @@
             "hexCode": "#61DAFB"
         },
         {
+            "name": "Redux",
+            "image": "/reactAssets/images/Tech/redux-removebg-preview.png",
+            "colorName": "Light Blue",
+            "hexCode": "#61DAFB"
+        },
+        {
+            "name": "Zustand",
+            "image": "/reactAssets/images/Tech/Zustand.png",
+            "colorName": "Light Blue",
+            "hexCode": "#61DAFB"
+        },
+        {
             "name": "Next JS",
             "image": "reactAssets/images/Tech/nextjs-icon.png",
             "colorName": "Black",
@@ -39,6 +57,12 @@
         {
             "name": "Vite",
             "image": "/reactAssets/images/Tech/vite.svg",
+            "colorName": "Purple",
+            "hexCode": "#646CFF"
+        },
+        {
+            "name": "SWT",
+            "image": "/reactAssets/images/Tech/swe-react.jpeg",
             "colorName": "Purple",
             "hexCode": "#646CFF"
         }
@@ -80,6 +104,19 @@
             "colorName": "Green",
             "hexCode": "#339933"
         },
+        {
+            "name": "Fastify",
+            "image": "/reactAssets/images/Tech/fastify.png",
+            "colorName": "Red",
+            "hexCode": "#000000"
+        },
+        {
+            "name": "Jest",
+            "image": "/reactAssets/images/Tech/jest.png",
+            "colorName": "Maroon",
+            "hexCode": "#99425b"
+        },
+
         {
             "name": "Express JS",
             "image": "/reactAssets/images/Tech/express-js.png",
@@ -136,7 +173,7 @@
         },
         {
             "name": "Prisma",
-            "image": "/reactAssets/images/Tech/prisma-js.jpg",
+            "image": "/reactAssets/images/Tech/prisma.png",
             "colorName": "Dark Blue",
             "hexCode": "#0C344B"
         }
