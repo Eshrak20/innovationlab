@@ -14,18 +14,15 @@ composer require inertiajs/inertia-laravel
 # 4. Install Inertia.js packages for React
 npm install @inertiajs/inertia @inertiajs/inertia-react
 
-# (Optional) Ensure React is installed
-npm install react react-dom
 
-
-5. Configure .env file
+# 5. Configure .env file
 Open the .env file and update your database settings:
 
 DB_DATABASE=your_database_name
 DB_USERNAME=your_database_user
 DB_PASSWORD=your_database_password
 
-6. Configure vite.config.js
+# 6. Configure vite.config.js
 Update your vite.config.js with your local development domain:
 
 export default defineConfig({
@@ -36,7 +33,7 @@ export default defineConfig({
 });
 
 
-7. database is upload with this project's root name innovationlabdb , so import it to your database 
+# 7. database is upload with this project's root name innovationlabdb , so import it to your database 
 
 
 Run the development servers
