@@ -39,25 +39,25 @@ const Navbar = () => {
     const navOptions = (
         <>
             <li>
-                <a
+                <Link
                     href="/"
                     className={`nav-item mt-2 ${url === "/" ? "active" : ""}`}
                 >
                     Home
-                </a>
+                </Link>
             </li>
             <li>
-                <a
+                <Link
                     href="/about"
                     className={`nav-item mt-2 ${
                         url === "/about" ? "active" : ""
                     }`}
                 >
                     About Us
-                </a>
+                </Link>
             </li>
             <li>
-                <a
+                <Link
                     href="/blog"
                     className={`nav-item ${
                         url === "/blog" || url.startsWith("/blog/")
@@ -66,10 +66,10 @@ const Navbar = () => {
                     }`}
                 >
                     Blogs
-                </a>
+                </Link>
             </li>
             <li>
-                <a
+                <Link
                     href="/service"
                     className={`nav-item ${
                         url === "/service" || url.startsWith("/service/")
@@ -78,17 +78,17 @@ const Navbar = () => {
                     }`}
                 >
                     Services
-                </a>
+                </Link>
             </li>
             <li>
-                <a
+                <Link
                     href="/contact"
                     className={`nav-item mt-2 ${
                         url === "/contact" ? "active" : ""
                     }`}
                 >
                     Contacts
-                </a>
+                </Link>
             </li>
         </>
     );

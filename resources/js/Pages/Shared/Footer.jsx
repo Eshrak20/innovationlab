@@ -7,6 +7,7 @@ import {
     faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "@inertiajs/react";
 
 const Footer = () => {
     return (
@@ -74,28 +75,28 @@ const Footer = () => {
                             solutions that amplify your online presence.
                         </p>
                         <div className="flex space-x-4 mt-4">
-                            <a href="#" className="text-[#895DF4] hover:text-[#b89efc]">
+                            <Link href="#" className="text-[#895DF4] hover:text-[#b89efc]">
                                 <FontAwesomeIcon icon={faFacebook} size="lg" />
-                            </a>
+                            </Link>
 
-                            <a
+                            <Link
                                 href="#"
                                 className="text-[#895DF4] hover:text-[#b89efc]"
                             >
                                 <FontAwesomeIcon icon={faLinkedin} size="lg" />
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="#"
                                 className="text-[#895DF4] hover:text-[#b89efc]"
                             >
                                 <FontAwesomeIcon icon={faTwitter} size="lg" />
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="#"
                                 className="text-[#895DF4] hover:text-[#b89efc]"
                             >
                                 <FontAwesomeIcon icon={faInstagram} size="lg" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -111,7 +112,7 @@ const Footer = () => {
                                 { name: "Terms of Service", path: "/terms" },
                             ].map((item, index) => (
                                 <li key={index}>
-                                    <a
+                                    <Link
                                         href={item.path}
                                         className="hover:text-[#b89efc] transition-colors flex items-center"
                                     >
@@ -129,7 +130,7 @@ const Footer = () => {
                                             />
                                         </svg>
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -166,36 +167,36 @@ const Footer = () => {
                     </div>
 
                     <div className="flex space-x-6">
-                        <a
+                        <Link
                             href="/privacy"
                             className="text-gray-400 hover:text-white"
                         >
                             Privacy Policy
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="/terms"
                             className="text-gray-400 hover:text-white"
                         >
                             Terms of Service
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="/contact"
                             className="text-gray-400 hover:text-white"
                         >
                             Contact Us
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="mt-4 md:mt-0 text-sm text-gray-500">
                         <p>
                             Developed with ❤️ by{" "}
-                            <a
+                            <Link
                                 href="/dashboard"
                                 className="text-success hover:underline"
                                 target="_blank"
                             >
                                 Our Web Team
-                            </a>
+                            </Link>
                         </p>
                     </div>
                 </div>
