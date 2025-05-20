@@ -31,9 +31,11 @@ const Blog = ({ blogInfo }) => {
                 title="Blog Section"
                 breadcrumb="Home / About Us"
             />
-             
-            <section ref={contentRef} className="py-28 bg-gray-100 dark:bg-gray-900 min-h-screen">
-                
+
+            <section
+                ref={contentRef}
+                className="py-28 bg-gray-100 dark:bg-gray-900 min-h-screen"
+            >
                 <div className="container mx-auto px-4 max-w-6xl">
                     <h2 className="text-4xl font-bold text-center mb-2 text-success">
                         Our Blog Posts
@@ -65,51 +67,71 @@ const Blog = ({ blogInfo }) => {
                     </div>
 
                     {/* Blog Cards */}
+                    {/* Blog Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                         {filteredBlogs.length > 0 ? (
-                            filteredBlogs.map((blog, index) => (
-                                <Link
-                                    key={blog.id}
-                                    href={`/blog/${blog.slug}`}
-                                    className="animate-fade-in-up"
-                                    style={{
-                                        animationDelay: `${index * 100}ms`,
-                                    }}
-                                >
-                                    <div className="h-full relative flex flex-col bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-hover-glow">
-                                        <div className="relative h-60 overflow-hidden image-container">
-                                            {blog.image && (
-                                                <img
-                                                    src={`/storage/${blog.image}`}
-                                                    alt={blog.title}
-                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                                    loading="lazy"
-                                                />
-                                            )}
-                                            <span className="absolute bottom-3 left-3 bg-black bg-opacity-70 text-white px-3 py-1 rounded text-sm">
-                                                {blog.date}
-                                            </span>
-                                            <span className="absolute top-3 right-3 bg-indigo-600 text-white px-3 py-1 rounded text-xs font-bold uppercase">
-                                                {blog.category}
-                                            </span>
+                            filteredBlogs.map((blog, index) => {
+                                const formattedDate = new Date(
+                                    blog.date
+                                ).toLocaleDateString("en-GB", {
+                                    day: "2-digit",
+                                    month: "long",
+                                    year: "numeric",
+                                });
+
+                                return (
+                                    <Link
+                                        key={blog.id}
+                                        href={`/blog/${blog.slug}`}
+                                        className="animate-fade-in-up"
+                                        style={{
+                                            animationDelay: `${index * 100}ms`,
+                                        }}
+                                    >
+                                        <div className="h-full relative flex flex-col bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 card-hover-glow">
+                                            {/* Image */}
+                                            <div className="relative h-60 overflow-hidden group">
+                                                {blog.image && (
+                                                    <img
+                                                        src={`/storage/${blog.image}`}
+                                                        alt={blog.title}
+                                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                        loading="lazy"
+                                                    />
+                                                )}
+                                            </div>
+
+                                            {/* Date & Category */}
+                                            <div className="flex justify-between items-center px-6 pt-4 pb-2 text-sm text-gray-600 dark:text-gray-400">
+                                                <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">
+                                                    {formattedDate}
+                                                </span>
+                                                <span className="bg-indigo-500 text-white px-3 py-1 rounded-full font-medium uppercase text-xs">
+                                                    {blog.category}
+                                                </span>
+                                            </div>
+
+                                            {/* Title & Summary */}
+                                            <div className="p-6 flex-grow">
+                                                <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                                                    {blog.title}
+                                                </h3>
+                                                <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+                                                    {blog.summary ||
+                                                        "No summary available."}
+                                                </p>
+                                            </div>
+
+                                            {/* Read More Button */}
+                                            <div className="px-6 pb-6 pt-2">
+                                                <button className="glowing-button px-4 py-2 rounded-full text-sm transition-all shadow-md">
+                                                    Read More →
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div className="p-6 flex-grow">
-                                            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3 group-hover:text-indigo-400 transition-colors">
-                                                {blog.title}
-                                            </h3>
-                                            <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-                                                {blog.summary ||
-                                                    "No summary available."}
-                                            </p>
-                                        </div>
-                                        <div className="px-6 pb-6 pt-2">
-                                            <button className="glowing-button px-4 py-2 rounded-full text-sm transition-all shadow-md">
-                                                Read More →
-                                            </button>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))
+                                    </Link>
+                                );
+                            })
                         ) : (
                             <div className="text-center col-span-full text-gray-500 dark:text-gray-400 py-12">
                                 <svg
