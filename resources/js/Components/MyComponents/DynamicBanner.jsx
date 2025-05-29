@@ -1,18 +1,19 @@
 import React from "react";
 
-const DynamicBanner = ({ videoSrc, title, breadcrumb }) => {
+const DynamicBanner = ({ videoSrc, title }) => {
     return (
-        <div className="relative w-full h-64 md:h-[500px] 2xl:h-[700px] flex items-center justify-center">
-            {/* Background Video */}
-            <video
-                className="absolute inset-0 w-full h-full object-cover"
-                src={videoSrc}
-                autoPlay
-                muted
-                loop
-                playsInline
-            ></video>
-
+        <div
+            style={{
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat", // 👈 this disables repeat
+                width: "100%",
+                height: "50vh",
+                backgroundImage:
+                    "url('reactAssets/images/ilabsimages/image3.avif')",
+            }}
+            className="relative w-full h-64 md:h-[500px] 2xl:h-[700px] flex items-center justify-center"
+        >
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/50"></div>
 

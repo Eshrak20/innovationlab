@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ReactTypingEffect from "react-typing-effect";
 import { motion } from "framer-motion";
+import BackgroundVideo from "./BackgroundVideo"; // Adjust the path if needed
 
-const BannerHome = ({stats}) => {
-
+const BannerHome = ({ stats }) => {
     const taglines = [
         "Empowering Progress\nEngineering the Future",
         "Igniting Innovation\nCrafting Tomorrow",
@@ -13,7 +13,7 @@ const BannerHome = ({stats}) => {
         "Designing Solutions\nFueling Evolution",
         "Reimagining Possibilities\nEngineering Change",
         "Driven by Curiosity\nDefined by Innovation",
-        "From Vision to Reality\nThe Future Starts Here"
+        "From Vision to Reality\nThe Future Starts Here",
     ];
 
     const [currentTagline, setCurrentTagline] = useState(taglines[0]);
@@ -21,7 +21,7 @@ const BannerHome = ({stats}) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => 
+            setCurrentIndex((prevIndex) =>
                 prevIndex === taglines.length - 1 ? 0 : prevIndex + 1
             );
             setCurrentTagline(taglines[currentIndex]);
@@ -31,27 +31,31 @@ const BannerHome = ({stats}) => {
     }, [currentIndex]);
 
     return (
-        <div className="relative w-full h-[500px] md:h-screen overflow-hidden text-white flex items-center justify-center">
+        <div
+            style={{
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat", // 👈 this disables repeat
+                width: "100%",
+                height: "100vh",
+                backgroundImage:
+                    "url('reactAssets/images/ilabsimages/image3.avif')",
+            }}
+            className="relative w-full h-[500px] md:h-screen overflow-hidden text-white flex items-center justify-center bg-black"
+        >
             {/* Background Video */}
-            <video
-                className="absolute top-0 left-0 w-full h-full object-cover z-negative"
-                autoPlay
-                loop
-                muted
-                playsInline
-                src="reactAssets/videos/purplevideo.mp4"
-            ></video>
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+            {/* <BackgroundVideo src="reactAssets/videos/purplevideo.mp4" /> */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/40"></div>
 
             {/* Centeblue Content */}
             <div className="relative text-center z-10">
                 <h2 className="-mt-32 text-xl md:text-4xl 2xl:text-6xl font-extrabold uppercase text-white  bg-opacity-70 p-8 rounded-xl transition duration-500 ease-in-out hover:scale-95">
-                    {currentTagline.split('\n').map((line, i) => (
+                    {currentTagline.split("\n").map((line, i) => (
                         <React.Fragment key={i}>
                             "{line}"
-                            {i < currentTagline.split('\n').length - 1 && <br />}
+                            {i < currentTagline.split("\n").length - 1 && (
+                                <br />
+                            )}
                         </React.Fragment>
                     ))}
                 </h2>

@@ -12,22 +12,16 @@ const Tech = () => {
         setAnimationKey((prevKey) => prevKey + 1);
     }, [selectedTech]);
 
-    // Calculate total width of one set of tech cards
+    // Optional: Preload all images (if you really need to, though lazy loading makes this less useful)
+    useEffect(() => {
+        Object.values(techData).flat().forEach(item => {
+            const img = new Image();
+            img.src = item.image;
+        });
+    }, []);
+
     const calculateTotalWidth = (techArray) => {
         return techArray.length * (112 + 96); // card width (112) + gap (96)
-    };
-
-    // Animation variants
-    const floatVariants = {
-        float: {
-            y: ["0%", "-15%", "0%"],
-            transition: {
-                duration: 3,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut",
-            },
-        },
     };
 
     const buttonVariants = {
@@ -46,7 +40,6 @@ const Tech = () => {
 
     return (
         <section className="relative overflow-hidden min-h-screen">
-            {/* Animated Background */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 opacity-95"></div>
                 <div className="absolute inset-0 opacity-30">
@@ -67,24 +60,15 @@ const Tech = () => {
                 </div>
             </div>
 
-            {/* Content */}
             <div className="relative z-10 container mx-auto px-4 pt-20 md:py-20">
-                {/* Main Content */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                >
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
                     <motion.h2
                         className="text-3xl md:text-6xl font-bold mb-6 text-center text-white"
                         initial={{ y: -50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.6 }}
                     >
-                        Our{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
-                            Tech Stack
-                        </span>
+                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">Tech Stack</span>
                     </motion.h2>
 
                     <motion.p
@@ -93,13 +77,11 @@ const Tech = () => {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.6 }}
                     >
-                        The technologies we use to build amazing digital
-                        experiences
+                        The technologies we use to build amazing digital experiences
                     </motion.p>
 
-                    {/* Tech Category Selector */}
                     <motion.div
-                        className="flex flex-wrap justify-center gap-3 md:gap-4 md:p-6 mb-16 md:bg-white/10 md:backdrop-blur-md rounded-xl md:shadow-lg md:border md:border-white/10"
+                        className="flex flex-wrap justify-center gap-3 md:gap-4 md:p-6 mb-16 md:bg-white/10 md:backdrop-blur-md rounded-md  md:border md:border-white/10"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
@@ -112,18 +94,14 @@ const Tech = () => {
                                 variants={buttonVariants}
                                 whileHover="hover"
                                 whileTap="tap"
-                                animate={
-                                    selectedTech === tech ? "selected" : ""
-                                }
+                                animate={selectedTech === tech ? "selected" : ""}
                             >
                                 {tech}
                             </motion.button>
                         ))}
                     </motion.div>
 
-                    {/* Track */}
                     <div className="relative h-32 md:h-96 overflow-hidden md:mb-32">
-                        {/* Sleepers */}
                         <div className="absolute top-0 bottom-0 left-0 right-0 flex">
                             {[...Array(40)].map((_, i) => (
                                 <motion.div
@@ -131,15 +109,11 @@ const Tech = () => {
                                     className="h-full w-2 mx-8 bg-white/10"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
-                                    transition={{
-                                        delay: i * 0.05,
-                                        duration: 0.5,
-                                    }}
+                                    transition={{ delay: i * 0.05, duration: 0.5 }}
                                 ></motion.div>
                             ))}
                         </div>
 
-                        {/* Infinite moving tech cards */}
                         <div className="absolute top-0 left-0 h-full w-full overflow-hidden">
                             <motion.div
                                 key={animationKey}
@@ -147,9 +121,7 @@ const Tech = () => {
                                 animate={{
                                     x: [
                                         "0%",
-                                        `-${calculateTotalWidth(
-                                            techData[selectedTech]
-                                        )}px`,
+                                        `-${calculateTotalWidth(techData[selectedTech])}px`,
                                     ],
                                 }}
                                 transition={{
@@ -160,44 +132,35 @@ const Tech = () => {
                                     },
                                 }}
                             >
-                                {[
-                                    ...techData[selectedTech],
-                                    ...techData[selectedTech],
-                                ].map((item, index) => (
+                                {[...techData[selectedTech], ...techData[selectedTech]].map((item, index) => (
                                     <motion.div
                                         key={`${item.name}-${index}`}
                                         className="flex flex-col items-center group relative px-4"
                                         whileHover={{ scale: 1.2, zIndex: 10 }}
-                                        transition={{
-                                            type: "spring",
-                                            stiffness: 300,
-                                        }}
+                                        transition={{ type: "spring", stiffness: 300 }}
                                     >
                                         <motion.div
                                             className="tech-card w-28 h-28 flex items-center justify-center rounded-2xl shadow-xl"
                                             style={{
                                                 backgroundColor: item.hexCode
                                                     ? `${item.hexCode}33`
-                                                    : "#ffffff33", // 33 = 20% opacity in hex
-                                                boxShadow: `0 0 30px ${
-                                                    item.hexCode || "#ffffff"
-                                                }`,
-                                                backdropFilter: "blur(5px)", // optional: adds a nice blur effect to the background
+                                                    : "#ffffff33",
+                                                boxShadow: `0 0 30px ${item.hexCode || "#ffffff"}`,
+                                                backdropFilter: "blur(5px)",
                                             }}
                                             whileHover={{
                                                 scale: 1.5,
-                                                boxShadow: `0 0 50px ${
-                                                    item.hexCode || "#ffffff"
-                                                }80`, // 80 = 50% opacity in hex
+                                                boxShadow: `0 0 50px ${item.hexCode || "#ffffff"}80`,
                                                 zIndex: 20,
                                                 backgroundColor: item.hexCode
                                                     ? `${item.hexCode}66`
-                                                    : "#ffffff66", // 66 = 40% opacity
+                                                    : "#ffffff66",
                                             }}
                                         >
                                             <motion.img
                                                 src={`${item.image}`}
                                                 alt={item.name}
+                                                loading="lazy" // Lazy loading for images!
                                                 className="tech-logo w-20 h-20 object-contain"
                                                 whileHover={{
                                                     rotate: 360,

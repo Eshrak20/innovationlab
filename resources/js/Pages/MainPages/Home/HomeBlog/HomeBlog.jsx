@@ -27,7 +27,7 @@ const HomeBlog = ({ blog }) => {
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
-                    {blog.slice(0,6).map((item) => (
+                    {blog.slice(0, 6).map((item) => (
                         <motion.div
                             key={item.id}
                             initial={{ opacity: 0, scale: 0.95 }}
@@ -46,20 +46,25 @@ const HomeBlog = ({ blog }) => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                     <span className="absolute bottom-4 left-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                                        {new Date(item.date).toLocaleDateString()}
+                                        {new Date(item.date).toLocaleDateString('en-GB', {
+                                            day: '2-digit',
+                                            month: 'long',
+                                            year: 'numeric',
+                                        })}
                                     </span>
                                 </div>
 
                                 <div className="p-6 bg-gray-900 rounded-b-lg border-t-0">
-                                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
-                                        {item.title}
-                                    </h3>
+                                    {/* Make the blog title clickable */}
+                                    <Link href={`/blog/${item.slug}`}>
+                                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors cursor-pointer">
+                                            {item.title}
+                                        </h3>
+                                    </Link>
+
                                     <p className="text-gray-400 mb-5">
-                                        {item.summary?.length > 35
-                                            ? `${item.summary
-                                                  .substring(0, 135)
-                                                  .trim()
-                                                  .replace(/[,;:.!?]$/, "")}...`
+                                        {item.summary?.length > 135
+                                            ? `${item.summary.substring(0, 135).trim().replace(/[,;:.!?]$/, "")}...`
                                             : item.summary || ""}
                                     </p>
 

@@ -15,7 +15,7 @@ const Home = ({ stats, profileData, blog, service }) => {
             <MainLayout>
                 <BannerHome stats={stats} />
                 <HomeAbout baseUrl={baseUrl} stats={stats} />
-                <div className="">
+                <div>
                     {service?.slice(0, 6).map((item, index) => (
                         <TextImage
                             key={item.id}

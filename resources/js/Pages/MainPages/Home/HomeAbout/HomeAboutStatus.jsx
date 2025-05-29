@@ -78,7 +78,7 @@ const HomeAboutStatus = ({ stats }) => {
                 ))}
             </div>
 
-            <div className="relative z-10 flex flex-wrap gap-4 justify-center md:gap-12">
+            <div className="relative z-10 flex gap-4 justify-evenly">
                 {stats.map((stat, index) => (
                     <div
                         key={index}

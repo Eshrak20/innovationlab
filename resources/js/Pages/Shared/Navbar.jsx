@@ -143,8 +143,8 @@ const Navbar = () => {
 
                     <Link href="/">
                         <img
-                            src="/reactAssets/images/Logo18.png"
-                            alt="Syntax Soft Systems Logo"
+                            src="/reactAssets/images/Logo.png"
+                            alt="ilabs360"
                             className="w-40 md:w-52  md:ml-16 -mt-1 rounded-md hover:scale-105  transition-transform duration-300 "
                         />
                     </Link>
