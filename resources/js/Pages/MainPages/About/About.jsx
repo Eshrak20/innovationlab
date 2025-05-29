@@ -27,7 +27,7 @@ const About = ({ profileData, managementData, missionData }) => {
                         imageUrl={`reactAssets/images/AboutBoxAbout/2.png`}
                     />
                     <Vision
-                        title="To develop a sustainable information Technology"
+                        title="To develop sustainable Technology"
                         description={`To develop a sustainable information Technology infra. & design the most \n Scalable IT solutions enabling Clients to reach their business goals.`}
                         imageUrl={`reactAssets/images/AboutBoxAbout/1.png`}
                         reverse={true}

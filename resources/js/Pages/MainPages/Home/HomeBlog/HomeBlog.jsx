@@ -1,17 +1,18 @@
 import { Link } from "@inertiajs/react";
 import { motion } from "framer-motion";
 import "./HomeBlog.css";
+import ReFormatDate from "@/Components/MyComponents/ReFormatDate";
 
 const HomeBlog = ({ blog }) => {
     return (
-        <section className="py-16 relative overflow-hidden">
+        <section className="pb-16 pt-52 relative overflow-hidden">
             {/* Background gradient */}
             <div className="absolute inset-0 -z-10 opacity-10">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-900 to-indigo-800 rounded-full filter blur-3xl"></div>
             </div>
 
             <div className="container mx-auto px-4 max-w-6xl">
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
@@ -46,11 +47,7 @@ const HomeBlog = ({ blog }) => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                     <span className="absolute bottom-4 left-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                                        {new Date(item.date).toLocaleDateString('en-GB', {
-                                            day: '2-digit',
-                                            month: 'long',
-                                            year: 'numeric',
-                                        })}
+                                        <ReFormatDate date={item.date} />
                                     </span>
                                 </div>
 
@@ -64,17 +61,30 @@ const HomeBlog = ({ blog }) => {
 
                                     <p className="text-gray-400 mb-5">
                                         {item.summary?.length > 135
-                                            ? `${item.summary.substring(0, 135).trim().replace(/[,;:.!?]$/, "")}...`
+                                            ? `${item.summary
+                                                  .substring(0, 135)
+                                                  .trim()
+                                                  .replace(/[,;:.!?]$/, "")}...`
                                             : item.summary || ""}
                                     </p>
 
-                                    <Link 
+                                    <Link
                                         href={`/blog/${item.slug}`}
                                         className="inline-flex items-center text-purple-400 font-medium hover:text-purple-300 transition-colors"
                                     >
                                         Read More
-                                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                        <svg
+                                            className="w-4 h-4 ml-2"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                            ></path>
                                         </svg>
                                     </Link>
                                 </div>

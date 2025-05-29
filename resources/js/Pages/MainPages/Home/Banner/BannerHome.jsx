@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactTypingEffect from "react-typing-effect";
 import { motion } from "framer-motion";
 import BackgroundVideo from "./BackgroundVideo"; // Adjust the path if needed
+import { Link } from "@inertiajs/react";
 
 const BannerHome = ({ stats }) => {
     const taglines = [
@@ -87,7 +88,7 @@ const BannerHome = ({ stats }) => {
                     </motion.h1>
 
                     {/* Let's Talk Button */}
-                    <a href="/contact">
+                    <Link href="/contact">
                         <motion.button
                             className="glowing-button py-1 px-3 text-sm rounded-full mt-1 md:mt-3 transition-all duration-300 ease-in-out md:py-3 md:px-6 md:text-xl  transform hover:translate-x-2"
                             initial={{ opacity: 0, scale: 0.8 }}
@@ -96,7 +97,7 @@ const BannerHome = ({ stats }) => {
                         >
                             Lets Talk
                         </motion.button>
-                    </a>
+                    </Link>
 
                     <div className="flex justify-center mt-10 gap-6">
                         {stats.map((stat, index) => (

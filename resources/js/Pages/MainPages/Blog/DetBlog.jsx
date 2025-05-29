@@ -2,6 +2,7 @@ import MainLayout from "@/Layouts/MainLayout";
 import { Link } from "@inertiajs/react";
 import React from "react";
 import "./DetBlog.css";
+import ReFormatDate from "@/Components/MyComponents/ReFormatDate";
 
 const DetBlog = ({ blog }) => {
     console.log(blog.profile_photo);
@@ -85,15 +86,16 @@ const DetBlog = ({ blog }) => {
                 )}
                 <div className="blog-header-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
                     <div className="max-w-3xl mx-auto w-full">
-                        <h1 className="blog-title text-4xl md:text-5xl font-bold text-white mb-4">
+                        <h1 className="blog-title text-3xl md:text-5xl md:font-bold text-white mb-4">
                             {blog.title}
                         </h1>
+
                         <div className="blog-meta flex items-center gap-4 text-white/80">
                             <span className="blog-category px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-sm">
                                 {blog.category}
                             </span>
                             <span className="blog-date text-sm">
-                                {blog.date}
+                                <ReFormatDate date={blog.date} />
                             </span>
                         </div>
                     </div>
@@ -216,10 +218,10 @@ const DetBlog = ({ blog }) => {
                         </div>
                         <div className="author-info">
                             <strong className="block text-lg font-medium text-gray-900 dark:text-white">
-                                {blog.published_by}
+                                Published By {blog.published_by}
                             </strong>
                             <p className="text-gray-500 dark:text-gray-100 text-sm">
-                                Published on {blog.date}
+                                <ReFormatDate date={blog.date} />
                             </p>
                         </div>
                     </div>

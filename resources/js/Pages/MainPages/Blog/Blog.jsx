@@ -4,6 +4,7 @@ import { Link } from "@inertiajs/react";
 import DynamicBanner from "@/Components/MyComponents/DynamicBanner";
 import videoSrc from "@/../../public/reactAssets/videos/purplevideo.mp4";
 import BlogPagination from "./BlogPagination";
+import ReFormatDate from "@/Components/MyComponents/ReFormatDate";
 
 const Blog = ({ blogInfo }) => {
     const contentRef = useRef();
@@ -71,14 +72,6 @@ const Blog = ({ blogInfo }) => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                         {filteredBlogs.length > 0 ? (
                             filteredBlogs.map((blog, index) => {
-                                const formattedDate = new Date(
-                                    blog.date
-                                ).toLocaleDateString("en-GB", {
-                                    day: "2-digit",
-                                    month: "long",
-                                    year: "numeric",
-                                });
-
                                 return (
                                     <Link
                                         key={blog.id}
@@ -104,7 +97,9 @@ const Blog = ({ blogInfo }) => {
                                             {/* Date & Category */}
                                             <div className="flex justify-between items-center px-6 pt-4 pb-2 text-sm text-gray-600 dark:text-gray-400">
                                                 <span className="bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full">
-                                                    {formattedDate}
+                                                    <ReFormatDate
+                                                        date={blog.date}
+                                                    />
                                                 </span>
                                                 <span className="bg-indigo-500 text-white px-3 py-1 rounded-full font-medium uppercase text-xs">
                                                     {blog.category}

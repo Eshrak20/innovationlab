@@ -1,0 +1,1 @@
+import a from"./Sidebar-v-2myCdC.js";import{j as r}from"./app-fjtTz2h4.js";function e({children:s}){return r.jsxs("div",{className:"flex min-h-screen bg-gray-100 dark:bg-gray-900",children:[r.jsx(a,{}),r.jsx("main",{className:"ml-64 w-full p-8",children:s})]})}export{e as A};
