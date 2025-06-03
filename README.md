@@ -41,3 +41,8 @@ Run the development servers
 npm run dev
 php artisan serve                                #for local pc
 php artisan serve --host=0.0.0.0 --port=8000     #for wifi 
+
+
+# After meessage redeircet 
+# when  blog pagintation then navbar is not selected
+# admin panel skill set color wrong 
