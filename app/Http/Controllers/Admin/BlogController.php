@@ -27,7 +27,7 @@ class BlogController extends Controller
     {
         $adminProfile = auth()->user();
         $adminProfile->load('profile');
-    
+
         return Inertia::render('Admin/Blog/BlogCreate', [
             'categories' => ['technical', 'nontechnical'],
             'adminProfile' => [
@@ -39,7 +39,7 @@ class BlogController extends Controller
             ],
         ]);
     }
-    
+
 
 
 
@@ -77,7 +77,7 @@ class BlogController extends Controller
         }
 
         // Save blog with the correct relative path for profile_photo
-        $blog = Blog::create([
+        Blog::create([
             'image' => $imagePath,
             'title' => $request->title,
             'summary' => $request->summary,
@@ -89,6 +89,7 @@ class BlogController extends Controller
             'slug' => Str::slug($request->slug),
             'admin_id' => auth()->id(),
         ]);
+        return redirect()->route('blogs.index')->with('success', 'blog created successfully.');
     }
 
 

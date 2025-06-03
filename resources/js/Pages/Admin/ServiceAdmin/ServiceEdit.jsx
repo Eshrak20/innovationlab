@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "@inertiajs/inertia-react";
 import axios from "axios";
 import AdminLayout from "@/Layouts/AdminLayout";
@@ -6,10 +6,10 @@ import { ToastContainer } from "react-toastify";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
 
 const ServiceEdit = ({ service }) => {
-    const { data, setData, processing, errors } = useForm({
+    const { data, setData, errors } = useForm({
         title: service.title || "",
         short_description: service.short_description || "",
-        description: service.description || "",
+        description: service.description || "", 
         icon: service.icon || "",
         image: service.image || "",
         is_featured: service.is_featured ? true : false,

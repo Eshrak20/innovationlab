@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
 import { useForm } from "@inertiajs/inertia-react";
+import { router } from "@inertiajs/react";
 
 const BlogCreate = ({ categories, adminProfile }) => {
     const { data, setData, reset, processing, errors } = useForm({
@@ -22,9 +23,7 @@ const BlogCreate = ({ categories, adminProfile }) => {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = async (e) => {
-        console.log("FormData profile_photo:", data.profile_photo);
-
+    const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
@@ -33,22 +32,16 @@ const BlogCreate = ({ categories, adminProfile }) => {
             formData.append(key, data[key]);
         });
 
-        try {
-            await axios.post(route("blogs.store"), formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
-            showSuccessToast("Blog created successfully!");
-            reset();
-        } catch (error) {
-            console.error("Submit error:", error);
-            const errorMessage =
-                error.response?.data?.message || "Failed to create blog";
-            showErrorToast(errorMessage);
-        } finally {
-            setIsSubmitting(false);
-        }
+        router.post(route("blogs.store"), formData, {
+            onSuccess: () => {
+                reset();
+            },
+            onError: (errors) => {
+                console.error("Submit error:", errors);
+                showErrorToast("Failed to create blog");
+            },
+            onFinish: () => setIsSubmitting(false),
+        });
     };
 
     const generateSlug = () => {

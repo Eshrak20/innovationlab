@@ -55,17 +55,6 @@ class ServiceController extends Controller
         return redirect()->route('services.index')->with('success', 'Service created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($id)
     {
         $service = Service::where('id', $id)
@@ -78,8 +67,7 @@ class ServiceController extends Controller
     
     public function update(Request $request, $id)
     {
-        $service = Service::where('id', $id)
-            ->firstOrFail();
+        $service = Service::findOrFail($id);
     
         $request->validate([
             'title' => 'required|string|max:255',
@@ -114,9 +102,6 @@ class ServiceController extends Controller
         return redirect()->route('services.index'); // update route name if different
     }
     
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $service = Service::where('id', $id)

@@ -83,15 +83,6 @@ const AdminGalleryList = ({ galleries: initialGalleries }) => {
                                         <div className="flex space-x-2">
                                             <Link
                                                 href={route(
-                                                    "galleries.show",
-                                                    gallery.id
-                                                )}
-                                                className="action-button"
-                                            >
-                                                <FontAwesomeIcon icon={faEye} />
-                                            </Link>
-                                            <Link
-                                                href={route(
                                                     "galleries.edit",
                                                     gallery.id
                                                 )}
