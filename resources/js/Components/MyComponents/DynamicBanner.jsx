@@ -1,6 +1,6 @@
 import React from "react";
 
-const DynamicBanner = ({ videoSrc, title }) => {
+const DynamicBanner = ({ title }) => {
     return (
         <div
             style={{

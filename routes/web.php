@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ContactInfoController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ExperienceStatusController;
 use App\Http\Controllers\Admin\FormController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ManagementController;
 use App\Http\Controllers\Admin\MissionController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -26,7 +27,7 @@ Route::get('/blog/{slug}', [BlogControllerView::class, 'show']);
 Route::get('/service', [ServiceControllerHome::class, 'index']);
 Route::get('/service/{id}', [ServiceControllerHome::class, 'show']);
 Route::get('/contact', [ContactController::class, 'index']);
-Route::post('/forms', [FormController::class, 'store'])->name('forms.store');
+Route::post('/form', [FormController::class, 'store'])->name('forms.store');
 Route::get('/privacy', [PrivacyPolicyController::class, 'index']);
 Route::get('/terms', [TermsConditionsController::class, 'index']);
 
@@ -43,6 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
     Route::resource('/blogs', BlogController::class);
+    Route::resource('/galleries', GalleryController::class);
     Route::resource('/services', ServiceController::class);
     Route::resource('/experienceStatuses', ExperienceStatusController::class);
     Route::resource('/contactInfo', ContactInfoController::class);

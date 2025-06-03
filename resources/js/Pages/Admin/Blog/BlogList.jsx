@@ -116,6 +116,9 @@ const BlogList = ({ blogs: initialBlogs }) => {
                                             <button
                                                 className="action-button delete-btn"
                                                 title="Delete"
+                                                onClick={() =>
+                                                    handleDelete(blog.id)
+                                                }
                                             >
                                                 <FontAwesomeIcon
                                                     icon={faTrash}

@@ -1,6 +1,5 @@
 import DynamicBanner from "@/Components/MyComponents/DynamicBanner";
 import MainLayout from "@/Layouts/MainLayout";
-import videoSrc from "@/../../public/reactAssets/videos/purplevideo.mp4";
 import Vision from "../About/Vision/Vision";
 import { useEffect, useRef } from "react";
 
@@ -20,7 +19,6 @@ const ServicesMain = ({ service }) => {
                 <div className="relative">
                     {/* Dynamic Banner */}
                     <DynamicBanner
-                        videoSrc={videoSrc}
                         title="Our Services"
                         breadcrumb="Home / About Us"
                     />

@@ -1,1 +1,0 @@
-import{j as s}from"./app-fjtTz2h4.js";const i=({title:e,children:r,cols:t=2})=>s.jsxs("div",{className:"space-y-6",children:[s.jsx("h2",{className:"text-lg font-medium text-gray-900",children:e}),s.jsx("div",{className:`grid grid-cols-1 md:grid-cols-${t} gap-6`,children:r})]});export{i as default};

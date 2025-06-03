@@ -7,7 +7,7 @@ const ContactInputField = ({
     value,
     onChange,
     placeholder,
-    requiblue,
+    required,
     errors
 }) => (
     <div className="w-full">
@@ -18,7 +18,7 @@ const ContactInputField = ({
             onChange={onChange}
             placeholder={placeholder}
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-success bg-white"
-            requiblue={requiblue}
+            required={required}
         />
         {errors && errors[name] && (
             <p className="text-success text-sm mt-1">{errors[name]}</p>
@@ -37,7 +37,7 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        post('/forms', {
+        post('/form', {
             preserveScroll: true,
             onSuccess: () => {
                 alert("Submitted From successfully")
@@ -65,7 +65,7 @@ const Form = () => {
                             value={data.name}
                             onChange={(e) => setData('name', e.target.value)}
                             placeholder="Name"
-                            requiblue
+                            required
                             errors={errors}
                         />
                     </div>
@@ -76,7 +76,7 @@ const Form = () => {
                             value={data.company}
                             onChange={(e) => setData('company', e.target.value)}
                             placeholder="Company"
-                            requiblue
+                            required
                             errors={errors}
                         />
                     </div>
@@ -87,7 +87,7 @@ const Form = () => {
                             value={data.phone}
                             onChange={(e) => setData('phone', e.target.value)}
                             placeholder="Phone"
-                            requiblue
+                            required
                             errors={errors}
                         />
                     </div>
@@ -98,7 +98,7 @@ const Form = () => {
                             value={data.email}
                             onChange={(e) => setData('email', e.target.value)}
                             placeholder="Email"
-                            requiblue
+                            required
                             errors={errors}
                         />
                     </div>
@@ -111,7 +111,7 @@ const Form = () => {
                                 placeholder="Describe what you want!"
                                 rows="8"
                                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-success bg-white"
-                                requiblue
+                                required
                             ></textarea>
                             {errors && errors.description && (
                                 <p className="text-success text-sm mt-1">{errors.description}</p>

@@ -1,0 +1,1 @@
+import{y as s}from"./index-Dtdo69c3.js";const o=e=>{s.success(e,{position:"top-right",autoClose:3e3,hideProgressBar:!1,closeOnClick:!0,pauseOnHover:!0,draggable:!0,progress:void 0})},t=e=>{s.error(e,{position:"top-right",autoClose:4e3,hideProgressBar:!1,closeOnClick:!0,pauseOnHover:!0,draggable:!0,progress:void 0})};export{t as a,o as s};

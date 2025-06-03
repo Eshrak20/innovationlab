@@ -1,0 +1,1 @@
+import{j as r}from"./app-BJrvDCdO.js";const n=t=>t?new Date(t).toLocaleDateString("en-US",{day:"numeric",month:"long",year:"numeric"}):"",a=({date:t})=>{const e=n(t);return r.jsx("div",{children:e})};export{a as R};

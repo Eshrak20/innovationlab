@@ -61,7 +61,7 @@ const Navbar = () => {
                 <Link
                     href="/blog"
                     className={`nav-item ${
-                        url === "/blog" || url.startsWith("/blog/")
+                        url === "/blog" || url.startsWith("/blog/") || url.startsWith("/blog?")
                             ? "active"
                             : ""
                     }`}

@@ -45,17 +45,6 @@ const ProfileEdit = ({ profile }) => {
             ? JSON.parse(profile.certifications)
             : []
     );
-    const [programmingLanguages, setProgrammingLanguages] = useState(
-        Array.isArray(profile?.programming_languages)
-            ? profile.programming_languages
-            : []
-    );
-    const [tools, setTools] = useState(
-        Array.isArray(profile?.tools) ? profile.tools : []
-    );
-    const [projects, setProjects] = useState(
-        Array.isArray(profile?.projects) ? profile.projects : []
-    );
 
     // File state
     const [profilePhoto, setProfilePhoto] = useState(null);

@@ -1,0 +1,1 @@
+import{j as e}from"./app-BJrvDCdO.js";const o=({src:t})=>e.jsxs(e.Fragment,{children:[e.jsx("video",{className:"absolute top-0 left-0 w-full h-full object-cover z-negative",autoPlay:!0,loop:!0,muted:!0,playsInline:!0,src:t}),e.jsx("div",{className:"absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"})]});export{o as default};

@@ -5,7 +5,6 @@ import Management from "./Management/Management";
 import Mission from "./Mission/Mission";
 import Vision from "./Vision/Vision";
 import DynamicBanner from "@/Components/MyComponents/DynamicBanner";
-import videoSrc from "@/../../public/reactAssets/videos/purplevideo.mp4";
 const About = ({ profileData, managementData, missionData }) => {
     window.scrollTo({
         top: 0,
@@ -15,7 +14,6 @@ const About = ({ profileData, managementData, missionData }) => {
         <>
             <MainLayout>
                 <DynamicBanner
-                    videoSrc={videoSrc}
                     title="About Us"
                     breadcrumb="Home / About Us"
                 />

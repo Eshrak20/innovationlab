@@ -28,7 +28,7 @@ const ArrayInputField = ({
                             handleAdd();
                         }
                     }}
-                    className="flex-1 block rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    className="flex-1 block text-black rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                     placeholder={placeholder}
                 />
                 <button

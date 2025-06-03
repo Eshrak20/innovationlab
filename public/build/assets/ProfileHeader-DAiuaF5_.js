@@ -1,1 +1,0 @@
-import{j as r}from"./app-fjtTz2h4.js";const s=({title:e,description:t})=>r.jsxs("div",{className:"p-6 border-b border-gray-200",children:[r.jsx("h1",{className:"text-2xl font-bold text-gray-900 dark:text-gray-200",children:e}),r.jsx("p",{className:"mt-1 text-gray-600 dark:text-gray-300",children:t})]});export{s as default};

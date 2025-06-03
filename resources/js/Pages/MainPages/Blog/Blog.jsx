@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import MainLayout from "@/Layouts/MainLayout";
 import { Link } from "@inertiajs/react";
 import DynamicBanner from "@/Components/MyComponents/DynamicBanner";
-import videoSrc from "@/../../public/reactAssets/videos/purplevideo.mp4";
 import BlogPagination from "./BlogPagination";
 import ReFormatDate from "@/Components/MyComponents/ReFormatDate";
 
@@ -28,7 +27,6 @@ const Blog = ({ blogInfo }) => {
     return (
         <MainLayout>
             <DynamicBanner
-                videoSrc={videoSrc}
                 title="Blog Section"
                 breadcrumb="Home / About Us"
             />

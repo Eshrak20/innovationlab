@@ -225,7 +225,7 @@ const BlogCreate = ({ categories, adminProfile }) => {
                             </label>
                             <textarea
                                 className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                                rows={6}
+                                rows={12}
                                 value={data.description}
                                 onChange={(e) =>
                                     setData("description", e.target.value)
