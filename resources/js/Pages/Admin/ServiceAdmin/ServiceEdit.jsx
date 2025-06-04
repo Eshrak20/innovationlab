@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { useForm } from "@inertiajs/inertia-react";
-import axios from "axios";
 import AdminLayout from "@/Layouts/AdminLayout";
 import { ToastContainer } from "react-toastify";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
+import { router } from "@inertiajs/react";
 
 const ServiceEdit = ({ service }) => {
     const { data, setData, errors } = useForm({
         title: service.title || "",
         short_description: service.short_description || "",
-        description: service.description || "", 
+        description: service.description || "",
         icon: service.icon || "",
         image: service.image || "",
         is_featured: service.is_featured ? true : false,
@@ -20,7 +20,7 @@ const ServiceEdit = ({ service }) => {
         service.image ? `/storage/${service.image}` : null
     );
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
@@ -42,37 +42,31 @@ const ServiceEdit = ({ service }) => {
             }
         });
 
-        // Only append image if it's a new uploaded file
+        // Only append image if it's a new file
         if (data.image instanceof File) {
             formData.append("image", data.image);
         }
 
-        try {
-            const response = await axios.post(
-                route("services.update", service.id),
-                formData,
-                {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                        "X-HTTP-Method-Override": "PATCH",
-                    },
-                }
-            );
-            showSuccessToast(response.data.success || "Service updated");
-        } catch (error) {
-            console.error(error);
-            const errorData = error.response?.data?.errors;
-            if (errorData) {
-                Object.values(errorData).forEach((errArr) =>
-                    showErrorToast(errArr[0])
-                );
-            } else {
-                showErrorToast("Failed to update service");
-            }
-        } finally {
-            setIsSubmitting(false);
-        }
+        // Add PATCH override for Inertia
+        formData.append("_method", "PATCH");
+
+        router.post(route("services.update", service.id), formData, {
+            forceFormData: true, // Important for file uploads
+            onSuccess: () => {
+                showSuccessToast("Service updated successfully!");
+            },
+            onError: (errors) => {
+                console.error("Submit error:", errors);
+                Object.values(errors).forEach((msg) => showErrorToast(msg));
+            },
+            onFinish: () => {
+                setIsSubmitting(false);
+            },
+        });
     };
+
+
+    
 
     return (
         <AdminLayout>

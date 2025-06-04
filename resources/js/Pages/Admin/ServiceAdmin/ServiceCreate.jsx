@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useForm } from "@inertiajs/inertia-react";
-import axios from "axios";
 import AdminLayout from "@/Layouts/AdminLayout";
 import { ToastContainer } from "react-toastify";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
 import "react-toastify/dist/ReactToastify.css";
+import { router } from "@inertiajs/react";
 
 const ServiceCreate = () => {
     const { data, setData, reset, processing, errors } = useForm({
@@ -18,35 +18,33 @@ const ServiceCreate = () => {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
         const formData = new FormData();
         Object.keys(data).forEach((key) => {
             if (key === "is_featured") {
-                formData.append(key, data[key] ? "1" : "0"); // Convert to string '1' or '0'
+                formData.append(key, data[key] ? "1" : "0");
             } else {
                 formData.append(key, data[key]);
             }
         });
 
-        try {
-            await axios.post(route("services.store"), formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
-            showSuccessToast("Service created successfully!");
-            reset();
-        } catch (error) {
-            console.error("Submit error:", error);
-            const errorMessage =
-                error.response?.data?.message || "Failed to create service";
-            showErrorToast(errorMessage);
-        } finally {
-            setIsSubmitting(false);
-        }
+        router.post(route("services.store"), formData, {
+            forceFormData: true, // Important for multipart/form-data
+            onSuccess: () => {
+                showSuccessToast("Service created successfully!");
+                reset();
+            },
+            onError: (errors) => {
+                console.error("Submit error:", errors);
+                Object.values(errors).forEach((msg) => showErrorToast(msg));
+            },
+            onFinish: () => {
+                setIsSubmitting(false);
+            },
+        });
     };
 
     return (

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import AdminLayout from "@/Layouts/AdminLayout";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
@@ -36,6 +35,7 @@ const BlogCreate = ({ categories, adminProfile }) => {
             onSuccess: () => {
                 reset();
             },
+            
             onError: (errors) => {
                 console.error("Submit error:", errors);
                 showErrorToast("Failed to create blog");

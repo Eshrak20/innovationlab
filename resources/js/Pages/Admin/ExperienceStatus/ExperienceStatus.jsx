@@ -47,20 +47,20 @@ const ExperienceStatus = ({ experiences: initialExperiences }) => {
             setIsUpdating(false);
         }
     };
+    //! Delete is disable for now
+    // const handleDelete = async (id) => {
+    //     if (!confirm("Are you sure you want to delete this experience?"))
+    //         return;
 
-    const handleDelete = async (id) => {
-        if (!confirm("Are you sure you want to delete this experience?"))
-            return;
-
-        try {
-            await axios.delete(`experience-statuses/${id}`);
-            setExperiences((exps) => exps.filter((e) => e.id !== id));
-            showSuccessToast("Experience deleted successfully");
-        } catch (error) {
-            console.error("Delete error:", error);
-            showErrorToast("Failed to delete experience");
-        }
-    };
+    //     try {
+    //         await axios.delete(`experience-statuses/${id}`);
+    //         setExperiences((exps) => exps.filter((e) => e.id !== id));
+    //         showSuccessToast("Experience deleted successfully");
+    //     } catch (error) {
+    //         console.error("Delete error:", error);
+    //         showErrorToast("Failed to delete experience");
+    //     }
+    // };
 
     return (
         <AdminLayout>
@@ -168,7 +168,9 @@ const ExperienceStatus = ({ experiences: initialExperiences }) => {
                                                             icon={faPen}
                                                         />
                                                     </button>
-                                                    <button
+
+                                                    {/* //!  Delete is disable for now */}
+                                                    {/* <button
                                                         onClick={() =>
                                                             handleDelete(exp.id)
                                                         }
@@ -178,7 +180,7 @@ const ExperienceStatus = ({ experiences: initialExperiences }) => {
                                                         <FontAwesomeIcon
                                                             icon={faTrash}
                                                         />
-                                                    </button>
+                                                    </button> */}
                                                 </div>
                                             )}
                                         </td>

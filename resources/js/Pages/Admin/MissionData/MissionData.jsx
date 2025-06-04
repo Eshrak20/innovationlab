@@ -48,18 +48,18 @@ const MissionData = ({ missions: initialMissions }) => {
             setIsUpdating(false);
         }
     };
+    //! Delete is disable for now
+    // const handleDelete = async (id) => {
+    //     if (!confirm("Are you sure you want to delete this mission?")) return;
 
-    const handleDelete = async (id) => {
-        if (!confirm("Are you sure you want to delete this mission?")) return;
-
-        try {
-            await axios.delete(`mission/${id}`);
-            setMissions((prev) => prev.filter((m) => m.id !== id));
-            showSuccessToast("Mission deleted successfully");
-        } catch (error) {
-            showErrorToast("Failed to delete mission");
-        }
-    };
+    //     try {
+    //         await axios.delete(`mission/${id}`);
+    //         setMissions((prev) => prev.filter((m) => m.id !== id));
+    //         showSuccessToast("Mission deleted successfully");
+    //     } catch (error) {
+    //         showErrorToast("Failed to delete mission");
+    //     }
+    // };
 
     return (
         <AdminLayout>
@@ -171,7 +171,8 @@ const MissionData = ({ missions: initialMissions }) => {
                                                             icon={faPen}
                                                         />
                                                     </button>
-                                                    <button
+                                                     {/* //!  Delete is disable for now */}
+                                                    {/* <button
                                                         onClick={() =>
                                                             handleDelete(
                                                                 mission.id
@@ -183,7 +184,7 @@ const MissionData = ({ missions: initialMissions }) => {
                                                         <FontAwesomeIcon
                                                             icon={faTrash}
                                                         />
-                                                    </button>
+                                                    </button> */}
                                                 </div>
                                             )}
                                         </td>

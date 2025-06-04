@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useForm } from "@inertiajs/inertia-react";
-import axios from "axios";
 import AdminLayout from "@/Layouts/AdminLayout";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { showErrorToast, showSuccessToast } from "@/toastConfig/toast";
+import { router } from "@inertiajs/react";
 
 const BlogEdit = ({ blog, categories }) => {
     const { data, setData, processing, errors } = useForm({
@@ -52,36 +52,17 @@ const BlogEdit = ({ blog, categories }) => {
         } else if (!data.image) {
             formData.append("image", "");
         }
-
-        try {
-            const response = await axios.post(
-                route("blogs.update", blog.id),
-                formData,
-                {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                        "X-HTTP-Method-Override": "PATCH",
-                    },
-                }
-            );
-
-            showSuccessToast(response.data.success);
-        } catch (error) {
-            console.error("Update error:", error);
-            if (error.response && error.response.data.errors) {
-                // Handle validation errors
-                const errors = error.response.data.errors;
-                Object.keys(errors).forEach((key) => {
-                    showErrorToast(errors[key][0]);
-                });
-            } else {
-                showErrorToast(
-                    error.response?.data?.message || "Failed to update blog"
-                );
-            }
-        } finally {
-            setIsSubmitting(false);
-        }
+        formData.append("_method", "patch");
+        router.post(route("blogs.update", blog.id), formData, {
+            onSuccess: () => {
+                showSuccessToast("blog updated successfully!");
+            },
+            onError: (errors) => {
+                console.error("Submit error:", errors);
+                showErrorToast("Failed to update blog");
+            },
+            onFinish: () => setIsSubmitting(false),
+        });
     };
 
     const generateSlug = () => {

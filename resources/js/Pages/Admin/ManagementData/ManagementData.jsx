@@ -48,18 +48,19 @@ const ManagementData = ({ managementData: initialData }) => {
             setIsUpdating(false);
         }
     };
+    //! Delete is disable for now
 
-    const handleDelete = async (id) => {
-        if (!confirm("Are you sure you want to delete this item?")) return;
-        try {
-            await axios.delete(`management-data/${id}`);
-            setDataList((list) => list.filter((item) => item.id !== id));
-            showSuccessToast("Data deleted successfully");
-        } catch (error) {
-            console.error("Delete error:", error);
-            showErrorToast("Failed to delete item");
-        }
-    };
+    // const handleDelete = async (id) => {
+    //     if (!confirm("Are you sure you want to delete this item?")) return;
+    //     try {
+    //         await axios.delete(`management-data/${id}`);
+    //         setDataList((list) => list.filter((item) => item.id !== id));
+    //         showSuccessToast("Data deleted successfully");
+    //     } catch (error) {
+    //         console.error("Delete error:", error);
+    //         showErrorToast("Failed to delete item");
+    //     }
+    // };
 
     return (
         <AdminLayout>
@@ -198,7 +199,8 @@ const ManagementData = ({ managementData: initialData }) => {
                                                             icon={faPen}
                                                         />
                                                     </button>
-                                                    <button
+                                                    {/* //!  Delete is disable for now */}
+                                                    {/* <button
                                                         onClick={() =>
                                                             handleDelete(
                                                                 item.id
@@ -210,7 +212,7 @@ const ManagementData = ({ managementData: initialData }) => {
                                                         <FontAwesomeIcon
                                                             icon={faTrash}
                                                         />
-                                                    </button>
+                                                    </button> */}
                                                 </div>
                                             )}
                                         </td>

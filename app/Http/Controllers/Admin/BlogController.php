@@ -153,7 +153,7 @@ class BlogController extends Controller
             return response()->json(['success' => 'Blog updated successfully']);
         }
 
-        return redirect()->route('blogs.index'); // or whatever your blog list route is named
+         return redirect()->route('blogs.index')->with('success', 'Blog updated successfully');
     }
 
 
@@ -166,7 +166,7 @@ class BlogController extends Controller
         $blog->delete();
 
         if (request()->wantsJson()) {
-            return response()->json(['message' => 'Blog deleted awd ']);
+            return response()->json(['message' => 'Blog deleted']);
         }
 
         return redirect()->route('blogs.index')->with('success', 'Blog deleted successfully');

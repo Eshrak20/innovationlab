@@ -70,20 +70,20 @@ const ContactInfo = ({ contactInfo: initialContactInfos }) => {
             setIsUpdating(false);
         }
     };
+    //! Delete is disable for now
+    // const handleDelete = async (id) => {
+    //     if (!confirm("Are you sure you want to delete this contact info?"))
+    //         return;
 
-    const handleDelete = async (id) => {
-        if (!confirm("Are you sure you want to delete this contact info?"))
-            return;
-
-        try {
-            await axios.delete(`contactInfo/${id}`);
-            setContactInfos((infos) => infos.filter((info) => info.id !== id));
-            showSuccessToast("Contact info deleted successfully");
-        } catch (error) {
-            console.error("Delete error:", error);
-            showErrorToast("Failed to delete contact info");
-        }
-    };
+    //     try {
+    //         await axios.delete(`contactInfo/${id}`);
+    //         setContactInfos((infos) => infos.filter((info) => info.id !== id));
+    //         showSuccessToast("Contact info deleted successfully");
+    //     } catch (error) {
+    //         console.error("Delete error:", error);
+    //         showErrorToast("Failed to delete contact info");
+    //     }
+    // };
 
     return (
         <AdminLayout>
@@ -227,7 +227,9 @@ const ContactInfo = ({ contactInfo: initialContactInfos }) => {
                                                                 icon={faPen}
                                                             />
                                                         </button>
-                                                        <button
+
+                                                        {/* //!  Delete is disable for now */}
+                                                        {/* <button
                                                             onClick={() =>
                                                                 handleDelete(
                                                                     info.id
@@ -239,7 +241,7 @@ const ContactInfo = ({ contactInfo: initialContactInfos }) => {
                                                             <FontAwesomeIcon
                                                                 icon={faTrash}
                                                             />
-                                                        </button>
+                                                        </button> */}
                                                     </div>
                                                 </td>
                                             </>

@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { showSuccessToast, showErrorToast } from "@/toastConfig/toast";
 import axios from "axios";
 import { useForm } from "@inertiajs/inertia-react";
+import { router } from "@inertiajs/react";
 
 const AdminGalleryEdit = ({ galleries }) => {
     const { data, setData, errors } = useForm({
@@ -30,7 +31,7 @@ const AdminGalleryEdit = ({ galleries }) => {
         }
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
@@ -47,34 +48,26 @@ const AdminGalleryEdit = ({ galleries }) => {
         if (data.image_path instanceof File) {
             formData.append("image_path", data.image_path);
         }
-        console.log(formData);
-        try {
-            const response = await axios.post(
-                route("galleries.update", galleries.id),
-                formData,
-                {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                        "X-HTTP-Method-Override": "PUT",
-                    },
+
+        formData.append("_method", "patch");
+        router.post(route("galleries.update", galleries.id), formData, {
+            forceFormData: true, // important to preserve multipart/form-data
+            preserveScroll: true,
+            onSuccess: () => {
+                showSuccessToast("Gallery updated successfully!");
+            },
+            onError: (errors) => {
+                if (errors) {
+                    Object.values(errors).forEach((msg) => showErrorToast(msg));
+                } else {
+                    showErrorToast("Failed to update gallery.");
                 }
-            );
-            showSuccessToast(
-                response.data?.success || "Gallery updated successfully!"
-            );
-        } catch (error) {
-            console.error(error);
-            const errorData = error.response?.data?.errors;
-            if (errorData) {
-                Object.values(errorData).forEach((errArr) =>
-                    showErrorToast(errArr[0])
-                );
-            } else {
-                showErrorToast("Failed to update gallery.");
-            }
-        } finally {
-            setIsSubmitting(false);
-        }
+            },
+            onFinish: () => {
+                setIsSubmitting(false);
+            },
+            method: "put", // this will override method to PUT
+        });
     };
 
     return (
